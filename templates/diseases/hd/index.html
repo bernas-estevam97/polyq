@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PolyQ - Huntington's Disease</title>
+  <link rel="shortcut icon" href="../../Images/image1.ico">
+  <link rel="stylesheet" href="style_1.css">
+  <link rel="stylesheet" href="highlight-js/highlightjs.css">
+  <link rel="stylesheet" href="ScrollSpy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="int-image.css">
+</head>
+<body>
+  <script src="ScrollSpy.min.js"></script>
+  <script src="highlight-js/highlight.pack.js"></script>
+    <header>
+      <a href="https://abcri.pt/"><img class="abcri-logo" src="../../Images/Logo_ABCRI.png"></a>
+      <a><img class="mngt-logo" src="../../Images/Logo_MNGT.png"></a>
+      <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+    </header>
+  <nav>
+    <img class="poly-logo" src="../../Images/logo-plyq.png"/>
+    <ul>
+      <li><a href="../drpla">DRPLA</a></li>
+      <li><a href="../sbma">SBMA</a></li>
+      <li><a href="../sca1">SCA1</a></li>
+    </ul>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="../sca2">SCA2</a>
+          <a href="../sca3">SCA3</a>
+          <a href="../sca6">SCA6</a>
+          <a href="../sca7">SCA7</a>
+          <a href="../sca17">SCA17</a>
+        </div>
+      </div>
+      <div class="dropdown-little">
+        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i class="fa-solid fa-turn-down"></i></button>
+        <div class="dropdown-content-little" id="myDropdownLittle">
+          <a href="../sbma">SBMA</a>
+          <a href="../drpla">DRPLA</a>
+          <a href="../sca1">SCA1</a>
+          <a href="../sca2">SCA2</a>
+          <a href="../sca3">SCA3</a>
+          <a href="../sca6">SCA6</a>
+          <a href="../sca7">SCA7</a>
+          <a href="../sca17">SCA17</a>
+        </div>
+      </div>
+    <a href="../../home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a>
+    <a href="../../home" class="return-little"><i class="fa-solid fa-house"></i> Home </a>
+  </nav>
+  <main>
+    <div class="aside-bar-left">
+      <h3> Page navigation</h3>
+      <div id="indicator"></div>
+    </div>
+    <div class="text">
+    <h1><a href="./"><i class="fa-solid fa-caret-right"></i>&nbspHuntington's Disease&nbsp<i class="fa-solid fa-caret-left"></i></a></h1>
+    <section class="scrollspy" spy-title="Introduction">
+      <div class="intro-section">
+        <h2> Introduction </h2>
+        <p>
+          Huntington disease (HD) is an inherited condition that causes progressive degeneration of neurons in the brain. Signs and symptoms usually develop between ages 35 to 44 years and may include uncontrolled movements, loss of intellectual abilities, and various emotional and psychiatric problems. People with HD usually live for about 15 to 20 years after the condition begins. It is caused by changes (mutations) in the HTT gene and is inherited in an autosomal dominant manner. This means that having a change (mutation) in only one of the 2 copies of the HTT gene is enough to cause the condition. When a person with HD has children, each child has a 50% (1 in 2) chance to inherit the mutated gene and develop the condition. </p>
+        <p>
+          Treatment is based on the symptoms present in each person and may include various medications.</p>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="First described">
+      <div class="firstd-section">
+      <h2> First Described</h2>
+      <p>
+        The first recorded mention of this disease was made in 1842, in a letter written by Charles Oscar Waters and published in Practice of Medicine. In 1846, Charles Gorman noted that the disease seemed to occur in particular regions. In 1860, Johan Christian Lund also gave a description of the disease, in which he noted that dementia along with jerking movement disorders seemed to be particularly prevalent in a secluded area of Setesdalen in Norway.</p>
+      <p>
+        In 1872, George Huntington gave the first complete description of the disease based on his studies of several generations of one family who exhibited similar symptoms. Huntington outlined the pattern of autosomal dominant inheritance years before Mendelian inheritance was elucidated.
+      </p>
+     </div>
+    </section>
+    <section class="scrollspy" spy-title="Epidemiology">
+      <div class="epi-section">
+        <h2> Epidemiology</h2>
+        <p>
+          According to systematic reviews and meta-analytic studies, prevalence of HD worldwide is between 2.5 and 3 per 100.000 <span class="refbig"><a href="#ref-one">[1]</a></span><span class="reflittle"><a href="#ref-one-little">[1]</a></span>,<span class="refbig"><a href="#ref-two">[2]</a></span><span class="reflittle"><a href="#ref-two-little">[2]</a></span>.
+        </p>
+        <p>
+          Average prevalence of HD across different world regions is shown in <span><a href="#epi-img">Figure 1</a></span>. All the data included is a representation of the information presented across 3 studies <span class="refbig"><a href="#ref-one">[1]</a></span><span class="reflittle"><a href="#ref-one-little">[1]</a></span> - <span class="refbig"><a href="#ref-three">[3]</a></span>
+          <span class="reflittle"><a href="#ref-three-little">[3]</a></span>.
+        </p>
+        <input type="checkbox" id="zoomCheck">
+        <label for="zoomCheck">
+          <img id="epi-img" type="img" src="../../Images/original images/HD/HD_epi-new.png">
+        </label>
+        <figcaption> <strong>Figure 1:</strong> Huntington epidemiologic features. Created with <a href="https://www.mapchart.net/">MapChart</a>.</figcaption>
+        <a class="download-image" target="_blank" href="../../Images/original images/HD/HD_epi-new.png" download>[Fullsize image] </a>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="Causative gene">
+        <div class="gene-section">
+          <h2> Causative gene</h2>
+          <p>
+            The IT15 gene, also known as huntingtin gene, is affected in Huntington's disease. It has a total of 67 exons and is located in the short arm of chromosome 4 (4p16.3, cytogenic band) (<a href="#gene-image2">figure 3</a>). There is an increased ammount of CAG repeats (CAG expansion) in exon 1 in Huntington's patients, usually more than 39 repeats, but less or more repeats have other implications already documented and demonstrated in (<a href="#gene-image1">figure 2</a>)
+            <span class="refbig"><a href="#ref-four">[4]</a></span><span class="reflittle"><a href="#ref-four-little">[4]</a></span>-<span class="refbig"><a href="#ref-six">[6]</a></span><span class="reflittle"><a href="#ref-six-little">[6]</a>
+            </span>. This gene codes for the protein huntingtin (Htt).
+          </p>
+          <div class="image-one">
+            <img id="gene-image1" src="../../Images/original images/HD/HTT.png" title="HTT gene">
+            <figcaption> <strong>Figure 2:</strong> Huntingtin gene with ranges of the repeats necessary for disease, juvenile onset, range in healthy individuals and others along with information about the total coding exons, chromosome location and size in DNA bases. Created with <a href="https://biorender.com/"> BioRender.com</a></figcaption>
+            <a class="download-image" target="_blank" href="../../Images/original images/HD/HTT.png" download> [Fullsize image] </a>
+          </div>
+          <div class="image-two">
+            <img id="gene-image2" src="../../Images/original images/HD/chromosome.png" title="HTT gene chromosomal location">
+            <figcaption> <strong>Figure 3:</strong> Huntingtin gene chromossomal band localization. Created with <a href="https://biorender.com/"> BioRender.com</a></figcaption>
+            <a class="download-image" target="_blank" href="../../Images/original images/HD/chromosome.png" download> [Fullsize image] </a>
+          </div>
+        </div>
+    </section>
+    <section class="scrollspy" spy-title="Codified protein">
+      <div class="protein-section">
+        <h2> Codified protein: structure, domains, functions and intracellular localization</h2>
+        <h3>Structure and domains</h3>
+          <p>
+            Huntingtin (Htt or HTT) is a soluble 3144 aminoacid protein (~350 kDa), found mostly expressed in the Central Nervous System (CNS) and testes. The abnormal polyglutamine expansion in the N-terminal region of Htt produces significant dysfunction and neural death <span class="refbig"><a href="#ref-seven">[7]</a></span><span class="reflittle"><a href="#ref-seven-little">[7]</a></span>.<br>
+          </p>
+          <p>
+            The N-terminal Gln-rich and Pro-rich domain has great conformational flexibility and is likely to exist in a fluctuating equilibrium of alpha-helical, random coil, and extended conformations. A simple HTT protein representation is shown in <a href="#protein-image">Figure 4</a> along with <a href="#table">Table 1</a> with information on each important HTT domain (information from <a href="https://www.uniprot.org/">Uniprot.org</a>).
+          </p>
+        <div class="non-interactive">
+          <img id="protein-image" src="../../Images/original images/HD/HTT_protein.png" title="Huntingtin structure">
+          <figcaption> <strong>Figure 4: </strong> Huntingtin protein structure. Created with <a href="https://biorender.com/"> BioRender.com</a></figcaption>
+          <a class="download-image" target="_blank" href="../../Images/original images/HD/HTT_protein.png" download> [Fullsize image] </a>
+        </div>
+        <div class="table">
+        <table style="width:100%" id="table">
+          <caption>Table 1. Huntingtin repeats</caption>
+          <tr>
+            <th>Description</th>
+            <th>Position</th>
+            <th>Length</th>
+          </tr>
+          <tr>
+            <td>Repeat 1</td>
+            <td>204-241</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>Repeat 2</td>
+            <td>246-283</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>Repeat 3</td>
+            <td>316-360</td>
+            <td>45</td>
+          </tr>
+          <tr>
+            <td>Repeat 4</td>
+            <td>802-839</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>Repeat 5</td>
+            <td>902-940</td>
+            <td>39</td>
+          </tr>
+        </table>
+        <div class="caption-under"> <strong>Table Caption:</strong> Huntingtin repeats with position within the htt protein, with the following length.</div>
+        </div>
+        <h3>Protein functions and biological role</h3>
+        <p>
+          Htt has various important cellular and biological roles:
+          <ul>
+            <li>Essential for embryonic development, as Htt gene knockout has been shown to be lethal in mice by embryonic day 8.5 <span class="refbig"><a href="#ref-eight">[8]</a></span><span class="reflittle"><a href="#ref-eight-little">[8]</a></span>.</li>
+            <li>Increased cellular death in Htt knockout animals indicate an anti-apoptotic role for Htt, which is supported by the findings that overexpression of full-length wild-type Htt in cultured striatal neurons protects them from apoptosis, whereas depletion of wild-type Htt makes neurons more sensitive to apoptotic stimulus<span class="refbig"><a href="#ref-nine">[9]</a></span><span class="reflittle"><a href="#ref-nine-little">[9]</a></span> -
+              <span class="refbig"><a href="#ref-eleven">[11]</a></span><span class="reflittle"><a href="#ref-eleven-little">[11]</a></span>.</li>
+            <li>Htt can bind and prevent the formation of the pro-apoptotic Hip1-HIPPI (Hip1 protein interactor) complex <span class="refbig"><a href="#ref-twelve">[12]</a></span><span class="reflittle"><a href="#ref-twelve-little">[12]</a></span>.</li>
+            <li>Htt can directly block the activation caspase 3 and 9 <span class="refbig"><a href="#ref-nine">[9]</a></span><span class="reflittle"><a href="#ref-nine-little">[9]</a></span>,  <span class="refbig"><a href="#ref-thirteen">[13]</a></span><span class="reflittle"><a href="#ref-thirteen-little">
+              [13]</a></span>.</li>
+            <li>Htt regulates the production of the brain-derived neurotrophic factor (BDNF) <span class="refbig"><a href="#ref-fourteen">[14]</a></span><span class="reflittle"><a href="#ref-fourteen-little">[14]</a></span>,  <span class="refbig"><a href="#ref-fifteen">[15]</a></span><span class="reflittle"><a href="#ref-fifteen-little">
+              [13]</a></span>.</li>
+            <li>Htt acts as positive regulator of BDNF transcription by preventing the recruitment of REST/NRSF to its DNA response element <span class="refbig"><a href="#ref-sixteen">[16]</a></span><span class="reflittle"><a href="#ref-sixteen-little">[16]</a></span>,  <span class="refbig"><a href="#ref-seventeen">[17]</a></span><span class="reflittle"><a href="#ref-seventeen-little">
+              [17]</a></span>.</li>
+            <li>By interacting with a variety of endocytic/trafficking proteins, such as α-adaptin, HIP1, HIP14, HAP1, HAP40, PACSIN1 and SH3GL3, clathrin, and dynamin, Htt participates in long and short range axonal transport and vesicle trafficking by associating with vesicles and microtubules  <span class="refbig"><a href="#ref-eighteen">[18]</a></span><span class="reflittle"><a href="#ref-eighteen-little">[18]</a>
+            </span>, <span class="refbig"><a href="#ref-nineteen">[19]</a></span><span class="reflittle"><a href="#ref-nineteen-little">[19]</a></span>, stimulates BDNF vesicular trafficking in neurons  <span class="refbig"><a href="#ref-twenty">[20]</a></span><span class="reflittle"><a href="#ref-twenty-little">[20]</a>
+            </span>, <span class="refbig"><a href="#ref-twenty-one">[21]</a></span><span class="reflittle"><a href="#ref-twenty-one-little">[21]</a></span>, regulates synaptic activity in neurons and regulates synaptic transmission and plasticity <span class="refbig"><a href="#ref-twenty-two">[22]</a></span>
+            <span class="reflittle"><a href="#ref-twenty-two-little">[22]</a></span>.</li>
+          </ul>
+        </p>
+        <h3> Protein intracellular localization</h3>
+        <p>
+          Immunofluorescent studies with cells in culture have supported both a cytoplasmic and nuclear localisation of HTT <span class="refbig"><a href="#ref-twenty-three">[23]</a></span><span class="reflittle"><a href="#ref-twenty-three-little">[23]</a>
+          </span>, <span class="refbig"><a href="#ref-twenty-four">[24]</a></span><span class="reflittle"><a href="#ref-twenty-four-little">[24]</a></span>.<br>
+        </p>
+        <p>
+          Many initial studies have supported Htt as an exclusively cytoplasmic protein <span class="refbig"><a href="#ref-twenty-five">[25]</a></span><span class="reflittle"><a href="#ref-twenty-five-little">[25]</a>
+          </span>, <span class="refbig"><a href="#ref-twenty-six">[26]</a></span><span class="reflittle"><a href="#ref-twenty-six-little">[26]</a></span> and others have shown nuclear localization of Htt <span class="refbig"><a href="#ref-twenty-seven">[27]</a></span><span class="reflittle"><a href="#ref-twenty-seven-little">[27]</a>
+          </span>, <span class="refbig"><a href="#ref-twenty-eight">[28]</a></span><span class="reflittle"><a href="#ref-twenty-eight-little">[28]</a></span>.<br>
+        </p>
+        <p>
+          The current idea of Htt intracellular localization is that it is largely cytoplasmic, but it can also be found with the cell nucleus<span class="refbig"><a href="#ref-twenty-four">[24]</a></span><span class="reflittle"><a href="#ref-twenty-four-little">[24]</a>
+          </span>.
+        </p>
+        <div class="interactive-image" id="my-interactive-image">
+          <img src="../../Images/cell-scheme.jpg" />
+        </div>
+        <div class="int-caption"> <strong>Figure 5:</strong> Huntingtin protein localization.<br>(Refresh this element if changed resolutions &nbsp<a href="javascript:void(0)" onclick="window.location.reload();"><i class="fa-solid fa-arrows-rotate"></i></a>&nbsp)</div>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="Pathophysiology">
+      <div class="patho-section">
+        <h2> Pathophysiology</h2>
+        <p>
+          Huntington’s disease neuropathological mechanisms are documented and mostly surround proteolytic cleavage of mHTT, misfolding, aggregation, transcriptional problems/dysregulation, mitochondrial dysfunction and abnormal cell clearance of HTT (Ubiquitin-proteasome system and autophagy).
+        </p>
+        <p>
+          Mutant HTT proteolysis results in N-terminal fragments where the polyglutamine tract is in HTT. These fragments are more prone to aggregate and cause neuronal toxicity. It is believed that mHTT aggregation and further cleavage by activating proteolytic caspases are directly involved with cell death <span class="refbig"><a href="#ref-twenty-nine">[29]</a></span><span class="reflittle"><a href="#ref-twenty-nine-little">[29]</a>
+          </span>. Protease inhibitors, or mutations that may block HTT cleavage have been demonstrated to slow down HD progression in mice <span class="refbig"><a href="#ref-thirty">[30]</a></span><span class="reflittle"><a href="#ref-thirty-little">[30]</a>
+          </span>, <span class="refbig"><a href="#ref-thirty-one">[31]</a></span><span class="reflittle"><a href="#ref-thirty-one-little">[31]</a></span>.
+        </p>
+        <p>
+          When it comes to misfolding and aggregation of mHTT the topic becomes less clear. Inclusions are often seen in the cell nucleus but also form in the cytoplasm, dendrites and axon terminals, though to a lesser extent. HTT fragments aggregate depending on the size of polyglutamine, fragment size, and intracellular protein interactors <span class="refbig"><a href="#ref-thirty-two">[32]</a></span><span class="reflittle"><a href="#ref-thirty-two-little">[32]</a>
+          </span> - <span class="refbig"><a href="#ref-thirty-five">[35]</a></span><span class="reflittle"><a href="#ref-thirty-five-little">[35]</a>
+          </span>. Inclusions are heterogeneous population comprising different forms of mHTT, and their definitive role (whether toxic or protective) has not yet been established <span class="refbig"><a href="#ref-thirty-six">[36]</a></span><span class="reflittle"><a href="#ref-thirty-six-little">[36]</a>
+          </span>.
+        </p>
+        <p>
+          Transcriptional problems that arise from HD are usually related with altered function/activity of several transcription factors and cofactors that HTT interacts with. Mutant HTT (with expanded polyglutamine) has been reported to bind and change the activity of several transcription factors and other effectors <span class="refbig"><a href="#ref-thirty-seven">[37]</a></span><span class="reflittle"><a href="#ref-thirty-seven-little">[37]</a>
+          </span>, <span class="refbig"><a href="#ref-thirty-eight">[38]</a></span><span class="reflittle"><a href="#ref-thirty-eight-little">[38]</a>
+          </span>. When mHTT binds these transcriptional factors/cofactors it sequesters these away from their normal DNA elements. Normal Htt binds cytosolic REST/NRSF and normally prevents its translocation to the nucleus, whereas mHTT interacts less with REST/ NRSF, resulting in the accumulation of this factor in the nucleus <span class="refbig"><a href="#ref-sixteen">[16]</a></span><span class="reflittle"><a href="#ref-sixteen-little">[16]</a>
+          </span>, <span class="refbig"><a href="#ref-seventeen">[17]</a></span><span class="reflittle"><a href="#ref-seventeen-little">[17]</a>
+          </span>. Mutated HTT also occupies the promoter region of PGC-1α by associating with the CREB–TAF4 complex. This leads to suppression of PGC-1α which in instance leads to evidence on impaired metabolic energy observed in HD <span class="refbig"><a href="#ref-thirty-nine">[39]</a></span><span class="reflittle"><a href="#ref-thirty-nine-little">[39]</a>
+          </span>. HTT could also impact mitochondrial biogenesis and function through effects on PGC-1α gene expression which was mentioned above as a target for mHTT.
+        </p>
+        <p>
+          Mutant HTT has been reported to damage mitochondria by multiple mechanisms: reduced  energy production and membrane potential, alteration in calcium homeostasis, more oxidative stress, and triggering of the caspase-mediated apoptotic pathways <span class="refbig"><a href="#ref-forty">[40]</a></span><span class="reflittle"><a href="#ref-forty-little">[40]</a>
+          </span> - <span class="refbig"><a href="#ref-forty-two">[42]</a></span><span class="reflittle"><a href="#ref-forty-two-little">[42]</a>
+          </span>.
+        </p>
+        <p>
+          About UPS interference. HTT with expanded polyglutamine sequesters UPS components into HTT inclusions altering their subcellular localization and consequently decaying the UPS efficiency <span class="refbig"><a href="#ref-forty-three">[43]</a></span><span class="reflittle"><a href="#ref-forty-three-little">[43]</a>
+          </span>, <span class="refbig"><a href="#ref-forty-four">[44]</a></span><span class="reflittle"><a href="#ref-forty-four-little">[44]</a>
+          </span>. Another method of interfering with the UPS consists on polyglutamine HTT not being degraded efficiently within the proteasome, leading to expanded polyglutamine sequences trapped in the proteasome that may block the entry of other substrates <span class="refbig"><a href="#ref-forty-five">[45]</a></span><span class="reflittle"><a href="#ref-forty-five-little">[45]</a>
+          </span>. It has also been proposed that inefficient degradation of expanded polyglutamine tracts of proteins may lead to the production of aggregation-prone fragments <span class="refbig"><a href="#ref-forty-six">[46]</a></span><span class="reflittle"><a href="#ref-forty-six-little">[46]</a>
+          </span>.
+        </p>
+        <p>
+          Autophagy may also be slightly compromised in some cases. Mutant HTT can interfere with target recognition and impair autophagic clearance <span class="refbig"><a href="#ref-forty-seven">[47]</a></span><span class="reflittle"><a href="#ref-forty-seven-little">[47]</a>
+          </span>, <span class="refbig"><a href="#ref-forty-eight">[48]</a></span><span class="reflittle"><a href="#ref-forty-eight-little">[48]</a>
+          </span>. Two articles have presented (in animal models) autophagy as a protecting mechanism capable of clearing the cell of mutated forms of huntingtin <span class="refbig"><a href="#ref-forty-nine">[49]</a></span><span class="reflittle"><a href="#ref-forty-nine-little">[49]</a>
+          </span>, <span class="refbig"><a href="#ref-fifty">[50]</a></span><span class="reflittle"><a href="#ref-fifty-little">[50]</a>
+          </span>.
+        </p>
+          <img id="patho-img" src="../../Images/original images/HD/HD_patho.png" title="Huntington pathogenic mechanisms">
+          <div class="caption-patho"> <strong>Figure 6:</strong> Huntington pathogenesis. A - Proteolysis and further cleavage of mHTT leads to cell toxicity and death. B - Misfolded HTT and aggregates populate the cells, this events remain unclear to the understanding and development of the disease. C - Mutant HTT binds TFs and alters their activity, BDNF might become affected as a result of this. D - UPS cannot perform normal degradation on expanded HTT and it might become blocked to other marked for degradation proteins. Also, mHTT can sometimes sequester UPS components compromising its normal function. E - Mutant HTT affects the expression of PGC-1α impairing normal mitochondria function leading to increased oxidative stress.</div>
+        <a class="download-image" target="_blank" href="../../Images/original images/HD/HD_patho.png" download> [Fullsize image] </a>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="Clinical manifestations">
+      <div class="clinical-section">
+        <h2> Clinical manifestations: neuropathology, other signs and symptoms</h2>
+        <h3> Neuropathology</h3>
+        <p>
+          Neuropathologically, HD is primarily characterized by neuronal loss in the striatum, cortex and basal ganglia. Nuclei usually affected are: globus pallidus (GP), thalamus, hypothalamus, subthalamic nucleus, substantia nigra (SN) and cerebellum <span class="refbig"><a href="#ref-fifty-one">[51]</a></span><span class="reflittle"><a href="#ref-fifty-one-little">[51]</a>
+          </span>.
+        </p>
+        <p>
+          Diffusion tensor imaging has demonstrated pathology of the white matter in pre and early symptomatic patients <span class="refbig"><a href="#ref-fifty-two">[52]</a></span><span class="reflittle"><a href="#ref-fifty-two-little">[52]</a>
+          </span>.
+        </p>
+        <h3> Signs and symptoms</h3>
+        <p>
+          Huntington disease (HD) is a progressive disorder that causes motor,
+          cognitive, and psychiatric signs and symptoms. On average, most people
+          begin developing features of HD between ages 35 and 44. Signs and symptoms
+          vary by stage and may include:<br>
+        </p>
+        <div class="list-flex">
+          <div class="column-one">
+            <div class="column-one-title">
+              <strong>Early stage</strong>
+            </div>
+          <ul>
+            <li>Behavioral disturbances</li>
+            <li>Clumsiness</li>
+            <li>Moodiness</li>
+            <li>Irritability</li>
+            <li>Paranoia</li>
+            <li>Apathy</li>
+            <li>Anxiety</li>
+            <li>Hallucinations</li>
+            <li>Abnormal eye movements</li>
+            <li>Depression</li>
+            <li>Impaired ability to detect odors</li>
+          </ul>
+          </div>
+          <div class="column-two">
+            <div class="column-two-title">
+              <strong>Middle stage</strong>
+            </div>
+          <ul>
+            <li>Dystonia</li>
+            <li>Involuntary movements</li>
+            <li>Trouble with balance and walking</li>
+            <li>Chorea with twisting and writhing motions</li>
+            <li>Unsteady gait</li>
+            <li>Slow reaction time</li>
+            <li>General weakness</li>
+            <li>Weight loss</li>
+            <li>Speech difficulties</li>
+            <li>Stubbornness</li>
+          </ul>
+          </div>
+          <div class="column-three">
+            <div class="column-three-title">
+              <strong>Late stage</strong>
+            </div>
+          <ul>
+            <li>Rigidity</li>
+            <li>Bradykinesia</li>
+            <li>Severe chorea</li>
+            <li>Serious weight loss</li>
+            <li>Inability to speak</li>
+            <li>Inability to walk</li>
+            <li>Swallowing problems</li>
+            <li>Inability to care for oneself</li>
+          </ul>
+          </div>
+      </div>
+    </div>
+    </section>
+    <section class="scrollspy" spy-title="References" id="references">
+      <div class="reference-section">
+        <h2> References </h2>
+        <ol>
+          <li><a id="ref-one-little" class="articlebottom">T. Pringsheim, K. Wiltshire, L. Day, J. Dykeman, T. Steeves, and N. Jette, “The incidence and prevalence of Huntington’s disease: a systematic review and meta-analysis,” Mov. Disord., vol. 27, no. 9, pp. 1083–1091, Aug. 2012.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/22692795/" class="links">[PUBMED]</a> &nbsp<a href="https://www.researchgate.net/publication/225301368_The_incidence_and_prevalence_of_Huntington's_disease_A_systematic_review_and_meta-analysis" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-two-little" class="articlebottom">M. D. Rawlins et al., “The Prevalence of Huntington’s Disease,” Neuroepidemiology, vol. 46, no. 2, pp. 144–153, Mar. 2016.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/26824438/" class="links">[PUBMED]</a></li>
+          <li><a id="ref-three-little" class="articlebottom">C. Kay, M. R. Hayden, and B. R. Leavitt, “Epidemiology of Huntington disease,” Handb. Clin. Neurol., vol. 144, pp. 31–46, 2017.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28947124/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/B9780128018934000031" class="links">[ScienceDirect]</a><a href="https://www.researchgate.net/publication/320000624_Epidemiology_of_Huntington_disease" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-four-little" class="articlebottom">N. S. Caron, G. E. Wright, and M. R. Hayden, “Huntington Disease,” GeneReviews®, Jun. 2020, Accessed: May 31, 2022.</a><br><a href="https://www.ncbi.nlm.nih.gov/books/NBK1305/" class="links">[NCBI BOOKS]</a></a></li>
+          <li><a id="ref-five-little" class="articlebottom">S. Podvin, H. T. Reardon, K. Yin, C. Mosier, and V. Hook, “Multiple clinical features of Huntington’s disease correlate with mutant HTT gene CAG repeat lengths and neurodegeneration,” J. Neurol., vol. 266, no. 3, pp. 551–564, Mar. 2019.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29956026/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/326043705_Multiple_clinical_features_of_Huntington's_disease_correlate_with_mutant_HTT_gene_CAG_repeat_lengths_and_neurodegeneration" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-six-little" class="articlebottom">A. C. Rego and L. P. de Almeida, “Molecular targets and therapeutic strategies in Huntington’s Disease,” Curr. Drug Targets CNS Neurol. Disord., vol. 4, no. 4, pp. 361–381, Aug. 2005.</a><br><a href="https://www.researchgate.net/publication/7658184_Molecular_Targets_and_Therapeutic_Strategies_in_Huntingtons_Disease" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-seven-little" class="articlebottom">M. Jimenez-Sanchez, F. Licitra, B. R. Underwood, and D. C. Rubinsztein, “Huntington’s Disease: Mechanisms of Pathogenesis and Therapeutic Strategies,” Cold Spring Harb. Perspect. Med., vol. 7, no. 7, pp. 1–22, Jul. 2017.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27940602/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/311548727_Huntington's_Disease_Mechanisms_of_Pathogenesis_and_Therapeutic_Strategies" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-eight-little" class="articlebottom">M. E. Macdonald et al., “Targeted inactivation of the mouse Huntington’s disease gene homolog Hdh,” in Cold Spring Harbor Symposia on Quantitative Biology, 1996, vol. 61, pp. 627–638.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/7618107/" class="links">[PUBMED]</a></li>
+          <li><a id="ref-nine-little" class="articlebottom">D. Rigamonti et al., “Wild-Type Huntingtin Protects from Apoptosis Upstream of Caspase-3,” J. Neurosci., vol. 20, no. 10, p. 3705, May 2000.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/10804212/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/pii/S0002929707640841" class="links">[ScienceDirect]</a></li>
+          <li><a id="ref-ten-little" class="articlebottom">B. R. Leavitt et al., “Wild-type huntingtin protects neurons from excitotoxicity,” J. Neurochem., vol. 96, no. 4, pp. 1121–1129, Feb. 2006.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/16417581/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/pii/S0002929707640841" class="links">[ScienceDirect - Full Text]</a></li>
+          <li><a id="ref-eleven-little" class="articlebottom">Y. Zhang et al., “Depletion of wild-type huntingtin in mouse models of neurologic diseases,” J. Neurochem., vol. 87, no. 1, pp. 101–106, Oct. 2003.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12969257/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/10572316_Depletion_of_wild-type_huntingtin_in_mouse_models_of_neurologic_diseases" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-twelve-little" class="articlebottom">F. G. Gervais et al., “Recruitment and activation of caspase-8 by the Huntingtin-interacting protein Hip-1 and a novel partner Hippi,” Nat. Cell Biol. 2002 42, vol. 4, no. 2, pp. 95–105, Jan. 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11788820/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/232782319_Recruitment_and_activation_of_caspase-8_by_the_Huntingtin-interacting_protein_Hip-1_and_a_novel_partner_Hippi" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-thirteen-little" class="articlebottom">D. Rigamonti, S. Sipione, D. Goffredo, C. Zuccato, E. Fossale, and E. Cattaneo, “Huntingtin’s Neuroprotective Activity Occurs via Inhibition of Procaspase-9 Processing *,” J. Biol. Chem., vol. 276, no. 18, pp. 14545–14548, Jan. 2001.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11278258/" class="links">[PUBMED]</a><a href="https://www.jbc.org/article/S0021-9258(19)56730-8/fulltext" class="links">[JBC - Full Text]</a> </a></li>
+          <li><a id="ref-fourteen-little" class="articlebottom">C. Zuccato et al., “Loss of huntingtin-mediated BDNF gene transcription in Huntington’s disease,” Science, vol. 293, no. 5529, pp. 493–498, Jul. 2001. </a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11408619/" class="links">[PUBMED]</a><a href="https://www.science.org/doi/10.1126/science.1059581" class="links">[Science]</a></li>
+          <li><a id="ref-fifteen-little" class="articlebottom">C. Zuccato and E. Cattaneo, “Brain-derived neurotrophic factor in neurodegenerative diseases,” Nat. Rev. Neurol., vol. 5, no. 6, pp. 311–322, 2009.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/19498435/" class="links">[PUBMED]</a><a href="https://www.nature.com/articles/nrneurol.2009.54" class="links">[Nature]</a></li>
+          <li><a id="ref-sixteen-little" class="articlebottom">C. Zuccato et al., “Widespread Disruption of Repressor Element-1 Silencing Transcription Factor/Neuron-Restrictive Silencer Factor Occupancy at Its Target Genes in Huntington’s Disease,” J. Neurosci., vol. 27, no. 26, p. 6972, Jun. 2007.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6672230/" class="links">[PUBMED Central]</a></li>
+          <li><a id="ref-seventeen-little" class="articlebottom">C. Zuccato et al., “Huntingtin interacts with REST/NRSF to modulate the transcription of NRSE-controlled neuronal genes,” Nat. Genet., vol. 35, no. 1, pp. 76–83, Sep. 2003.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12881722/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/10643471_Huntingtin_interacts_with_RESTNRSF_to_modulate_the_transcription_of_NRSE-controlled_neuronal_genes" class="links">[ResearchGate]</a></li>
+          <li><a id="ref-eighteen-little" class="articlebottom">M. DiFiglia et al., “Huntingtin is a cytoplasmic protein associated with vesicles in human and rat brain neurons,” Neuron, vol. 14, no. 5, pp. 1075–1081, 1995.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/7748555/" class="links">[PUBMED]</a><a href="https://www.cell.com/neuron/pdf/0896-6273(95)90346-1.pdf?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2F0896627395903461%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a id="ref-nineteen-little" class="articlebottom">G. Hoffner, P. Kahlem, and P. Djian, “Perinuclear localization of huntingtin as a consequence of its binding to microtubules through an interaction with beta-tubulin: relevance to Huntington’s disease,” J. Cell Sci., vol. 115, no. Pt 5, pp. 941–948, Mar. 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11870213/" class="links">[PUBMED]</a><a href="https://journals.biologists.com/jcs/article/115/5/941/27080/Perinuclear-localization-of-huntingtin-as-a" class="links">[Journal of Cell Science - Full Text]</a></li>
+          <li><a id="ref-twenty-little" class="articlebottom">L. R. Gauthier et al., “Huntingtin controls neurotrophic support and survival of neurons by enhancing BDNF vesicular transport along microtubules,” Cell, vol. 118, no. 1, pp. 127–138, Jul. 2004.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/15242649/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/pii/S0092867404006191" class="links">[ScienceDirect - Full Text]</a></li>
+          <li><a id="ref-twenty-one-little" class="articlebottom">L. S. Her and L. S. B. Goldstein, “Enhanced Sensitivity of Striatal Neurons to Axonal Transport Defects Induced by Mutant Huntingtin,” J. Neurosci., vol. 28, no. 50, p. 13662, Dec. 2008.</a><br><a href="https://www.jneurosci.org/content/28/50/13662" class="links">[JNeurosci - Full Text]</a></li>
+          <li><a id="ref-twenty-two-little" class="articlebottom">R. Smith, P. Brundin, and J. Y. Li, “Synaptic dysfunction in Huntington’s disease: a new perspective,” Cell. Mol. Life Sci., vol. 62, no. 17, pp. 1901–1912, Sep. 2005.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/15968465/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s00018-005-5084-5" class="links">[Springer Link]</a></li>
+          <li><a id="ref-twenty-three-little" class="articlebottom">A. Hughes and L. Jones, “Huntingtin localisation studies - a technical review,” PLoS Curr., vol. 3, 2011.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3037564/" class="links">[PUBMED Central]</a></li>
+          <li><a id="ref-twenty-four-little" class="articlebottom">F. Saudou and S. Humbert, “The Biology of Huntingtin,” Neuron, vol. 89, no. 5, pp. 910–926, Mar. 2016.</a><br><a href="https://www.cell.com/neuron/fulltext/S0896-6273(16)00096-9?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0896627316000969%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a id="ref-twenty-five-little" class="articlebottom">A. H. Sharp et al., “Widespread expression of Huntington’s disease gene (IT15) protein product,” Neuron, vol. 14, no. 5, pp. 1065–1074, 1995.</a><br><a href="https://www.sciencedirect.com/science/article/pii/0896627395903453" class="links">[ScienceDirect]</a></li>
+          <li><a id="ref-twenty-six-little" class="articlebottom">P. G. Bhide et al., “Expression of normal and mutant huntingtin in the developing brain,” J. Neurosci., vol. 16, no. 17, pp. 5523–5535, Sep. 1996.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6578889/" class="links">[PUBMED Central - Full Text]</a><a href="https://www.jneurosci.org/content/16/17/5523" class="links">[JNeurosci]</a></li>
+          <li><a id="ref-twenty-seven-little" class="articlebottom">T. Tao and A. M. Tartakoff, “Nuclear relocation of normal huntingtin,” Traffic, vol. 2, no. 6, pp. 385–394, 2001.</a><br><a href="https://onlinelibrary.wiley.com/doi/full/10.1034/j.1600-0854.2001.002006385.x?sid=nlm%3Apubmed" class="links">[Wiley Online Library - Full Text]</a></li>
+          <li><a id="ref-twenty-eight-little" class="articlebottom">K. B. Kegel et al., “Huntingtin is present in the nucleus, interacts with the transcriptional corepressor C-terminal binding protein, and represses transcription,” J. Biol. Chem., vol. 277, no. 9, pp. 7466–7476, Mar. 2002.</a><br><a href="https://www.sciencedirect.com/science/article/pii/S0021925819823074" class="links">[ScienceDirect - Full Text]</a><a href="https://www.researchgate.net/publication/11617921_Huntingtin_Is_Present_in_the_Nucleus_Interacts_with_the_Transcriptional_Corepressor_C-terminal_Binding_Protein_and_Represses_Transcription" class="links">[ResearchGate - Full Text]</a></li>
+          <li><a id="ref-twenty-nine-little" class="articlebottom">G. M. Halliday, D. A. McRitchie, V. Macdonald, K. L. Double, R. J. Trent, and E. McCusker, “Regional specificity of brain atrophy in Huntington’s disease,” Exp. Neurol., vol. 154, no. 2, pp. 663–672, 1998.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9878201/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S0014488698969199" class="links">[ScienceDirect]</a></li>
+          <li><a id="ref-thirty-little" class="articlebottom">C. L. Wellington et al., “Inhibiting caspase cleavage of huntingtin reduces toxicity and aggregate formation in neuronal and nonneuronal cells,” J. Biol. Chem., vol. 275, no. 26, pp. 19831–19838, Jun. 2000.</a><br><a href="https://www.sciencedirect.com/science/article/pii/S0021925819800571" class="links">[ScienceDirect - Full Text]</a></li>
+          <li><a id="ref-thirty-one-little" class="articlebottom">R. K. Graham et al., “Cleavage at the caspase-6 site is required for neuronal dysfunction and degeneration due to mutant huntingtin,” Cell, vol. 125, no. 6, pp. 1179–1191, 2006.</a><br><a href="https://www.cell.com/fulltext/S0092-8674(06)00558-7" class="links">[Cell - Full Text]</a></li>
+          <li><a id="ref-thirty-two-little" class="articlebottom">D. Martindale et al., “Length of huntingtin and its polyglutamine tract influences localization and frequency of intracellular aggregates,” Nat. Genet., vol. 18, no. 2, pp. 150–154, 1998.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9462744/" class="links">[PUBMED]</a><a href="https://www.nature.com/articles/ng0298-150" class="links">[Nature]</a></li>
+          <li><a id="ref-thirty-three-little" class="articlebottom">A. S. Hackam et al., “The Influence of Huntingtin Protein Size on Nuclear Localization and Cellular Toxicity,” J. Cell Biol., vol. 141, no. 5, p. 1097, Jun. 1998.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2137174/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a id="ref-thirty-four-little" class="articlebottom">S. H. Li and X. J. Li, “Aggregation of N-terminal huntingtin is dependent on the length of its glutamine repeats,” Hum. Mol. Genet., vol. 7, no. 5, pp. 777–782, May 1998.</a><br><a href="https://www.researchgate.net/publication/51328410_Aggregation_of_N-terminal_huntingtin_is_dependent_on_the_length_of_its_glutamine_repeats" class="links">[ResearchGate - Full Text]</a></li>
+          <li><a id="ref-thirty-five-little" class="articlebottom">S. Chen, F. A. Ferrone, and R. Wetzel, “Huntington’s disease age-of-onset linked to polyglutamine aggregation nucleation,” Proc. Natl. Acad. Sci. U. S. A., vol. 99, no. 18, p. 11884, Sep. 2002.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC129363/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a id="ref-thirty-six-little" class="articlebottom">M. Arrasate and S. Finkbeiner, “Protein aggregates in Huntington’s disease,” Exp. Neurol., vol. 238, no. 1, pp. 1–11, Nov. 2011.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3909772/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a id="ref-thirty-seven-little" class="articlebottom">A. W. Dunah et al., “Sp1 and TAFII130 transcriptional activity disrupted in early Huntington’s disease,” Science, vol. 296, no. 5576, pp. 2238–2243, Jun. 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11988536/" class="links">[PUBMED]</a><a href="https://www.science.org/doi/abs/10.1126/science.1072613?versioned=true" class="links">[Science]</a></li>
+          <li><a id="ref-thirty-eight-little" class="articlebottom">H. Okazawa, “Polyglutamine diseases: a transcription disorder?,” Cell. Mol. Life Sci., vol. 60, no. 7, pp. 1427–1439, Jul. 2003.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12943229/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s00018-003-3013-z" class="links">[Springer]</a></li>
+          <li><a id="ref-thirty-nine-little" class="articlebottom">E. Trushina and C. T. McMurray, “Oxidative stress and mitochondrial dysfunction in neurodegenerative diseases,” Neuroscience, vol. 145, no. 4, pp. 1233–1248, May. 2007.</a><br><a href="https://www.researchgate.net/publication/6502812_Trushina_E_McMurray_C_T_Oxidative_stress_and_mitochondrial_dysfunction_in_neurodegenerative_diseases_Neuroscience_145_1233-1248" class="links">[ResearchGate - Full Text]</a></li>
+          <li><a id="ref-forty-little" class="articlebottom">S. E. Browne et al., “Oxidative damage and metabolic dysfunction in Huntington’s disease: selective vulnerability of the basal ganglia,” Ann. Neurol., vol. 41, no. 5, pp. 646–653, May 1997.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9153527/" class="links">[PUBMED]</a><a href="https://onlinelibrary.wiley.com/doi/10.1002/ana.410410514" class="links">[Wiley Online Library]</a></li>
+          <li><a id="ref-forty-one-little" class="articlebottom">S. E. Browne, R. J. Ferrante, and M. F. Beal, “Oxidative stress in Huntington’s disease,” Brain Pathol., vol. 9, no. 1, pp. 147–163, 1999.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8098260/" class="links">[PUBMED Central - Full PDF Available]</a></li>
+          <li><a id="ref-forty-two-little" class="articlebottom">A. V. Panov et al., “Early mitochondrial calcium defects in Huntington’s disease are a direct effect of polyglutamines,” Nat. Neurosci., vol. 5, no. 8, pp. 731–736, 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12089530/" class="links">[PUBMED]</a><a href="https://www.nature.com/articles/nn884" class="links">[Nature]</a></li>
+          <li><a id="ref-forty-three-little" class="articlebottom">M. DiFiglia et al., “Aggregation of huntingtin in neuronal intranuclear inclusions and dystrophic neurites in brain,” Science, vol. 277, no. 5334, pp. 1990–1993, Sep. 1997.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9302293/" class="links">[PUBMED]</a><a href="https://www.science.org/doi/10.1126/science.277.5334.1990" class="links">[Science]</a></li>
+          <li><a id="ref-forty-four-little" class="articlebottom">S. W. Davies et al., “Formation of neuronal intranuclear inclusions underlies the neurological dysfunction in mice transgenic for the HD mutation,” Cell, vol. 90, no. 3, pp. 537–548, Aug. 1997.</a><br><a href="https://www.cell.com/cell/fulltext/S0092-8674(00)80513-9?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867400805139%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a id="ref-forty-five-little" class="articlebottom">S. Imarisio et al., “Huntington’s disease: from pathology and genetics to potential therapies,” Biochem. J., vol. 412, no. 2, pp. 191–209, Jun. 2008.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18466116/" class="links">[PUBMED]</a></li>
+          <li><a id="ref-forty-six-little" class="articlebottom">C. I. Holmberg, K. E. Staniszewski, K. N. Mensah, A. Matouschek, and R. I. Morimoto, “Inefficient degradation of truncated polyglutamine proteins by the proteasome,” EMBO J., vol. 23, no. 21, pp. 4307–4318, Oct. 2004.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC524390/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a id="ref-forty-seven-little" class="articlebottom">M. Martinez-Vicente et al., “Cargo recognition failure is responsible for inefficient autophagy in Huntington’s disease,” Nat. Neurosci., vol. 13, no. 5, pp. 567–576, May 2010.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2860687/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a id="ref-forty-eight-little" class="articlebottom">L. Qi et al., “The role of chaperone-mediated autophagy in huntingtin degradation,” PLoS One, vol. 7, no. 10, Oct. 2012.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3469570/" class="links">[PUBMED Central - Full Text]</a><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0046834" class="links">[PLOS ONE - Full Text]</a></li>
+          <li><a id="ref-forty-nine-little" class="articlebottom">B. Ravikumar et al., “Inhibition of mTOR induces autophagy and reduces toxicity of polyglutamine expansions in fly and mouse models of Huntington disease,” Nat. Genet., vol. 36, no. 6, pp. 585–595, Jun. 2004.</a><br><a href="https://www.nature.com/articles/ng1362" class="links">[Nature - Full Text]</a></li>
+          <li><a id="ref-fifty-little" class="articlebottom">K. Jia, A. C. Hart, and B. Levine, “Autophagy genes protect against disease caused by polyglutamine expansion proteins in Caenorhabditis elegans,” Autophagy, vol. 3, no. 1, pp. 21–25, 2007.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/17172799/" class="links">[PUBMED]</a></li>
+          <li><a id="ref-fifty-one-little" class="articlebottom">L. A. Raymond, V. M. André, C. Cepeda, C. M. Gladding, A. J. Milnerwood, and M. S. Levine, “Pathophysiology of Huntington’s Disease: Time-Dependent Alterations in Synaptic and Receptor Function,” Neuroscience, vol. 198, p. 252, Dec. 2011.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3221774/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a id="ref-fifty-two-little" class="articlebottom">H. D. Rosas et al., “Diffusion tensor imaging in presymptomatic and early Huntington’s disease: Selective white matter pathology and its relationship to clinical measures,” Mov. Disord., vol. 21, no. 9, pp. 1317–1325, Sep. 2006.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/16755582/" class="links">[PUBMED]</a><a href="https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.20979" class="links">
+            [Wiley Online Library]</a></li>
+        </ol>
+      </div>
+    </section>
+    </div>
+    <div class="aside-bar-right" id="bar-right">
+      <div class="ref-side-bar">
+        <h3><i class="fa-solid fa-link"></i> References</h3>
+        <ul>
+          <li><a href="" id="ref-one" class="articlefocus">1. &nbsp T. Pringsheim, K. Wiltshire, L. Day, J. Dykeman, T. Steeves, and N. Jette, “The incidence and prevalence of Huntington’s disease: a systematic review and meta-analysis,” Mov. Disord., vol. 27, no. 9, pp. 1083–1091, Aug. 2012.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/22692795/" class="links">[PUBMED]</a> &nbsp<a href="https://www.researchgate.net/publication/225301368_The_incidence_and_prevalence_of_Huntington's_disease_A_systematic_review_and_meta-analysis" class="links">[ResearchGate]</a></li>
+          <li><a href="" id="ref-two" class="articlefocus">2. &nbsp M. D. Rawlins et al., “The Prevalence of Huntington’s Disease,” Neuroepidemiology, vol. 46, no. 2, pp. 144–153, Mar. 2016.</a><a href="https://pubmed.ncbi.nlm.nih.gov/26824438/" class="links">[PUBMED]</a><a href="https://www.karger.com/Article/Fulltext/443738" class="links">[Full Text - Karger]</a></li>
+          <li><a href="" id="ref-three" class="articlefocus">3. &nbsp C. Kay, M. R. Hayden, and B. R. Leavitt, “Epidemiology of Huntington disease,” Handb. Clin. Neurol., vol. 144, pp. 31–46, 2017.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28947124/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/B9780128018934000031" class="links">[ScienceDirect]</a><a href="https://www.researchgate.net/publication/320000624_Epidemiology_of_Huntington_disease" class="links">
+            [ResearchGate]</a></li>
+          <li><a href="" id="ref-four" class="articlefocus">4. &nbsp N. S. Caron, G. E. Wright, and M. R. Hayden, “Huntington Disease,” GeneReviews®, Jun. 2020, Accessed: May 31, 2022.</a><br><a href="https://www.ncbi.nlm.nih.gov/books/NBK1305/" class="links">[NCBI BOOKS]</a></li>
+          <li><a href="" id="ref-five" class="articlefocus">5. &nbsp S. Podvin, H. T. Reardon, K. Yin, C. Mosier, and V. Hook, “Multiple clinical features of Huntington’s disease correlate with mutant HTT gene CAG repeat lengths and neurodegeneration,” J. Neurol., vol. 266, no. 3, pp. 551–564, Mar. 2019.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29956026/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/326043705_Multiple_clinical_features_of_Huntington's_disease_correlate_with_mutant_HTT_gene_CAG_repeat_lengths_and_neurodegeneration" class="links">[ResearchGate]</a></a></li>
+          <li><a href="" id="ref-six" class="articlefocus">6. &nbspA. C. Rego and L. P. de Almeida, “Molecular targets and therapeutic strategies in Huntington’s Disease,” Curr. Drug Targets CNS Neurol. Disord., vol. 4, no. 4, pp. 361–381, Aug. 2005.</a><br><a href="https://www.researchgate.net/publication/7658184_Molecular_Targets_and_Therapeutic_Strategies_in_Huntingtons_Disease" class="links">[ResearchGate]</a></li>
+          <li><a href="" id="ref-seven" class="articlefocus">7. &nbsp M. Jimenez-Sanchez, F. Licitra, B. R. Underwood, and D. C. Rubinsztein, “Huntington’s Disease: Mechanisms of Pathogenesis and Therapeutic Strategies,” Cold Spring Harb. Perspect. Med., vol. 7, no. 7, pp. 1–22, Jul. 2017.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27940602/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/311548727_Huntington's_Disease_Mechanisms_of_Pathogenesis_and_Therapeutic_Strategies" class="links">[ResearchGate]</a></a></li>
+          <li><a href="" id="ref-eight" class="articlefocus">8. &nbsp M. E. Macdonald et al., “Targeted inactivation of the mouse Huntington’s disease gene homolog Hdh,” in Cold Spring Harbor Symposia on Quantitative Biology, 1996, vol. 61, pp. 627–638.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/7618107/" class="links">[PUBMED]</a></a></li>
+          <li><a href="" id="ref-nine" class="articlefocus">9. &nbsp D. Rigamonti et al., “Wild-Type Huntingtin Protects from Apoptosis Upstream of Caspase-3,” J. Neurosci., vol. 20, no. 10, p. 3705, May 2000.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/10804212/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/pii/S0002929707640841" class="links">[ScienceDirect]</a></li>
+          <li><a href="" id="ref-ten" class="articlefocus">10. &nbsp B. R. Leavitt et al., “Wild-type huntingtin protects neurons from excitotoxicity,” J. Neurochem., vol. 96, no. 4, pp. 1121–1129, Feb. 2006.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/16417581/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/pii/S0002929707640841" class="links">[ScienceDirect - Full Text]</a></a></li>
+          <li><a href="" id="ref-eleven" class="articlefocus">11. &nbsp Y. Zhang et al., “Depletion of wild-type huntingtin in mouse models of neurologic diseases,” J. Neurochem., vol. 87, no. 1, pp. 101–106, Oct. 2003.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12969257/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/10572316_Depletion_of_wild-type_huntingtin_in_mouse_models_of_neurologic_diseases" class="links">[ResearchGate]</a></li>
+          <li><a href="" id="ref-twelve" class="articlefocus">12. &nbsp F. G. Gervais et al., “Recruitment and activation of caspase-8 by the Huntingtin-interacting protein Hip-1 and a novel partner Hippi,” Nat. Cell Biol. 2002 42, vol. 4, no. 2, pp. 95–105, Jan. 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11788820/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/232782319_Recruitment_and_activation_of_caspase-8_by_the_Huntingtin-interacting_protein_Hip-1_and_a_novel_partner_Hippi" class="links">[ResearchGate]</a></li>
+          <li><a href="" id="ref-thirteen" class="articlefocus">13. &nbsp D. Rigamonti, S. Sipione, D. Goffredo, C. Zuccato, E. Fossale, and E. Cattaneo, “Huntingtin’s Neuroprotective Activity Occurs via Inhibition of Procaspase-9 Processing *,” J. Biol. Chem., vol. 276, no. 18, pp. 14545–14548, Jan. 2001.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11278258/" class="links">[PUBMED]</a><a href="https://www.jbc.org/article/S0021-9258(19)56730-8/fulltext" class="links">[JBC - Full Text]</a></li>
+          <li><a href="" id="ref-fourteen" class="articlefocus">14. &nbsp C. Zuccato et al., “Loss of huntingtin-mediated BDNF gene transcription in Huntington’s disease,” Science, vol. 293, no. 5529, pp. 493–498, Jul. 2001. </a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11408619/" class="links">[PUBMED]</a><a href="https://www.science.org/doi/10.1126/science.1059581" class="links">[Science]</a></li>
+          <li><a href="" id="ref-fifteen" class="articlefocus">15. &nbsp C. Zuccato and E. Cattaneo, “Brain-derived neurotrophic factor in neurodegenerative diseases,” Nat. Rev. Neurol., vol. 5, no. 6, pp. 311–322, 2009.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/19498435/" class="links">[PUBMED]</a><a href="https://www.nature.com/articles/nrneurol.2009.54" class="links">[Nature]</a></li>
+          <li><a href="" id="ref-sixteen" class="articlefocus">16. &nbsp C. Zuccato et al., “Widespread Disruption of Repressor Element-1 Silencing Transcription Factor/Neuron-Restrictive Silencer Factor Occupancy at Its Target Genes in Huntington’s Disease,” J. Neurosci., vol. 27, no. 26, p. 6972, Jun. 2007.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6672230/" class="links">[PUBMED Central]</a></li>
+          <li><a href="" id="ref-seventeen" class="articlefocus">17. &nbsp C. Zuccato et al., “Huntingtin interacts with REST/NRSF to modulate the transcription of NRSE-controlled neuronal genes,” Nat. Genet., vol. 35, no. 1, pp. 76–83, Sep. 2003.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12881722/" class="links">[PUBMED]</a><a href="https://www.researchgate.net/publication/10643471_Huntingtin_interacts_with_RESTNRSF_to_modulate_the_transcription_of_NRSE-controlled_neuronal_genes" class="links">[ResearchGate]</a></li>
+          <li><a href="" id="ref-eighteen" class="articlefocus">18. &nbsp M. DiFiglia et al., “Huntingtin is a cytoplasmic protein associated with vesicles in human and rat brain neurons,” Neuron, vol. 14, no. 5, pp. 1075–1081, 1995.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/7748555/" class="links">[PUBMED]</a><a href="https://www.cell.com/neuron/pdf/0896-6273(95)90346-1.pdf?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2F0896627395903461%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a href="" id="ref-nineteen" class="articlefocus">19. &nbsp G. Hoffner, P. Kahlem, and P. Djian, “Perinuclear localization of huntingtin as a consequence of its binding to microtubules through an interaction with beta-tubulin: relevance to Huntington’s disease,” J. Cell Sci., vol. 115, no. Pt 5, pp. 941–948, Mar. 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11870213/" class="links">[PUBMED]</a><a href="https://journals.biologists.com/jcs/article/115/5/941/27080/Perinuclear-localization-of-huntingtin-as-a" class="links">[Journal of Cell Science - Full Text]</a></li>
+          <li><a href="" id="ref-twenty" class="articlefocus">20. &nbsp L. R. Gauthier et al., “Huntingtin controls neurotrophic support and survival of neurons by enhancing BDNF vesicular transport along microtubules,” Cell, vol. 118, no. 1, pp. 127–138, Jul. 2004.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/15242649/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/pii/S0092867404006191" class="links">[ScienceDirect - Full Text]</a></li>
+          <li><a href="" id="ref-twenty-one" class="articlefocus">21. &nbsp L. S. Her and L. S. B. Goldstein, “Enhanced Sensitivity of Striatal Neurons to Axonal Transport Defects Induced by Mutant Huntingtin,” J. Neurosci., vol. 28, no. 50, p. 13662, Dec. 2008.</a><br><a href="https://www.jneurosci.org/content/28/50/13662" class="links">[JNeurosci - Full Text]</a></li>
+          <li><a href="" id="ref-twenty-two" class="articlefocus">22. &nbsp R. Smith, P. Brundin, and J. Y. Li, “Synaptic dysfunction in Huntington’s disease: a new perspective,” Cell. Mol. Life Sci., vol. 62, no. 17, pp. 1901–1912, Sep. 2005.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/15968465/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s00018-005-5084-5" class="links">[Springer Link]</a></li>
+          <li><a href="" id="ref-twenty-three" class="articlefocus">23. &nbsp A. Hughes and L. Jones, “Huntingtin localisation studies - a technical review,” PLoS Curr., vol. 3, 2011.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3037564/" class="links">[PUBMED Central]</a></li>
+          <li><a href="" id="ref-twenty-four" class="articlefocus">24. &nbsp F. Saudou and S. Humbert, “The Biology of Huntingtin,” Neuron, vol. 89, no. 5, pp. 910–926, Mar. 2016.</a><br><a href="https://www.cell.com/neuron/fulltext/S0896-6273(16)00096-9?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0896627316000969%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a href="" id="ref-twenty-five" class="articlefocus">25. &nbsp A. H. Sharp et al., “Widespread expression of Huntington’s disease gene (IT15) protein product,” Neuron, vol. 14, no. 5, pp. 1065–1074, 1995.</a><br><a href="https://www.sciencedirect.com/science/article/pii/0896627395903453" class="links">[ScienceDirect]</a></li>
+          <li><a href="" id="ref-twenty-six" class="articlefocus">26. &nbsp P. G. Bhide et al., “Expression of normal and mutant huntingtin in the developing brain,” J. Neurosci., vol. 16, no. 17, pp. 5523–5535, Sep. 1996.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6578889/" class="links">[PUBMED Central - Full Text]</a><a href="https://www.jneurosci.org/content/16/17/5523" class="links">[JNeurosci]</a></li>
+          <li><a href="" id="ref-twenty-seven" class="articlefocus">27. &nbsp T. Tao and A. M. Tartakoff, “Nuclear relocation of normal huntingtin,” Traffic, vol. 2, no. 6, pp. 385–394, 2001.</a><br><a href="https://onlinelibrary.wiley.com/doi/full/10.1034/j.1600-0854.2001.002006385.x?sid=nlm%3Apubmed" class="links">[Wiley Online Library - Full Text]</a></li>
+          <li><a href="" id="ref-twenty-eight" class="articlefocus">28. &nbsp K. B. Kegel et al., “Huntingtin is present in the nucleus, interacts with the transcriptional corepressor C-terminal binding protein, and represses transcription,” J. Biol. Chem., vol. 277, no. 9, pp. 7466–7476, Mar. 2002.</a><br><a href="https://www.sciencedirect.com/science/article/pii/S0021925819823074" class="links">[ScienceDirect - Full Text]</a><a href="https://www.researchgate.net/publication/11617921_Huntingtin_Is_Present_in_the_Nucleus_Interacts_with_the_Transcriptional_Corepressor_C-terminal_Binding_Protein_and_Represses_Transcription" class="links">[ResearchGate - Full Text]</a></li>
+          <li><a href="" id="ref-twenty-nine" class="articlefocus">29. &nbsp G. M. Halliday, D. A. McRitchie, V. Macdonald, K. L. Double, R. J. Trent, and E. McCusker, “Regional specificity of brain atrophy in Huntington’s disease,” Exp. Neurol., vol. 154, no. 2, pp. 663–672, 1998.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9878201/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S0014488698969199" class="links">[ScienceDirect]</a></li>
+          <li><a href="" id="ref-thirty" class="articlefocus">30. &nbsp C. L. Wellington et al., “Inhibiting caspase cleavage of huntingtin reduces toxicity and aggregate formation in neuronal and nonneuronal cells,” J. Biol. Chem., vol. 275, no. 26, pp. 19831–19838, Jun. 2000.</a><br><a href="https://www.sciencedirect.com/science/article/pii/S0021925819800571" class="links">[ScienceDirect - Full Text]</a></li>
+          <li><a href="" id="ref-thirty-one" class="articlefocus">31. &nbsp R. K. Graham et al., “Cleavage at the caspase-6 site is required for neuronal dysfunction and degeneration due to mutant huntingtin,” Cell, vol. 125, no. 6, pp. 1179–1191, 2006.</a><br><a href="https://www.cell.com/fulltext/S0092-8674(06)00558-7" class="links">[Cell - Full Text]</a></li>
+          <li><a href="" id="ref-thirty-two" class="articlefocus">32. &nbsp D. Martindale et al., “Length of huntingtin and its polyglutamine tract influences localization and frequency of intracellular aggregates,” Nat. Genet., vol. 18, no. 2, pp. 150–154, 1998.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9462744/" class="links">[PUBMED]</a><a href="https://www.nature.com/articles/ng0298-150" class="links">[Nature]</a></li>
+          <li><a href="" id="ref-thirty-three" class="articlefocus">33. &nbsp A. S. Hackam et al., “The Influence of Huntingtin Protein Size on Nuclear Localization and Cellular Toxicity,” J. Cell Biol., vol. 141, no. 5, p. 1097, Jun. 1998.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2137174/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a href="" id="ref-thirty-four" class="articlefocus">34. &nbsp S. H. Li and X. J. Li, “Aggregation of N-terminal huntingtin is dependent on the length of its glutamine repeats,” Hum. Mol. Genet., vol. 7, no. 5, pp. 777–782, May 1998.</a><br><a href="https://www.researchgate.net/publication/51328410_Aggregation_of_N-terminal_huntingtin_is_dependent_on_the_length_of_its_glutamine_repeats" class="links">[ResearchGate - Full Text]</a></li>
+          <li><a href="" id="ref-thirty-five" class="articlefocus">35. &nbsp S. Chen, F. A. Ferrone, and R. Wetzel, “Huntington’s disease age-of-onset linked to polyglutamine aggregation nucleation,” Proc. Natl. Acad. Sci. U. S. A., vol. 99, no. 18, p. 11884, Sep. 2002.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC129363/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a href="" id="ref-thirty-six" class="articlefocus">36. &nbsp M. Arrasate and S. Finkbeiner, “Protein aggregates in Huntington’s disease,” Exp. Neurol., vol. 238, no. 1, pp. 1–11, Nov. 2011.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3909772/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a href="" id="ref-thirty-seven" class="articlefocus">37. &nbsp A. W. Dunah et al., “Sp1 and TAFII130 transcriptional activity disrupted in early Huntington’s disease,” Science, vol. 296, no. 5576, pp. 2238–2243, Jun. 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11988536/" class="links">[PUBMED]</a><a href="https://www.science.org/doi/abs/10.1126/science.1072613?versioned=true" class="links">[Science]</a></li>
+          <li><a href="" id="ref-thirty-eight" class="articlefocus">38. &nbsp H. Okazawa, “Polyglutamine diseases: a transcription disorder?,” Cell. Mol. Life Sci., vol. 60, no. 7, pp. 1427–1439, Jul. 2003.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12943229/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s00018-003-3013-z" class="links">[Springer]</a></li>
+          <li><a href="" id="ref-thirty-nine" class="articlefocus">39. &nbsp E. Trushina and C. T. McMurray, “Oxidative stress and mitochondrial dysfunction in neurodegenerative diseases,” Neuroscience, vol. 145, no. 4, pp. 1233–1248, May. 2007.</a><br><a href="https://www.researchgate.net/publication/6502812_Trushina_E_McMurray_C_T_Oxidative_stress_and_mitochondrial_dysfunction_in_neurodegenerative_diseases_Neuroscience_145_1233-1248" class="links">[ResearchGate - Full Text]</a></li>
+          <li><a href="" id="ref-forty" class="articlefocus">40. &nbsp S. E. Browne et al., “Oxidative damage and metabolic dysfunction in Huntington’s disease: selective vulnerability of the basal ganglia,” Ann. Neurol., vol. 41, no. 5, pp. 646–653, May 1997.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9153527/" class="links">[PUBMED]</a><a href="https://onlinelibrary.wiley.com/doi/10.1002/ana.410410514" class="links">[Wiley Online Library]</a></li>
+          <li><a href="" id="ref-forty-one" class="articlefocus">41. &nbsp S. E. Browne, R. J. Ferrante, and M. F. Beal, “Oxidative stress in Huntington’s disease,” Brain Pathol., vol. 9, no. 1, pp. 147–163, 1999.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8098260/" class="links">[PUBMED Central - Full PDF Available]</a></li>
+          <li><a href="" id="ref-forty-two" class="articlefocus">42. &nbsp A. V. Panov et al., “Early mitochondrial calcium defects in Huntington’s disease are a direct effect of polyglutamines,” Nat. Neurosci., vol. 5, no. 8, pp. 731–736, 2002.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12089530/" class="links">[PUBMED]</a><a href="https://www.nature.com/articles/nn884" class="links">[Nature]</a></li>
+          <li><a href="" id="ref-forty-three" class="articlefocus">43. &nbsp M. DiFiglia et al., “Aggregation of huntingtin in neuronal intranuclear inclusions and dystrophic neurites in brain,” Science, vol. 277, no. 5334, pp. 1990–1993, Sep. 1997.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9302293/" class="links">[PUBMED]</a><a href="https://www.science.org/doi/10.1126/science.277.5334.1990" class="links">[Science]</a></li>
+          <li><a href="" id="ref-forty-four" class="articlefocus">44. &nbsp S. W. Davies et al., “Formation of neuronal intranuclear inclusions underlies the neurological dysfunction in mice transgenic for the HD mutation,” Cell, vol. 90, no. 3, pp. 537–548, Aug. 1997.</a><br><a href="https://www.cell.com/cell/fulltext/S0092-8674(00)80513-9?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867400805139%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a href="" id="ref-forty-five" class="articlefocus">45. &nbsp S. Imarisio et al., “Huntington’s disease: from pathology and genetics to potential therapies,” Biochem. J., vol. 412, no. 2, pp. 191–209, Jun. 2008.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18466116/" class="links">[PUBMED]</a></li>
+          <li><a href="" id="ref-forty-six" class="articlefocus">46. &nbsp C. I. Holmberg, K. E. Staniszewski, K. N. Mensah, A. Matouschek, and R. I. Morimoto, “Inefficient degradation of truncated polyglutamine proteins by the proteasome,” EMBO J., vol. 23, no. 21, pp. 4307–4318, Oct. 2004.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC524390/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a href="" id="ref-forty-seven" class="articlefocus">47. &nbsp M. Martinez-Vicente et al., “Cargo recognition failure is responsible for inefficient autophagy in Huntington’s disease,” Nat. Neurosci., vol. 13, no. 5, pp. 567–576, May 2010.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2860687/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a href="" id="ref-forty-eight" class="articlefocus">48. &nbsp L. Qi et al., “The role of chaperone-mediated autophagy in huntingtin degradation,” PLoS One, vol. 7, no. 10, Oct. 2012.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3469570/" class="links">[PUBMED Central - Full Text]</a><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0046834" class="links">[PLOS ONE - Full Text]</a></li>
+          <li><a href="" id="ref-forty-nine" class="articlefocus">49. &nbsp B. Ravikumar et al., “Inhibition of mTOR induces autophagy and reduces toxicity of polyglutamine expansions in fly and mouse models of Huntington disease,” Nat. Genet., vol. 36, no. 6, pp. 585–595, Jun. 2004.</a><br><a href="https://www.nature.com/articles/ng1362" class="links">[Nature - Full Text]</a></li>
+          <li><a href="" id="ref-fifty" class="articlefocus">50. &nbsp K. Jia, A. C. Hart, and B. Levine, “Autophagy genes protect against disease caused by polyglutamine expansion proteins in Caenorhabditis elegans,” Autophagy, vol. 3, no. 1, pp. 21–25, 2007.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/17172799/" class="links">[PUBMED]</a></li>
+          <li><a href="" id="ref-fifty-one" class="articlefocus">51. &nbsp L. A. Raymond, V. M. André, C. Cepeda, C. M. Gladding, A. J. Milnerwood, and M. S. Levine, “Pathophysiology of Huntington’s Disease: Time-Dependent Alterations in Synaptic and Receptor Function,” Neuroscience, vol. 198, p. 252, Dec. 2011.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3221774/" class="links">[PUBMED Central - Full Text]</a></li>
+          <li><a href="" id="ref-fifty-two" class="articlefocus">52. &nbsp H. D. Rosas et al., “Diffusion tensor imaging in presymptomatic and early Huntington’s disease: Selective white matter pathology and its relationship to clinical measures,” Mov. Disord., vol. 21, no. 9, pp. 1317–1325, Sep. 2006.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/16755582/" class="links">[PUBMED]</a><a href="https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.20979" class="links">
+            [Wiley Online Library]</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer id=footer>
+    <div class="collumns">
+      <div class="first-third">
+        <ul>
+          <li><a href="../../">Landing Page</a></li>
+          <li><a href="https://abcri.pt/">ABC-RI</a></li>
+          <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
+          <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
+        </ul>
+      </div>
+      <div class="second-third">
+        <ul>
+          <li><a href="../../authors">Authors</a></li>
+          <li><a href="https://www.ualg.pt/">UAlg</a></li>
+          <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
+          <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
+        </ul>
+      </div>
+      <div class="third-third">
+        <ul>
+          <li><a href="../../contact">Contact</a></li>
+          <li><a href="../../objectives">Objectives</a></li>
+          <li><a href="../../appreciation">Appreciation</a></li>
+        </ul>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="200.000000pt" height="200.000000pt" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.10, written by Peter Selinger 2001-2011
+</metadata>
+<g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#3d85c6" stroke="none">
+<path d="M1514 1622 c-11 -10 -31 -22 -44 -25 -38 -10 -45 -17 -84 -82 -40 -67 -44 -94 -20 -135 18 -29 101 -80 132 -80 10 0 23 -5 29 -11 6 -6 26 -14 43 -18 24 -4 38 -16 51 -40 10 -19 23 -39 28 -44 14 -14 61 19 61 43 0 12 10 25 23 30 36 15 78 65 89 107 20 79 20 89 -8 152 -25 55 -33 64 -83 90 -72 36 -185 42 -217 13z m76 -27 c-10 -12 -10 -19 -2 -27 9 -9 18 -4 37 16 14 15 28 25 33 23 4 -2 25 -12 47 -22 40 -18 75 -43 75 -54 0 -9 -67 -7 -76 2 -12 12 -44 8 -44 -5 0 -20 48 -38 81 -31 49 9 81 -33 63 -81 -7 -19 -36 -21 -65 -3 -17 9 -23 9 -26 0 -3 -8 -14 -11 -28 -7 -12 3 -26 1 -30 -5 -3 -6 -17 -8 -31 -5 -13 3 -24 2 -24 -4 0 -19 -33 -22 -57 -6 -35 22 -52 3 -23 -24 21 -20 21 -20 2 -26 -23 -8 -117 37 -126 60 -9 24 -7 74 3 74 5 0 11 -7 15 -15 9 -26 48 -17 77 18 21 24 28 28 29 15 0 -24 22 -23 38 2 7 11 21 20 31 20 11 0 22 4 26 9 10 17 -15 23 -68 16 -38 -6 -58 -15 -78 -37 -25 -26 -29 -27 -37 -11 -19 32 20 83 64 83 8 0 23 9 34 20 11 11 32 20 46 20 23 0 25 -2 14 -15z m179 -224 l34 -1 -23 -25 c-25 -26 -59 -32 -91 -15 -15 8 -24 6 -41 -10 -13 -11 -35 -20 -54 -20 -60 0 -53 30 11 50 22 7 46 15 53 19 8 3 28 5 45 5 18 -1 47 -2 66 -3z m-34 -81 c-3 -5 -12 -10 -20 -10 -8 0 -17 5 -20 10 -4 6 5 10 20 10 15 0 24 -4 20 -10z m-61 -22 c14 -55 0 -64 -26 -19 -12 22 -13 31 -5 35 21 8 25 6 31 -16z"/>
+<path d="M72 1198 c-23 -23 -14 -59 18 -71 l30 -11 0 -163 c0 -150 -1 -163 -18 -163 -37 0 -57 -51 -30 -78 15 -15 100 -15 152 -1 60 16 158 119 182 189 32 94 68 153 113 187 23 18 48 33 54 33 9 0 12 -46 12 -165 0 -91 -1 -165 -2 -165 -1 0 -13 5 -27 11 -25 12 -25 14 -28 142 l-3 130 -29 -41 c-25 -37 -28 -48 -24 -102 4 -63 -4 -78 -19 -34 -9 26 -10 26 -36 -27 l-26 -54 31 -33 c81 -83 206 -106 306 -56 81 40 129 104 177 238 20 54 73 119 117 142 l28 15 0 -166 0 -165 -22 11 c-22 10 -23 13 -20 139 3 142 -1 151 -48 88 -19 -26 -22 -40 -18 -94 2 -35 3 -64 1 -64 -1 0 -8 12 -16 26 l-14 26 -26 -53 -26 -54 32 -34 c92 -97 257 -108 353 -24 44 39 93 115 114 177 27 82 69 140 120 166 l40 20 0 -164 0 -165 -22 8 c-22 8 -23 15 -28 137 l-5 128 -29 -34 c-26 -31 -28 -39 -24 -97 4 -66 -4 -82 -19 -37 -9 26 -10 26 -36 -27 l-26 -54 32 -33 c52 -55 116 -82 191 -82 56 0 67 3 76 21 9 16 8 26 -5 45 -8 13 -22 24 -30 24 -13 0 -15 26 -15 164 0 152 1 164 19 169 31 8 43 40 25 65 -13 18 -25 22 -72 22 -131 0 -232 -90 -286 -256 -19 -57 -73 -127 -117 -149 -15 -8 -30 -15 -34 -15 -3 0 -5 74 -5 165 0 91 3 165 6 165 3 0 14 -5 25 -10 17 -10 19 -22 19 -143 l0 -132 28 28 c23 24 28 37 32 105 6 73 6 75 18 48 l13 -30 25 54 25 53 -38 39 c-54 55 -107 78 -181 78 -112 0 -206 -69 -259 -188 -13 -31 -34 -78 -45 -104 -21 -48 -51 -82 -100 -113 l-28 -17 0 166 c0 164 0 167 20 156 18 -10 20 -21 20 -143 l1 -132 36 39 c35 38 35 39 29 102 -7 69 -2 81 15 37 l11 -28 23 45 c32 61 31 73 -12 110 -114 100 -276 92 -375 -18 -42 -47 -63 -83 -89 -159 -10 -30 -28 -67 -40 -84 -22 -31 -94 -89 -111 -89 -4 0 -8 74 -8 165 0 91 3 165 6 165 3 0 14 -5 25 -10 17 -10 19 -23 19 -143 l1 -132 29 34 c25 30 30 44 32 105 3 68 4 70 17 44 l14 -27 23 50 c22 46 22 52 8 74 -17 27 -76 69 -117 84 -38 15 -140 14 -155 -1z m153 -22 c19 -8 51 -27 70 -42 50 -38 44 -69 -17 -88 -15 -4 -18 -17 -18 -71 0 -37 -4 -64 -9 -61 -5 3 -9 41 -9 83 0 43 -1 86 -1 95 -1 25 -58 53 -77 37 -19 -15 -21 -318 -2 -337 24 -24 57 -12 107 36 37 36 56 66 81 130 18 46 46 101 62 123 36 49 111 106 117 87 2 -7 10 -21 19 -30 14 -16 13 -18 -6 -18 -48 0 -103 -73 -151 -199 -26 -69 -84 -143 -133 -171 -48 -27 -161 -40 -173 -20 -5 9 3 22 24 39 l31 26 0 160 0 160 -31 26 c-19 15 -29 31 -25 37 10 17 100 15 141 -2z m487 -12 c18 -9 47 -30 65 -47 26 -24 30 -34 22 -49 -5 -10 -21 -18 -34 -18 -27 0 -33 -13 -38 -95 -2 -27 -4 -8 -5 44 -2 82 -5 98 -24 118 -25 27 -41 29 -62 7 -23 -23 -23 -315 0 -338 20 -20 20 -20 69 8 51 30 85 78 124 174 37 92 62 129 115 168 54 41 108 58 162 50 86 -11 172 -74 159 -116 -4 -13 -13 -20 -24 -18 -10 2 -25 -3 -34 -11 -15 -12 -17 -10 -17 22 0 27 -7 41 -27 57 -32 25 -54 23 -68 -6 -10 -21 -10 -21 -28 3 -22 28 -45 24 -91 -14 -46 -38 -81 -93 -106 -164 -41 -119 -116 -192 -215 -210 -87 -16 -126 9 -70 45 25 16 25 17 25 180 l0 164 -27 20 c-18 13 -24 24 -20 36 6 15 16 17 62 12 30 -3 70 -13 87 -22z m898 10 c2 -3 -9 -16 -25 -28 -30 -23 -30 -26 -33 -127 -2 -57 -5 -106 -8 -108 -2 -2 -4 43 -4 101 0 123 -9 139 -60 118 -46 -19 -112 -99 -134 -161 -25 -72 -68 -148 -103 -181 -85 -81 -235 -83 -312 -4 -25 25 -31 39 -26 55 3 12 14 21 24 21 28 0 41 21 43 70 1 26 4 11 7 -39 6 -77 8 -86 33 -104 27 -20 28 -20 48 -2 18 16 20 32 22 159 l2 141 6 -149 c6 -178 11 -185 85 -142 52 31 95 91 121 170 49 145 154 231 269 219 22 -3 42 -7 45 -9z m-1072 -380 c20 -10 21 -13 7 -24 -8 -7 -15 -19 -15 -27 0 -11 -6 -11 -30 4 -17 10 -42 30 -56 44 -22 23 -23 29 -13 52 7 15 17 23 25 20 28 -11 44 18 46 81 1 46 3 37 7 -39 6 -91 8 -100 29 -111z m912 44 c0 -55 51 -88 80 -53 11 13 16 12 41 -8 50 -39 30 -62 -44 -51 -51 8 -102 34 -139 69 -23 21 -26 29 -16 44 6 11 19 16 29 14 11 -3 21 1 25 11 9 24 24 9 24 -26z"/>
+<path d="M470 550 c0 -65 3 -90 13 -90 9 0 11 23 9 90 -2 49 -8 90 -13 90 -5 0 -9 -40 -9 -90z"/>
+<path d="M1090 551 l0 -89 33 1 c31 2 32 3 35 55 3 56 -10 85 -34 75 -10 -4 -14 2 -14 21 0 14 -4 26 -10 26 -6 0 -10 -36 -10 -89z m48 -27 c-2 -22 -7 -39 -13 -39 -12 0 -19 60 -10 83 10 28 27 -3 23 -44z"/>
+<path d="M280 545 c0 -69 3 -85 15 -85 9 0 15 9 15 25 0 15 6 25 15 25 19 0 35 31 35 69 0 32 -22 51 -59 51 -20 0 -21 -6 -21 -85z m50 19 c0 -19 -4 -34 -10 -34 -5 0 -10 18 -10 41 0 24 4 38 10 34 6 -3 10 -22 10 -41z"/>
+<path d="M612 618 c-7 -7 -12 -38 -12 -70 0 -45 5 -66 22 -88 21 -29 58 -41 58 -20 0 6 -7 10 -17 10 -15 0 -15 1 0 18 12 13 17 37 17 78 0 61 -11 84 -40 84 -9 0 -21 -5 -28 -12z m46 -85 c-5 -72 -28 -68 -28 5 0 32 3 62 7 66 13 13 24 -24 21 -71z"/>
+<path d="M750 545 c0 -83 0 -85 24 -85 39 0 56 25 56 84 0 58 -19 86 -58 86 -21 0 -22 -4 -22 -85z m45 0 c0 -38 -4 -60 -12 -62 -10 -4 -13 13 -13 62 0 49 3 66 13 63 8 -3 12 -25 12 -63z"/>
+<path d="M939 608 c-3 -53 3 -134 11 -142 5 -5 17 -5 27 -1 17 8 17 8 1 12 -25 6 -26 91 -2 100 15 6 15 7 -1 19 -9 7 -14 17 -10 23 3 6 -1 11 -9 11 -10 0 -17 -9 -17 -22z"/>
+<path d="M392 591 c-19 -11 -27 -83 -13 -110 15 -26 47 -27 61 -2 15 29 12 87 -6 105 -18 18 -24 19 -42 7z m28 -61 c0 -27 -4 -50 -10 -50 -5 0 -10 23 -10 50 0 28 5 50 10 50 6 0 10 -22 10 -50z"/>
+<path d="M510 588 c0 -7 7 -40 15 -73 12 -52 12 -61 0 -71 -20 -15 -19 -24 5 -24 19 0 28 22 45 110 4 19 9 43 11 53 4 11 0 17 -10 17 -11 0 -16 -9 -16 -29 0 -16 -3 -38 -7 -48 -6 -13 -9 -6 -13 26 -3 25 -11 46 -17 49 -7 2 -13 -2 -13 -10z"/>
+<path d="M852 588 c-13 -13 -16 -38 -6 -38 4 0 13 8 20 18 12 16 13 16 20 -2 5 -13 3 -21 -4 -24 -24 -8 -43 -35 -40 -56 2 -16 11 -21 36 -23 l32 -1 0 63 c0 48 -4 64 -16 69 -22 8 -28 8 -42 -6z m38 -88 c0 -19 -11 -26 -23 -14 -8 8 3 34 14 34 5 0 9 -9 9 -20z"/>
+<path d="M1006 584 c-20 -20 -20 -34 -1 -34 8 0 15 7 15 15 0 8 5 15 10 15 19 0 10 -31 -16 -54 -37 -31 -26 -66 20 -66 l33 0 -4 58 c-3 31 -6 63 -8 70 -6 17 -30 15 -49 -4z m34 -84 c0 -11 -4 -20 -10 -20 -5 0 -10 9 -10 20 0 11 5 20 10 20 6 0 10 -9 10 -20z"/>
+<path d="M1193 593 c-13 -5 -18 -43 -7 -43 4 0 13 8 20 18 12 16 13 16 14 0 0 -9 -11 -29 -25 -42 -33 -33 -21 -65 25 -64 30 1 30 2 30 58 0 69 -16 90 -57 73z m23 -110 c-11 -11 -19 6 -11 24 8 17 8 17 12 0 3 -10 2 -21 -1 -24z"/>
+<path d="M1271 581 c-8 -15 -5 -27 15 -56 25 -37 26 -65 0 -30 -9 13 -15 15 -20 6 -11 -17 14 -42 38 -39 29 4 32 35 7 69 -12 15 -21 34 -21 41 1 8 5 7 14 -4 17 -23 26 -23 26 1 0 17 -18 31 -40 31 -5 0 -14 -9 -19 -19z"/>
+<path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
+</g>
+</svg>
+    <p>&copyPolyQ Database. All rights reserved 2021-2022. Authors and database creators all duly mentioned.</p>
+    <div class="logos">
+      <a class="logo-one"> <img src="../../Images/Logo_ABCRI.png" alt=""></a>
+      <a class="logo-two"> <img src="../../Images/Logo_MNGT.png" alt=""></a>
+      <a class="logo-three"> <img src="../../Images/fmcb-mod.png" alt=""></a>
+    </div>
+  </footer>
+  <script src="../../Scripts/jquery-3.6.0.min.js"></script>
+  <script src="../../Scripts/interactive-image.min.js"></script>
+  <script src="../../Scripts/Image-Int-Scripts/image-int-hd.js"></script>
+  <script>
+            var indicator = document.getElementById('indicator');
+
+            var spy = new ScrollSpy(
+                {
+                    contexts_class: 'scrollspy'
+                }
+            );
+
+            spy.Indicator({
+                element: indicator
+            });
+</script>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function myFunctionLittle() {
+  document.getElementById("myDropdownLittle").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.dropbtn-little')){
+    var dropLittle = document.getElementsByClassName("dropdown-content-little");
+    var r;
+    for (r = 0; r < dropLittle.length; r++) {
+      var openDropLittle = dropLittle[r];
+      if (openDropLittle.classList.contains('show')) {
+        openDropLittle.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+<script>
+
+
+$(document).scroll(function() {
+    checkOffset();
+});
+
+function checkOffset() {
+    if($('#bar-right').offset().top + $('#bar-right').height() >= $('#references').offset().top + 200)
+          $('#bar-right').hide(800);
+    if($(document).scrollTop() + window.innerHeight < $('#references').offset().top + 200)
+          $('#bar-right').show(800); // restore when you scroll up
+}
+</script>
+
+<script>
+
+function reload(){
+  var imageInt = document.getElementById("my-interactive-image");
+  var imageContent = imageInt.innerHTML;
+  imageInt.innerHTML = imageContent;
+}
+
+</script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PolyQ - SCA2</title>
+  <link rel="shortcut icon" href="../../Images/image1.ico">
+  <link rel="stylesheet" href="style_2.css">
+  <link rel="stylesheet" href="highlight-js/highlightjs.css">
+  <link rel="stylesheet" href="ScrollSpy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="int-image.css">
+</head>
+<body>
+  <script src="ScrollSpy.min.js"></script>
+  <script src="highlight-js/highlight.pack.js"></script>
+    <header>
+      <a href="https://abcri.pt/"><img class="abcri-logo" src="../../Images/Logo_ABCRI.png"></a>
+      <a><img class="mngt-logo" src="../../Images/Logo_MNGT.png"></a>
+      <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+    </header>
+  <nav>
+    <img class="poly-logo" src="../../Images/logo-plyq.png"/>
+    <ul>
+      <li><a href="../hd">HD</a></li>
+      <li><a href="../drpla">DRPLA</a></li>
+      <li><a href="../sbma">SBMA</a></li>
+    </ul>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="../sca1">SCA1</a>
+          <a href="../sca3">SCA3</a>
+          <a href="../sca6">SCA6</a>
+          <a href="../sca7">SCA7</a>
+          <a href="../sca17">SCA17</a>
+        </div>
+      </div>
+      <div class="dropdown-little">
+        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i class="fa-solid fa-turn-down"></i></button>
+        <div class="dropdown-content-little" id="myDropdownLittle">
+          <a href="../hd">HD</a>
+          <a href="../drpla">DRPLA</a>
+          <a href="../sbma">SBMA</a>
+          <a href="../sca1">SCA1</a>
+          <a href="../sca3">SCA3</a>
+          <a href="../sca6">SCA6</a>
+          <a href="../sca7">SCA7</a>
+          <a href="../sca17">SCA17</a>
+        </div>
+      </div>
+    <a href="../../home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a>
+    <a href="../../home" class="return-little"><i class="fa-solid fa-house"></i> Home </a>
+  </nav>
+  <main>
+    <div class="aside-bar-left">
+      <h3> Page navigation</h3>
+      <div id="indicator"></div>
+    </div>
+    <div class="text">
+    <h1><a href="./"><i class="fa-solid fa-caret-right"></i> &nbspSpinocerebellar Ataxia 2</a></h1>
+    <section class="scrollspy" spy-title="Introduction">
+      <div class="intro-section">
+        <h2> Introduction </h2>
+        <p>
+          SCAs have been classified into at least 43 subtypes depending on their genetic locus. Among them, SCA type 2 (SCA2) is the second most common disorder and one of the most severe subtypes.
+        </p>
+        <p>
+          SCA2 is inherited in an autosomal dominant manner. This means that having one changed (mutated) copy of ATXN2 (the responsible gene) in each cell is enough to cause signs and symptoms of the condition.
+        </p>
+        <p>
+          Spinocerebellar ataxia type 2 is a condition characterized by progressive problems with movement. Signs and symptoms of the disorder typically begin in mid-adulthood but can appear anytime from childhood to late adulthood. People with SCA2 usually survive 10 to 20 years after symptoms first appear.
+        </p>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="First described">
+      <div class="firstd-section">
+      <h2> First Described</h2>
+      <p>
+        Wadia and Swami were the first to describe the early appearance of slow saccadic eye movements and peripheral neuropathy in what was then believed to be a unique form of autosomal dominant ataxia.
+      </p>
+        <p>
+          Wadia suggested that this disorder was the most frequently occurring form of hereditary ataxia, including Friedreich’s ataxia, in western India. In a follow up study of six families from western India, Wadia et al have shown that the 26 members who all had slow horizontal saccadic eye movements in addition to ataxia were positive for an expansion at the SCA2 locus <span class="refbig"><a href="#ref-one">[1]</a></span><span class="reflittle"><a href="#ref-one-little">[1]</a></span>.
+        </p>
+        <p>
+          This disorder would eventually be called Spinocerebellar Ataxia 2.
+        </p>
+     </div>
+    </section>
+    <section class="scrollspy" spy-title="Epidemiology">
+      <div class="epi-section">
+        <h2> Epidemiology</h2>
+        <p>
+          Prevalence is estimated at 1-2 per 100,000, with significant geographic and ethnic variations. Global epidemiological data has shown that SCA2 has a wide geographical distribution across the world, being the second most common subtype of autosomal dominant cerebellar ataxia at worldwide, after only to SCA3 (Machado–Joseph disease) <span class="refbig"><a href="#ref-two">[2]</a></span><span class="reflittle"><a href="#ref-two-little">[2]</a></span>,
+          <span class="refbig"><a href="#ref-three">[3]</a></span><span class="reflittle"><a href="#ref-three-little">[3]</a></span>.
+        </p>
+        <p>
+          In some parts of the world, it represents the most common subtype, and, in other regions, it is a less frequent disorder as compared to other SCAs (<a href="#epi-img">Figure 1</a>).
+        </p>
+        <input type="checkbox" id="zoomCheck">
+        <label for="zoomCheck">
+          <img id="epi-img" src="../../Images/original images/SCA2/SCA2_epi.png">
+        </label>
+          <figcaption> <strong>Figure 1:</strong> Epidemiological features of spinocerebellar ataxia type 2 (SCA2). Relative frequency of SCA2 in autosomal dominant cerebellar ataxias, around the world <span class="refbig"><a href="#ref-two">[2]</a></span><span class="reflittle"><a href="#ref-two-little">[2]</a></span>. Created with <a href="https://www.mapchart.net/">MapChart</a>.</figcaption>
+        <a class="download-image" href="../../Images/original images/SCA2/SCA2_epi.png" download> [Fullsize image] </a>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="Causative gene">
+        <div class="gene-section">
+          <h2> Causative gene</h2>
+          <p>
+            The ATXN2 gene is affected in this disease.
+          </p>
+          <p>
+            In disease like state, this gene presents itself with 32 or more CAG repeats in exon 1. ATXN2 has 25 exons (<a href="#gene-image1">Figure 2</a>). It is located on chromosome 12 (cytogenic band: 12q24.12, <a href="#gene-image2">Figure 3</a>) and has the size of 147 460 bases with a minus strand orientation (fig.2) (Human Gene ATXN2, <a href="https://genome.ucsc.edu/cgi-bin/hgGene?db=hg38&hgg_type=knownGene&hgg_gene=ATXN2">ENST00000550104.5</a>).
+          </p>
+          <p>
+            Normal SCA2 alleles contain up to 31 CAG repeats. Disease alleles, on the other hand, start being a problem when past 32 CAG repeats.
+          </p>
+          <div class="image-one">
+            <img id="gene-image1" src="../../Images/original images/SCA2/ATXN2.png" title="ATXN2 gene">
+            <figcaption> <strong>Figure 2:</strong> ATXN2 gene with ranges of the CAG repeats necessary for disease and range in healthy individuals along with information about the total coding exons, chromosome location and size in DNA bases. Created with <a href="https://biorender.com/"> BioRender.com</a></figcaption>
+            <a class="download-image" target="_blank" href="../../Images/original images/SCA2/ATXN2.png" download> [Fullsize image] </a>
+          </div>
+          <div class="image-two">
+            <img id="gene-image2" src="../../Images/original images/SCA2/chromosome.png" title="ATXN2 gene chromosomal location">
+            <figcaption> <strong>Figure 3:</strong> ATXN2 gene chromossomal band localization. Created with <a href="https://biorender.com/"> BioRender.com</a></figcaption>
+            <a class="download-image" target="_blank" href="../../Images/original images/SCA2/chromosome.png" download> [Fullsize image] </a>
+          </div>
+        </div>
+    </section>
+    <section class="scrollspy" spy-title="Codified protein">
+      <div class="protein-section">
+        <h2> Codified protein: structure, domains, functions and intracellular localization</h2>
+        <h3>Structure and domains</h3>
+        <p>
+          Ataxin-2 is a 1313 aminoacid, 140,283 Da protein, found mostly expressed in the brain, heart, liver, skeletal muscle, pancreas and placenta. Isoform 1 is predominant in the brain and spinal cord. Isoform 4 is more abundant in the cerebellum. In the brain, broadly expressed in the amygdala, caudate nucleus, corpus callosum, hippocampus, hypothalamus, substantia nigra, subthalamic nucleus and thalamus.
+        </p>
+        <p>
+           An ataxin-2 protein representation is shown in <a href="#protein-image">Figure 4</a> along with <a href="#table">Table 1</a> with information on each of its important domains (information from <a href="https://www.uniprot.org/">Uniprot.org</a>).
+        </p>
+        <div class="non-interactive">
+          <img id="protein-image" src="../../Images/original images/SCA2/ATXN2 protein.png" title="Ataxin-2 structure">
+          <figcaption> <strong>Figure 4: </strong> Ataxin-2 protein structure. Created with <a href="https://biorender.com/"> BioRender.com</a></figcaption>
+          <a class="download-image" target="_blank" href="../../Images/original images/SCA2/ATXN2 protein.png" download> [Fullsize image] </a>
+        </div>
+        <div class="table">
+        <table style="width:100%" id="table">
+          <caption>Table 1. &nbspAtaxin-2 domains</caption>
+          <tr>
+            <th>Description</th>
+            <th>Position</th>
+            <th>Length</th>
+          </tr>
+          <tr>
+            <td>SBM1</td>
+            <td>117-126</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Lsm</td>
+            <td>254-345</td>
+            <td>92</td>
+          </tr>
+          <tr>
+            <td>LsmAD</td>
+            <td>353-475</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <td>SBM2</td>
+            <td>587-596</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>PAM2</td>
+            <td>908-925</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>A2D</td>
+            <td>1172-1216</td>
+            <td>45</td>
+          </tr>
+        </table>
+        <div class="caption-under"> <strong>Table Caption:</strong> Ataxin-2 important domains with respective position within the protein structure and lengths.</div>
+      </div>
+      <h3>Protein functions and biological role</h3>
+      <p>
+        Ataxin-2 is involved in the binding of certain factors and implicated in some important cellular processes:
+      </p>
+        <ul>
+          <li>Important for normal EGFR trafficking by negative regulating the receptor internalization <span class="refbig"><a href="#ref-four">[4]</a></span><span class="reflittle"><a href="#ref-four-little">[4]</a></span>.</li>
+          <li>Ataxin-2 can bind RNA, this way it can transport it or aid in its metabolic process <span class="refbig"><a href="#ref-five">[5]</a></span><span class="reflittle"><a href="#ref-five-little">[5]</a></span>.</li>
+          <li>It can bind protein-C <span class="refbig"><a href="#ref-six">[6]</a></span><span class="reflittle"><a href="#ref-six-little">[6]</a></span>.</li>
+          <li>There is evidence that ataxin-2 has an important role in translation regulation <span class="refbig"><a href="#ref-seven">[7]</a></span><span class="reflittle"><a href="#ref-seven-little">[7]</a></span>.</li>
+          <li>Evidence of Ataxin-2 being involved in P-body/stress granules assembly <span class="refbig"><a href="#ref-eight">[8]</a></span><span class="reflittle"><a href="#ref-eight-little">[8]</a></span>.</li>
+        </ul>
+      <h3> Protein intracellular localization</h3>
+      <p>
+        Immunohistochemical studies revealed that ataxin-2 localized in the neuronal cytoplasm and proximal dendrites. It is expressed widely and uniformly in normal human brains <span class="refbig"><a href="#ref-nine">[9]</a></span><span class="reflittle"><a href="#ref-nine-little">[9]</a></span>.
+      </p>
+      <p>
+        Semi-quantitative immunofluorescent analysis of normal brains has revealed cytoplasmic ataxin-2 strongly associated with ribosomal protein S6 and poly-A binding protein 1 suggesting a major role of ataxin-2 in protein synthesis <span class="refbig"><a href="#ref-nine">[9]</a></span><span class="reflittle"><a href="#ref-nine-little">[9]</a></span>.
+      </p>
+      <div class="interactive-image" id="my-interactive-image">
+        <img src="../../Images/cell-scheme.jpg" />
+      </div>
+      <div class="int-caption"> <strong>Figure 5:</strong> Huntingtin protein localization.<br>(Refresh this element if changed resolutions &nbsp<a href="javascript:void(0)" onclick="window.location.reload();"><i class="fa-solid fa-arrows-rotate"></i></a>&nbsp)</div>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="Pathophysiology">
+      <div class="patho-section">
+        <h2> Pathophysiology</h2>
+        <p>
+          The CAG-triplet expansion in the ATXN2 gene gives rise to an abnormal polyglutamine region in the ataxin-2 protein, which results in a gain of a toxic function that affects specific groups of neurons <span class="refbig"><a href="#ref-ten">[10]</a></span><span class="reflittle"><a href="#ref-ten-little">[10]</a></span>,
+          <span class="refbig"><a href="#ref-eleven">[11]</a></span><span class="reflittle"><a href="#ref-eleven-little">[11]</a></span>. The degree of neuronal degeneration is related with the length of the polyglutamine expansion and is expressed phenotypically as motor and cognitive alterations as happens in other polyglutamine diseases.
+        </p>
+        <p>
+          A polyQ-expanded ataxin-2 is characterized by a conformational shift to the β-sheet–rich structure, which forms the insoluble aggregates with the β-sheet–rich amyloid fibrillar structures and accumulates as inclusion bodies in neurons. The aggregation of these forms triggers a series of events that lead to cell programmed death and consequently degeneration of neuronal structures <span class="refbig"><a href="#ref-twelve">[12]</a></span><span class="reflittle"><a href="#ref-twelve-little">[12]</a></span>.
+        </p>
+        <p>
+          Mitochondrial oxidative stress in fibroblasts from SCA2 patients has revealed the increased SOD expression and the decreased catalase expression at both the transcript and protein levels. The increased levels of the intracellular hydrogen peroxide, produced by the increased SOD from a superoxide, could not be decomposed by the reduced levels of catalase, thus leading to increased oxidative stress, disturbances in the antioxidant system, changes in the oxidative phosphorylation system, and abnormalities in the mitochondrial activity that were detected in the fibroblasts from SCA2 patients <span class="refbig"><a href="#ref-thirteen">[13]</a></span><span class="reflittle"><a href="#ref-thirteen-little">[13]</a></span>.
+        </p>
+        <p>
+          Staufen1 (STAU1) is a multifunctional protein involved in regulating RNA metabolism, but also with mRNA transport in neuronal dendrites, and other cells in vertebrates. It is a double-stranded RNA-binding protein required for the formation of the cytoplasmic inclusions in neuroglia and cultured cells and involved in the modulation of stress granules (SG) functions, co-localized with ataxin-2 in SG-like structures.
+        </p>
+        <p>
+          SCA2 patient-derived fibroblasts and SCA2 mice, have shown that the polyQ expansion in ataxin-2 also leads to abnormal autophagy, accompanied by the enhanced expression of STAU1. It has been shown that the increased STAU1 levels induced the aberrant processing of the RNA targets <span class="refbig"><a href="#ref-fourteen">[14]</a></span><span class="reflittle"><a href="#ref-fourteen-little">[14]</a></span>.
+        </p>
+        <p>
+          ITPR1 channel releases calcium ions from storage in a cell structure called the endoplasmic reticulum into the surrounding cell fluid.
+        </p>
+        <p>
+          Mutated ataxin-2 associates with the cytosolic C-terminal region of type 1 ITPR1, an intracellular calcium release channel <span class="refbig"><a href="#ref-fifteen">[15]</a></span><span class="reflittle"><a href="#ref-fifteen-little">[15]</a></span>. Poly-Q ataxin-2 when complexed with ITPR1 increases its sensitivity to activation by inositol-tri-phosphate
+          <span class="refbig"><a href="#ref-twelve">[12]</a></span><span class="reflittle"><a href="#ref-twelve-little">[12]</a></span>.
+        </p>
+        <img id="patho-img" src="../../Images/original images/SCA2/SCA2.png" title="SCA2 pathogenic mechanisms">
+        <div class="caption-patho"> <strong>Figure 6:</strong> SCA2 pathogenesis. A - Aggregation of mutated forms of ataxin-2 in neurons and formation of inclusion bodies found in the nucleus. B - 1. SCA2 patients present increased levels of SOD and lower levels of catalse which leads to mitochondrial oxidative stress. 2. STAU1 is hypothesized to be increasingly stabilized due to interaction with mutated ataxin-2. As in other polyglutamine diseases, the cellular clearance mechanisms are compromised which also leads to increased levels of STAU1. Increased nuclear levels of STAU1 interfere with normal RNA processing. 3. PolyQ ataxin-2 increases ITPR1 sensitivity leading to increased calcium levels.</div>
+        <a class="download-image" target="_blank" href="../../Images/original images/SCA2/SCA2.png" download> [Fullsize image] </a>
+      </div>
+    </section>
+    <section class="scrollspy" spy-title="Clinical manifestations">
+      <div class="clinical-section">
+        <h2> Clinical manifestations: neuropathology, other signs and symptoms</h2>
+        <h3> Neuropathology</h3>
+        <p>
+          Atrophy of the cerebellum, pons, medulla oblongata, basal ganglia, frontal lobe, and spinal cord as well as depigmentation of the substantia nigra <span class="refbig"><a href="#ref-sixteen">[16]</a></span><span class="reflittle"><a href="#ref-sixteen-little">[16]</a></span>.
+        </p>
+        <p>
+          Neuronal loss and gliosis in all three layers of the cerebellar cortex, and in the pontine nuclei and the inferior olivary nucleus <span class="refbig"><a href="#ref-sixteen">[16]</a></span><span class="reflittle"><a href="#ref-sixteen-little">[16]</a></span>.
+        </p>
+        <p>
+          In the extrapyramidal system and the motor neuron system, there is degeneration in the substantia nigra and anterior horn. The olivocerebellar and pontocerebellar pathways and the posterior column, predominantly Goll’s fascicle, also show severe degeneration and astrocytic gliosis is most cases <span class="refbig"><a href="#ref-sixteen">[16]</a></span><span class="reflittle"><a href="#ref-sixteen-little">[16]</a></span>.
+        </p>
+        <h3> Signs and symptoms</h3>
+        <div class="list-flex">
+          <div class="column-one">
+            <div class="column-one-title">
+              <strong>Early stage</strong>
+            </div>
+          <ul>
+            <li>Ataxia</li>
+            <li>Speech and swallowing difficulties</li>
+            <li>Ophthalmoplegia</li>
+            <li>Nystagmus</li>
+            <li>Saccadic slowing</li>
+          </ul>
+          </div>
+          <div class="column-two">
+            <div class="column-two-title">
+              <strong>Late stage</strong>
+            </div>
+          <ul>
+            <li>Peripheral neuropathy</li>
+            <li>Atrophy</li>
+            <li>Dystonia</li>
+            <li>Chorea</li>
+            <li>Bradykinesia</li>
+            <li>Tremor</li>
+            <li>Rigidity</li>
+            <li>Dementia</li>
+          </ul>
+          </div>
+      </div>
+    </div>
+    </section>
+    <section class="scrollspy" spy-title="References" id="references">
+      <div class="reference-section">
+        <h2> References </h2>
+        <ol>
+          <li><a id="ref-one-little" class="articlebottom">N. H. Wadia and R. K. Swami, “A new form of heredo-familial spinocerebellar degeneration with slow eye movements (nine families),” Brain, vol. 94, no. 2, pp. 359–374, 1971.</a><br><a href="https://academic.oup.com/brain/article-abstract/94/2/359/256641?redirectedFrom=fulltext&login=false">[Oxford Academic]</a></li>
+          <li><a id="ref-two-little" class="articlebottom">L. C. Velázquez-Pérez, R. Rodríguez-Labrada, and J. Fernandez-Ruiz, “Spinocerebellar ataxia type 2: Clinicogenetic aspects, mechanistic insights, and management approaches,” Front. Neurol., vol. 8, no. SEP, Sep. 2017.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5601978/">[PUBMED Central - Full Text]</a><a href="https://www.frontiersin.org/articles/10.3389/fneur.2017.00472/full">[Frontiers - Full Text]</a></li>
+          <li><a id="ref-three-little" class="articlebottom">A. Durr, “Autosomal dominant cerebellar ataxias: polyglutamine expansions and beyond,” Lancet. Neurol., vol. 9, no. 9, pp. 885–894, Sep. 2010.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/20723845/">[PUBMED]</a><a href="https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(10)70183-6/fulltext">[The Lancet]</a></li>
+          <li><a id="ref-four-little" class="articlebottom">D. Nonis et al., “Ataxin-2 associates with the endocytosis complex and affects EGF receptor trafficking,” Cell. Signal., vol. 20, no. 10, pp. 1725–1739, Oct. 2008.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18602463/">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S089865680800154X?via%3Dihub">[ScienceDirect]</a></li>
+          <li><a id="ref-five-little" class="articlebottom">A. Castello et al., “Insights into RNA biology from an atlas of mammalian mRNA-binding proteins,” Cell, vol. 149, no. 6, pp. 1393–1406, Jun. 2012.</a><br><a href="https://www.cell.com/cell/fulltext/S0092-8674(12)00576-4?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867412005764%3Fshowall%3Dtrue">[Cell - Full Text]</a></li>
+          <li><a id="ref-six-little" class="articlebottom">M. Ralser, M. Albrecht, U. Nonhoff, T. Lengauer, H. Lehrach, and S. Krobitsch, “An integrative approach to gain insights into the cellular function of human ataxin-2,” J. Mol. Biol., vol. 346, no. 1, pp. 203–214, Feb. 2005.</a><br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0022283604014639?via%3Dihub">[ScienceDirect - Full Text]</a></li>
+          <li><a id="ref-seven-little" class="articlebottom">T. F. Satterfield and L. J. Pallanck, “Ataxin-2 and its Drosophila homolog, ATX2, physically assemble with polyribosomes,” Hum. Mol. Genet., vol. 15, no. 16, pp. 2523–2532, Aug. 2006.</a><br><a href="https://academic.oup.com/hmg/article/15/16/2523/645291">[Oxford Academic - Full Text]</a></li>
+          <li><a id="ref-eight-little" class="articlebottom">U. Nonhoff et al., “Ataxin-2 interacts with the DEAD/H-box RNA helicase DDX6 and interferes with P-bodies and stress granules,” Mol. Biol. Cell, vol. 18, no. 4, pp. 1385–1396, Apr. 2007.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1838996/">[PUBMED Central - Full Text]</a><a href="https://www.molbiolcell.org/doi/10.1091/mbc.e06-12-1120">[MBoC - Full Text]</a></li>
+          <li><a id="ref-nine-little" class="articlebottom">R. Watanabe et al., “Intracellular dynamics of Ataxin-2 in the human brains with normal and frontotemporal lobar degeneration with TDP-43 inclusions,” Acta Neuropathol. Commun., vol. 8, no. 1, Dec. 2020.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7594343/">[PUBMED Central - Full Text]</a><a href="https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-020-01055-9">[BMC - Full Text]</a></li>
+          <li><a id="ref-ten-little" class="articlebottom">I. Lastres-Becker, U. Rüb, and G. Auburger, “Spinocerebellar ataxia 2 (SCA2),” Cerebellum 2008 72, vol. 7, no. 2, pp. 115–124, Apr. 2008.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18418684/">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s12311-008-0019-y">[Springer]</a></li>
+          <li><a id="ref-eleven-little" class="articlebottom">L. Velázquez-Pérez, R. Rodríguez-Labrada, J. C. García-Rodríguez, L. E. Almaguer-Mederos, T. Cruz-Mariño, and J. M. Laffita-Mesa, “A Comprehensive Review of Spinocerebellar Ataxia Type 2 in Cuba,” Cerebellum 2011 102, vol. 10, no. 2, pp. 184–198, Mar. 2011.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/21399888/">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s12311-011-0265-2">[Springer]</a></li>
+          <li><a id="ref-twelve-little" class="articlebottom">A. Matilla-Dueñas, I. Sánchez, M. Corral-Juan, A. Dávalos, R. Alvarez, and P. Latorre, “Cellular and Molecular Pathways Triggering Neurodegeneration in the Spinocerebellar Ataxias,” Cerebellum 2009 92, vol. 9, no. 2, pp. 148–166, Nov. 2009.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/19890685/">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s12311-009-0144-2">[Springer]</a></li>
+          <li><a id="ref-thirteen-little" class="articlebottom">N. Cornelius et al., “Evidence of oxidative stress and mitochondrial dysfunction in spinocerebellar ataxia type 2 (SCA2) patient fibroblasts: Effect of coenzyme Q10 supplementation on these parameters,” Mitochondrion, vol. 34, pp. 103–114, May 2017.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28263872/">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S1567724916302021?via%3Dihub">[ScienceDirect]</a></li>
+          <li><a id="ref-fourteen-little" class="articlebottom">S. Paul, W. Dansithong, K. P. Figueroa, D. R. Scoles, and S. M. Pulst, “Staufen1 links RNA stress granules and autophagy in a model of neurodegeneration,” Nat. Commun., vol. 9, no. 1, Dec. 2018.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6128856/">[PUBMED Central - Full Text]</a><a href="https://www.nature.com/articles/s41467-018-06041-3">[Nature - Full Text]</a></li>
+          <li><a id="ref-fifteen-little" class="articlebottom">J. Liu et al., “Deranged calcium signaling and neurodegeneration in spinocerebellar ataxia type 2,” J. Neurosci., vol. 29, no. 29, pp. 9148–9162, Jul. 2009.</a><br><a href="https://www.jneurosci.org/content/29/29/9148">[JNeurosci - Full Text]</a></li>
+          <li><a id="ref-sixteen-little" class="articlebottom">S. Koyano, S. Yagishita, Y. Kuroiwa, F. Tanaka, and T. Uchihara, “Neuropathological staging of spinocerebellar ataxia type 2 by semiquantitative 1C2-positive neuron typing. Nuclear translocation of cytoplasmic 1C2 underlies disease progression of spinocerebellar ataxia type 2,” Brain Pathol., vol. 24, no. 6, pp. 599–606, Nov. 2014.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8028922/">[PUBMED Central]</a><a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/bpa.12146">[Wiley - Full PDF]</a></li>
+        </ol>
+      </div>
+    </section>
+    </div>
+    <div class="aside-bar-right" id="bar-right">
+      <div class="ref-side-bar">
+        <h3><i class="fa-solid fa-link"></i> References</h3>
+        <ul>
+          <li><a href="" id="ref-one" class="articlefocus">1. &nbsp N. H. Wadia and R. K. Swami, “A new form of heredo-familial spinocerebellar degeneration with slow eye movements (nine families),” Brain, vol. 94, no. 2, pp. 359–374, 1971.</a><br><a href="https://academic.oup.com/brain/article-abstract/94/2/359/256641?redirectedFrom=fulltext&login=false" class="links">[Oxford Academic]</a></li>
+          <li><a href="" id="ref-two" class="articlefocus">2. &nbsp L. C. Velázquez-Pérez, R. Rodríguez-Labrada, and J. Fernandez-Ruiz, “Spinocerebellar ataxia type 2: Clinicogenetic aspects, mechanistic insights, and management approaches,” Front. Neurol., vol. 8, no. SEP, Sep. 2017.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5601978/" class="links">[PUBMED Central - Full Text]</a><a href="https://www.frontiersin.org/articles/10.3389/fneur.2017.00472/full" class="links">[Frontiers - Full Text]</a></li>
+          <li><a href="" id="ref-three" class="articlefocus">3. &nbsp A. Durr, “Autosomal dominant cerebellar ataxias: polyglutamine expansions and beyond,” Lancet. Neurol., vol. 9, no. 9, pp. 885–894, Sep. 2010.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/20723845/" class="links">[PUBMED]</a><a href="https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(10)70183-6/fulltext" class="links">[The Lancet]</a></li>
+          <li><a href="" id="ref-four" class="articlefocus">4. &nbsp D. Nonis et al., “Ataxin-2 associates with the endocytosis complex and affects EGF receptor trafficking,” Cell. Signal., vol. 20, no. 10, pp. 1725–1739, Oct. 2008.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18602463/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S089865680800154X?via%3Dihub" class="links">[ScienceDirect]</a></li>
+          <li><a href="" id="ref-five" class="articlefocus">5. &nbsp A. Castello et al., “Insights into RNA biology from an atlas of mammalian mRNA-binding proteins,” Cell, vol. 149, no. 6, pp. 1393–1406, Jun. 2012.</a><br><a href="https://www.cell.com/cell/fulltext/S0092-8674(12)00576-4?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867412005764%3Fshowall%3Dtrue" class="links">[Cell - Full Text]</a></li>
+          <li><a href="" id="ref-six" class="articlefocus">6. &nbsp M. Ralser, M. Albrecht, U. Nonhoff, T. Lengauer, H. Lehrach, and S. Krobitsch, “An integrative approach to gain insights into the cellular function of human ataxin-2,” J. Mol. Biol., vol. 346, no. 1, pp. 203–214, Feb. 2005.</a><br><a href="https://www.sciencedirect.com/science/article/abs/pii/S0022283604014639?via%3Dihub" class="links">[ScienceDirect - Full Text]</a></li>
+          <li><a href="" id="ref-seven" class="articlefocus">7. &nbsp T. F. Satterfield and L. J. Pallanck, “Ataxin-2 and its Drosophila homolog, ATX2, physically assemble with polyribosomes,” Hum. Mol. Genet., vol. 15, no. 16, pp. 2523–2532, Aug. 2006.</a><br><a href="https://academic.oup.com/hmg/article/15/16/2523/645291" class="links">[Oxford Academic - Full Text]</a></li>
+          <li><a href="" id="ref-eight" class="articlefocus">8. &nbsp U. Nonhoff et al., “Ataxin-2 interacts with the DEAD/H-box RNA helicase DDX6 and interferes with P-bodies and stress granules,” Mol. Biol. Cell, vol. 18, no. 4, pp. 1385–1396, Apr. 2007.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1838996/" class="links">[PUBMED Central - Full Text]</a><a href="https://www.molbiolcell.org/doi/10.1091/mbc.e06-12-1120" class="links">[MBoC - Full Text]</a></li>
+          <li><a href="" id="ref-nine" class="articlefocus">9. &nbsp R. Watanabe et al., “Intracellular dynamics of Ataxin-2 in the human brains with normal and frontotemporal lobar degeneration with TDP-43 inclusions,” Acta Neuropathol. Commun., vol. 8, no. 1, Dec. 2020.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7594343/" class="links">[PUBMED Central - Full Text]</a><a href="https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-020-01055-9" class="links">[BMC - Full Text]</a></li>
+          <li><a href="" id="ref-ten" class="articlefocus">10. &nbsp I. Lastres-Becker, U. Rüb, and G. Auburger, “Spinocerebellar ataxia 2 (SCA2),” Cerebellum 2008 72, vol. 7, no. 2, pp. 115–124, Apr. 2008.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18418684/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s12311-008-0019-y" class="links">[Springer]</a></li>
+          <li><a href="" id="ref-eleven" class="articlefocus">11. &nbsp L. Velázquez-Pérez, R. Rodríguez-Labrada, J. C. García-Rodríguez, L. E. Almaguer-Mederos, T. Cruz-Mariño, and J. M. Laffita-Mesa, “A Comprehensive Review of Spinocerebellar Ataxia Type 2 in Cuba,” Cerebellum 2011 102, vol. 10, no. 2, pp. 184–198, Mar. 2011.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/21399888/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s12311-011-0265-2" class="links">[Springer]</a></li>
+          <li><a href="" id="ref-twelve" class="articlefocus">12. &nbsp A. Matilla-Dueñas, I. Sánchez, M. Corral-Juan, A. Dávalos, R. Alvarez, and P. Latorre, “Cellular and Molecular Pathways Triggering Neurodegeneration in the Spinocerebellar Ataxias,” Cerebellum 2009 92, vol. 9, no. 2, pp. 148–166, Nov. 2009.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/19890685/" class="links">[PUBMED]</a><a href="https://link.springer.com/article/10.1007/s12311-009-0144-2" class="links">[Springer]</a></li>
+          <li><a href="" id="ref-thirteen" class="articlefocus">13. &nbsp N. Cornelius et al., “Evidence of oxidative stress and mitochondrial dysfunction in spinocerebellar ataxia type 2 (SCA2) patient fibroblasts: Effect of coenzyme Q10 supplementation on these parameters,” Mitochondrion, vol. 34, pp. 103–114, May 2017.</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28263872/" class="links">[PUBMED]</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S1567724916302021?via%3Dihub" class="links">[ScienceDirect]</a></li>
+          <li><a href="" id="ref-fourteen" class="articlefocus">14. &nbsp S. Paul, W. Dansithong, K. P. Figueroa, D. R. Scoles, and S. M. Pulst, “Staufen1 links RNA stress granules and autophagy in a model of neurodegeneration,” Nat. Commun., vol. 9, no. 1, Dec. 2018.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6128856/" class="links">[PUBMED Central - Full Text]</a><a href="https://www.nature.com/articles/s41467-018-06041-3" class="links">[Nature - Full Text]</a></li>
+          <li><a href="" id="ref-fifteen" class="articlefocus">15. &nbsp J. Liu et al., “Deranged calcium signaling and neurodegeneration in spinocerebellar ataxia type 2,” J. Neurosci., vol. 29, no. 29, pp. 9148–9162, Jul. 2009.</a><br><a href="https://www.jneurosci.org/content/29/29/9148" class="links">[JNeurosci - Full Text]</a></li>
+          <li><a href="" id="ref-sixteen" class="articlefocus">16. &nbsp S. Koyano, S. Yagishita, Y. Kuroiwa, F. Tanaka, and T. Uchihara, “Neuropathological staging of spinocerebellar ataxia type 2 by semiquantitative 1C2-positive neuron typing. Nuclear translocation of cytoplasmic 1C2 underlies disease progression of spinocerebellar ataxia type 2,” Brain Pathol., vol. 24, no. 6, pp. 599–606, Nov. 2014.</a><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8028922/" class="links">[PUBMED Central]</a><a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/bpa.12146" class="links">[Wiley - Full PDF]</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer id=footer>
+    <div class="collumns">
+      <div class="first-third">
+        <ul>
+          <li><a href="../../">Landing Page</a></li>
+          <li><a href="https://abcri.pt/">ABC-RI</a></li>
+          <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
+          <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
+        </ul>
+      </div>
+      <div class="second-third">
+        <ul>
+          <li><a href="../../authors">Authors</a></li>
+          <li><a href="https://www.ualg.pt/">UAlg</a></li>
+          <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
+          <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
+        </ul>
+      </div>
+      <div class="third-third">
+        <ul>
+          <li><a href="../../contact">Contact</a></li>
+          <li><a href="../../objectives">Objectives</a></li>
+          <li><a href="../../appreciation">Appreciation</a></li>
+        </ul>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="200.000000pt" height="200.000000pt" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.10, written by Peter Selinger 2001-2011
+</metadata>
+<g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#3d85c6" stroke="none">
+<path d="M1514 1622 c-11 -10 -31 -22 -44 -25 -38 -10 -45 -17 -84 -82 -40 -67 -44 -94 -20 -135 18 -29 101 -80 132 -80 10 0 23 -5 29 -11 6 -6 26 -14 43 -18 24 -4 38 -16 51 -40 10 -19 23 -39 28 -44 14 -14 61 19 61 43 0 12 10 25 23 30 36 15 78 65 89 107 20 79 20 89 -8 152 -25 55 -33 64 -83 90 -72 36 -185 42 -217 13z m76 -27 c-10 -12 -10 -19 -2 -27 9 -9 18 -4 37 16 14 15 28 25 33 23 4 -2 25 -12 47 -22 40 -18 75 -43 75 -54 0 -9 -67 -7 -76 2 -12 12 -44 8 -44 -5 0 -20 48 -38 81 -31 49 9 81 -33 63 -81 -7 -19 -36 -21 -65 -3 -17 9 -23 9 -26 0 -3 -8 -14 -11 -28 -7 -12 3 -26 1 -30 -5 -3 -6 -17 -8 -31 -5 -13 3 -24 2 -24 -4 0 -19 -33 -22 -57 -6 -35 22 -52 3 -23 -24 21 -20 21 -20 2 -26 -23 -8 -117 37 -126 60 -9 24 -7 74 3 74 5 0 11 -7 15 -15 9 -26 48 -17 77 18 21 24 28 28 29 15 0 -24 22 -23 38 2 7 11 21 20 31 20 11 0 22 4 26 9 10 17 -15 23 -68 16 -38 -6 -58 -15 -78 -37 -25 -26 -29 -27 -37 -11 -19 32 20 83 64 83 8 0 23 9 34 20 11 11 32 20 46 20 23 0 25 -2 14 -15z m179 -224 l34 -1 -23 -25 c-25 -26 -59 -32 -91 -15 -15 8 -24 6 -41 -10 -13 -11 -35 -20 -54 -20 -60 0 -53 30 11 50 22 7 46 15 53 19 8 3 28 5 45 5 18 -1 47 -2 66 -3z m-34 -81 c-3 -5 -12 -10 -20 -10 -8 0 -17 5 -20 10 -4 6 5 10 20 10 15 0 24 -4 20 -10z m-61 -22 c14 -55 0 -64 -26 -19 -12 22 -13 31 -5 35 21 8 25 6 31 -16z"/>
+<path d="M72 1198 c-23 -23 -14 -59 18 -71 l30 -11 0 -163 c0 -150 -1 -163 -18 -163 -37 0 -57 -51 -30 -78 15 -15 100 -15 152 -1 60 16 158 119 182 189 32 94 68 153 113 187 23 18 48 33 54 33 9 0 12 -46 12 -165 0 -91 -1 -165 -2 -165 -1 0 -13 5 -27 11 -25 12 -25 14 -28 142 l-3 130 -29 -41 c-25 -37 -28 -48 -24 -102 4 -63 -4 -78 -19 -34 -9 26 -10 26 -36 -27 l-26 -54 31 -33 c81 -83 206 -106 306 -56 81 40 129 104 177 238 20 54 73 119 117 142 l28 15 0 -166 0 -165 -22 11 c-22 10 -23 13 -20 139 3 142 -1 151 -48 88 -19 -26 -22 -40 -18 -94 2 -35 3 -64 1 -64 -1 0 -8 12 -16 26 l-14 26 -26 -53 -26 -54 32 -34 c92 -97 257 -108 353 -24 44 39 93 115 114 177 27 82 69 140 120 166 l40 20 0 -164 0 -165 -22 8 c-22 8 -23 15 -28 137 l-5 128 -29 -34 c-26 -31 -28 -39 -24 -97 4 -66 -4 -82 -19 -37 -9 26 -10 26 -36 -27 l-26 -54 32 -33 c52 -55 116 -82 191 -82 56 0 67 3 76 21 9 16 8 26 -5 45 -8 13 -22 24 -30 24 -13 0 -15 26 -15 164 0 152 1 164 19 169 31 8 43 40 25 65 -13 18 -25 22 -72 22 -131 0 -232 -90 -286 -256 -19 -57 -73 -127 -117 -149 -15 -8 -30 -15 -34 -15 -3 0 -5 74 -5 165 0 91 3 165 6 165 3 0 14 -5 25 -10 17 -10 19 -22 19 -143 l0 -132 28 28 c23 24 28 37 32 105 6 73 6 75 18 48 l13 -30 25 54 25 53 -38 39 c-54 55 -107 78 -181 78 -112 0 -206 -69 -259 -188 -13 -31 -34 -78 -45 -104 -21 -48 -51 -82 -100 -113 l-28 -17 0 166 c0 164 0 167 20 156 18 -10 20 -21 20 -143 l1 -132 36 39 c35 38 35 39 29 102 -7 69 -2 81 15 37 l11 -28 23 45 c32 61 31 73 -12 110 -114 100 -276 92 -375 -18 -42 -47 -63 -83 -89 -159 -10 -30 -28 -67 -40 -84 -22 -31 -94 -89 -111 -89 -4 0 -8 74 -8 165 0 91 3 165 6 165 3 0 14 -5 25 -10 17 -10 19 -23 19 -143 l1 -132 29 34 c25 30 30 44 32 105 3 68 4 70 17 44 l14 -27 23 50 c22 46 22 52 8 74 -17 27 -76 69 -117 84 -38 15 -140 14 -155 -1z m153 -22 c19 -8 51 -27 70 -42 50 -38 44 -69 -17 -88 -15 -4 -18 -17 -18 -71 0 -37 -4 -64 -9 -61 -5 3 -9 41 -9 83 0 43 -1 86 -1 95 -1 25 -58 53 -77 37 -19 -15 -21 -318 -2 -337 24 -24 57 -12 107 36 37 36 56 66 81 130 18 46 46 101 62 123 36 49 111 106 117 87 2 -7 10 -21 19 -30 14 -16 13 -18 -6 -18 -48 0 -103 -73 -151 -199 -26 -69 -84 -143 -133 -171 -48 -27 -161 -40 -173 -20 -5 9 3 22 24 39 l31 26 0 160 0 160 -31 26 c-19 15 -29 31 -25 37 10 17 100 15 141 -2z m487 -12 c18 -9 47 -30 65 -47 26 -24 30 -34 22 -49 -5 -10 -21 -18 -34 -18 -27 0 -33 -13 -38 -95 -2 -27 -4 -8 -5 44 -2 82 -5 98 -24 118 -25 27 -41 29 -62 7 -23 -23 -23 -315 0 -338 20 -20 20 -20 69 8 51 30 85 78 124 174 37 92 62 129 115 168 54 41 108 58 162 50 86 -11 172 -74 159 -116 -4 -13 -13 -20 -24 -18 -10 2 -25 -3 -34 -11 -15 -12 -17 -10 -17 22 0 27 -7 41 -27 57 -32 25 -54 23 -68 -6 -10 -21 -10 -21 -28 3 -22 28 -45 24 -91 -14 -46 -38 -81 -93 -106 -164 -41 -119 -116 -192 -215 -210 -87 -16 -126 9 -70 45 25 16 25 17 25 180 l0 164 -27 20 c-18 13 -24 24 -20 36 6 15 16 17 62 12 30 -3 70 -13 87 -22z m898 10 c2 -3 -9 -16 -25 -28 -30 -23 -30 -26 -33 -127 -2 -57 -5 -106 -8 -108 -2 -2 -4 43 -4 101 0 123 -9 139 -60 118 -46 -19 -112 -99 -134 -161 -25 -72 -68 -148 -103 -181 -85 -81 -235 -83 -312 -4 -25 25 -31 39 -26 55 3 12 14 21 24 21 28 0 41 21 43 70 1 26 4 11 7 -39 6 -77 8 -86 33 -104 27 -20 28 -20 48 -2 18 16 20 32 22 159 l2 141 6 -149 c6 -178 11 -185 85 -142 52 31 95 91 121 170 49 145 154 231 269 219 22 -3 42 -7 45 -9z m-1072 -380 c20 -10 21 -13 7 -24 -8 -7 -15 -19 -15 -27 0 -11 -6 -11 -30 4 -17 10 -42 30 -56 44 -22 23 -23 29 -13 52 7 15 17 23 25 20 28 -11 44 18 46 81 1 46 3 37 7 -39 6 -91 8 -100 29 -111z m912 44 c0 -55 51 -88 80 -53 11 13 16 12 41 -8 50 -39 30 -62 -44 -51 -51 8 -102 34 -139 69 -23 21 -26 29 -16 44 6 11 19 16 29 14 11 -3 21 1 25 11 9 24 24 9 24 -26z"/>
+<path d="M470 550 c0 -65 3 -90 13 -90 9 0 11 23 9 90 -2 49 -8 90 -13 90 -5 0 -9 -40 -9 -90z"/>
+<path d="M1090 551 l0 -89 33 1 c31 2 32 3 35 55 3 56 -10 85 -34 75 -10 -4 -14 2 -14 21 0 14 -4 26 -10 26 -6 0 -10 -36 -10 -89z m48 -27 c-2 -22 -7 -39 -13 -39 -12 0 -19 60 -10 83 10 28 27 -3 23 -44z"/>
+<path d="M280 545 c0 -69 3 -85 15 -85 9 0 15 9 15 25 0 15 6 25 15 25 19 0 35 31 35 69 0 32 -22 51 -59 51 -20 0 -21 -6 -21 -85z m50 19 c0 -19 -4 -34 -10 -34 -5 0 -10 18 -10 41 0 24 4 38 10 34 6 -3 10 -22 10 -41z"/>
+<path d="M612 618 c-7 -7 -12 -38 -12 -70 0 -45 5 -66 22 -88 21 -29 58 -41 58 -20 0 6 -7 10 -17 10 -15 0 -15 1 0 18 12 13 17 37 17 78 0 61 -11 84 -40 84 -9 0 -21 -5 -28 -12z m46 -85 c-5 -72 -28 -68 -28 5 0 32 3 62 7 66 13 13 24 -24 21 -71z"/>
+<path d="M750 545 c0 -83 0 -85 24 -85 39 0 56 25 56 84 0 58 -19 86 -58 86 -21 0 -22 -4 -22 -85z m45 0 c0 -38 -4 -60 -12 -62 -10 -4 -13 13 -13 62 0 49 3 66 13 63 8 -3 12 -25 12 -63z"/>
+<path d="M939 608 c-3 -53 3 -134 11 -142 5 -5 17 -5 27 -1 17 8 17 8 1 12 -25 6 -26 91 -2 100 15 6 15 7 -1 19 -9 7 -14 17 -10 23 3 6 -1 11 -9 11 -10 0 -17 -9 -17 -22z"/>
+<path d="M392 591 c-19 -11 -27 -83 -13 -110 15 -26 47 -27 61 -2 15 29 12 87 -6 105 -18 18 -24 19 -42 7z m28 -61 c0 -27 -4 -50 -10 -50 -5 0 -10 23 -10 50 0 28 5 50 10 50 6 0 10 -22 10 -50z"/>
+<path d="M510 588 c0 -7 7 -40 15 -73 12 -52 12 -61 0 -71 -20 -15 -19 -24 5 -24 19 0 28 22 45 110 4 19 9 43 11 53 4 11 0 17 -10 17 -11 0 -16 -9 -16 -29 0 -16 -3 -38 -7 -48 -6 -13 -9 -6 -13 26 -3 25 -11 46 -17 49 -7 2 -13 -2 -13 -10z"/>
+<path d="M852 588 c-13 -13 -16 -38 -6 -38 4 0 13 8 20 18 12 16 13 16 20 -2 5 -13 3 -21 -4 -24 -24 -8 -43 -35 -40 -56 2 -16 11 -21 36 -23 l32 -1 0 63 c0 48 -4 64 -16 69 -22 8 -28 8 -42 -6z m38 -88 c0 -19 -11 -26 -23 -14 -8 8 3 34 14 34 5 0 9 -9 9 -20z"/>
+<path d="M1006 584 c-20 -20 -20 -34 -1 -34 8 0 15 7 15 15 0 8 5 15 10 15 19 0 10 -31 -16 -54 -37 -31 -26 -66 20 -66 l33 0 -4 58 c-3 31 -6 63 -8 70 -6 17 -30 15 -49 -4z m34 -84 c0 -11 -4 -20 -10 -20 -5 0 -10 9 -10 20 0 11 5 20 10 20 6 0 10 -9 10 -20z"/>
+<path d="M1193 593 c-13 -5 -18 -43 -7 -43 4 0 13 8 20 18 12 16 13 16 14 0 0 -9 -11 -29 -25 -42 -33 -33 -21 -65 25 -64 30 1 30 2 30 58 0 69 -16 90 -57 73z m23 -110 c-11 -11 -19 6 -11 24 8 17 8 17 12 0 3 -10 2 -21 -1 -24z"/>
+<path d="M1271 581 c-8 -15 -5 -27 15 -56 25 -37 26 -65 0 -30 -9 13 -15 15 -20 6 -11 -17 14 -42 38 -39 29 4 32 35 7 69 -12 15 -21 34 -21 41 1 8 5 7 14 -4 17 -23 26 -23 26 1 0 17 -18 31 -40 31 -5 0 -14 -9 -19 -19z"/>
+<path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
+</g>
+</svg>
+    <p>&copyPolyQ Database. All rights reserved 2021-2022. Authors and database creators all duly mentioned.</p>
+    <div class="logos">
+      <a class="logo-one"> <img src="../../Images/Logo_ABCRI.png" alt=""></a>
+      <a class="logo-two"> <img src="../../Images/Logo_MNGT.png" alt=""></a>
+      <a class="logo-three"> <img src="../../Images/fmcb-mod.png" alt=""></a>
+    </div>
+  </footer>
+  <script src="../../Scripts/jquery-3.6.0.min.js"></script>
+  <script src="../../Scripts/interactive-image.min.js"></script>
+  <script src="../../Scripts/Image-Int-Scripts/image-int-sca2.js"></script>
+  <script>
+            var indicator = document.getElementById('indicator');
+
+            var spy = new ScrollSpy(
+                {
+                    contexts_class: 'scrollspy'
+                }
+            );
+
+            spy.Indicator({
+                element: indicator
+            });
+</script>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function myFunctionLittle() {
+  document.getElementById("myDropdownLittle").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.dropbtn-little')){
+    var dropLittle = document.getElementsByClassName("dropdown-content-little");
+    var r;
+    for (r = 0; r < dropLittle.length; r++) {
+      var openDropLittle = dropLittle[r];
+      if (openDropLittle.classList.contains('show')) {
+        openDropLittle.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+<script>
+
+
+$(document).scroll(function() {
+    checkOffset();
+});
+
+function checkOffset() {
+    if($('#bar-right').offset().top + $('#bar-right').height() >= $('#references').offset().top + 200)
+          $('#bar-right').hide(800);
+    if($(document).scrollTop() + window.innerHeight < $('#references').offset().top + 200)
+          $('#bar-right').show(800); // restore when you scroll up
+}
+</script>
+<script>
+
+function reload(){
+  var imageInt = document.getElementById("my-interactive-image");
+  var imageContent = imageInt.innerHTML;
+  imageInt.innerHTML = imageContent;
+}
+
+</script>
+
+
+</body>
+
+
+</html>
