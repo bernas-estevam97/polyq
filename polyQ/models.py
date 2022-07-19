@@ -13,24 +13,39 @@ class Epidemology(models.Model):
     text = models.TextField()
     image = models.ManyToManyField(Images, blank=True)
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class FirstDescribed(models.Model):
     text = models.TextField()
+
+    def __str__(self):
+        return f'{self.text}'
 
 
 class CausativeGene(models.Model):
     text = models.TextField()
     image = models.ManyToManyField(Images, blank=True)
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class CodifiedProtein(models.Model):
     text = models.TextField()
     image = models.ManyToManyField(Images, blank=True)
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class PathoPhysiology(models.Model):
     text = models.TextField()
     image = models.ManyToManyField(Images)
+
+    def __str__(self):
+        return f'{self.text}'
 
 
 class CharacteristicsTableRows(models.Model):
@@ -38,28 +53,46 @@ class CharacteristicsTableRows(models.Model):
     text2 = models.CharField(max_length=100, blank=True, null=True)
     text3 = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class CharacteristicsTable(models.Model):
     rows_col = models.ManyToManyField(CharacteristicsTableRows, related_name='col1')
+
     # rows_col2 = models.ManyToManyField(CharacteristicsTableRows, related_name='col2')
     # rows_col3 = models.ManyToManyField(CharacteristicsTableRows, related_name='col3')
+    def __str__(self):
+        return f'{self.rows_col}'
 
 
 class Clinical(models.Model):
     text = models.TextField()
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class ListItems(models.Model):
     text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f'{self.text}'
 
 
 class List(models.Model):
     text = models.CharField(max_length=200)
     item = models.ManyToManyField(ListItems)
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class Reference(models.Model):
     text = models.TextField()
+
+    def __str__(self):
+        return f'{self.text}'
 
 
 class Disease(models.Model):
@@ -73,3 +106,6 @@ class Disease(models.Model):
     list = models.ManyToManyField(List)
     references = models.ManyToManyField(Reference)
     characteristic_table = models.ForeignKey(CharacteristicsTable, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.name}'
