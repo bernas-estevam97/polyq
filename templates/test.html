@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PolyQ - Huntington's Disease</title>
+    <link rel="shortcut icon" href="../../Images/image1.ico">
+    <link rel="stylesheet" href="style_1.css">
+    <link rel="stylesheet" href="highlight-js/highlightjs.css">
+    <link rel="stylesheet" href="ScrollSpy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="int-image.css">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+{% for list in disease.list.all %}
+    <ul>{{ list.text }}</ul>
+    {% for item in list.item.all %}
+        <li>{{ item.text }}</li>
+    {% endfor %}<br>
+{% endfor %}
+
+<table style="width:100%" id="table">
+
+    <tr>
+        <th>Description</th>
+        <th>Position</th>
+        <th>Length</th>
+    </tr>
+
+    {% for col1 in disease.characteristic_table.rows_col.all %}
+        <tr>
+            {% if col1.text != null %}
+                <td>{{ col1.text }}</td>
+            {% else %}
+                <td></td>
+            {% endif %}
+            {% if col1.text2 != null %}
+                <td>{{ col1.text2 }}</td>
+            {% else %}
+                <td></td>
+            {% endif %}
+            {% if col1.text3 != null %}
+                <td>{{ col1.text3 }}</td>
+            {% else %}
+                <td></td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>

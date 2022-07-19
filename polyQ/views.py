@@ -1,4 +1,7 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+
+from polyQ.models import Disease
 
 
 def index(request):
@@ -59,3 +62,13 @@ def authors(request):
 
 def appreciation(request):
     return render(request, 'appreciation/index.html')
+
+
+def disease_view(request, disease_name):
+    test_list = [1, 2, 3, 4, 5]
+    try:
+        disease = Disease.objects.get(name=disease_name)
+        return render(request, 'test.html', {'disease': disease, 'test_list': test_list})
+    except Disease.DoesNotExist:
+        error_message = "Esta doenca n exisxte na nossa base de dados"
+        return render(request, 'not-found-page.html', {'error_message': error_message})

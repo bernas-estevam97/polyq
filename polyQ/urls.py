@@ -34,4 +34,5 @@ urlpatterns = [
     path('contact/', contact),
     path('authors/', authors),
     path('appreciation/', appreciation),
+    path('teste/<disease_name>', disease_view),
 ]
