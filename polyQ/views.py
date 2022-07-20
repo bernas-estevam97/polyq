@@ -76,12 +76,11 @@ def disease_view(request, disease_name):
 
 def search_disease(request):
     disease_name = request.GET.get('disease')
-    test_list = [1, 2, 3, 4, 5]
     try:
         disease = Disease.objects.get(Q(name__contains=disease_name) | Q(slug__contains=disease_name))
         other_diseases = Disease.objects.all().exclude(name__contains=disease_name)
         title = disease.name.upper()
-        return render(request, 'diseases.html', {'disease': disease, 'test_list': test_list, 'title':title,'other_diseases':other_diseases})
+        return render(request, 'diseases.html', {'disease': disease, 'title':title,'other_diseases':other_diseases})
     except Disease.DoesNotExist:
         error_message = "This disease does not exit on our database"
         return render(request, 'not-found-page.html', {'error_message': error_message})
