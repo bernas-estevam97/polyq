@@ -6,57 +6,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PolyQ - SCA1</title>
+    <title>PolyQ - {{ title }}</title>
     <link rel="shortcut icon" href="{% static 'img/image1.ico' %}">
     <link rel="stylesheet" href="{% static 'css/style_diseases.css' %}">
     <link rel="stylesheet" href="{% static 'css/highlightjs.css' %}">
     <link rel="stylesheet" href="{% static 'css/ScrollSpy.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
+    <script src="{% static 'fontawesome/js/all.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/int-image.css' %}">
 </head>
 <body>
-<script src="ScrollSpy.min.js"></script>
-<script src="highlight-js/highlight.pack.js"></script>
+<script src="{% static 'js/ScrollSpy.min.js' %}"></script>
+<script src="{% static 'js/highlight.pack.js' %}"></script>
 <header>
-    <a href="https://abcri.pt/"><img class="abcri-logo" src="../../Images/Logo_ABCRI.png"></a>
-    <a><img class="mngt-logo" src="../../Images/Logo_MNGT.png"></a>
+    <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
+    <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
     <h1><strong>An ABC Research Institute polyglutamine disease database</strong></h1>
 </header>
 <nav>
-    <img class="poly-logo" src="../../Images/logo-plyq.png"/>
+    <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <ul>
-        <li><a href="../hd">HD</a></li>
-        <li><a href="../drpla">DRPLA</a></li>
-        <li><a href="../sbma">SBMA</a></li>
+         <li><a href="/disease_search/?disease={{ other_diseases.0.name }}">{{ other_diseases.0 }}</a></li>
+         <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
+         <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
     </ul>
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
-            <a href="../sca2">SCA2</a>
-            <a href="../sca3">SCA3</a>
-            <a href="../sca6">SCA6</a>
-            <a href="../sca7">SCA7</a>
-            <a href="../sca17">SCA17</a>
+            {% for disease in other_diseases|slice:"3:" %}
+                <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
+            {% endfor %}
         </div>
     </div>
     <div class="dropdown-little">
-        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i
-                class="fa-solid fa-turn-down"></i></button>
+        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i class="fa-solid fa-turn-down"></i></button>
         <div class="dropdown-content-little" id="myDropdownLittle">
-            <a href="../hd">HD</a>
-            <a href="../drpla">DRPLA</a>
-            <a href="../sbma">SBMA</a>
-            <a href="../sca2">SCA2</a>
-            <a href="../sca3">SCA3</a>
-            <a href="../sca6">SCA6</a>
-            <a href="../sca7">SCA7</a>
-            <a href="../sca17">SCA17</a>
+            {% for disease in other_diseases %}
+            <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
+            {% endfor %}
         </div>
     </div>
-    <a href="../../home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a>
-    <a href="../../home" class="return-little"><i class="fa-solid fa-house"></i> Home </a>
+    <a href="/home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a>
+    <a href="/home" class="return-little"><i class="fa-solid fa-house"></i> Home </a>
 </nav>
 <main>
     <div class="aside-bar-left">
@@ -64,20 +55,18 @@
         <div id="indicator"></div>
     </div>
     <div class="text">
-        <h1><a href="./"><i class="fa-solid fa-caret-right"></i> &nbspSpinocerebellar Ataxia 1</a></h1>
+        <h1><a href=""><i class="fa-solid fa-caret-right"></i> &nbsp{{disease.slug}}</a></h1>
         <section class="scrollspy" spy-title="Introduction">
             <div class="intro-section">
-                <section class="scrollspy" spy-title="Introduction">
-                    <div class="intro-section">
-                        <h2> Introduction </h2>
-                        {{ disease.introduction|safe }}
-                    </div>
-                </section>
+                <h2> Introduction </h2>
+                {{ disease.introduction|safe }}
             </div>
         </section>
         <section class="scrollspy" spy-title="First described">
             <div class="firstd-section">
+                <h2>First described</h2>
                 {{ disease.first_described|safe }}
+            </div>
         </section>
         <section class="scrollspy" spy-title="Epidemiology">
             <div class="epi-section">
@@ -223,7 +212,7 @@
           </a></span>.
                 </p>
                 <div class="interactive-image" id="my-interactive-image">
-                    <img src="../../Images/cell-scheme.jpg"/>
+                    <img src="{% static 'img/cell-scheme.jpg' %}"/>
                 </div>
                 <div class="int-caption"><strong>Figure 5:</strong> Androgen receptor intracellular localization.<br>(Refresh
                     this element if changed resolutions &nbsp<a href="javascript:void(0)"
@@ -341,31 +330,87 @@
                     </ul>
                 </div>
                 <h3>Signs and symptoms</h3>
+                {% if title in style_1_diseases %}
                 <div class="list-flex">
-                    <div class="column-one">
+                      <div class="column-one">
                         <div class="column-one-title">
-                            <strong>Neurological symptoms</strong>
+                          <strong>Early stage</strong>
                         </div>
-                        <ul>
-                            <li>Dysarthria</li>
-                            <li>Hypermetric saccades</li>
-                            <li>Ataxia of gait</li>
-                            <li>Ataxia of stance</li>
-                        </ul>
+                      <ul>
+                        <li>Behavioral disturbances</li>
+                        <li>Clumsiness</li>
+                        <li>Moodiness</li>
+                        <li>Irritability</li>
+                        <li>Paranoia</li>
+                        <li>Apathy</li>
+                        <li>Anxiety</li>
+                        <li>Hallucinations</li>
+                        <li>Abnormal eye movements</li>
+                        <li>Depression</li>
+                        <li>Impaired ability to detect odors</li>
+                      </ul>
+                      </div>
+                      <div class="column-two">
+                        <div class="column-two-title">
+                          <strong>Middle stage</strong>
+                        </div>
+                      <ul>
+                        <li>Dystonia</li>
+                        <li>Involuntary movements</li>
+                        <li>Trouble with balance and walking</li>
+                        <li>Chorea with twisting and writhing motions</li>
+                        <li>Unsteady gait</li>
+                        <li>Slow reaction time</li>
+                        <li>General weakness</li>
+                        <li>Weight loss</li>
+                        <li>Speech difficulties</li>
+                        <li>Stubbornness</li>
+                      </ul>
+                      </div>
+                      <div class="column-three">
+                        <div class="column-three-title">
+                          <strong>Late stage</strong>
+                        </div>
+                      <ul>
+                        <li>Rigidity</li>
+                        <li>Bradykinesia</li>
+                        <li>Severe chorea</li>
+                        <li>Serious weight loss</li>
+                        <li>Inability to speak</li>
+                        <li>Inability to walk</li>
+                        <li>Swallowing problems</li>
+                        <li>Inability to care for oneself</li>
+                      </ul>
+                      </div>
+                  </div>
+                  {% endif %}
+                  {% if title in style_2_diseases %}
+                  <div class="list-flex-style-two">
+                    <div class="column-one">
+                      <div class="column-one-title">
+                        <strong>Neurological symptoms</strong>
+                      </div>
+                    <ul>
+                      <li>Dysarthria</li>
+                      <li>Hypermetric saccades</li>
+                      <li>Ataxia of gait</li>
+                      <li>Ataxia of stance</li>
+                    </ul>
                     </div>
                     <div class="column-two">
-                        <div class="column-two-title">
-                            <strong>Other signs and symptoms</strong>
-                        </div>
-                        <ul>
-                            <li>Speech and swallowing difficulties</li>
-                            <li>Spasticity</li>
-                            <li>Ophthalmoplegia</li>
-                            <li>Nystagmus</li>
-                            <li>Cognitive impairment</li>
-                        </ul>
+                      <div class="column-two-title">
+                        <strong>Other signs and symptoms</strong>
+                      </div>
+                    <ul>
+                      <li>Speech and swallowing difficulties</li>
+                      <li>Spasticity</li>
+                      <li>Ophthalmoplegia</li>
+                      <li>Nystagmus</li>
+                      <li>Cognitive impairment</li>
+                    </ul>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </section>
         <section class="scrollspy" spy-title="References" id="references">
@@ -445,14 +490,32 @@
     </svg>
     <p>&copyPolyQ Database. All rights reserved 2021-2022. Authors and database creators all duly mentioned.</p>
     <div class="logos">
-        <a class="logo-one"> <img src="../../Images/Logo_ABCRI.png" alt=""></a>
-        <a class="logo-two"> <img src="../../Images/Logo_MNGT.png" alt=""></a>
-        <a class="logo-three"> <img src="../../Images/fmcb-mod.png" alt=""></a>
+        <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
+        <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>
+        <a class="logo-three"> <img src="{% static 'img/fmcb-mod.png' %}" alt=""></a>
     </div>
 </footer>
-<script src="../../Scripts/jquery-3.6.0.min.js"></script>
-<script src="../../Scripts/interactive-image.min.js"></script>
-<script src="../../Scripts/Image-Int-Scripts/image-int-sca1.js"></script>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/interactive-image.min.js' %}"></script>
+{% if title == 'HD' %}
+<script src="{% static 'js/image-int-hd.js' %}"></script>
+{% elif title == 'DRPLA' %}
+<script src="{% static 'js/image-int-drpla.js' %}"></script>
+{% elif title == 'SBMA' %}
+<script src="{% static 'js/image-int-sbma.js' %}"></script>
+{% elif title == 'SCA1' %}
+<script src="{% static 'js/image-int-sca1.js' %}"></script>
+{% elif title == 'SCA2' %}
+<script src="{% static 'js/image-int-sca2.js' %}"></script>
+{% elif title == 'SCA3' %}
+<script src="{% static 'js/image-int-sca3.js' %}"></script>
+{% elif title == 'SCA6' %}
+<script src="{% static 'js/image-int-sca6.js' %}"></script>
+{% elif title == 'SCA7' %}
+<script src="{% static 'js/image-int-sca7.js' %}"></script>
+{% elif title == 'SCA17' %}
+<script src="{% static 'js/image-int-sca17.js' %}"></script>
+{% endif %}
 <script>
     var indicator = document.getElementById('indicator');
 

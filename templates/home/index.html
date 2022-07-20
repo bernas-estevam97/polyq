@@ -10,7 +10,8 @@
     <title>Polyglutamine Diseases - Home</title>
     <link rel="shortcut icon" href="{% static 'img/image1.ico' %}"/>
     <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
+    <script src="{% static 'fontawesome/js/all.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
 </head>
 <body>
@@ -163,8 +164,8 @@
                     </div>
                 </div>
             </a>
-
-            <div class="my_item" onclick="window.location='../diseases/drpla';">
+            <a href="/disease_search/?disease=drpla">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -180,7 +181,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='../diseases/sbma';">
+            </a>
+            <a href="/disease_search/?disease=sbma">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -196,7 +199,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='../diseases/sca1';">
+            </a>
+            <a href="/disease_search/?disease=sca1">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -212,7 +217,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='../diseases/sca2';">
+            </a>
+            <a href="/disease_search/?disease=sca2">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -228,7 +235,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='../diseases/sca3';">
+            </a>
+            <a href="/disease_search/?disease=sca3">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -244,7 +253,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='../diseases/sca6';">
+            </a>
+            <a href="/disease_search/?disease=sca6">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -260,7 +271,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='../diseases/sca7';">
+            </a>
+            <a href="/disease_search/?disease=sca7">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -276,7 +289,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my_item" onclick="window.location='/disease_search/?disease=sca17';">
+            </a>
+            <a href="/disease_search/?disease=sca17">
+            <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
@@ -292,6 +307,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
         <button id="left-btn" onclick="scrollHorizontally(1)"><i class="fa-solid fa-angle-left"></i></button>
         <button id="right-btn" onclick="scrollHorizontally(-1)"><i class="fa-solid fa-angle-right"></i></button>

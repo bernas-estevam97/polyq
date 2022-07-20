@@ -80,12 +80,18 @@ def tmp_disease(request):
 
 
 def search_disease(request):
+    style_1_diseases = ["HD", "DRPLA", "SBMA", "SCA6"]
+    style_2_diseases = ["SCA1", "SCA2", "SCA3", "SCA7", "SCA17"]
     disease_name = request.GET.get('disease')
     try:
-        disease = Disease.objects.get(Q(name__contains=disease_name) | Q(slug__contains=disease_name))
+        disease_name = request.GET.get('disease')
+        disease = Disease.objects.get(
+            Q(name__contains=disease_name) | Q(slug__contains=disease_name))
         other_diseases = Disease.objects.all().exclude(name__contains=disease_name)
-        title = disease.name.upper()
-        return render(request, 'diseases.html', {'disease': disease, 'title': title, 'other_diseases': other_diseases})
+        title = disease.name
+        return render(request, 'diseases.html', {'disease': disease, 'title': title,
+                                                 'other_diseases': other_diseases, 'style_1_diseases': style_1_diseases,
+                                                 'style_2_diseases': style_2_diseases})
     except Disease.DoesNotExist:
         error_message = "This disease does not exit on our database"
         return render(request, 'not-found-page.html', {'error_message': error_message})

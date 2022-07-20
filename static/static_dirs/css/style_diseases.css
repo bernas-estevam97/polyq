@@ -72,8 +72,9 @@ nav{
 }
 
 nav .poly-logo{
-	width: 160px;
-	height: 120px;
+	width: 120px;
+	height: auto;
+	margin-top: 10px;
 }
 
 nav ul{
@@ -262,13 +263,13 @@ main {
 	margin-left: 20px;
 	padding: 10px 30px;
 	margin-bottom: 50px;
-	cursor: pointer;
 	width: 80%;
 }
 
 .text h1 a{
 	text-decoration: none;
 	color: #000;
+	cursor: pointer;
 }
 
 .text a{
@@ -561,6 +562,11 @@ td{
 	list-style-type: none;
 	border: 1px solid #ddd;
 	padding: 10px;
+}
+
+.clinical-section .list-flex-style-two{
+	display: flex;
+	justify-content: space-between;
 }
 
 .clinical-section .list-flex-style-two .column-one,
@@ -931,7 +937,7 @@ nav{
 }
 
 nav .poly-logo{
-	width: 100px;
+	width: 110px;
 	height: auto;
 }
 
@@ -1173,7 +1179,7 @@ figcaption{
 	}
 
 	nav .poly-logo{
-		width: 100px;
+		width: 110px;
 		height: auto;
 	}
 
@@ -1394,7 +1400,7 @@ figcaption{
 	}
 
 	nav .poly-logo{
-		width: 100px;
+		width: 120px;
 		height: auto;
 	}
 

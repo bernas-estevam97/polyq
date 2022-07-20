@@ -10,6 +10,7 @@ class HtmlTutorial(models.Model):
 
 class Images(models.Model):
     image = models.ImageField()
+    image_caption = models.CharField(max_length=200, blank=True)
 
 
 class Introduction(models.Model):
