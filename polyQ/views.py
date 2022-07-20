@@ -70,5 +70,12 @@ def disease_view(request, disease_name):
         disease = Disease.objects.get(name=disease_name)
         return render(request, 'test.html', {'disease': disease, 'test_list': test_list})
     except Disease.DoesNotExist:
-        error_message = "Esta doenca n exisxte na nossa base de dados"
+        error_message = "This disease does not exit on our database"
         return render(request, 'not-found-page.html', {'error_message': error_message})
+
+
+def search_disease(request):
+    if request.method == 'POST':
+        searched = request.POST['disease']
+        diseases = Disease.objects.filter(name__contains=searched)
+        return render(request, 'diseases.html', {'searched': searched, 'diseases': diseases})

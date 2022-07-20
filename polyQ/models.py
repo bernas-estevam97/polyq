@@ -68,7 +68,8 @@ class CharacteristicsTableRows(models.Model):
 
 
 class CharacteristicsTable(models.Model):
-    rows_col = models.ManyToManyField(CharacteristicsTableRows, related_name='col1')
+    rows_col = models.ManyToManyField(
+        CharacteristicsTableRows, related_name='col1')
 
     # rows_col2 = models.ManyToManyField(CharacteristicsTableRows, related_name='col2')
     # rows_col3 = models.ManyToManyField(CharacteristicsTableRows, related_name='col3')
@@ -108,14 +109,18 @@ class Reference(models.Model):
 class Disease(models.Model):
     name = models.CharField(max_length=200)
     introduction = models.ForeignKey(Introduction, on_delete=models.CASCADE)
+    first_described = models.ForeignKey(
+        FirstDescribed, on_delete=models.CASCADE)
     epidemology = models.ForeignKey(Epidemology, on_delete=models.CASCADE)
-    first_described = models.ForeignKey(FirstDescribed, on_delete=models.CASCADE)
-    codified_protein = models.ForeignKey(CodifiedProtein, on_delete=models.CASCADE)
-    patho_physiology = models.ForeignKey(PathoPhysiology, on_delete=models.CASCADE)
+    codified_protein = models.ForeignKey(
+        CodifiedProtein, on_delete=models.CASCADE)
+    patho_physiology = models.ForeignKey(
+        PathoPhysiology, on_delete=models.CASCADE)
     clinical = models.ForeignKey(Clinical, on_delete=models.CASCADE)
     list = models.ManyToManyField(List)
     references = models.ManyToManyField(Reference)
-    characteristic_table = models.ForeignKey(CharacteristicsTable, on_delete=models.CASCADE)
+    characteristic_table = models.ForeignKey(
+        CharacteristicsTable, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}'

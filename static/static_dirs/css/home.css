@@ -15,7 +15,7 @@ body{
 
 header{
   position: relative;
-  background-image: linear-gradient(rgba(229, 229, 228, 0.65), rgba(225, 225, 223, 0.85)), url(../Images/index-bg.jpg);
+  background-image: linear-gradient(rgba(229, 229, 228, 0.65), rgba(225, 225, 223, 0.85)), url('/static/img/index-bg.jpg');
   background-position: center;
   background-size: cover;
   height: 120px;
@@ -81,7 +81,7 @@ nav{
 }
 
 .hover-info{
-  z-index: 999;
+  z-index: -1;
   margin-top: 40px;
   background: #fff;
   border: 1px solid #000;
@@ -102,6 +102,7 @@ nav{
 
 .hover-elem:hover ~ .hover-info{
   opacity: 1;
+  z-index: 999;
 }
 
 .autocomplete{
@@ -175,7 +176,7 @@ input:focus {
 
 main{
   z-index: 1;
-  background-image: linear-gradient(rgba(250, 250, 250, 0.8), rgba(240, 240, 240, 0.8)), url(../Images/banner-color.jpg);
+  background-image: linear-gradient(rgba(250, 250, 250, 0.8), rgba(240, 240, 240, 0.8)), url('/static/img/banner-color.jpg');
   background-size: cover;
 }
 
@@ -571,22 +572,24 @@ main h4::after {
   position: absolute;
   text-align: center;
   top: 120px;
-  width: 60%;
+  width: 50%;
   left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
   background: rgba(255, 255, 255, 0.9);
   padding: 5px;
   border-radius: 3px;
-  text-decoration: underline;
+  border: 2px solid #F7B608 !important;
+  /* text-decoration: underline;
   text-decoration-color: #F7B608;
   text-decoration-skip-ink: none;
-  text-decoration-thickness: 4px;
+  text-decoration-thickness: 3px; */
   opacity: 1;
 }
 
-.back-face span{
-  font-size: 20px;
+.back-face span img{
+  width: 30px;
+  height: auto;
   opacity: 1;
 }
 

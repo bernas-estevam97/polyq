@@ -1,24 +1,25 @@
-
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Cache-control" content="no-cache">
-  <link rel="shortcut icon" href="../Images/image.ico">
-  <link rel="stylesheet" href="objective.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>PolyQ - Objectives</title>
+  <link rel="shortcut icon" href="{% static 'img/image.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/objective.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 </head>
 <body>
   <header>
-    <a href="https://abcri.pt/"><img class="abcri-logo" src="../Images/Logo_ABCRI.png"></a>
-    <a><img class="mngt-logo" src="../Images/Logo_MNGT.png"></a>
+    <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
+    <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
     <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
   </header>
   <nav>
-    <a href=""> <img class="poly-q" src="../Images/logo-plyq.png"> </a>
+    <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <ul>
       <li><a href="../" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
       <li><a href="../" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
@@ -131,11 +132,11 @@
   </svg>
       <p>&copyPolyQ Database. All rights reserved 2021-2022. Authors and database creators all duly mentioned.</p>
       <div class="logos">
-        <a class="logo-one"> <img src="../Images/Logo_ABCRI.png" alt=""></a>
-        <a class="logo-two"> <img src="../Images/Logo_MNGT.png" alt=""></a>
-        <a class="logo-three"> <img src="../Images/fmcb-mod.png" alt=""></a>
+        <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
+        <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>
+        <a class="logo-three"> <img src="{% static 'img/fmcb-mod.png' %}" alt=""></a>
       </div>
     </footer>
-    <script src="../Scripts/app.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

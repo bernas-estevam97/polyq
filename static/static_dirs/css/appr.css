@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@400;500;600;700&family=Saira+Condensed&display=swap');
 
+
 *{
   margin: 0;
   padding: 0;
@@ -8,7 +9,7 @@
 
 body{
 	font-family: 'Roboto Slab', serif;
-	background-image: url(../Images/banner-nav.png);
+	background-image: url('/static/img/banner-nav.png');
 	background-position: center;
 	background-size: cover;
 	/* font-family: 'Tiro Devanagari Sanskrit', serif; */
@@ -17,7 +18,7 @@ body{
 header{
   position: relative;
   height: 120px;
-  background-image: linear-gradient(rgba(229, 229, 228, 0.65), rgba(225, 225, 223, 0.85)), url(../Images/index-bg.jpg);
+  background-image: linear-gradient(rgba(229, 229, 228, 0.65), rgba(225, 225, 223, 0.85)), url('/static/img/index-bg.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -62,7 +63,7 @@ nav{
   z-index: 4;
 }
 
-nav .poly-q{
+nav .poly-logo{
 	width: 160px;
 	height: auto;
 }
@@ -175,6 +176,8 @@ footer{
   width:100%;
   background-color: #e9e9e9;
   border-top: 2px solid rgba(120,120,120,0.1);
+	border-top: 1px solid #000;
+	font-family: "Poppins", serif;
 }
 
 footer .collumns{
@@ -185,12 +188,12 @@ footer .collumns{
 }
 
 footer .collumns .first-third{
-  width: 120px;
+  width: 140px;
   display: flex;
   border-left: 3px solid #898989;
-	margin: 10px;
-  height: 120px;
-  padding: 10px 20px;
+  margin: 10px;
+  height: 130px;
+  padding: 0 10px;
 }
 
 footer .collumns .first-third ul {
@@ -212,12 +215,12 @@ footer .collumns .first-third ul li:hover > a{
 }
 
 footer .collumns .second-third{
-  width: 130px;
+	width: 150px;
   display: flex;
   border-left: 3px solid #898989;
-	margin: 10px;
-  height: 120px;
-  padding: 10px 20px;
+  margin: 10px;
+  height: 130px;
+  padding: 0 10px;
 }
 
 footer .collumns .second-third ul {
@@ -238,12 +241,12 @@ footer .collumns .second-third ul li:hover > a{
 }
 
 footer .collumns .third-third{
-  width: 120px;
+	width: 140px;
   display: flex;
   border-left: 3px solid #898989;
   margin: 10px;
-  height: 120px;
-  padding: 10px 20px;
+  height: 130px;
+  padding: 0 10px;
 }
 
 footer .collumns .third-third ul {

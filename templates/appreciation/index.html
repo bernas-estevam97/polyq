@@ -1,23 +1,26 @@
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="../Images/image.ico">
-  <link rel="stylesheet" href="appr.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <title>PolyQ - Appreciation</title>
+  <link rel="shortcut icon" href="{% static 'img/image.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/appr.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 </head>
 <body>
   <header>
-    <a href="https://abcri.pt/"><img class="abcri-logo" src="../Images/Logo_ABCRI.png"></a>
-    <a><img class="mngt-logo" src="../Images/Logo_MNGT.png"></a>
+    <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
+    <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
     <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
   </header>
   <nav>
-    <a href=""> <img class="poly-q" src="../Images/logo-plyq.png"> </a>
+    <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <ul>
       <li><a href="../" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
       <li><a href="../" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
@@ -27,35 +30,35 @@
   </nav>
   <main>
     <div class="appr" data-aos="fade-up" data-aos-offset="300" data-aos-duration="800">
-      <a href="https://biorender.com/"><img src="../Images/biorender-logo.png"></a>
+      <a href="https://biorender.com/"><img src="{% static 'img/biorender-logo.png' %}"></a>
       <div class="center">
           <p>Thank you to BioRender for the tools to create some of our images.</p>
       </div>
     </div>
     <div class="appr" data-aos="fade-up" data-aos-offset="500" data-aos-duration="800">
-      <a href="https://www.mapchart.net/"><img src="../Images/mapchart-logo.png"></a>
+      <a href="https://www.mapchart.net/"><img src="{% static 'img/mapchart-logo.png' %}"></a>
       <div class="center">
           <p>Thank you to MapChart for the amazing tool that helped create our epidemiologic maps for each disease.</p>
       </div>
     </div>
     <div class="appr" data-aos="fade-up" data-aos-offset="500" data-aos-duration="800">
       <div class="flex-vert">
-        <a href="https://pubmed.ncbi.nlm.nih.gov/"><img class="image" src="../Images/pubmed-logo.png"></a>
-        <a class="ref-space" href="https://www.sciencedirect.com/"><img class="image-1" src="../Images/ScienceDirect-logo.jpg"></a>
-        <a class="ref-space-1" href="https://www.researchgate.net/"><img class="image-2" src="../Images/research-logo.png"></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/"><img class="image" src="{% static 'img/pubmed-logo.png' %}"></a>
+        <a class="ref-space" href="https://www.sciencedirect.com/"><img class="image-1" src="{% static 'img/ScienceDirect-logo.jpg' %}"></a>
+        <a class="ref-space-1" href="https://www.researchgate.net/"><img class="image-2" src="{% static 'img/research-logo.png' %}"></a>
       </div>
       <div class="center">
           <p>Thank you for the information across various academic research databases.</p>
       </div>
     </div>
     <div class="appr" data-aos="fade-up" data-aos-offset="500" data-aos-duration="800">
-      <a class="ref-long" href="https://genome.ucsc.edu/"><img class="image-long" src="../Images/genome-logo.png"></a>
+      <a class="ref-long" href="https://genome.ucsc.edu/"><img class="image-long" src="{% static 'img/genome-logo.png' %}"></a>
       <div class="center">
           <p>Thank you to genomebrowser for various information including gene location.</p>
       </div>
     </div>
     <div class="appr" data-aos="fade-up" data-aos-offset="500" data-aos-duration="800">
-      <a href="https://www.uniprot.org/"><img class="image-long" src="../Images/uniprot-logo.jpg"></a>
+      <a href="https://www.uniprot.org/"><img class="image-long" src="{% static 'img/uniprot-logo.jpg' %}"></a>
       <div class="center">
           <p>Thank you to UniProt for detailed protein information.</p>
       </div>
@@ -111,14 +114,14 @@ Created by potrace 1.10, written by Peter Selinger 2001-2011
 </svg>
     <p> &copyPolyQ Database. All rights reserved 2021-2022. Authors and database creators all duly mentioned.</p>
     <div class="logos">
-      <a class="logo-one"> <img src="../Images/Logo_ABCRI.png" alt=""></a>
-      <a class="logo-two"> <img src="../Images/Logo_MNGT.png" alt=""></a>
-      <a class="logo-three"> <img src="../Images/fmcb-mod.png" alt=""></a>
+      <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
+      <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>
+      <a class="logo-three"> <img src="{% static 'img/fmcb-mod.png' %}" alt=""></a>
     </div>
   </footer>
 </body>
-<script src="../Scripts/jquery-3.6.0.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
  <script>
    AOS.init();
  </script>
