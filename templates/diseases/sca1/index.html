@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PolyQ - SCA1</title>
-  <link rel="shortcut icon" href="../../Images/image1.ico">
-  <link rel="stylesheet" href="style_2.css">
-  <link rel="stylesheet" href="highlight-js/highlightjs.css">
-  <link rel="stylesheet" href="ScrollSpy.css">
+  <link rel="shortcut icon" href="{% static 'img/image1.ico'%}">
+  <link rel="stylesheet" href="{% static 'css/style_diseases.css' %}">
+  <link rel="stylesheet" href="{% static 'css/highlightjs.css' %}">
+  <link rel="stylesheet" href="{% static 'css/ScrollSpy.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="int-image.css">
+  <link rel="stylesheet" href="{% static 'css/int-image.css' %}">
 </head>
 <body>
   <script src="ScrollSpy.min.js"></script>

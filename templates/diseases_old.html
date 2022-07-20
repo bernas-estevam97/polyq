@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PolyQ - {{ title }}</title>
+</head>
+<body>
+{{ disease }}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <ul>
+      <li><a href="/disease_search/?disease={{ other_diseases.0.name }}">{{ other_diseases.0 }}</a></li>
+      <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
+      <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
+    </ul>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
+    <div class="dropdown-content" id="myDropdown">
+        {% for disease in other_diseases|slice:"3:" %}
+            <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

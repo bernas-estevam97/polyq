@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from polyQ.models import Disease
-
+from django.db.models import Q
 
 def index(request):
     return render(request, 'index.html')
@@ -75,10 +75,16 @@ def disease_view(request, disease_name):
 
 
 def search_disease(request):
-    if request.method == 'POST':
-        searched = request.POST['disease']
-        diseases = Disease.objects.filter(name__contains=searched)
-        return render(request, 'diseases.html', {'searched': searched, 'diseases': diseases})
+    disease_name = request.GET.get('disease')
+    test_list = [1, 2, 3, 4, 5]
+    try:
+        disease = Disease.objects.get(Q(name__contains=disease_name) | Q(slug__contains=disease_name))
+        other_diseases = Disease.objects.all().exclude(name__contains=disease_name)
+        title = disease.name.upper()
+        return render(request, 'diseases.html', {'disease': disease, 'test_list': test_list, 'title':title,'other_diseases':other_diseases})
+    except Disease.DoesNotExist:
+        error_message = "This disease does not exit on our database"
+        return render(request, 'not-found-page.html', {'error_message': error_message})
 
 
 def tmp_disease(request):

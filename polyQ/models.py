@@ -100,14 +100,18 @@ class List(models.Model):
 
 
 class Reference(models.Model):
-    text = models.TextField()
+    author = models.CharField(max_length=200)
+    journal = models.CharField(max_length=200)
+    journal_link = models.CharField(max_length=500)
+    journal_link_name = models.CharField(max_length=100)
 
     def __str__(self):
-        return f'{self.text}'
+        return f'{self.journal_link_name}'
 
 
 class Disease(models.Model):
     name = models.CharField(max_length=200)
+    slug = models.CharField(max_length=200)
     introduction = models.ForeignKey(Introduction, on_delete=models.CASCADE)
     first_described = models.ForeignKey(
         FirstDescribed, on_delete=models.CASCADE)
