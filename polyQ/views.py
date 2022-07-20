@@ -79,3 +79,7 @@ def search_disease(request):
         searched = request.POST['disease']
         diseases = Disease.objects.filter(name__contains=searched)
         return render(request, 'diseases.html', {'searched': searched, 'diseases': diseases})
+
+
+def tmp_disease(request):
+    return render(request, 'test.html')

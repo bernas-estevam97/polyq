@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,5 +35,6 @@ urlpatterns = [
     path('authors/', authors),
     path('appreciation/', appreciation),
     path('teste/<disease_name>', disease_view),
-    path('disease_search/', views.search_disease, name='disease_search')
+    path('disease_search/', search_disease, name='disease_search'),
+    path('disease/', tmp_disease)
 ]
