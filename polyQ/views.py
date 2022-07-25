@@ -97,7 +97,7 @@ def search_disease(request):
                 'y': img_coordinate.y,
                 'title': img_coordinate.title,
                 'text': img_coordinate.text,
-                'device': img_coordinate.device_width
+                'device': img_coordinate.device
             }
             img_coordinates.append(img_object)
         return render(request, 'diseases.html', {'disease': disease, 'title': title,
