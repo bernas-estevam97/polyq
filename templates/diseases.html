@@ -76,7 +76,9 @@
                 </p>
                 <input type="checkbox" id="zoomCheck">
                 <label for="zoomCheck">
-                    <img src="{{ disease.image.url }}">
+                    {% for image in disease.epidemiology.image.all %}
+                    <img src="{{ image.image.url }}">
+                    {% endfor %}
                 </label>
                 <figcaption><strong>Figure 1.</strong> World chart of SCA1 epidemiology based on its prevalence within
                     the autosomal dominant ataxias <span class="refbig"><a href="#ref-2">[2]</a></span><span
@@ -497,23 +499,23 @@
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
 {% if title == 'HD' %}
-<script src="{% static 'js/image-int-hd.js' %}"></script>
+    <script src="{% static 'js/image-int-hd.js' %}"></script>
 {% elif title == 'DRPLA' %}
-<script src="{% static 'js/image-int-drpla.js' %}"></script>
+    <script src="{% static 'js/image-int-drpla.js' %}"></script>
 {% elif title == 'SBMA' %}
-<script src="{% static 'js/image-int-sbma.js' %}"></script>
+    <script src="{% static 'js/image-int-sbma.js' %}"></script>
 {% elif title == 'SCA1' %}
-<script src="{% static 'js/image-int-sca1.js' %}"></script>
+    <script src="{% static 'js/image-int-sca1.js' %}"></script>
 {% elif title == 'SCA2' %}
-<script src="{% static 'js/image-int-sca2.js' %}"></script>
+    <script src="{% static 'js/image-int-sca2.js' %}"></script>
 {% elif title == 'SCA3' %}
-<script src="{% static 'js/image-int-sca3.js' %}"></script>
+    <script src="{% static 'js/image-int-sca3.js' %}"></script>
 {% elif title == 'SCA6' %}
-<script src="{% static 'js/image-int-sca6.js' %}"></script>
+    <script src="{% static 'js/image-int-sca6.js' %}"></script>
 {% elif title == 'SCA7' %}
-<script src="{% static 'js/image-int-sca7.js' %}"></script>
+    <script src="{% static 'js/image-int-sca7.js' %}"></script>
 {% elif title == 'SCA17' %}
-<script src="{% static 'js/image-int-sca17.js' %}"></script>
+    <script src="{% static 'js/image-int-sca17.js' %}"></script>
 {% endif %}
 <script>
     var indicator = document.getElementById('indicator');
