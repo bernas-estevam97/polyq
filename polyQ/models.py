@@ -8,6 +8,16 @@ class HtmlTutorial(models.Model):
         return f'{self.text}'
 
 
+class Coordinate_Text(models.Model):
+    x = models.IntegerField()
+    y = models.IntegerField()
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length=500)
+    device_width = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.title} {self.device_width}'
+
 class Images(models.Model):
     name = models.CharField(max_length=100, blank=True)
     image_caption = models.TextField()
@@ -114,6 +124,14 @@ class Reference(models.Model):
         return f'{self.journal_link_name}'
 
 
+class CSS_Class(models.Model):
+    # field_name = models.CharField(max_length=100)
+    css_class = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.css_class}'
+
+
 class Disease(models.Model):
     name = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
@@ -130,6 +148,9 @@ class Disease(models.Model):
     references = models.ManyToManyField(Reference)
     characteristic_table = models.ForeignKey(
         CharacteristicsTable, on_delete=models.CASCADE)
+    css_class = models.ForeignKey(CSS_Class, on_delete=models.CASCADE, blank=True, null=True)
+    coordinates = models.ManyToManyField(Coordinate_Text, blank=True)
+
     # image = models.ManyToManyField(Images, blank=True)
 
     def __str__(self):

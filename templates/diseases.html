@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +25,9 @@
 <nav>
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <ul>
-         <li><a href="/disease_search/?disease={{ other_diseases.0.name }}">{{ other_diseases.0 }}</a></li>
-         <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
-         <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
+        <li><a href="/disease_search/?disease={{ other_diseases.0.name }}">{{ other_diseases.0 }}</a></li>
+        <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
+        <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
     </ul>
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
@@ -39,10 +38,11 @@
         </div>
     </div>
     <div class="dropdown-little">
-        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i class="fa-solid fa-turn-down"></i></button>
+        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i
+                class="fa-solid fa-turn-down"></i></button>
         <div class="dropdown-content-little" id="myDropdownLittle">
             {% for disease in other_diseases %}
-            <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
+                <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
             {% endfor %}
         </div>
     </div>
@@ -55,7 +55,7 @@
         <div id="indicator"></div>
     </div>
     <div class="text">
-        <h1><a href="">{{disease.slug}}</a></h1>
+        <h1><a href="">{{ disease.slug }}</a></h1>
         <section class="scrollspy" spy-title="Introduction">
             <div class="intro-section">
                 <h2> Introduction </h2>
@@ -72,12 +72,12 @@
             <div class="epi-section">
                 <h2> Epidemiology</h2>
                 <p>
-                    {{ disease.epidemiology|safe}}
+                    {{ disease.epidemiology|safe }}
                 </p>
                 <input type="checkbox" id="zoomCheck">
                 <label for="zoomCheck">
                     {% for image in disease.epidemiology.image.all %}
-                    <img src="{{ image.image.url }}">
+                        <img src="{{ image.image.url }}">
                     {% endfor %}
                 </label>
                 <figcaption><strong>Figure 1.</strong> World chart of SCA1 epidemiology based on its prevalence within
@@ -331,87 +331,87 @@
                     </ul>
                 </div>
                 <h3>Signs and symptoms</h3>
-                {% if title in style_1_diseases %}
-                <div class="list-flex">
-                      <div class="column-one">
-                        <div class="column-one-title">
-                          <strong>Early stage</strong>
-                        </div>
-                      <ul>
-                        <li>Behavioral disturbances</li>
-                        <li>Clumsiness</li>
-                        <li>Moodiness</li>
-                        <li>Irritability</li>
-                        <li>Paranoia</li>
-                        <li>Apathy</li>
-                        <li>Anxiety</li>
-                        <li>Hallucinations</li>
-                        <li>Abnormal eye movements</li>
-                        <li>Depression</li>
-                        <li>Impaired ability to detect odors</li>
-                      </ul>
-                      </div>
-                      <div class="column-two">
-                        <div class="column-two-title">
-                          <strong>Middle stage</strong>
-                        </div>
-                      <ul>
-                        <li>Dystonia</li>
-                        <li>Involuntary movements</li>
-                        <li>Trouble with balance and walking</li>
-                        <li>Chorea with twisting and writhing motions</li>
-                        <li>Unsteady gait</li>
-                        <li>Slow reaction time</li>
-                        <li>General weakness</li>
-                        <li>Weight loss</li>
-                        <li>Speech difficulties</li>
-                        <li>Stubbornness</li>
-                      </ul>
-                      </div>
-                      <div class="column-three">
-                        <div class="column-three-title">
-                          <strong>Late stage</strong>
-                        </div>
-                      <ul>
-                        <li>Rigidity</li>
-                        <li>Bradykinesia</li>
-                        <li>Severe chorea</li>
-                        <li>Serious weight loss</li>
-                        <li>Inability to speak</li>
-                        <li>Inability to walk</li>
-                        <li>Swallowing problems</li>
-                        <li>Inability to care for oneself</li>
-                      </ul>
-                      </div>
-                  </div>
-                  {% endif %}
-                  {% if title in style_2_diseases %}
-                  <div class="list-flex-style-two">
+                {#                {% if title in style_1_diseases %}#}
+                <div class="{{ disease.css_class }}">
                     <div class="column-one">
-                      <div class="column-one-title">
-                        <strong>Neurological symptoms</strong>
-                      </div>
-                    <ul>
-                      <li>Dysarthria</li>
-                      <li>Hypermetric saccades</li>
-                      <li>Ataxia of gait</li>
-                      <li>Ataxia of stance</li>
-                    </ul>
+                        <div class="column-one-title">
+                            <strong>Early stage</strong>
+                        </div>
+                        <ul>
+                            <li>Behavioral disturbances</li>
+                            <li>Clumsiness</li>
+                            <li>Moodiness</li>
+                            <li>Irritability</li>
+                            <li>Paranoia</li>
+                            <li>Apathy</li>
+                            <li>Anxiety</li>
+                            <li>Hallucinations</li>
+                            <li>Abnormal eye movements</li>
+                            <li>Depression</li>
+                            <li>Impaired ability to detect odors</li>
+                        </ul>
                     </div>
                     <div class="column-two">
-                      <div class="column-two-title">
-                        <strong>Other signs and symptoms</strong>
-                      </div>
-                    <ul>
-                      <li>Speech and swallowing difficulties</li>
-                      <li>Spasticity</li>
-                      <li>Ophthalmoplegia</li>
-                      <li>Nystagmus</li>
-                      <li>Cognitive impairment</li>
-                    </ul>
+                        <div class="column-two-title">
+                            <strong>Middle stage</strong>
+                        </div>
+                        <ul>
+                            <li>Dystonia</li>
+                            <li>Involuntary movements</li>
+                            <li>Trouble with balance and walking</li>
+                            <li>Chorea with twisting and writhing motions</li>
+                            <li>Unsteady gait</li>
+                            <li>Slow reaction time</li>
+                            <li>General weakness</li>
+                            <li>Weight loss</li>
+                            <li>Speech difficulties</li>
+                            <li>Stubbornness</li>
+                        </ul>
+                    </div>
+                    <div class="column-three">
+                        <div class="column-three-title">
+                            <strong>Late stage</strong>
+                        </div>
+                        <ul>
+                            <li>Rigidity</li>
+                            <li>Bradykinesia</li>
+                            <li>Severe chorea</li>
+                            <li>Serious weight loss</li>
+                            <li>Inability to speak</li>
+                            <li>Inability to walk</li>
+                            <li>Swallowing problems</li>
+                            <li>Inability to care for oneself</li>
+                        </ul>
                     </div>
                 </div>
-                {% endif %}
+                {#                  {% endif %}#}
+                {#                  {% if title in style_2_diseases %}#}
+                {#                  <div class="list-flex-style-two">#}
+                {#                    <div class="column-one">#}
+                {#                      <div class="column-one-title">#}
+                {#                        <strong>Neurological symptoms</strong>#}
+                {#                      </div>#}
+                {#                    <ul>#}
+                {#                      <li>Dysarthria</li>#}
+                {#                      <li>Hypermetric saccades</li>#}
+                {#                      <li>Ataxia of gait</li>#}
+                {#                      <li>Ataxia of stance</li>#}
+                {#                    </ul>#}
+                {#                    </div>#}
+                {#                    <div class="column-two">#}
+                {#                      <div class="column-two-title">#}
+                {#                        <strong>Other signs and symptoms</strong>#}
+                {#                      </div>#}
+                {#                    <ul>#}
+                {#                      <li>Speech and swallowing difficulties</li>#}
+                {#                      <li>Spasticity</li>#}
+                {#                      <li>Ophthalmoplegia</li>#}
+                {#                      <li>Nystagmus</li>#}
+                {#                      <li>Cognitive impairment</li>#}
+                {#                    </ul>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#                {% endif %}#}
             </div>
         </section>
         <section class="scrollspy" spy-title="References" id="references">
@@ -419,7 +419,8 @@
                 <h2> References </h2>
                 <ol>
                     {% for ref in disease.references.all %}
-                        <li><a id="ref-{{forloop.counter}}-little" class="articlebottom">{{ ref.author }}, {{ ref.journal }}</a><br><a
+                        <li><a id="ref-{{ forloop.counter }}-little"
+                               class="articlebottom">{{ ref.author }}, {{ ref.journal }}</a><br><a
                                 href="{{ ref.journal_link }}">{{ ref.journal_link_name }}</a></li>
 
                     {% endfor %}
@@ -432,7 +433,8 @@
             <h3><i class="fa-solid fa-link"></i> References</h3>
             <ul>
                 {% for ref in disease.references.all %}
-                    <li><a href="" id="ref-{{forloop.counter}}" class="articlefocus">{{forloop.counter}}. &nbsp {{ ref.author }}, {{ ref.journal }}</a><br><a
+                    <li><a href="" id="ref-{{ forloop.counter }}" class="articlefocus">{{ forloop.counter }}.
+                        &nbsp {{ ref.author }}, {{ ref.journal }}</a><br><a
                             href="{{ ref.journal_link }}">{{ ref.journal_link_name }}</a></li>
 
                 {% endfor %}
@@ -498,27 +500,12 @@
 </footer>
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
-{% if title == 'HD' %}
+    <script>
+        let img_coordinates = {{ img_coordinates|safe }};
+    </script>
     <script src="{% static 'js/image-int-hd.js' %}"></script>
-{% elif title == 'DRPLA' %}
-    <script src="{% static 'js/image-int-drpla.js' %}"></script>
-{% elif title == 'SBMA' %}
-    <script src="{% static 'js/image-int-sbma.js' %}"></script>
-{% elif title == 'SCA1' %}
-    <script src="{% static 'js/image-int-sca1.js' %}"></script>
-{% elif title == 'SCA2' %}
-    <script src="{% static 'js/image-int-sca2.js' %}"></script>
-{% elif title == 'SCA3' %}
-    <script src="{% static 'js/image-int-sca3.js' %}"></script>
-{% elif title == 'SCA6' %}
-    <script src="{% static 'js/image-int-sca6.js' %}"></script>
-{% elif title == 'SCA7' %}
-    <script src="{% static 'js/image-int-sca7.js' %}"></script>
-{% elif title == 'SCA17' %}
-    <script src="{% static 'js/image-int-sca17.js' %}"></script>
-{% endif %}
 <script>
-    var indicator = document.getElementById('indicator');
+    let indicator = document.getElementById('indicator');
 
     var spy = new ScrollSpy(
         {

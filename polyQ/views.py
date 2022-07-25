@@ -90,9 +90,19 @@ def search_disease(request):
             Q(name__contains=disease_name) | Q(slug__contains=disease_name))
         other_diseases = Disease.objects.all().exclude(name__contains=disease_name)
         title = disease.name
+        img_coordinates = []
+        for img_coordinate in disease.coordinates.all():
+            img_object = {
+                'x': img_coordinate.x,
+                'y': img_coordinate.y,
+                'title': img_coordinate.title,
+                'text': img_coordinate.text,
+                'device': img_coordinate.device_width
+            }
+            img_coordinates.append(img_object)
         return render(request, 'diseases.html', {'disease': disease, 'title': title,
                                                  'other_diseases': other_diseases, 'style_1_diseases': style_1_diseases,
-                                                 'style_2_diseases': style_2_diseases})
+                                                 'style_2_diseases': style_2_diseases,'img_coordinates':img_coordinates})
     except Disease.DoesNotExist:
         error_message = "This disease does not exit on our database"
         return render(request, 'not-found-page.html', {'error_message': error_message})
