@@ -118,18 +118,15 @@ class Disease(models.Model):
     name = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
     introduction = models.ForeignKey(Introduction, on_delete=models.CASCADE)
-    first_described = models.ForeignKey(
-        FirstDescribed, on_delete=models.CASCADE)
+    first_described = models.ForeignKey(FirstDescribed, on_delete=models.CASCADE)
     epidemiology = models.ForeignKey(Epidemiology, on_delete=models.CASCADE)
-    codified_protein = models.ForeignKey(
-        CodifiedProtein, on_delete=models.CASCADE)
-    patho_physiology = models.ForeignKey(
-        PathoPhysiology, on_delete=models.CASCADE)
+    codified_protein = models.ForeignKey(CodifiedProtein, on_delete=models.CASCADE)
+    patho_physiology = models.ForeignKey(PathoPhysiology, on_delete=models.CASCADE)
     clinical = models.ForeignKey(Clinical, on_delete=models.CASCADE)
     list = models.ManyToManyField(List)
     references = models.ManyToManyField(Reference)
-    characteristic_table = models.ForeignKey(
-        CharacteristicsTable, on_delete=models.CASCADE)
+    characteristic_table = models.ForeignKey(CharacteristicsTable, on_delete=models.CASCADE)
+    image = models.ManyToManyField(Images, blank=True)
 
     def __str__(self):
         return f'{self.name}'
