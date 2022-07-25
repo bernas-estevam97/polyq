@@ -259,7 +259,7 @@ main {
 
 .text h1{
 	font-size: 2vw;
-	text-align: left;
+	text-align: justify;
 	margin-left: 20px;
 	padding: 10px 30px;
 	margin-bottom: 50px;
@@ -267,18 +267,14 @@ main {
 }
 
 .text h1 a{
-	text-decoration: none;
+	text-decoration-color: #F7B608;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 3px;
 	color: #000;
 	cursor: pointer;
 }
 
-.text a{
-	text-decoration: none;
-}
 
-.text a:hover{
-	text-decoration: underline;
-}
 
 
 .intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section{
@@ -687,6 +683,7 @@ td{
 	border-radius: 3px;
 	z-index: 1;
 	padding-left: 25px;
+	font-size: 0.8vw;
 }
 
 .aside-bar-right h3{
@@ -1653,44 +1650,31 @@ figcaption{
 			text-align: center;
 			margin-left: 10px !important;
 		}
-
-		.text h1{
-			margin-bottom: 30px !important;
-			margin-left: 0 !important;
-			font-size: 2.4vw;
-		}
-
 		.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
-		  font-size: 2vw !important;
+		  font-size: 1.5vw;
 		  text-align: left;
-			margin-left: 0 !important;
-			margin-bottom: 20px !important;
+			margin-left: 20px;
+			margin-bottom: 30px;
 		}
 
-		.protein-section h3, .clinical-section h3{
-			font-size: 2vw !important;
+		.protein-section > h3, .clinical-section > h3{
+		  font-size: 1.3vw;
 		  text-align: left;
-			margin-left: 0 !important;
-			margin-bottom: 20px !important;
+			margin-left: 20px;
+			margin-bottom: 30px;
+			margin-top: 40px;
+			font-weight: normal;
+			text-decoration: underline;
 		}
+
 
 		.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
 		  text-align: justify;
-			font-size: 1.8vw;
+			font-size: 1vw;
 			line-height: 2;
-			margin-left: 0 !important;
-			margin-bottom: 20px !important;
+			margin: 20px;
 		}
 
-		.protein-section ul li{
-			font-size: 1.2vw;
-			margin-left: 0 !important;
-			margin-bottom: 20px !important;
-		}
-
-		.clinical-section .list-neuronal ul li{
-			font-size: 1.2vw;
-		}
 
 		figcaption{
 			font-size: 1vw;
@@ -1771,35 +1755,6 @@ figcaption{
 
 			nav .return-button{
 				margin-left: 10px !important;
-			}
-
-			.text h1{
-				margin-bottom: 30px !important;
-				margin-left: 0 !important;
-				font-size: 2.4vw;
-			}
-
-			.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
-			  font-size: 2vw !important;
-			  text-align: left;
-				margin-left: 0 !important;
-				margin-bottom: 20px !important;
-			}
-
-			.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
-			  text-align: justify;
-				font-size: 1.2vw;
-				line-height: 2;
-				margin-left: 0 !important;
-				margin-bottom: 20px !important;
-			}
-
-			.protein-section ul li{
-				font-size: 1.2vw;
-			}
-
-			.clinical-section .list-neuronal ul li{
-				font-size: 1.2vw;
 			}
 
 			.aside-bar-left{

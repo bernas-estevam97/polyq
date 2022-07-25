@@ -9,8 +9,12 @@ class HtmlTutorial(models.Model):
 
 
 class Images(models.Model):
+    name = models.CharField(max_length=100, blank=True)
+    image_caption = models.TextField()
     image = models.ImageField()
-    image_caption = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Introduction(models.Model):
@@ -20,7 +24,7 @@ class Introduction(models.Model):
         return f'{self.text}'
 
 
-class Epidemology(models.Model):
+class Epidemiology(models.Model):
     text = models.TextField()
     image = models.ManyToManyField(Images, blank=True)
 
@@ -116,7 +120,7 @@ class Disease(models.Model):
     introduction = models.ForeignKey(Introduction, on_delete=models.CASCADE)
     first_described = models.ForeignKey(
         FirstDescribed, on_delete=models.CASCADE)
-    epidemology = models.ForeignKey(Epidemology, on_delete=models.CASCADE)
+    epidemiology = models.ForeignKey(Epidemiology, on_delete=models.CASCADE)
     codified_protein = models.ForeignKey(
         CodifiedProtein, on_delete=models.CASCADE)
     patho_physiology = models.ForeignKey(

@@ -55,7 +55,7 @@
         <div id="indicator"></div>
     </div>
     <div class="text">
-        <h1><a href=""><i class="fa-solid fa-caret-right"></i> &nbsp{{disease.slug}}</a></h1>
+        <h1><a href="">{{disease.slug}}</a></h1>
         <section class="scrollspy" spy-title="Introduction">
             <div class="intro-section">
                 <h2> Introduction </h2>
@@ -72,16 +72,15 @@
             <div class="epi-section">
                 <h2> Epidemiology</h2>
                 <p>
-                    Worldwide, one to two individuals in 100,000 develop SCA1 with significant geographical and ethnic
-                    variations.
+                    {{ disease.epidemiology|safe}}
                 </p>
                 <input type="checkbox" id="zoomCheck">
                 <label for="zoomCheck">
-                    <img src="../../Images/original images/SCA1/SCA1_prevalence.png">
+                    <img src="{{ disease.image.url }}">
                 </label>
                 <figcaption><strong>Figure 1.</strong> World chart of SCA1 epidemiology based on its prevalence within
-                    the autosomal dominant ataxias <span class="refbig"><a href="#ref-two">[2]</a></span><span
-                            class="reflittle"><a href="#ref-two-little">[2]</a></span>.
+                    the autosomal dominant ataxias <span class="refbig"><a href="#ref-2">[2]</a></span><span
+                            class="reflittle"><a href="#ref-2-little">[2]</a></span>.
                 </figcaption>
                 <a class="download-image" href="../../Images/original images/SCA1/SCA1_prevalence.png" download>
                     [Fullsize image] </a>
@@ -92,8 +91,8 @@
                 <h2>Causative gene</h2>
                 <p>
                     ATXN1 gene spans 450 kb of genomic DNA and is organized into 9 exons <span class="refbig"><a
-                        href="#ref-three">[3]</a></span><span class="reflittle"><a
-                        href="#ref-three-little">[3]</a></span>. The first 7 fall in the 5-prime untranslated region,
+                        href="#ref-3">[3]</a></span><span class="reflittle"><a
+                        href="#ref-3-little">[3]</a></span>. The first 7 fall in the 5-prime untranslated region,
                     whereas the last 2 contain the coding region (21.982 nt) (<a href="#gene-image1">Figure 2</a>).
                     There is an increased ammount of CAG repeats in exon 8 when disease is present. CAG repeats are
                     usually interrupted by CAT trinucleotides
@@ -418,7 +417,7 @@
                 <h2> References </h2>
                 <ol>
                     {% for ref in disease.references.all %}
-                        <li><a id="ref-one-little" class="articlebottom">{{ ref.author }}, {{ ref.journal }}</a><br><a
+                        <li><a id="ref-{{forloop.counter}}-little" class="articlebottom">{{ ref.author }}, {{ ref.journal }}</a><br><a
                                 href="{{ ref.journal_link }}">{{ ref.journal_link_name }}</a></li>
 
                     {% endfor %}
@@ -431,7 +430,7 @@
             <h3><i class="fa-solid fa-link"></i> References</h3>
             <ul>
                 {% for ref in disease.references.all %}
-                    <li><a id="ref-one-little" class="articlebottom">{{ ref.author }}, {{ ref.journal }}</a><br><a
+                    <li><a href="" id="ref-{{forloop.counter}}" class="articlefocus">{{forloop.counter}}. &nbsp {{ ref.author }}, {{ ref.journal }}</a><br><a
                             href="{{ ref.journal_link }}">{{ ref.journal_link_name }}</a></li>
 
                 {% endfor %}

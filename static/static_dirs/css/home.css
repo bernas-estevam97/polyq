@@ -121,7 +121,6 @@ nav{
 }
 
 
-
 input:focus {
   outline:none;
 }
@@ -491,7 +490,11 @@ main h4::after {
   margin-top: 20px;
 }
 
-
+.slider-container a{
+  width: 300px;
+  height: 300px;
+  margin: 0 30px 30px 30px;
+}
 
 .slider-container::-webkit-scrollbar{
   display: none;
@@ -501,7 +504,6 @@ main h4::after {
 
 .my_item{
   display: inline-block;
-  margin: 0 30px 30px 30px;
   cursor:pointer;
   width: 300px;
   height: 300px;
@@ -559,7 +561,7 @@ main h4::after {
   position: relative;
   text-align: center;
   top: -170px;
-  width: 60%;
+  width: 58%;
   left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
@@ -1024,6 +1026,11 @@ footer .logos .logo-three img{
     padding: 0 !important;
   }
 
+  .slider-container a{
+    width: 150px;
+    height: 150px;
+  }
+
   .card-container{
     width: 150px;
     height: 150px;
@@ -1334,6 +1341,11 @@ footer .logos .logo-three img{
     padding: 0 !important;
   }
 
+  .slider-container a{
+    width: 150px;
+    height: 150px;
+  }
+
   .card-container{
     width: 150px;
     height: 150px;
@@ -1642,6 +1654,11 @@ footer .logos .logo-three img{
       height: 150px;
     }
 
+    .slider-container a{
+      width: 150px;
+      height: 150px;
+    }
+
 
     .front-face{
       width: 150px;
@@ -1811,6 +1828,11 @@ footer .logos .logo-three img{
   .slider-container{
     margin-top: 20px !important;
     padding: 0 10px !important;
+  }
+
+  .slider-container a{
+    width: 200px;
+    height: 200px;
   }
 
   .card-container{

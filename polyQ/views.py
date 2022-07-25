@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from django.core.exceptions import MultipleObjectsReturned
 from polyQ.models import Disease
 from django.db.models import Q
+from django.contrib import messages
 
 
 def index(request):
@@ -95,3 +96,6 @@ def search_disease(request):
     except Disease.DoesNotExist:
         error_message = "This disease does not exit on our database"
         return render(request, 'not-found-page.html', {'error_message': error_message})
+
+    except Disease.MultipleObjectsReturned:
+        return render(request, 'home/index.html')

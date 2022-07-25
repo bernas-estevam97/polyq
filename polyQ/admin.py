@@ -4,7 +4,7 @@ from django.contrib import admin
 
 admin.site.register(Images)
 admin.site.register(Introduction)
-admin.site.register(Epidemology)
+admin.site.register(Epidemiology)
 admin.site.register(FirstDescribed)
 admin.site.register(CausativeGene)
 admin.site.register(CodifiedProtein)
