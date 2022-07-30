@@ -9,7 +9,7 @@
 
 body{
 	font-family: 'Roboto Slab', serif;
-	background-image: url('/static/img/banner-nav.png');
+	background-image: linear-gradient(rgba(229, 229, 228, 0.3), rgba(225, 225, 223, 0.3)), url('/static/img/banner-nav.png');
 	background-position: center;
 	background-size: cover;
 	/* font-family: 'Tiro Devanagari Sanskrit', serif; */
@@ -100,7 +100,7 @@ nav .return-little{
 
 main{
 	background: #fff;
-	margin: 2% 5% 2% 5%;
+	margin: 2% 3%;
 	padding: 10px;
 	border-radius: 5px;
 }

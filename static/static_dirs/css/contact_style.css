@@ -144,13 +144,6 @@ main h1{
 	margin-left: 30px;
 }
 
-.contact-info ul li:hover{
-	text-decoration: underline;
-	text-decoration-skip-ink: none;
-}
-
-
-
 .contact-info a{
 	text-decoration: none;
 	margin-right: 20px;
@@ -160,6 +153,13 @@ main h1{
 .contact-info i{
 	font-size: 25px;
 }
+
+.contact-info ul li:hover{
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+}
+
+
 
 .contact-info .logos a{
 	position: relative;

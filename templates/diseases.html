@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/highlightjs.css' %}">
     <link rel="stylesheet" href="{% static 'css/ScrollSpy.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
-    <script src="{% static 'fontawesome/js/all.min.js' %}"></script>
+    <!-- <script src="{% static 'fontawesome/js/all.min.js' %}"></script> -->
     <link rel="stylesheet" href="{% static 'css/int-image.css' %}">
 </head>
 <body>
@@ -59,163 +59,99 @@
         <section class="scrollspy" spy-title="Introduction">
             <div class="intro-section">
                 <h2> Introduction </h2>
-                {{ disease.introduction|safe }}
+                {{ disease.introduction.text|safe }}
             </div>
         </section>
         <section class="scrollspy" spy-title="First described">
             <div class="firstd-section">
                 <h2>First described</h2>
-                {{ disease.first_described|safe }}
+                {{ disease.first_described.text|safe }}
             </div>
         </section>
         <section class="scrollspy" spy-title="Epidemiology">
             <div class="epi-section">
                 <h2> Epidemiology</h2>
                 <p>
-                    {{ disease.epidemiology|safe }}
+                    {{ disease.epidemiology.text|safe }}
                 </p>
                 <input type="checkbox" id="zoomCheck">
                 <label for="zoomCheck">
                     {% for image in disease.epidemiology.image.all %}
-                        <img src="{{ image.image.url }}">
-                    {% endfor %}
+                        <img id="epi-img" type="img" src="{{ image.image.url }}">
                 </label>
-                <figcaption><strong>Figure 1.</strong> World chart of SCA1 epidemiology based on its prevalence within
-                    the autosomal dominant ataxias <span class="refbig"><a href="#ref-2">[2]</a></span><span
-                            class="reflittle"><a href="#ref-2-little">[2]</a></span>.
+                <figcaption> {{ image.image_caption|safe }}
                 </figcaption>
-                <a class="download-image" href="../../Images/original images/SCA1/SCA1_prevalence.png" download>
+                <a class="download-image" href="{{image.image.url}}" download>
                     [Fullsize image] </a>
+                    {% endfor %}
             </div>
         </section>
         <section class="scrollspy" spy-title="Causative gene">
             <div class="gene-section">
                 <h2>Causative gene</h2>
-                <p>
-                    ATXN1 gene spans 450 kb of genomic DNA and is organized into 9 exons <span class="refbig"><a
-                        href="#ref-3">[3]</a></span><span class="reflittle"><a
-                        href="#ref-3-little">[3]</a></span>. The first 7 fall in the 5-prime untranslated region,
-                    whereas the last 2 contain the coding region (21.982 nt) (<a href="#gene-image1">Figure 2</a>).
-                    There is an increased ammount of CAG repeats in exon 8 when disease is present. CAG repeats are
-                    usually interrupted by CAT trinucleotides
-                    <span class="refbig"><a href="#ref-four">[4]</a></span><span class="reflittle"><a
-                        href="#ref-four-little">[4]</a></span>. CATs are thought to be involved in the stability of the
-                    trinucleotide stretch during DNA replication <span class="refbig"><a href="#ref-four">[4]</a></span><span
-                        class="reflittle"><a href="#ref-four-little">[4]</a>
-            </span>.
-                </p>
-                <p>
-                    Normal SCA1 alleles contain from 6 to 43 CAG repeats with those greater than 21 being interrupted
-                    with 1 – 3 CAT trinucleotides. Disease alleles, on the other hand, are pure CAG tracts ranging from
-                    44 (39 if uninterrupted) to 82 units. Such interruptions are found in all the longer unaffected
-                    alleles. In contrast, all affected alleles are pure CAG tracts <span class="refbig"><a
-                        href="#ref-five">[5]</a></span><span class="reflittle"><a href="#ref-five-little">[5]</a></span>.
-                    The presence of repeat interruptions particularly in the longer wild type alleles lead to the
-                    possibility that the CAT interruptions have an important function of maintaining stability of normal
-                    alleles (<a href="#gene-image1">Figure 2</a>).
-                </p>
-                <p>
-                    ATXN1 gene codes for ataxin-1 and is in the short arm of chromosome 6 (<a href="#gene-image2">Figure
-                    3</a>), according to NCBI (from <a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000332">RefSeq
-                    NM_000332.4</a>).
-                </p>
-                <div class="image-one">
-                    <img id="gene-image1" src="../../Images/original images/SCA1/ATXN1.png" title="AR gene">
-                    <figcaption><strong>Figure 2:</strong> ATXN1 gene with ranges of the CAG repeats necessary for
-                        disease and range in healthy individuals along with information about the total coding exons,
-                        chromosome location and size in DNA bases. Created with <a href="https://biorender.com/">
-                            BioRender.com</a></figcaption>
-                    <a class="download-image" target="_blank" href="../../Images/original images/SCA1/ATXN1.png"
+                {{ disease.causative_gene.text|safe }}
+                {% for image in disease.causative_gene.image.all %}
+                <div class="image-{{forloop.counter}}">
+                    <img id="gene-image{{forloop.counter}}" src="{{image.image.url}}" title="{{image.name}}">
+                    <figcaption>{{image.image_caption|safe}}</figcaption>
+                    <a class="download-image" target="_blank" href="{{image.image.url}}"
                        download> [Fullsize image] </a>
                 </div>
-                <div class="image-two">
-                    <img id="gene-image2" src="../../Images/original images/SCA1/chromosome.png"
-                         title="AR gene chromosomal location">
-                    <figcaption><strong>Figure 3:</strong> ATXN1 gene chromossomal band localization. Created with <a
-                            href="https://biorender.com/"> BioRender.com</a></figcaption>
-                    <a class="download-image" target="_blank" href="../../Images/original images/SCA1/chromosome.png"
-                       download> [Fullsize image] </a>
-                </div>
+                {% endfor %}
             </div>
         </section>
         <section class="scrollspy" spy-title="Codified protein">
             <div class="protein-section">
                 <h2>Codified protein: structure, domains, functions and intracellular localization</h2>
                 <h3>Structure and domains</h3>
-                <p>
-                    ATXN1 gene codes for ataxin-1. Ataxin-1 has 815 amino acids and a molecular mass of 86923 Da (~87
-                    kDa). Ataxin-1 is a ubiquitous polyglutamine protein expressed primarily in the nucleus.
-                </p>
-                <p>
-                    Spinocerebellar ataxia is caused when ataxin-1 is mutated, this is when ataxin-1 has a bigger than
-                    normal number of glutamines where the protein can no longer be stable and leads to cellular problems
-                    that eventually result in disease.
-                </p>
-                <p>
-                    An ataxin-1 protein representation is shown in <a href="#protein-image">Figure 4</a> along with <a
-                        href="#table">Table 1</a> with information on its important domain/s (information from <a
-                        href="https://www.uniprot.org/">Uniprot.org</a>).
-                </p>
+                {{ disease.codified_protein.text|safe }}
                 <div class="non-interactive">
-                    <img id="protein-image" src="../../Images/original images/SCA1/Ataxin-1.png"
-                         title="Androgen receptor structure">
-                    <figcaption><strong>Figure 4: </strong> Ataxin-1 structure and important domains. Created with <a
-                            href="https://biorender.com/"> BioRender.com</a></figcaption>
-                    <a class="download-image" target="_blank" href="../../Images/original images/SCA1/Ataxin-1.png"
+                    {% for image in disease.codified_protein.image.all %}
+                    <img id="protein-image" src="{{image.image.url}}"
+                         title="{{image.name}}">
+                    <figcaption>{{image.image_caption|safe}}</figcaption>
+                    <a class="download-image" target="_blank" href="{{image.image.url}}"
                        download> [Fullsize image] </a>
+                     {% endfor %}
                 </div>
                 <div class="table">
                     <table style="width:100%" id="table">
-                        <caption>Table 1. Ataxin-1 important domain</caption>
+                        <caption>{{disease.characteristic_table.table_title}}</caption>
                         <tr>
                             <th>Description</th>
                             <th>Position</th>
                             <th>Length</th>
                         </tr>
-                        <tr>
-                            <td>AXH</td>
-                            <td>562-689</td>
-                            <td>127</td>
-                        </tr>
+                        {% for col1 in disease.characteristic_table.rows_col.all %}
+                            <tr>
+                                {% if col1.text != null %}
+                                    <td>{{ col1.text }}</td>
+                                {% else %}
+                                    <td></td>
+                                {% endif %}
+                                {% if col1.text2 != null %}
+                                    <td>{{ col1.text2 }}</td>
+                                {% else %}
+                                    <td></td>
+                                {% endif %}
+                                {% if col1.text3 != null %}
+                                    <td>{{ col1.text3 }}</td>
+                                {% else %}
+                                    <td></td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
                     </table>
-                    <div class="caption-under"><strong>Table Caption:</strong> Ataxin-1 domain with respective position
-                        and length.
-                    </div>
+                    <div class="caption-under">{{disease.characteristic_table.table_caption|safe}}</div>
                 </div>
                 <h3>Protein functions and biological role</h3>
-                <p>
-                    Ataxin-1 has important molecular functions regarding transcription:
-                </p>
-                <ul>
-                    <li>It binds chromatin (DNA) and functions as a transcriptional repressor.</li>
-                    <li>It has the ability to bind RNA <span class="refbig"><a href="#ref-six">[6]</a></span><span
-                            class="reflittle"><a href="#ref-six-little">[6]</a></span> and to self-associate through
-                        certain regions <span class="refbig"><a href="#ref-seven">[7]</a></span><span class="reflittle"><a
-                                href="#ref-seven-little">[7].
-          </a></span></li>
-                    <li>RNA processing function <span class="refbig"><a href="#ref-eight">[8]</a></span><span
-                            class="reflittle"><a href="#ref-eight-little">[8]</a></span></li>
-                </ul>
-                <p>
-                    According to <a href="https://www.uniprot.org/uniprot/P10275">UniProt.org</a> the ATXN1 gene product
-                    is involved in various biological processes from early nervous system development to keeping its
-                    stability and normal functioning throughout the years. It has important roles in brain development,
-                    learning and memory.
-                </p>
+                {{ disease.codified_protein.protein_functions|safe }}
                 <h3> Protein intracellular localization</h3>
-                <p>
-                    Ataxin-1 is widely expressed in the normal human brain and peripheral tissues. It is present in both
-                    nucleus and cytoplasm. Within neurons, ATXN1 is predominantly nuclear, with some cytoplasmic ATXN1
-                    found in Purkinje cells and brainstem nuclei <span class="refbig"><a href="#ref-nine">[9]</a></span><span
-                        class="reflittle"><a href="#ref-nine-little">[9]
-          </a></span>, <span class="refbig"><a href="#ref-ten">[10]</a></span><span class="reflittle"><a
-                        href="#ref-ten-little">[10]
-          </a></span>.
-                </p>
+                {{ disease.codified_protein.protein_location|safe }}
                 <div class="interactive-image" id="my-interactive-image">
                     <img src="{% static 'img/cell-scheme.jpg' %}"/>
                 </div>
-                <div class="int-caption"><strong>Figure 5:</strong> Androgen receptor intracellular localization.<br>(Refresh
+                <div class="int-caption"><strong>Figure 5:</strong> {{disease.codified_protein.protein_name|safe}} intracellular localization.<br>(Refresh
                     this element if changed resolutions &nbsp<a href="javascript:void(0)"
                                                                 onclick="window.location.reload();"><i
                             class="fa-solid fa-arrows-rotate"></i></a>&nbsp)
@@ -225,204 +161,47 @@
         <section class="scrollspy" spy-title="Pathophysiology">
             <div class="patho-section">
                 <h2> Pathophysiology</h2>
-                <p>
-                    Disease-related expansions have a direct relationship between length and severity/age-of-onset of
-                    disease, i.e. longer the longer the glutamine tract the more severe and earlier is the age of onset
-                    of disease.
-                </p>
-                <p>
-                    The presence of expanded glutamine (Q) repeats in Ataxin-1 impairs ubiquitination and degradation,
-                    leading to its accumulation in neurons and subsequent toxicity <span class="refbig"><a
-                        href="#ref-eleven">[11]</a></span><span class="reflittle"><a href="#ref-eleven-little">[11]</a></span>.
-                    On the other hand, some other studies reported that accumulation in neurons showed no further
-                    disease worsening and disease specimens with less or close to none neuronal inclusions still
-                    developed disease as cases with accumulation of poly-Q ataxin-1 <span class="refbig"><a
-                        href="#ref-twelve">[12]</a></span><span class="reflittle"><a href="#ref-twelve-little">[12]</a></span>,
-                    <span class="refbig"><a href="#ref-thirteen">[13]</a></span><span class="reflittle"><a
-                        href="#ref-thirteen-little">[11]</a></span>.
-                </p>
-                <p>
-                    Biochemical and genetic studies provide evidence that the polyglutamine expansion enhances
-                    interactions that are normally regulated by phosphorylation at Ser776 and a subsequent alteration in
-                    its interaction with other cellular proteins <span class="refbig"><a
-                        href="#ref-thirteen">[13]</a></span><span class="reflittle"><a
-                        href="#ref-thirteen-little">[13]</a></span>.
-                </p>
-                <p>
-                    S776 phosphorylation confers to Ataxin-1 great stability and enhances protein-protein interactions.
-                    Interaction of pS776-Ataxin-1 with 14-3-3 stabilizes the first. The chaperone 14-3-3 bound to
-                    pS776-Ataxin-1 protects the latter from degradation which may lead to toxic levels of the protein
-                    <span class="refbig"><a href="#ref-fourteen">[14]</a></span><span class="reflittle"><a
-                        href="#ref-fourteen-little">[14]</a></span>.
-                </p>
-                <p>
-                    SUMOylation is a post-translational modification involved in various cellular processes, such as
-                    nuclear-cytosolic transport, transcriptional regulation, apoptosis, protein stability, response to
-                    stress, and progression through the cell cycle. SUMOylation is dependent on nuclear localization and
-                    phosphorylation at Ser-776. It is reduced in the presence of an expanded polyglutamine tract <span
-                        class="refbig"><a href="#ref-thirteen">[13]</a></span><span class="reflittle"><a
-                        href="#ref-thirteen-little">[13]</a></span>, <span class="refbig"><a
-                        href="#ref-fifteen">[15]</a></span><span class="reflittle"><a
-                        href="#ref-fifteen-little">[15]</a>
-          </span>.
-                </p>
-                <p>
-                    The ataxin-1 AXH domain allows its homodimerization and interaction with regulators of transcription
-                    such as the transcriptional repressor Capicua (Cic). Ataxin-1 and Cic together exist in large
-                    protein complexes where mutant ataxin-1 is thought to affect Cic repressor activity. In addition to
-                    regulating Cic function, stability of Cic depends on Ataxin-1 binding <span class="refbig"><a
-                        href="#ref-fourteen">[14]</a></span><span class="reflittle"><a
-                        href="#ref-fourteen-little">[14]</a></span>. Poly-Q ataxin-1 has presented evidence that the
-                    interaction with RBM17 (RNA-binding motif protein 17) is enhanced since it seemed RBM17 interacted
-                    preferably with polyglutamine-expanded ataxin-1 and its phosphorylated forms.
-                </p>
-                <p>
-                    Ataxin-1 toxicity acts through a gain of function mechanism, where mutant Ataxin-1 affects the
-                    normal function of an Ataxin-1 binding partner (Cic) and exacerbates its normal gene-repressor
-                    function in vivo <span class="refbig"><a href="#ref-sixteen">[16]</a></span><span class="reflittle"><a
-                        href="#ref-sixteen-little">[16]</a></span>,
-                    <span class="refbig"><a href="#ref-seventeen">[17]</a></span><span class="reflittle"><a
-                        href="#ref-seventeen-little">[17]</a></span>. Thus, mutant Ataxin-1 also results in Cic loss of
-                    function, revealing complexity in Ataxin-1 effects
-                    <span class="refbig"><a href="#ref-seventeen">[17]</a></span><span class="reflittle"><a
-                        href="#ref-seventeen-little">[17]</a></span>.
-                </p>
-                <img id="patho-img" src="../../Images/original images/SCA1/SCA1.png" title="SCA1 pathogenic mechanisms">
-                <div class="caption-patho"><strong>Figure 6:</strong> SCA1 pathogenesis. A - Aggregation of mutated
-                    ataxin-1 inside the cell and nucleus. B - PolyQ ataxin-1 is less ubiquitinated leading to less
-                    degradation of this mutated form of the protein. Ataxin-1 with expanded glutamines is also less
-                    targeted by SUMO and so it is less SUMOylated affecting cellular stability. C - Interaction of
-                    mutated ataxin-1 with chaperones is enhanced resulting in the protection of the first from
-                    degradation therefore increasing toxic levels of the mutated protein inside the cell. D - PolyQ
-                    ataxin-1 shifts the balance of interactions. Mutated ataxin-1 interacts more with RBM17 and affects
-                    Cic function leading to its exacerbated function or loss of function in some cases (* check <span
-                            class="refbig"><a href="#ref-seventeen">[17]</a></span><span class="reflittle"><a
-                            href="#ref-seventeen-little">[17]</a></span>).
+                {{disease.patho_physiology.text|safe}}
+                {% for image in disease.patho_physiology.image.all %}
+                <img id="patho-img" src="{{image.image.url}}" title="{{image.name}}">
+                <div class="caption-patho"> {{image.image_caption|safe}}
                 </div>
-                <a class="download-image" target="_blank" href="../../Images/original images/SCA1/SCA1.png" download>
+                <a class="download-image" target="_blank" href="{{image.image.url}}" download>
                     [Fullsize image] </a>
+                {% endfor %}
             </div>
         </section>
         <section class="scrollspy" spy-title="Clinical manifestations">
             <div class="clinical-section">
                 <h2> Clinical manifestations: neuropathology, other signs and symptoms</h2>
                 <h3>Neuropathology</h3>
-                <p>
-                    Spinocerebellar ataxia type 1 (SCA1) primarily affects the brainstem, spinocerebellar tracts and
-                    cerebellar Purkinje cells.
-                </p>
-                <p>
-                    SCA1 has many pathoanatomical findings in various tissues <span class="refbig"><a
-                        href="#ref-eightteen">[18]</a></span><span class="reflittle"><a
-                        href="#ref-eighteen-little">[18]</a>
-          </span>:
-                </p>
-                <div class="list-neuronal">
-                    <ul>
-                        <li>Neuronal loss in the neocortex</li>
-                        <li>Neuronal loss in the basal forebrain nuclei, basal ganglia, amygdala, hypothalamus and
-                            thalamus
-                        </li>
-                        <li>Neuronal loss in the cerebellum</li>
-                        <li>Neuronal loss in the midbrain</li>
-                        <li>Neuronal loss in the pons and medulla oblongata</li>
-                        <li>Neuronal intranuclear inclusion</li>
-                        <li>Astrogliosis</li>
-                    </ul>
-                </div>
+                {{disease.clinical.text|safe}}
                 <h3>Signs and symptoms</h3>
+                {{disease.clinical.signs_symptoms|safe}}
                 {#                {% if title in style_1_diseases %}#}
                 <div class="{{ disease.css_class }}">
-                    <div class="column-one">
-                        <div class="column-one-title">
-                            <strong>Early stage</strong>
-                        </div>
-                        <ul>
-                            <li>Behavioral disturbances</li>
-                            <li>Clumsiness</li>
-                            <li>Moodiness</li>
-                            <li>Irritability</li>
-                            <li>Paranoia</li>
-                            <li>Apathy</li>
-                            <li>Anxiety</li>
-                            <li>Hallucinations</li>
-                            <li>Abnormal eye movements</li>
-                            <li>Depression</li>
-                            <li>Impaired ability to detect odors</li>
-                        </ul>
-                    </div>
-                    <div class="column-two">
-                        <div class="column-two-title">
-                            <strong>Middle stage</strong>
-                        </div>
-                        <ul>
-                            <li>Dystonia</li>
-                            <li>Involuntary movements</li>
-                            <li>Trouble with balance and walking</li>
-                            <li>Chorea with twisting and writhing motions</li>
-                            <li>Unsteady gait</li>
-                            <li>Slow reaction time</li>
-                            <li>General weakness</li>
-                            <li>Weight loss</li>
-                            <li>Speech difficulties</li>
-                            <li>Stubbornness</li>
-                        </ul>
-                    </div>
-                    <div class="column-three">
-                        <div class="column-three-title">
-                            <strong>Late stage</strong>
-                        </div>
-                        <ul>
-                            <li>Rigidity</li>
-                            <li>Bradykinesia</li>
-                            <li>Severe chorea</li>
-                            <li>Serious weight loss</li>
-                            <li>Inability to speak</li>
-                            <li>Inability to walk</li>
-                            <li>Swallowing problems</li>
-                            <li>Inability to care for oneself</li>
-                        </ul>
-                    </div>
-                </div>
-                {#                  {% endif %}#}
-                {#                  {% if title in style_2_diseases %}#}
-                {#                  <div class="list-flex-style-two">#}
-                {#                    <div class="column-one">#}
-                {#                      <div class="column-one-title">#}
-                {#                        <strong>Neurological symptoms</strong>#}
-                {#                      </div>#}
-                {#                    <ul>#}
-                {#                      <li>Dysarthria</li>#}
-                {#                      <li>Hypermetric saccades</li>#}
-                {#                      <li>Ataxia of gait</li>#}
-                {#                      <li>Ataxia of stance</li>#}
-                {#                    </ul>#}
-                {#                    </div>#}
-                {#                    <div class="column-two">#}
-                {#                      <div class="column-two-title">#}
-                {#                        <strong>Other signs and symptoms</strong>#}
-                {#                      </div>#}
-                {#                    <ul>#}
-                {#                      <li>Speech and swallowing difficulties</li>#}
-                {#                      <li>Spasticity</li>#}
-                {#                      <li>Ophthalmoplegia</li>#}
-                {#                      <li>Nystagmus</li>#}
-                {#                      <li>Cognitive impairment</li>#}
-                {#                    </ul>#}
-                {#                    </div>#}
-                {#                </div>#}
-                {#                {% endif %}#}
-            </div>
+                            {% for list in disease.list.all %}
+                                <div class="column-{{forloop.counter}}">
+                                    <div class="column-{{ forloop.counter }}-title">{{list.text}}</div>
+                                {% for item in list.item.all %}
+                                    <ul>
+                                    <li>{{ item.text }}</li>
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            {% endfor %}
+               </div>
         </section>
         <section class="scrollspy" spy-title="References" id="references">
             <div class="reference-section">
                 <h2> References </h2>
                 <ol>
                     {% for ref in disease.references.all %}
-                        <li><a id="ref-{{ forloop.counter }}-little"
-                               class="articlebottom">{{ ref.author }}, {{ ref.journal }}</a><br><a
-                                href="{{ ref.journal_link }}">{{ ref.journal_link_name }}</a></li>
-
+                        <li><a id="ref-{{ forloop.counter }}-little" class="articlebottom">{{ref.author|safe}} {{ref.journal_info}}</a><br>
+                            {% for link in ref.links.all %}
+                               <a href="{{link.ref_link}}" class="links" target="_blank">[{{link.clickable_name}}]</a>&nbsp
+                            {% endfor %}
+                           </li>
                     {% endfor %}
                 </ol>
             </div>
@@ -433,10 +212,11 @@
             <h3><i class="fa-solid fa-link"></i> References</h3>
             <ul>
                 {% for ref in disease.references.all %}
-                    <li><a href="" id="ref-{{ forloop.counter }}" class="articlefocus">{{ forloop.counter }}.
-                        &nbsp {{ ref.author }}, {{ ref.journal }}</a><br><a
-                            href="{{ ref.journal_link }}">{{ ref.journal_link_name }}</a></li>
-
+                    <li><a href="" id="ref-{{ forloop.counter }}" class="articlefocus" >{{ forloop.counter }}. &nbsp {{ref.author|safe}} {{ref.journal_info}}</a><br>
+                        {% for link in ref.links.all %}
+                           <a href="{{link.ref_link}}" class="links" target="_blank">[{{link.clickable_name}}]</a>&nbsp
+                        {% endfor %}
+                    </li>
                 {% endfor %}
             </ul>
         </div>
@@ -446,7 +226,7 @@
     <div class="collumns">
         <div class="first-third">
             <ul>
-                <li><a href="../../">Landing Page</a></li>
+                <li><a href="/">Landing Page</a></li>
                 <li><a href="https://abcri.pt/">ABC-RI</a></li>
                 <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
                 <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
@@ -454,7 +234,7 @@
         </div>
         <div class="second-third">
             <ul>
-                <li><a href="../../authors">Authors</a></li>
+                <li><a href="/authors">Authors</a></li>
                 <li><a href="https://www.ualg.pt/">UAlg</a></li>
                 <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
                 <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
@@ -462,9 +242,9 @@
         </div>
         <div class="third-third">
             <ul>
-                <li><a href="../../contact">Contact</a></li>
-                <li><a href="../../objectives">Objectives</a></li>
-                <li><a href="../../appreciation">Appreciation</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/objectives">Objectives</a></li>
+                <li><a href="/appreciation">Appreciation</a></li>
             </ul>
         </div>
     </div>
@@ -491,7 +271,7 @@
             <path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
         </g>
     </svg>
-    <p>&copyPolyQ Database. All rights reserved 2021-2022. Authors and database creators all duly mentioned.</p>
+    <p>&copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. Authors and database creators all duly mentioned.</p>
     <div class="logos">
         <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
         <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>
@@ -503,7 +283,7 @@
     <script>
         let img_coordinates = {{ img_coordinates|safe }};
     </script>
-    <script src="{% static 'js/image-int-hd.js' %}"></script>
+    <script src="{% static 'js/image-int-all.js' %}"></script>
 <script>
     let indicator = document.getElementById('indicator');
 

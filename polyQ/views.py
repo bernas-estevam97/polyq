@@ -102,9 +102,9 @@ def search_disease(request):
             img_coordinates.append(img_object)
         return render(request, 'diseases.html', {'disease': disease, 'title': title,
                                                  'other_diseases': other_diseases, 'style_1_diseases': style_1_diseases,
-                                                 'style_2_diseases': style_2_diseases,'img_coordinates':img_coordinates})
+                                                 'style_2_diseases': style_2_diseases, 'img_coordinates': img_coordinates})
     except Disease.DoesNotExist:
-        error_message = "This disease does not exit on our database"
+        error_message = "This disease does not exit on our database!"
         return render(request, 'not-found-page.html', {'error_message': error_message})
 
     except Disease.MultipleObjectsReturned:

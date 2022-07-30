@@ -7,7 +7,7 @@
 }
 .interactive-image .unsupported-screen {
     display: none;
-    width: 120px;
+    width: 200px;
     margin: 20px auto;
     padding: 20px;
     color: #1d2129;
@@ -16,8 +16,8 @@
     text-align: center;
 }
 .interactive-image .unsupported-screen:before {
-    content: "Please rotate your device and refresh"}
-@media screen and (max-width:399px) {
+    content: "Please rotate your device and refresh for better view!"}
+@media screen and (max-width:380px) {
     .interactive-image{
     background-image: none;
     background-color: #fff;
