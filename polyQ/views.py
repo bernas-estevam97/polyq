@@ -4,6 +4,7 @@ from django.core.exceptions import MultipleObjectsReturned
 from polyQ.models import Disease
 from django.db.models import Q
 from django.contrib import messages
+from django.core.management import CommandError
 
 
 def index(request):
@@ -18,40 +19,40 @@ def objectives(request):
     return render(request, 'objectives/index.html')
 
 
-def diseases_drpla(request):
-    return render(request, 'diseases/drpla/index.html')
-
-
-def diseases_hd(request):
-    return render(request, 'diseases/hd/index.html')
-
-
-def diseases_sbma(request):
-    return render(request, 'diseases/sbma/index.html')
-
-
-def diseases_sca1(request):
-    return render(request, 'diseases/sca1/index.html')
-
-
-def diseases_sca2(request):
-    return render(request, 'diseases/sca2/index.html')
-
-
-def diseases_sca3(request):
-    return render(request, 'diseases/sca3/index.html')
-
-
-def diseases_sca6(request):
-    return render(request, 'diseases/sca6/index.html')
-
-
-def diseases_sca7(request):
-    return render(request, 'diseases/sca7/index.html')
-
-
-def diseases_sca17(request):
-    return render(request, 'diseases/sca17/index.html')
+# def diseases_drpla(request):
+#     return render(request, 'diseases/drpla/index.html')
+#
+#
+# def diseases_hd(request):
+#     return render(request, 'diseases/hd/index.html')
+#
+#
+# def diseases_sbma(request):
+#     return render(request, 'diseases/sbma/index.html')
+#
+#
+# def diseases_sca1(request):
+#     return render(request, 'diseases/sca1/index.html')
+#
+#
+# def diseases_sca2(request):
+#     return render(request, 'diseases/sca2/index.html')
+#
+#
+# def diseases_sca3(request):
+#     return render(request, 'diseases/sca3/index.html')
+#
+#
+# def diseases_sca6(request):
+#     return render(request, 'diseases/sca6/index.html')
+#
+#
+# def diseases_sca7(request):
+#     return render(request, 'diseases/sca7/index.html')
+#
+#
+# def diseases_sca17(request):
+#     return render(request, 'diseases/sca17/index.html')
 
 
 def contact(request):
@@ -87,8 +88,8 @@ def search_disease(request):
     try:
         disease_name = request.GET.get('disease')
         disease = Disease.objects.get(
-            Q(name__contains=disease_name) | Q(slug__contains=disease_name))
-        other_diseases = Disease.objects.all().exclude(name__contains=disease_name)
+            Q(name=disease_name.upper()) | Q(slug__contains=disease_name))
+        other_diseases = Disease.objects.all().exclude(name=disease_name.upper())
         title = disease.name
         img_coordinates = []
         for img_coordinate in disease.coordinates.all():
@@ -108,4 +109,6 @@ def search_disease(request):
         return render(request, 'not-found-page.html', {'error_message': error_message})
 
     except Disease.MultipleObjectsReturned:
-        return render(request, 'home/index.html')
+        error_message_alert = "Multiple Objects Returned. More than 1 disease is being selected by your search"
+        return render(request, 'home/index.html', {'error_message_alert': error_message_alert})
+        # raise CommandError(error_message_alert)

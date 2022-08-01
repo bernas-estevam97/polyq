@@ -99,7 +99,7 @@ function autocomplete(inp, arr) {
 /*An array containing all the country names in the world:*/
 var diseases = ["Huntington's disease", "Dentatorubral-pallidoluysian atrophy",
                  "Spinal-bulbar muscular atrophy", "Spinocerebellar ataxia type 1", "Spinocerebellar ataxia type 2", "Spinocerebellar ataxia type 3",
-                "Spinocerebellar ataxia type 6", "Spinocerebellar ataxia type 7", "Spinocerebellar ataxia type 17"];
+                "Spinocerebellar ataxia type 6", "Spinocerebellar ataxia type 7", "Spinocerebellar ataxia 17"];
 
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the diseases array as possible autocomplete values:*/

@@ -468,29 +468,27 @@ td{
 
 .popup-text{
 	position: absolute;
-	left: 20%;
-	margin-top: 40px;
+	left: 25%;
+	margin-top: 30px;
 	font-size: 12px;
 	width: 200px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	background-color: white;
 	padding: 10px;
 	opacity: 0;
-	transition: opacity .5s ease;
 	border-radius: 3px;
 }
 
 .popup-text2{
 	position: absolute;
 	left: 35%;
-	margin-top: 40px;
+	margin-top: 30px;
 	font-size: 12px;
 	width: 250px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	background-color: white;
 	padding: 10px;
 	opacity: 0;
-	transition: opacity .5s ease;
 	border-radius: 3px;
 }
 
@@ -504,15 +502,14 @@ td{
 	background-color: white;
 	padding: 10px;
 	opacity: 0;
-	transition: opacity .5s ease;
 	border-radius: 3px;
 }
 
 .popup-text4{
 	position: absolute;
-	left: 45%;
+	left: 55%;
 	margin-top: 40px;
-	font-size: 14px;
+	font-size: 12px;
 	width: 250px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	background-color: white;
@@ -532,6 +529,7 @@ td{
 .clinical-section .list-flex{
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 50px;
 }
 
 .clinical-section .list-flex .column-1,
@@ -564,6 +562,7 @@ td{
 .clinical-section .list-flex-style-two{
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 50px;
 }
 
 .clinical-section .list-flex-style-two .column-1,
@@ -1011,9 +1010,9 @@ nav .return-little:hover{
 }
 
 .text h1{
-	font-size: 1.8em;
+	font-size: 2em;
 	margin-left: 0px !important;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	padding: 10px 0 0 20px !important;
 	cursor: pointer;
 	width: 90%;
@@ -1087,6 +1086,44 @@ figcaption{
 	border: 1px solid #ddd;
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+.popup-text{
+	position: absolute;
+	left: 20%;
+	margin-top: 40px;
+	font-size: 12px;
+	width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	background-color: white;
+	padding: 10px;
+	opacity: 0;
+	transition: opacity .5s ease;
+	border-radius: 3px;
+}
+
+.popup-text2{
+	position: absolute;
+	left: 20%;
+	margin-top: 30px;
+	font-size: 12px;
+	width: 250px;
+}
+
+.popup-text3{
+	position: absolute;
+	left: 20%;
+	margin-top: 30px;
+	font-size: 10px;
+	width: 250px;
+}
+
+.popup-text4{
+	position: absolute;
+	left: 20%;
+	margin-top: 30px;
+	font-size: 12px;
+	width: 250px;
 }
 
 .clinical-section .list-neuronal ul li{
@@ -1254,11 +1291,13 @@ figcaption{
 
 	.text h1{
 		font-size: 2em;
-		margin-left: 10px;
-		margin-bottom: 30px;
+		margin-left: 30px;
+		margin-bottom: 50px;
 		cursor: pointer;
-		width: 79%;
+		width: 80%;
+		text-align: center;
 	}
+
 
 	.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section{
 	  padding: 10px !important;
@@ -1527,6 +1566,18 @@ figcaption{
 
 	.table .caption-under{
 		font-size: 1.3vw;
+	}
+
+	.interactive-image{
+		text-align: center;
+		width: 400px;
+		margin: 0 !important;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.interactive-image img{
+		width: 400px;
 	}
 
 	.int-caption{

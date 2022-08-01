@@ -191,13 +191,14 @@
                                 </div>
                             {% endfor %}
                </div>
+               {{disease.clinical.text_under_list|safe}}
         </section>
         <section class="scrollspy" spy-title="References" id="references">
             <div class="reference-section">
                 <h2> References </h2>
                 <ol>
                     {% for ref in disease.references.all %}
-                        <li><a id="ref-{{ forloop.counter }}-little" class="articlebottom">{{ref.author|safe}} {{ref.journal_info}}</a><br>
+                        <li><a id="ref-{{ forloop.counter }}-little" class="articlebottom">{{ref.author_and_title|safe}} {{ref.journal_info}}</a><br>
                             {% for link in ref.links.all %}
                                <a href="{{link.ref_link}}" class="links" target="_blank">[{{link.clickable_name}}]</a>&nbsp
                             {% endfor %}
@@ -212,7 +213,7 @@
             <h3><i class="fa-solid fa-link"></i> References</h3>
             <ul>
                 {% for ref in disease.references.all %}
-                    <li><a href="" id="ref-{{ forloop.counter }}" class="articlefocus" >{{ forloop.counter }}. &nbsp {{ref.author|safe}} {{ref.journal_info}}</a><br>
+                    <li><a href="" id="ref-{{ forloop.counter }}" class="articlefocus" >{{ forloop.counter }}. &nbsp {{ref.author_and_title|safe}} {{ref.journal_info}}</a><br>
                         {% for link in ref.links.all %}
                            <a href="{{link.ref_link}}" class="links" target="_blank">[{{link.clickable_name}}]</a>&nbsp
                         {% endfor %}

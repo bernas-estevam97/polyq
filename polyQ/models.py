@@ -111,6 +111,7 @@ class Clinical(models.Model):
     identifier = models.CharField(max_length=100)
     text = models.TextField()
     signs_symptoms = models.TextField()
+    text_under_list = models.TextField(blank=True)
 
     def __str__(self):
         return f'{self.identifier}'
@@ -142,7 +143,7 @@ class RefLinks(models.Model):
 
 class Reference(models.Model):
     ref_name_disease = models.CharField(max_length=200)
-    author = models.CharField(max_length=200)
+    author_and_title = models.CharField(max_length=300)
     journal_info = models.CharField(max_length=200)
     links = models.ManyToManyField(RefLinks)
 
