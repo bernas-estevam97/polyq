@@ -24,11 +24,11 @@
 </header>
 <nav>
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
+    <div class="nav-default">
     <ul>
         <li><a href="/disease_search/?disease={{ other_diseases.0.name }}">{{ other_diseases.0 }}</a></li>
         <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
         <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
-    </ul>
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
@@ -37,6 +37,13 @@
             {% endfor %}
         </div>
     </div>
+    <div class="return-button">
+    <a href="/home"><i class="fa-solid fa-house"></i> Return to Home page </a>
+    </div>
+    </ul>
+    </div>
+    <div class="little-nav">
+    <ul>
     <div class="dropdown-little">
         <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i
                 class="fa-solid fa-turn-down"></i></button>
@@ -46,8 +53,11 @@
             {% endfor %}
         </div>
     </div>
-    <a href="/home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a>
-    <a href="/home" class="return-little"><i class="fa-solid fa-house"></i> Home </a>
+    <div class="return-little">
+    <a href="/home"><i class="fa-solid fa-house"></i> Home </a>
+    </div>
+    </ul>
+    </div>
 </nav>
 <main>
     <div class="aside-bar-left">
@@ -116,7 +126,7 @@
                 </div>
                 <div class="table">
                     <table style="width:100%" id="table">
-                        <caption>{{disease.characteristic_table.table_title}}</caption>
+                        <caption>{{disease.characteristic_table.table_title|safe}}</caption>
                         <tr>
                             <th>Description</th>
                             <th>Position</th>

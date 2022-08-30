@@ -247,7 +247,8 @@ nav .fas{
     border-radius: 6px;
   }
   .copy-right{
-    font-size: 20px;
+    margin-top: 20px;
+    font-size: 14px;
     top: 90%;
     left:50%;
   }

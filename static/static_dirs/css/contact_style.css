@@ -135,13 +135,17 @@ main h1{
   color: white;
   max-width: 100%;
   line-height: 65px;
-  font-size: 20px;
+  font-size: 24px;
 	align-items: center;
 	border-bottom: 5px solid white;
 }
 
 .contact-info ul{
 	margin-left: 30px;
+}
+
+.contact-info ul li{
+	margin: 10px 0 10px 0;
 }
 
 .contact-info a{
@@ -192,6 +196,7 @@ main h1{
 .map-location{
 	border: 1px solid #ccc;
 	padding: 5px 5px 0 5px;
+	margin-bottom: 100px;
 }
 
 .map-location iframe{
@@ -356,7 +361,7 @@ footer .logos .logo-three img{
 
 
 
-@media (max-width: 472px){
+@media (max-width: 500px){
 
 	header{
 		width: 100%;
@@ -390,7 +395,7 @@ footer .logos .logo-three img{
 		padding: 3px;
 	}
 
-	nav .poly-q{
+	nav .poly-logo{
     height: auto;
     width: 100px;
   }
@@ -412,6 +417,22 @@ footer .logos .logo-three img{
   nav .return-button{
     display: none;
   }
+
+	.contact-section{
+	  margin: 0%;
+		padding: 0;
+	}
+
+	.contact-info{
+	  line-height: 65px;
+	  font-size: 15px;
+		align-items: center;
+		border-bottom: 5px solid white;
+	}
+
+	.contact-location a{
+		font-size: 16px;
+	}
 
 	footer{
 		font-size: 12px;
@@ -452,7 +473,7 @@ footer .logos .logo-three img{
 
 }
 
-@media (min-width: 473px) and (max-width: 622px){
+@media (min-width: 501px) and (max-width: 622px){
   *{
     margin: 0;
     padding: 0;
@@ -510,6 +531,22 @@ footer .logos .logo-three img{
 
 	nav .return-button{
 		display: none;
+	}
+
+	.contact-section{
+		margin: 0;
+		padding: 0;
+	}
+
+	.contact-info{
+		line-height: 65px;
+		font-size: 18px;
+		align-items: center;
+		border-bottom: 5px solid white;
+	}
+
+	.contact-location a{
+		font-size: 20px;
 	}
 
 	footer{

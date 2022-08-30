@@ -71,6 +71,10 @@ nav{
 	top: 0px;
 }
 
+nav .little-nav{
+	display: none;
+}
+
 nav .poly-logo{
 	width: 120px;
 	height: auto;
@@ -79,7 +83,6 @@ nav .poly-logo{
 
 nav ul{
 	display: flex;
-	margin-left: 40%;
 }
 
 nav ul li{
@@ -211,17 +214,24 @@ nav .dropbtn-little{
 
 
 
-nav .return-button{
+
+
+nav .return-button a{
+	position: relative;
+	font-size: 15px;
+	padding: 15px;
   color:#000;
   text-decoration: none;
   transition: 0.3s;
-	padding: 10px;
 	border: 2px solid #F2C20E;
 	border-radius: 5px;
 	background: #fff;
+	margin-left: 30px;
+	top: 15px;
 }
 
-nav .return-little{
+nav .return-little a{
+	color: #000;
   display: none;
   text-decoration: none;
   transition: 0.3s;
@@ -230,16 +240,14 @@ nav .return-little{
 }
 
 
-nav .return-button:hover{
+nav .return-button a:hover{
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.poly-logo{
-  position: relative;
-  height: auto;
-  width: 200px;
-  margin: 0;
-}
+/* nav .return-button a, nav .return-little a{
+	text-decoration: none;
+	color: #000;
+} */
 
 /* ---------------------------- TEXT MAIN ------------------------------*/
 
@@ -955,6 +963,10 @@ footer .logos .logo-three img{
     padding: 3px;
   }
 
+	nav .little-nav{
+		display: block !important;
+	}
+
 nav{
   padding: 0 2%;
   height:80px;
@@ -962,17 +974,18 @@ nav{
 }
 
 nav .poly-logo{
-	width: 110px;
+	width: 100px;
 	height: auto;
 }
 
-nav ul{
+nav .nav-default ul{
 	display: none;
 }
 
 nav .dropbtn{
 	display: none;
 }
+
 
 nav .dropdown-little{
 	display: block;
@@ -983,16 +996,17 @@ nav .return-button{
   display: none;
 }
 
-nav .return-little{
-  display: block;
+nav .return-little a{
+	display: block;
   font-size: 15px;
 	color: #000;
 	border: 2px solid #F2C20E;
 	border-radius: 5px;
 	background: #fff;
+	margin-left: 10px;
 }
 
-nav .return-little:hover{
+nav .return-little a:hover{
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
@@ -1246,7 +1260,11 @@ figcaption{
 		height: auto;
 	}
 
-	nav ul{
+	nav .little-nav{
+		display: block !important;
+	}
+
+	nav .nav-default ul{
 		display: none;
 	}
 
@@ -1259,20 +1277,21 @@ figcaption{
 		margin-left: 140px !important;
 	}
 
-	nav .return-button{
+	nav .return-button a{
 	  display: none;
 	}
 
-	nav .return-little{
+	nav .return-little a{
 	  display: block;
 	  font-size: 15px;
 		color: #000;
 		border: 2px solid #F2C20E;
 		border-radius: 5px;
 		background: #fff;
+		margin-left: 15px !important;
 	}
 
-	nav .return-little:hover{
+	nav .return-little a:hover{
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	}
 
@@ -1469,50 +1488,26 @@ figcaption{
 		height: auto;
 	}
 
-	nav ul{
-		display: flex;
-		margin-left: 15%;
-	}
-
-	nav ul li{
-		margin: 0 15px;
-		padding: 10px;
-		list-style-type: none;
-		justify-content: space-between;
-		font-size: 1em;
-		background: white;
-		border-radius: 3px;
-		border: 3px solid #D0D2D3;
-		cursor: pointer;
-	}
-
-	nav ul li a{
-		cursor: pointer;
-		text-decoration: none;
-		color: black;
-	}
-	nav .dropbtn{
-		cursor: pointer;
-		background-color: #FFD118;
-	  color: #000;
-	  padding: 15px;
-	  font-size: 14px;
-	  border: none;
-		border-radius: 5px;
-		font-weight: bold;
-	}
-
-	nav .return-button{
-	  color:#000;
-	  text-decoration: none;
-	  transition: 0.3s;
-		padding: 10px !important;
-		border: 2px solid #F2C20E;
-		border-radius: 5px;
-		background: #fff;
+	nav .nav-default{
 		font-size: 12px;
-		text-align: center;
+	}
+
+	nav .nav-default ul li{
+		margin: 0 5px !important;
+	}
+
+	nav .nav-default .dropdown{
 		margin-left: 10px !important;
+	}
+
+	nav .nav-default .dropdown .dropbtn{
+		font-size: 12px;
+	}
+
+	nav .nav-default .return-button a{
+		margin: 0 0 0 10px !important;
+		font-size: 1em;
+		padding: 12px !important;
 	}
 
 	.text{
@@ -1719,17 +1714,15 @@ figcaption{
       margin: 15px 0 !important;
     }
 
-		nav .return-button{
-		  color:#000;
-		  text-decoration: none;
-		  transition: 0.3s;
-			padding: 8px !important;
-			border: 2px solid #F2C20E;
-			border-radius: 5px;
-			background: #fff;
-			text-align: center;
+		nav .nav-default{
+			font-size: .8em;
+		}
+
+		nav .return-button a{
 			margin-left: 10px !important;
 		}
+
+
 		.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
 		  font-size: 1.5vw;
 		  text-align: left;
