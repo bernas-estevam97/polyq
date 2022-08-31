@@ -86,7 +86,7 @@ nav ul{
 }
 
 nav ul li{
-	margin: 0 15px;
+	margin: 0 30px 0 0;
 	padding: 10px;
 	list-style-type: none;
 	justify-content: space-between;
@@ -226,7 +226,7 @@ nav .return-button a{
 	border: 2px solid #F2C20E;
 	border-radius: 5px;
 	background: #fff;
-	margin-left: 30px;
+	margin-left: 50px;
 	top: 15px;
 }
 
