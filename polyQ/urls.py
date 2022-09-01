@@ -41,3 +41,7 @@ urlpatterns = [
     path('disease/', tmp_disease)
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)
+
+
+handler404 = 'polyQ.views.custom_page_not_found_view'
+handler500 = 'polyQ.views.custom_error_view'

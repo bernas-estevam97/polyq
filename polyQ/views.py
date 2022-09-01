@@ -5,7 +5,6 @@ from polyQ.models import Disease
 from django.db.models import Q
 from django.contrib import messages
 from django.core.management import CommandError
-from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 
@@ -94,6 +93,7 @@ def search_disease(request):
         other_diseases = Disease.objects.all().exclude(name=disease_name.upper())
         title = disease.name
         img_coordinates = []
+
         for img_coordinate in disease.coordinates.all():
             img_object = {
                 'x': img_coordinate.x,
@@ -103,29 +103,34 @@ def search_disease(request):
                 'device': img_coordinate.device
             }
             img_coordinates.append(img_object)
-        return render(request, 'diseases.html', {'disease': disease, 'title': title,
-                                                 'other_diseases': other_diseases, 'style_1_diseases': style_1_diseases,
-                                                 'style_2_diseases': style_2_diseases, 'img_coordinates': img_coordinates})
+        context = {
+            'disease': disease,
+            'title': title,
+            'other_diseases': other_diseases,
+            'style_1_diseases': style_1_diseases,
+            'style_2_diseases': style_2_diseases,
+            'img_coordinates': img_coordinates
+        }
+        return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:
+        error_code = ""
         error_message = "This disease does not exit on our database!"
-        return render(request, 'not-found-page.html', {'error_message': error_message})
+        return render(request, 'not-found-page.html', {'error_message': error_message, 'error_code': error_code})
 
     except Disease.MultipleObjectsReturned:
-        error_message_alert = "Be more specific with your search"
-        return render(request, 'home/index.html', {'error_message_alert': error_message_alert})
+        error_code = ""
+        error_message = "Be more specific with your search"
+        return render(request, 'home/index.html', {'error_message': error_message, 'error_code': error_code})
         # raise CommandError(error_message_alert)
 
 
-def handler404(request, *args, **argv):
-    error_message = ""
-    response = render_to_response('not-found-page.html', {'error_message': error_message},
-                                  context_instance=RequestContext(request), )
-    response.status_code = 404
-    return response
+def custom_page_not_found_view(request, exception):
+    error_code = "404"
+    error_message = "Page not found"
+    return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
 
 
-def handler500(request, *args, **argv):
-    response = render_to_response('500.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 500
-    return response
+def custom_error_view(request, exception=None):
+    error_code = "500"
+    error_message = "Internal Server error"
+    return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
