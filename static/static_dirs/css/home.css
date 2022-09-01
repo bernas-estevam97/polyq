@@ -601,6 +601,10 @@ main h4::after {
   color: #000;
 }
 
+.message-phone{
+  display: none;
+}
+
 
 #left-btn{
   cursor: pointer;
@@ -853,9 +857,9 @@ footer .logos .logo-three img{
 
   .poly-logo{
     position: absolute;
-    width: 120px;
-    height: 90px;
-    top: -10px;
+    width: 110px;
+    height: auto;
+    top: -18px;
     left: 50%;
     transform: translateX(-40%);
   }
@@ -1075,7 +1079,18 @@ footer .logos .logo-three img{
     transform: none !important;
   }
 
+  .message-phone{
+    display: block;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 20px;
+  }
 
+  .message-phone .fa-solid{
+    color: #EBA000;
+    font-size: 20px;
+    opacity: 0.8;
+  }
 
   #left-btn, #left-all-btn, #right-btn, #right-all-btn{
     display: none;
@@ -1168,11 +1183,12 @@ footer .logos .logo-three img{
   nav{
     height: 120px;
   }
+
   .poly-logo{
     position: absolute;
-    width: 120px;
-    height: 90px;
-    top: -10px;
+    width: 110px;
+    height: auto;
+    top: -18px;
     left: 50%;
     transform: translateX(-40%);
   }
@@ -1392,6 +1408,18 @@ footer .logos .logo-three img{
     transform: none !important;
   }
 
+  .message-phone{
+    display: block;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .message-phone .fa-solid{
+    color: #EBA000;
+    font-size: 20px;
+    opacity: 0.8;
+  }
 
   #left-btn, #left-all-btn, #right-btn, #right-all-btn{
     display: none;
@@ -1700,7 +1728,18 @@ footer .logos .logo-three img{
       transform: none !important;
     }
 
+    .message-phone{
+      display: block;
+      font-size: 1em;
+      text-align: center;
+      margin-top: 20px;
+    }
 
+    .message-phone .fa-solid{
+      color: #EBA000;
+      font-size: 20px;
+      opacity: 0.8;
+    }
 
 
     #left-btn, #left-all-btn, #right-btn, #right-all-btn{
@@ -1879,7 +1918,18 @@ footer .logos .logo-three img{
     transform: none !important;
   }
 
+  .message-phone{
+    display: block;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+  }
 
+  .message-phone .fa-solid{
+    color: #EBA000;
+    font-size: 20px;
+    opacity: 0.8;
+  }
 
   #left-btn, #left-all-btn, #right-btn, #right-all-btn{
     display: none;

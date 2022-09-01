@@ -24,8 +24,8 @@
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <div class="autocomplete">
         <form method="get" action="/disease_search">
-            <input type="text" name="disease" class="search-box" placeholder="Disease search..." size="40" id="myInput"
-                   autocomplete="off">
+            <input type="text" pattern="[\w' -]{2,}" name="disease" class="search-box" placeholder="Disease search..."
+            size="40" id="myInput" autocomplete="off" required>
             <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
         </form>
     </div>
@@ -312,6 +312,7 @@
         <button id="right-btn" onclick="scrollHorizontally(-1)"><i class="fa-solid fa-angle-right"></i></button>
         <button id="left-all-btn" onclick="scrollHorizontally(1)"><i class="fa-solid fa-angles-left"></i></button>
         <button id="right-all-btn" onclick="scrollHorizontally(-1)"><i class="fa-solid fa-angles-right"></i></button>
+        <div class="message-phone" data-aos="fade-up" data-aos-offset="20" data-aos-duration="800"><i class="fa-solid fa-circle-chevron-up"></i>&nbsp&nbsp&nbspScroll horizontally for more diseases&nbsp&nbsp&nbsp<i class="fa-solid fa-circle-chevron-up"></i></div>
     </div>
 </main>
 <footer>

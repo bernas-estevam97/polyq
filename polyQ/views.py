@@ -109,6 +109,6 @@ def search_disease(request):
         return render(request, 'not-found-page.html', {'error_message': error_message})
 
     except Disease.MultipleObjectsReturned:
-        error_message_alert = "Multiple Objects Returned. More than 1 disease is being selected by your search"
+        error_message_alert = "Be more specific with your search"
         return render(request, 'home/index.html', {'error_message_alert': error_message_alert})
         # raise CommandError(error_message_alert)
