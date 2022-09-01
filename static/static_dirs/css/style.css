@@ -437,8 +437,11 @@ nav .fas{
   .header{
     height: 1000px;
   }
+}
 
+
+@media (max-width: 1024px){
   .nav-links{
-    height: 1000px;
+    height: 100%;
   }
 }
