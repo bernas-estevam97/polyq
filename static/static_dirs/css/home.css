@@ -519,7 +519,8 @@ main h4::after {
 
 }
 
-.my_item:hover .card-container{
+.my_item:hover
+.card-container{
   transform: rotateY(180deg);
 }
 
