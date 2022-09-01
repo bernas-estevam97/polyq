@@ -5,6 +5,8 @@ from polyQ.models import Disease
 from django.db.models import Q
 from django.contrib import messages
 from django.core.management import CommandError
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 def index(request):
@@ -112,3 +114,18 @@ def search_disease(request):
         error_message_alert = "Be more specific with your search"
         return render(request, 'home/index.html', {'error_message_alert': error_message_alert})
         # raise CommandError(error_message_alert)
+
+
+def handler404(request, *args, **argv):
+    error_message = ""
+    response = render_to_response('not-found-page.html', {'error_message': error_message},
+                                  context_instance=RequestContext(request), )
+    response.status_code = 404
+    return response
+
+
+def handler500(request, *args, **argv):
+    response = render_to_response('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
