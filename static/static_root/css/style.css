@@ -1,0 +1,447 @@
+/* Index - Style.css */
+
+*{
+  margin:0;
+  padding: 0;
+  font-family: 'Saira Condensed', sans-serif;
+}
+
+.poly-q{
+  height: auto;
+  width: auto;
+  max-width: 170px;
+  max-height: 170px;
+  cursor: default;
+}
+
+.ualg-logo{
+  height: auto;
+  width: auto;
+  max-width: 250px;
+  max-height: 250px;
+  filter: brightness(250%);
+}
+
+.abcri-logo{
+  height: auto;
+  width: 10vw;
+  filter: brightness(250%);
+}
+
+.header{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url('/static/img/banner-gray.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+svg{
+  fill: white;
+  width: 15vw;
+  height: auto;
+
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 2%;
+}
+
+.nav-links{
+  flex:1;
+  text-align: right;
+}
+
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 40px;
+  position: relative;
+}
+
+.nav-links ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.nav-links ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #F7E106;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+  width: 100%;
+}
+
+.text-box{
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1{
+  font-size: 60px;
+}
+
+.text-box p{
+  font-size: 30px;
+  margin: 20px 0px 0px;
+  padding: 30px;
+}
+
+.btn-visit{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 30px;
+  background: transparent;
+  position: relative;
+  top: 35px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-visit:hover{
+  border: 1px solid #000;
+  background: #F7E106;
+  transition: 0.5s;
+  color: #000;
+}
+
+
+.copy-right{
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 20px;
+}
+
+.mngt-logo{
+  width: 200px;
+  height: 100px;
+  margin: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+nav .fas{
+  display: none;
+}
+
+@media (min-width:281px) and (max-width: 700px){
+
+  html, body{
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+
+  }
+  nav{
+    display: flex;
+    padding: 0% 6%;
+  }
+  .poly-q{
+    width: 20vw;
+    height: auto;
+  }
+
+  .abcri-logo{
+    width: 20vw;
+    height: auto;
+    margin-top: 10px !important;
+  }
+  svg{
+    width: 30vw;
+  }
+
+  .text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .text-box h1{
+    font-size: 30px;
+
+
+    }
+  .text-box p{
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+}
+  .nav-links ul li{
+      display: block;
+      padding: 6px 20px;
+}
+  .nav-links{
+    position: absolute;
+    background: rgba(24, 32, 65, 0.95);
+    height: 100vh;
+    width: 140px;
+    top: 0;
+    right: -210px;
+    text-align: right;
+    z-index: 2;
+    transition: 1s;
+  }
+
+  .nav-links ul li a{
+    font-size: 20px;
+  }
+  .header{
+    min-height: 100vh;
+    width: 100%;
+
+  }
+  nav .fas{
+    display: block;
+    text-align: left;
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .nav-links ul{
+    padding: 20px 0px;
+  }
+  .btn-visit{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 16px 40px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  .copy-right{
+    margin-top: 20px;
+    font-size: 14px;
+    top: 90%;
+    left:50%;
+  }
+}
+/* Galaxy fold */
+@media (max-width: 280px){
+
+  html, body{
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+
+  }
+  nav{
+    display: flex;
+    padding: 0% 6%;
+  }
+  .poly-q{
+    width: 20vw;
+    height: auto;
+  }
+
+  .abcri-logo{
+    width: 20vw;
+    height: auto;
+    margin-top: 10px !important;
+    margin-right: 10px !important;
+  }
+  svg{
+    width: 30vw;
+  }
+
+  .nav-links{
+    position: absolute;
+    background: rgba(24, 32, 65, 0.95);
+    height: 100vh;
+    width: 100px;
+    top: 0;
+    right: -210px;
+    text-align: right;
+    z-index: 2;
+    transition: 1s;
+  }
+
+  .nav-links ul li a{
+    font-size: 12px;
+  }
+
+  .nav-links ul li{
+      display: block;
+      padding: 6px 10px;
+  }
+
+  nav .fas{
+    display: block;
+    text-align: left;
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .text-box h1{
+    font-size: 20px;
+
+
+    }
+  .text-box p{
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+  }
+
+  .btn-visit{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 16px 40px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  .copy-right{
+    font-size: 10px;
+    top: 90%;
+    left:50%;
+  }
+}
+
+/* Ipad/Tablet */
+@media (min-width: 701px) and (max-width: 1024px){
+  html, body{
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+
+  }
+  nav{
+    display: flex;
+    padding: 0% 7%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .poly-q{
+    max-width: 30vw;
+    height: auto;
+  }
+
+  svg{
+    width: 30vw;
+    height: auto;
+  }
+
+  .abcri-logo{
+    width: 20vw;
+    margin-right: 40px !important;
+  }
+
+  .text-box h1{
+    font-size: 50px;
+    padding: 0px;
+}
+  .text-box p{
+    font-size: 25px;
+    padding: 10px;
+}
+  .nav-links ul li{
+      display: block;
+      padding: 20px 20px;
+  }
+
+  .nav-links{
+    position: absolute;
+    background: rgba(24, 32, 65, 0.95);
+    height: 100vh;
+    width: 240px;
+    top: 0;
+    right: -240px;
+    text-align: right;
+    z-index: 2;
+    transition: 1s;
+}
+
+ .nav-links ul li a{
+   font-size: 30px;
+ }
+
+nav .fas{
+  display: block;
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  text-align: left;
+  margin-left: 1px;
+}
+}
+
+@media (min-width: 1025px) and (max-width: 1546px){
+  .nav-links ul li a{
+    font-size: 22px;
+  }
+  .nav-links ul li{
+    padding: 8px 20px;
+    position: relative;
+  }
+}
+
+
+@media (max-height: 599px){
+  .header{
+    height: 1000px;
+  }
+}
+
+
+@media (max-width: 1024px){
+  .nav-links{
+    height: 100%;
+  }
+}
