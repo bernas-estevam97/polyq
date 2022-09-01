@@ -516,9 +516,10 @@ main h4::after {
   transform-style: preserve-3d;
   transition: all .5s ease;
   background: grey;
+
 }
 
-.card-container:hover{
+.my_item:hover .card-container{
   transform: rotateY(180deg);
 }
 
@@ -528,6 +529,7 @@ main h4::after {
   width: 300px;
   height: 300px;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
   background: white;
   color: #333;
 }
@@ -537,6 +539,7 @@ main h4::after {
   width: 300px;
   height: 300px;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
   background: #fafafa;
   color: #333;
   transform: rotateY(180deg);
