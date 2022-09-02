@@ -516,7 +516,6 @@ main h4::after {
   transform-style: preserve-3d;
   transition: all .5s ease;
   background: grey;
-
 }
 
 .my_item:hover
@@ -603,10 +602,6 @@ main h4::after {
 .my_item a{
   text-decoration: none;
   color: #000;
-}
-
-.message-phone{
-  display: none;
 }
 
 
@@ -780,6 +775,7 @@ footer svg{
   transform: translateX(-50%);
   margin-top: 20px;
 }
+
 
 footer p{
   font-family: arial;
@@ -1022,7 +1018,7 @@ footer .logos .logo-three img{
   }
 
   .horizontal-slider{
-    padding: 20px 0 40px 0;
+    padding: 20px 0 50px 0;
     margin: 50px 0 0 0;
   }
 
@@ -1034,14 +1030,42 @@ footer .logos .logo-three img{
     padding: 0 !important;
   }
 
+
+  .slider-container::-webkit-scrollbar{
+    display: block !important;
+    height: 10px;
+  }
+
+  .slider-container::-webkit-scrollbar-track {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(224, 227, 229, 1);
+      margin-top: 30px;
+  }
+
+  .slider-container::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 5px;
+      border-radius: 10px;
+      background: #F2C20E;
+  }
+
+  .slider-container::-webkit-scrollbar-thumb:window-inactive {
+      background: #F2C20E;
+  }
+
   .slider-container a{
     width: 150px;
     height: 150px;
   }
 
-  .card-container{
+  .my-item{
     width: 150px;
     height: 150px;
+  }
+
+  .card-container{
+    width: auto;
+    height: auto;
   }
 
 
@@ -1071,6 +1095,7 @@ footer .logos .logo-three img{
 
   .my_item .front-face p{
     font-size: 0.8rem;
+    text-align: center;
     top: -100px;
     padding: 10px !important;
     text-decoration: underline;
@@ -1083,18 +1108,35 @@ footer .logos .logo-three img{
     transform: none !important;
   }
 
-  .message-phone{
+
+  /* #right-button-little{
     display: block;
-    font-size: 0.8em;
-    text-align: center;
-    margin-top: 20px;
+    position: absolute;
+    border: none;
+    right: 0;
+    top: 56%;
+    font-size: 1.5em;
+    background: transparent !important;
+    background-color: grey;
+    color: #DF9800;
+    border: grey;
+    transition: 0.5s ease-out;
   }
 
-  .message-phone .fa-solid{
-    color: #EBA000;
-    font-size: 20px;
-    opacity: 0.8;
-  }
+  #left-button-little{
+    display: block;
+    position: absolute;
+    border: none;
+    left: 0;
+    top: 56%;
+    font-size: 1.5em;
+    background: transparent !important;
+    background-color: grey;
+    color: #DF9800;
+    border: grey;
+    transition: 0.5s ease-out;
+  } */
+
 
   #left-btn, #left-all-btn, #right-btn, #right-all-btn{
     display: none;
@@ -1412,17 +1454,26 @@ footer .logos .logo-three img{
     transform: none !important;
   }
 
-  .message-phone{
-    display: block;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 20px;
+  .slider-container::-webkit-scrollbar{
+    display: block !important;
+    height: 10px;
   }
 
-  .message-phone .fa-solid{
-    color: #EBA000;
-    font-size: 20px;
-    opacity: 0.8;
+  .slider-container::-webkit-scrollbar-track {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(224, 227, 229, 1);
+      margin-top: 30px;
+  }
+
+  .slider-container::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 5px;
+      border-radius: 10px;
+      background: #F2C20E;
+  }
+
+  .slider-container::-webkit-scrollbar-thumb:window-inactive {
+      background: #F2C20E;
   }
 
   #left-btn, #left-all-btn, #right-btn, #right-all-btn{
@@ -1732,17 +1783,26 @@ footer .logos .logo-three img{
       transform: none !important;
     }
 
-    .message-phone{
-      display: block;
-      font-size: 1em;
-      text-align: center;
-      margin-top: 20px;
+    .slider-container::-webkit-scrollbar{
+      display: block !important;
+      height: 10px;
     }
 
-    .message-phone .fa-solid{
-      color: #EBA000;
-      font-size: 20px;
-      opacity: 0.8;
+    .slider-container::-webkit-scrollbar-track {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: rgba(224, 227, 229, 1);
+        margin-top: 30px;
+    }
+
+    .slider-container::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 5px;
+        border-radius: 10px;
+        background: #F2C20E;
+    }
+
+    .slider-container::-webkit-scrollbar-thumb:window-inactive {
+        background: #F2C20E;
     }
 
 
@@ -1922,18 +1982,29 @@ footer .logos .logo-three img{
     transform: none !important;
   }
 
-  .message-phone{
-    display: block;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 20px;
+  .slider-container::-webkit-scrollbar{
+    display: block !important;
+    height: 10px;
   }
 
-  .message-phone .fa-solid{
-    color: #EBA000;
-    font-size: 20px;
-    opacity: 0.8;
+
+  .slider-container::-webkit-scrollbar-track {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(224, 227, 229, 1);
+      margin-top: 30px;
   }
+
+  .slider-container::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 5px;
+      border-radius: 10px;
+      background: #F2C20E;
+  }
+
+  .slider-container::-webkit-scrollbar-thumb:window-inactive {
+      background: #F2C20E;
+  }
+
 
   #left-btn, #left-all-btn, #right-btn, #right-all-btn{
     display: none;
