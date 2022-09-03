@@ -443,11 +443,12 @@ main h4::after {
 .img-slider .navigation .btn{
   background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
   width: 5px;
   height: 5px;
-  margin: 10px;
+  margin: 15px;
   border-radius: 50%;
+  border: none;
 }
 
 .img-slider .navigation .btn.active{
@@ -603,6 +604,10 @@ main h4::after {
   text-decoration: none;
   color: #000;
 }
+
+/* #right-button-little, #left-button-little{
+  display: none;
+} */
 
 
 #left-btn{
@@ -973,10 +978,10 @@ footer .logos .logo-three img{
   }
 
   .img-slider .navigation .btn{
-    padding: 5px;
+    padding: 6px;
     width: 3px;
     height: 3px;
-    margin: 5px;
+    margin: 0 10px;
     border-radius: 50%;
   }
 
@@ -1030,10 +1035,13 @@ footer .logos .logo-three img{
     padding: 0 !important;
   }
 
-
   .slider-container::-webkit-scrollbar{
     display: block !important;
-    height: 10px;
+  }
+
+
+  .slider-container::-webkit-scrollbar{
+      height: 8px;
   }
 
   .slider-container::-webkit-scrollbar-track {
@@ -1346,10 +1354,10 @@ footer .logos .logo-three img{
   }
 
   .img-slider .navigation .btn{
-    padding: 5px;
+    padding: 6px;
     width: 3px;
     height: 3px;
-    margin: 5px;
+    margin: 0 10px;
     border-radius: 50%;
   }
 
@@ -1388,6 +1396,10 @@ footer .logos .logo-three img{
     font-size: 14px;
     margin: 10px;
     border-bottom: 2px solid #F7B608;
+  }
+
+  .slider-container::-webkit-scrollbar{
+    display: block !important;
   }
 
   .horizontal-slider{
@@ -1456,7 +1468,11 @@ footer .logos .logo-three img{
 
   .slider-container::-webkit-scrollbar{
     display: block !important;
-    height: 10px;
+  }
+
+
+  .slider-container::-webkit-scrollbar{
+      height: 8px;
   }
 
   .slider-container::-webkit-scrollbar-track {
@@ -1674,10 +1690,10 @@ footer .logos .logo-three img{
     }
 
     .img-slider .navigation .btn{
-      padding: 5px;
+      padding: 7px;
       width: 3px;
       height: 3px;
-      margin: 5px;
+      margin: 0 10px;
       border-radius: 50%;
     }
 
@@ -1785,7 +1801,11 @@ footer .logos .logo-three img{
 
     .slider-container::-webkit-scrollbar{
       display: block !important;
-      height: 10px;
+    }
+
+
+    .slider-container::-webkit-scrollbar{
+        height: 8px;
     }
 
     .slider-container::-webkit-scrollbar-track {
@@ -1984,9 +2004,12 @@ footer .logos .logo-three img{
 
   .slider-container::-webkit-scrollbar{
     display: block !important;
-    height: 10px;
   }
 
+
+  .slider-container::-webkit-scrollbar{
+      height: 8px;
+  }
 
   .slider-container::-webkit-scrollbar-track {
       -webkit-border-radius: 10px;
