@@ -443,11 +443,12 @@ main h4::after {
 .img-slider .navigation .btn{
   background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
   width: 5px;
   height: 5px;
-  margin: 10px;
+  margin: 15px;
   border-radius: 50%;
+  border: none;
 }
 
 .img-slider .navigation .btn.active{
@@ -977,10 +978,10 @@ footer .logos .logo-three img{
   }
 
   .img-slider .navigation .btn{
-    padding: 5px;
+    padding: 6px;
     width: 3px;
     height: 3px;
-    margin: 5px;
+    margin: 0 10px;
     border-radius: 50%;
   }
 
@@ -1353,10 +1354,10 @@ footer .logos .logo-three img{
   }
 
   .img-slider .navigation .btn{
-    padding: 5px;
+    padding: 6px;
     width: 3px;
     height: 3px;
-    margin: 5px;
+    margin: 0 10px;
     border-radius: 50%;
   }
 
@@ -1689,10 +1690,10 @@ footer .logos .logo-three img{
     }
 
     .img-slider .navigation .btn{
-      padding: 5px;
+      padding: 7px;
       width: 3px;
       height: 3px;
-      margin: 5px;
+      margin: 0 10px;
       border-radius: 50%;
     }
 

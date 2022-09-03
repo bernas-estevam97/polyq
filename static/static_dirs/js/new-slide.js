@@ -5,6 +5,7 @@ const slides = document.querySelectorAll('.slide');
 const slideBtns = document.querySelectorAll('.btn');
 const numberOfSlides = slides.length;
 var slideNumber = 0;
+let btnNumber = 0;
 let currentSlide = 1;
 
 nextBtn.addEventListener('click', () =>{
@@ -76,3 +77,30 @@ slider.addEventListener("mouseout", () => {
 
 
 // clickable slide icons
+
+const navBtn = document.querySelector('.navigation');
+const btns = Array.from(navBtn.children);
+
+
+navBtn.addEventListener("click", e => {
+  const targetBtn = e.target.closest('button');
+
+  if (!targetBtn) return;
+
+
+  const targetIndex = btns.findIndex(btn => btn === targetBtn);
+  const targetSlide = slides[targetIndex];
+
+  // updateDots(currentBtn, targetBtn);
+
+  slides.forEach((slide) =>{
+    slide.classList.remove('active');
+  });
+  slideBtns.forEach((btn) =>{
+    btn.classList.remove('active');
+  });
+  slideNumber = targetIndex;
+
+  targetSlide.classList.add('active');
+  targetBtn.classList.add('active');
+})
