@@ -107,7 +107,7 @@ main{
 
 .appr{
 	position: relative;
-	margin: 50px;
+	margin: 20px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -146,12 +146,12 @@ main{
 	position: relative;
 	font-size: 1.2vw;
 	margin-left: 10px;
-	border-bottom-style: double;
-	border-bottom-width: 6px;
-	border-bottom-color: grey;
-	border-top-style: double;
+	border-style: double;
+	border-width: 8px;
+	border-color: rgba(61, 61, 61, 0.29);
+	/* border-top-style: ridge;
 	border-top-width: 6px;
-	border-top-color: grey;
+	border-top-color: whitesmoke; */
 	padding: 20px;
 	width: 60%;
 	text-align: center;
