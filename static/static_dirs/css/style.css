@@ -151,6 +151,8 @@ nav .fas{
   display: none;
 }
 
+
+
 @media (min-width:281px) and (max-width: 700px){
 
   html, body{
@@ -163,7 +165,7 @@ nav .fas{
   }
   nav{
     display: flex;
-    padding: 0% 6%;
+    padding: 0 4%;
   }
   .poly-q{
     width: 20vw;
@@ -174,9 +176,12 @@ nav .fas{
     width: 20vw;
     height: auto;
     margin-top: 10px !important;
+    margin-right: 50px !important;
+
   }
   svg{
     width: 30vw;
+
   }
 
   .text-box{
@@ -227,8 +232,9 @@ nav .fas{
     text-align: left;
     position: relative;
     color: #fff;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
+    margin-right: 15px;
   }
 
   .nav-links ul{
