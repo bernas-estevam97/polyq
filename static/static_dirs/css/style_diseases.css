@@ -734,6 +734,11 @@ span a:hover{
 	scroll-behavior: smooth;
 }
 
+.aside-bar-right ul{
+	scrollbar-width: thin;
+	scrollbar-color: #F2C20E white;
+}
+
 .aside-bar-right ul::-webkit-scrollbar{
     width: 10px;
 }
