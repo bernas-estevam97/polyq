@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 *{
   margin: 0;
@@ -497,24 +497,24 @@ main h4::after {
   margin: 0 30px 30px 30px;
 }
 
+/* Firefox scrollbar none */
+
+.slider-container{
+  scrollbar-width: none;
+}
+
 .slider-container::-webkit-scrollbar{
   display: none;
 }
 
-
-
-.my_item{
-  display: inline-block;
-  cursor:pointer;
-  width: 300px;
-  height: 300px;
-}
 
 .card-container{
   position: relative;
   width: 300px;
   height: 300px;
   transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   transition: all .5s ease;
   background: grey;
 }
@@ -524,13 +524,10 @@ main h4::after {
   transform: rotateY(180deg);
 }
 
-
 .front-face{
   position: absolute;
   width: 300px;
   height: 300px;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
   background: white;
   color: #333;
 }
@@ -540,7 +537,6 @@ main h4::after {
   width: 300px;
   height: 300px;
   backface-visibility: hidden;
-  transform-style: preserve-3d;
   background: #fafafa;
   color: #333;
   transform: rotateY(180deg);
@@ -586,11 +582,6 @@ main h4::after {
   padding: 5px;
   border-radius: 3px;
   border: 2px solid #F7B608 !important;
-  /* text-decoration: underline;
-  text-decoration-color: #F7B608;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: 3px; */
-  opacity: 1;
 }
 
 .back-face span img{
@@ -600,14 +591,11 @@ main h4::after {
 }
 
 
-.my_item a{
+.slider-container a{
   text-decoration: none;
   color: #000;
 }
 
-/* #right-button-little, #left-button-little{
-  display: none;
-} */
 
 
 #left-btn{
@@ -1033,6 +1021,8 @@ footer .logos .logo-three img{
 
   .slider-container{
     padding: 0 !important;
+    scrollbar-width: thin;
+    scrollbar-color: #F2C20E white;
   }
 
   .slider-container::-webkit-scrollbar{
@@ -1413,6 +1403,8 @@ footer .logos .logo-three img{
 
   .slider-container{
     padding: 0 !important;
+    scrollbar-width: thin;
+    scrollbar-color: #F2C20E white;
   }
 
   .slider-container a{
@@ -1746,6 +1738,8 @@ footer .logos .logo-three img{
 
     .slider-container{
       padding: 0 !important;
+      scrollbar-width: thin;
+      scrollbar-color: #F2C20E white;
     }
 
     .card-container{
@@ -1951,6 +1945,8 @@ footer .logos .logo-three img{
   .slider-container{
     margin-top: 20px !important;
     padding: 0 10px !important;
+    scrollbar-width: thin;
+    scrollbar-color: #F2C20E white;
   }
 
   .slider-container a{
