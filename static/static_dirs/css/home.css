@@ -81,14 +81,12 @@ nav{
 }
 
 .hover-info{
-  z-index: -1;
   margin-top: 40px;
   background: #fff;
   border: 1px solid #000;
   right: 200px;
   padding: 20px;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  display: none;
 }
 
 .hover-info span{
@@ -101,8 +99,7 @@ nav{
 }
 
 .hover-elem:hover ~ .hover-info{
-  opacity: 1;
-  z-index: 999;
+  display: block;
 }
 
 .autocomplete{
