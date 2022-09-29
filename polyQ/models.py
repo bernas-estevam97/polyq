@@ -147,6 +147,9 @@ class Reference(models.Model):
     journal_info = models.CharField(max_length=200)
     links = models.ManyToManyField(RefLinks)
 
+    class Meta:
+        ordering = ['ref_name_disease']
+
     def __str__(self):
         return f'{self.ref_name_disease}'
 
