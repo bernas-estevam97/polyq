@@ -68,14 +68,14 @@ def appreciation(request):
     return render(request, 'appreciation/index.html')
 
 
-def disease_view(request, disease_name):
-    test_list = [1, 2, 3, 4, 5]
-    try:
-        disease = Disease.objects.get(name=disease_name)
-        return render(request, 'test.html', {'disease': disease, 'test_list': test_list})
-    except Disease.DoesNotExist:
-        error_message = "This disease does not exit on our database"
-        return render(request, 'not-found-page.html', {'error_message': error_message})
+# def disease_view(request, disease_name):
+#     test_list = [1, 2, 3, 4, 5]
+#     try:
+#         disease = Disease.objects.get(name=disease_name)
+#         return render(request, 'test.html', {'disease': disease, 'test_list': test_list})
+#     except Disease.DoesNotExist:
+#         error_message = "This disease does not exit on our database"
+#         return render(request, 'not-found-page.html', {'error_message': error_message})
 
 
 def tmp_disease(request):

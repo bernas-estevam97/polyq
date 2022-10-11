@@ -36,7 +36,6 @@ urlpatterns = [
     path('contact/', contact),
     path('authors/', authors),
     path('appreciation/', appreciation),
-    path('teste/<disease_name>', disease_view),
     path('disease_search/', search_disease, name='disease_search'),
     path('disease/', tmp_disease)
 ] + static(settings.MEDIA_URL,
