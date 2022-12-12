@@ -8,8 +8,19 @@ from django.core.management import CommandError
 from django.template import RequestContext
 
 
+# Internalization 
+from django.shortcuts import render
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
+
+
+
+
+# Views and render templates
+
 def index(request):
-    return render(request, 'index.html')
+    trans = translate(language='pt')
+    return render(request, 'index.html', {'trans': trans})
 
 
 def home(request):
@@ -134,3 +145,14 @@ def custom_error_view(request, exception=None):
     error_code = "500"
     error_message = "Internal Server error"
     return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
+
+
+def translate(language):
+    cur_language = get_language()
+    try:
+        activate(language)
+        objectives = gettext('OBJECTIVES')
+        authors = gettext('AUTHOR/S')
+    finally:
+        activate(cur_language)
+    return objectives, authors 
