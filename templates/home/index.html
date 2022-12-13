@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 
 {% load static %}
@@ -15,6 +16,9 @@
     <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
 </head>
 <body>
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
 <header>
     <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
     <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
@@ -318,7 +322,7 @@
     <div class="collumns">
         <div class="first-third">
             <ul>
-                <li><a href="/">Landing Page</a></li>
+                <li><a href="../">Landing Page</a></li>
                 <li><a href="https://abcri.pt/">ABC-RI</a></li>
                 <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
                 <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>

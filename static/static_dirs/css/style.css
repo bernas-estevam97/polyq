@@ -157,9 +157,14 @@ nav .fas{
   bottom: 5%;
 }
 
-.language-options a{
+.language-options .lang{
   margin-right: 10px;
   text-decoration: none;
+}
+
+.language-options .lang:hover img{
+  border: 3px solid white;
+  border-radius: 50%;
 }
 
 
@@ -204,12 +209,12 @@ nav .fas{
     text-align: center;
   }
   .text-box h1{
-    font-size: 30px;
+    font-size: 25px;
 
 
     }
   .text-box p{
-    font-size: 20px;
+    font-size: 17px;
     top: 50%;
     left: 50%;
 }
@@ -230,7 +235,7 @@ nav .fas{
   }
 
   .nav-links ul li a{
-    font-size: 20px;
+    font-size: 1.2em;
   }
   .header{
     min-height: 100vh;
@@ -268,6 +273,25 @@ nav .fas{
     top: 90%;
     left:50%;
   }
+
+  .language-options{
+    position: absolute;
+    left: 33%;
+    right: 0 !important;
+    bottom: 15%;
+  }
+  
+  .language-options .lang{
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  .language-options .lang:hover img{
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+
+
 }
 /* Galaxy fold */
 @media (max-width: 280px){
@@ -354,8 +378,8 @@ nav .fas{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 16px 40px;
-    font-size: 20px;
+    padding: 12px 20px;
+    font-size: 0.9em;
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -365,6 +389,23 @@ nav .fas{
     font-size: 10px;
     top: 90%;
     left:50%;
+  }
+
+  .language-options{
+    position: absolute;
+    left: 30%;
+    right: 0 !important;
+    bottom: 15%;
+  }
+  
+  .language-options .lang{
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .language-options .lang:hover img{
+    border: 3px solid white;
+    border-radius: 50%;
   }
 }
 
@@ -428,14 +469,37 @@ nav .fas{
    font-size: 30px;
  }
 
-nav .fas{
-  display: block;
-  color: #fff;
-  font-size: 35px;
-  cursor: pointer;
-  text-align: left;
-  margin-left: 1px;
-}
+  nav .fas{
+    display: block;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: left;
+    margin-left: 1px;
+  }
+
+  .language-options{
+    position: absolute;
+    left: 38%;
+    right: 0 !important;
+    bottom: 17%;
+  }
+
+  .language-options .lang{
+    margin-right: 20px;
+    text-decoration: none;
+  }
+
+  .language-options .lang img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .language-options .lang:hover img{
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+
 }
 
 @media (min-width: 1025px) and (max-width: 1546px){

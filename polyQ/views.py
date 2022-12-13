@@ -19,8 +19,7 @@ from django.utils.translation import get_language, activate, gettext
 # Views and render templates
 
 def index(request):
-    trans = translate(language='pt')
-    return render(request, 'index.html', {'trans': trans})
+    return render(request, 'index.html')
 
 
 def home(request):
@@ -151,8 +150,5 @@ def translate(language):
     cur_language = get_language()
     try:
         activate(language)
-        objectives = gettext('OBJECTIVES')
-        authors = gettext('AUTHOR/S')
     finally:
         activate(cur_language)
-    return objectives, authors 

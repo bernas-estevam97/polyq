@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 21:43+0000\n"
+"POT-Creation-Date: 2022-12-13 17:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,10 +30,52 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: .\polyQ\views.py:21
+#: .\polyQ\urls.py:25 .\polyQ\urls.py:48
+msgid "admin/"
+msgstr ""
+
+#: .\templates\index.html:8
+msgid "Polyglutamine Disorders - Database"
+msgstr ""
+
+#: .\templates\index.html:106
+msgid "HOME"
+msgstr ""
+
+#: .\templates\index.html:107
 msgid "OBJECTIVES"
 msgstr ""
 
-#: .\polyQ\views.py:22
+#: .\templates\index.html:108
 msgid "AUTHOR/S"
+msgstr ""
+
+#: .\templates\index.html:109
+msgid "CONTACT"
+msgstr ""
+
+#: .\templates\index.html:110
+msgid "APPRECIATION"
+msgstr ""
+
+#: .\templates\index.html:116
+msgid "A Database for Polyglutamine Diseases"
+msgstr ""
+
+#: .\templates\index.html:117
+msgid ""
+"Information on the 9 known different diseases that result from increased "
+"number of CAG triplets."
+msgstr ""
+
+#: .\templates\index.html:118
+msgid "Visit PolyQ Database"
+msgstr ""
+
+#: .\templates\index.html:121
+msgid "PolyQ Database. All rights reserved 2021"
+msgstr ""
+
+#: .\templates\index.html:121
+msgid "Authors and database creators duly mentioned."
 msgstr ""

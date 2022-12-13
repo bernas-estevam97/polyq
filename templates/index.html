@@ -5,7 +5,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title> Polyglutamine Disorders - Database</title>
+    <title> {% trans "Polyglutamine Disorders - Database" %}</title>
 		<link rel="shortcut icon" href="{% static 'img/image.ico' %}">
 		<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -103,41 +103,47 @@
 			{% get_current_language as LANGUAGE_CODE %}
 			{% get_available_languages as LANGUAGES %}
 			{% get_language_info_list for LANGUAGES as languages %}
-              <li><a href="home">HOME </a></li>
+              <li><a href="home">{% trans "HOME" %}</a></li>
               <li><a href="objectives" target="_blank">{% trans "OBJECTIVES" %}</a></li>
               <li><a href="authors">{% trans "AUTHOR/S" %} </a></li>
-              <li><a href="contact">CONTACT </a></li>
-              <li><a href="appreciation">APPRECIATION </a></li>
+              <li><a href="contact">{% trans "CONTACT" %} </a></li>
+              <li><a href="appreciation">{% trans "APPRECIATION" %}</a></li>
             </ul>
           </div>
           <i class="fas fa-bars" onclick="showMenu()"> </i>
       </nav>
         <div class="text-box">
-          <h1> A Database for Polyglutamine Diseases</h1>
-          <p> Information on the 9 known different diseases that result from increased number of CAG triplets.</p>
-          <a href="home" class="btn-visit"> Visit PolyQ Database</a>
+          <h1> {% trans "A Database for Polyglutamine Diseases" %}</h1>
+          <p> {% trans "Information on the 9 known different diseases that result from increased number of CAG triplets." %}</p>
+          <a href="home" class="btn-visit">{% trans "Visit PolyQ Database" %}</a>
         </div>
           <div class="footer-container">
-            <a class="copy-right"> &copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script><br>Authors and database creators duly mentioned.<br> &#129516; &#129516; &#129516; &#129516; &#129516;</a>
+            <a class="copy-right"> &copy;{% trans "PolyQ Database. All rights reserved 2021" %}<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script><br>{% trans "Authors and database creators duly mentioned." %}<br> &#129516; &#129516; &#129516; &#129516; &#129516;</a>
           </div>
 		  <div class="language-options">
-			<a href="/en/"> <img src="{% static 'img/united-kingdom.png' %}"> </a>
-			<a href="/pt/"> <img src="{% static 'img/portugal.png' %}"> </a>
-			<a href="/es/"> <img src="{% static 'img/spain.png' %}"> </a>
+			<a href="/en/" class="lang" > <img src="{% static 'img/united-kingdom.png' %}"> </a>
+			<a href="/pt/" class="lang" > <img src="{% static 'img/portugal.png' %}"> </a>
+			<a href="/es/" class="lang" > <img src="{% static 'img/spain.png' %}"> </a>
 		  </div>
       </section>
 	  
 <!--- Javascript for toggle menu --->
 <script type="text/javascript">
 
+var navLinks= document.getElementById("navLinks");
 
-    var navLinks= document.getElementById("navLinks");
-    function showMenu(){
+function showMenu(){
       navLinks.style.right = "0";
     }
-    function hideMenu(wind_size){
+function hideMenu(wind_size){
       navLinks.style.right = "-240px";
     }
+
+
+
+
+
+
 
 </script>
 
