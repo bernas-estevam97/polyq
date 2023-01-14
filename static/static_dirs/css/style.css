@@ -167,6 +167,16 @@ nav .fas{
   border-radius: 50%;
 }
 
+.language-options .current{
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.language-options .current img{
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
 
 @media (min-width:281px) and (max-width: 700px){
 
@@ -285,11 +295,7 @@ nav .fas{
     margin-right: 15px;
     text-decoration: none;
   }
-  
-  .language-options .lang:hover img{
-    border: 3px solid white;
-    border-radius: 50%;
-  }
+
 
 
 }
@@ -402,11 +408,7 @@ nav .fas{
     margin-right: 10px;
     text-decoration: none;
   }
-  
-  .language-options .lang:hover img{
-    border: 3px solid white;
-    border-radius: 50%;
-  }
+
 }
 
 /* Ipad/Tablet */
@@ -493,11 +495,6 @@ nav .fas{
   .language-options .lang img{
     width: 50px;
     height: 50px;
-  }
-
-  .language-options .lang:hover img{
-    border: 3px solid white;
-    border-radius: 50%;
   }
 
 }
