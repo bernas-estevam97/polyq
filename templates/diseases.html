@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -19,29 +20,45 @@
 <script src="{% static 'js/ScrollSpy.min.js' %}"></script>
 <script src="{% static 'js/highlight.pack.js' %}"></script>
 <header>
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
     <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
     <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
     <h1><strong>An ABC Research Institute polyglutamine disease database</strong></h1>
 </header>
 <nav>
-    <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <div class="nav-default">
+    <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
+    <div class="nav-separate">
+    <div class="diseases-more">
     <ul>
         <li><a href="/disease_search/?disease={{ other_diseases.0.name }}">{{ other_diseases.0 }}</a></li>
         <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
         <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
+    </ul>   
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
+        <button onclick="myFunction()" class="more-btn">More <i class="fa-solid fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
             {% for disease in other_diseases|slice:"3:" %}
                 <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
             {% endfor %}
         </div>
     </div>
+    </div>
+    <div class="lang-menu">
+        <button class="lang-more-btn"><img src="{% static 'img/united-kingdom-flag.png' %}"><i class="fa-solid fa-caret-down"></i></button>
+        <div class="lang-dropdown" id="langDropdown">
+                <a href="/en/disease_search/?disease={{ disease }}"><img src="{% static 'img/united-kingdom-flag.png' %}"></a>
+                <a href="/pt/disease_search/?disease={{ disease }}"><img src="{% static 'img/portugal-flag.png' %}"></a>
+                <a href="/es/disease_search/?disease={{ disease }}"><img src="{% static 'img/spain-flag.png' %}"></a>
+        </div>
+    </div>
+		  
     <div class="return-button">
     <a href="/home"><i class="fa-solid fa-house"></i> Return to Home page </a>
     </div>
-    </ul>
+    </div>
     </div>
     <div class="little-nav">
     <ul>
@@ -322,7 +339,7 @@
 
     // Close the dropdown if the user clicks outside of it
     window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
+        if (!event.target.matches('.more-btn')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
             var i;
             for (i = 0; i < dropdowns.length; i++) {
@@ -332,7 +349,7 @@
                 }
             }
         }
-        if (!event.target.matches('.dropbtn-little')) {
+        if (!event.target.matches('.more-btn-little')) {
             var dropLittle = document.getElementsByClassName("dropdown-content-little");
             var r;
             for (r = 0; r < dropLittle.length; r++) {
@@ -343,6 +360,9 @@
             }
         }
     }
+
+</script>
+<script>
 
 </script>
 <script>

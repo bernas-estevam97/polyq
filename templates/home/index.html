@@ -27,7 +27,7 @@
 <nav>
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <div class="autocomplete">
-        <form method="get" action="/disease_search">
+        <form method="get" action="/{{ LANGUAGE_CODE }}/disease_search">
             <input type="text" pattern="[\w' -]{2,}" name="disease" class="search-box" placeholder="Disease search..."
             size="40" id="myInput" autocomplete="off" required>
             <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
@@ -149,7 +149,7 @@
         <h6>Polyglutamine Diseases</h6>
         <h2>Use search bar or click directly on your disease of interest</h2>
         <div class="slider-container" id="slider-horizontal">
-            <a href="/disease_search/?disease=hd">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=hd">
                 <div class="my_item">
                     <div class="card-container">
                         <div class="front-face">
@@ -167,7 +167,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/disease_search/?disease=drpla">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=drpla">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -185,7 +185,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sbma">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sbma">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -203,7 +203,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca1">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca1">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -221,7 +221,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca2">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca2">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -239,7 +239,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca3">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca3">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -257,7 +257,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca6">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca6">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -275,7 +275,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca7">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca7">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -293,7 +293,7 @@
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca17">
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca17">
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -330,7 +330,7 @@
         </div>
         <div class="second-third">
             <ul>
-                <li><a href="/authors">Authors</a></li>
+                <li><a href="/{{ LANGUAGE_CODE }}/authors">Authors</a></li>
                 <li><a href="https://www.ualg.pt/" target="_blank">UAlg</a></li>
                 <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
                 <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
@@ -338,9 +338,9 @@
         </div>
         <div class="third-third">
             <ul>
-                <li><a href="../contact">Contact</a></li>
-                <li><a href="../objectives">Objectives</a></li>
-                <li><a href="../appreciation">Appreciation</a></li>
+                <li><a href="/{{ LANGUAGE_CODE }}/contact">Contact</a></li>
+                <li><a href="/{{ LANGUAGE_CODE }}/objectives">Objectives</a></li>
+                <li><a href="/{{ LANGUAGE_CODE }}/appreciation">Appreciation</a></li>
             </ul>
         </div>
     </div>
