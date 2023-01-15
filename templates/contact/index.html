@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 {% load static %}
-
+{% load i18n %}
 
 <html lang="en" dir="ltr">
   <head>
@@ -20,12 +20,15 @@
       <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
     </header>
     <nav>
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %}
+      {% get_language_info_list for LANGUAGES as languages %}
         <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
       <ul>
-        <li><a href="../" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
-        <li><a href="../" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
-        <li><a href="../home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a></li>
-        <li><a href="../home" class="return-little"><i class="fa-solid fa-house"></i> Home </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-little"><i class="fa-solid fa-house"></i> Home </a></li>
       </ul>
     </nav>
   <main>
@@ -51,7 +54,7 @@
     <div class="collumns">
       <div class="first-third">
         <ul>
-          <li><a href="../home">Home</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/home">Home</a></li>
           <li><a href="https://abcri.pt/">ABC-RI</a></li>
           <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
           <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
@@ -59,7 +62,7 @@
       </div>
       <div class="second-third">
         <ul>
-          <li><a href="../authors">Authors</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/authors">Authors</a></li>
           <li><a href="https://www.ualg.pt/">UAlg</a></li>
           <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
           <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
@@ -67,9 +70,9 @@
       </div>
       <div class="third-third">
         <ul>
-          <li><a href="/">Landing Page</a></li>
-          <li><a href="/objectives">Objectives</a></li>
-          <li><a href="/appreciation">Appreciation</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/">Landing Page</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/objectives">Objectives</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/appreciation">Appreciation</a></li>
         </ul>
       </div>
     </div>

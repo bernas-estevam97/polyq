@@ -60,7 +60,13 @@ header h1{
 
 /******************************* DEFAULT NAV STYLING **********************/
 
+nav{
+	display: unset;
+}
+
 .nav-default{
+  position: sticky;
+  top: 0;
   display: flex;
   padding: 0 2%;
   background-color: rgba(224, 227, 229, 1);
@@ -69,8 +75,6 @@ header h1{
   justify-content: space-between;  /* justify X axis */
   align-items: center;    /* align according to Y axis */
   z-index: 4;
-  position: sticky;
-  top: 0px;
 }
 
 .nav-separate{
@@ -186,7 +190,7 @@ nav .diseases-more .dropdown-content a:hover {background-color: #ddd;}
 nav .little-nav{
 	padding: 0 2%;
 	height:80px;
-	position: relative !important;
+	position: sticky;
 	display: none; /* change to flex in when using it */
 	padding: 0 2%;
 	background-color: rgba(224, 227, 229, 1);
