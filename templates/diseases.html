@@ -61,20 +61,28 @@
     </div>
     </div>
     <div class="little-nav">
-    <ul>
-    <div class="dropdown-little">
-        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i
-                class="fa-solid fa-turn-down"></i></button>
-        <div class="dropdown-content-little" id="myDropdownLittle">
-            {% for disease in other_diseases %}
-                <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
-            {% endfor %}
+        <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
+        <div class="nav-separate-little">
+        <div class="dropdown-little">
+            <button onclick="myFunctionLittle()" class="more-btn-little">Other Diseases &nbsp <i class="fa-solid fa-turn-down"></i></button>
+            <div class="dropdown-content-little" id="myDropdownLittle">
+                {% for disease in other_diseases %}
+                    <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <div class="return-little">
-    <a href="/home"><i class="fa-solid fa-house"></i> Home </a>
-    </div>
-    </ul>
+            <div class="lang-menu">
+                <button class="lang-more-btn"><img src="{% static 'img/united-kingdom-flag.png' %}"><i class="fa-solid fa-caret-down"></i></button>
+                <div class="lang-dropdown" id="langDropdown">
+                        <a href="/en/disease_search/?disease={{ disease }}"><img src="{% static 'img/united-kingdom-flag.png' %}"></a>
+                        <a href="/pt/disease_search/?disease={{ disease }}"><img src="{% static 'img/portugal-flag.png' %}"></a>
+                        <a href="/es/disease_search/?disease={{ disease }}"><img src="{% static 'img/spain-flag.png' %}"></a>
+                </div>
+            </div>
+            <div class="return-little">
+            <a href="/home"><i class="fa-solid fa-house"></i> Home</a>
+            </div>
+        </div>
     </div>
 </nav>
 <main>
