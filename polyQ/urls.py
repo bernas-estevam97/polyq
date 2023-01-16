@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path(_('admin/'), admin.site.urls),
+    path(_('admin_access/'), admin.site.urls),
     path('', index),
     path('home/', home),
     path('objectives/', objectives),
@@ -45,7 +45,6 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns (
-    path(_('admin/'), admin.site.urls),
     path('', index),
     path('home/', home),
     path('objectives/', objectives),

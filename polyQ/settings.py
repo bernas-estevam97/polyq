@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polyQ',
-    'import_export'
+    'import_export',
+    'translations',
 ]
 
 MIDDLEWARE = [
@@ -156,4 +157,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 5 * 60
+SESSION_COOKIE_AGE = 240 * 60

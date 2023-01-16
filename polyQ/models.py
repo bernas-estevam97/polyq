@@ -1,5 +1,5 @@
 from django.db import models
-
+from translations.models import Translatable
 
 class HtmlTutorial(models.Model):
     text = models.TextField()
@@ -29,10 +29,13 @@ class Images(models.Model):
         return self.name
 
 
-class Introduction(models.Model):
+class Introduction(Translatable):
     identifier = models.CharField(max_length=100)
     text = models.TextField()
 
+    class TranslatableMeta:
+        fields = ['text']
+        
     def __str__(self):
         return f'{self.identifier}'
 
