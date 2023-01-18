@@ -1,7 +1,10 @@
 {% load i18n %}
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -100,9 +103,6 @@
         <div class="nav-links" id="navLinks">
           <i class="fas fa-window-close" onclick="hideMenu()"> </i>
             <ul>
-			{% get_current_language as LANGUAGE_CODE %}
-			{% get_available_languages as LANGUAGES %}
-			{% get_language_info_list for LANGUAGES as languages %}
               <li><a href="/{{ LANGUAGE_CODE }}/home">{% trans "HOME" %}</a></li>
               <li><a href="/{{ LANGUAGE_CODE }}/objectives" target="_blank">{% trans "OBJECTIVES" %}</a></li>
               <li><a href="/{{ LANGUAGE_CODE }}/authors">{% trans "AUTHOR/S" %} </a></li>

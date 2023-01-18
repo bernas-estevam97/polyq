@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polyQ',
     'import_export',
-    'translations'
+    'modeltranslation'
+    # 'translations'
 ]
 
 MIDDLEWARE = [

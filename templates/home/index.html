@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 
 {% load static %}
-
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
 </head>
 <body>
-    {% get_current_language as LANGUAGE_CODE %}
-    {% get_available_languages as LANGUAGES %}
-    {% get_language_info_list for LANGUAGES as languages %}
+    
 <header>
     <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
     <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>

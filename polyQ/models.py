@@ -1,5 +1,6 @@
 from django.db import models
-from translations.models import Translatable
+# from translations.models import Translatable
+from django.utils.translation import gettext_lazy as _
 
 class HtmlTutorial(models.Model):
     text = models.TextField()
@@ -29,12 +30,9 @@ class Images(models.Model):
         return self.name
 
 
-class Introduction(Translatable):
+class Introduction(models.Model):
     identifier = models.CharField(max_length=100)
     text = models.TextField()
-
-    class TranslatableMeta:
-        fields = ['text']
         
     def __str__(self):
         return f'{self.identifier}'
@@ -183,6 +181,8 @@ class Disease(models.Model):
         CSS_Class, on_delete=models.CASCADE, blank=True, null=True)
     coordinates = models.ManyToManyField(Coordinate_Text, blank=True)
 
+    # class TranslatableMeta:
+    #     fields = ['slug', 'introduction',]
     # image = models.ManyToManyField(Images, blank=True)
 
     def __str__(self):

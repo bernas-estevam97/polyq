@@ -1,12 +1,12 @@
 from .models import *
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from translations.admin import TranslatableAdmin, TranslationInline
-from translations.models import Translation
+# from translations.admin import TranslatableAdmin, TranslationInline
+# from translations.models import Translation
 
 
-class ModelAdmin(TranslatableAdmin, ImportExportModelAdmin):
-    inlines = [TranslationInline, ]
+class ModelAdmin(ImportExportModelAdmin):
+    # inlines = [TranslationInline, ]
     pass
 
 admin.site.register(Images, ModelAdmin)
@@ -27,4 +27,4 @@ admin.site.register(HtmlTutorial, ModelAdmin)
 admin.site.register(CSS_Class, ModelAdmin)
 admin.site.register(Coordinate_Text, ModelAdmin)
 admin.site.register(RefLinks, ModelAdmin)
-admin.site.register(Translation)
+# admin.site.register(Translation)

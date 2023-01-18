@@ -8,7 +8,7 @@ from django.core.management import CommandError
 from django.template import RequestContext
 from django.utils import translation
 from .models import Introduction
-from translations.models import Translation
+# from translations.models import Translation ---- Using the django-translations package
 from django.db.models import Prefetch
 
 

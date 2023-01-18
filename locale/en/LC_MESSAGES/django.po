@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-13 17:13+0000\n"
+"POT-Creation-Date: 2023-01-16 16:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\polyQ\settings.py:131
+#: .\polyQ\settings.py:133
 msgid "English"
 msgstr ""
 
-#: .\polyQ\settings.py:132
+#: .\polyQ\settings.py:134
 msgid "Spanish"
 msgstr ""
 
-#: .\polyQ\settings.py:133
+#: .\polyQ\settings.py:135
 msgid "Portuguese"
 msgstr ""
 
-#: .\polyQ\urls.py:25 .\polyQ\urls.py:48
-msgid "admin/"
+#: .\polyQ\urls.py:25
+msgid "admin_access/"
 msgstr ""
 
 #: .\templates\index.html:8
