@@ -49,8 +49,8 @@
             <span>{% trans "Search-help:" %}</span><br>
             <br>&nbsp {% trans "Start typing the disease name and recommendations show up." %}<br>
             <br>&nbsp {% trans "Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work." %}<br>
-            <br>&nbsp {% trans "On enter click, the home page will be redirected to the disease page. The same will happen if the
-            search button is clicked." %}
+            <br>&nbsp {% blocktrans %}On enter click, the home page will be redirected to the disease page. The same will happen if the
+            search button is clicked.{% endblocktrans %}
         </p></div>
     </div>
 </nav>
@@ -63,10 +63,10 @@
                 <img src="{% static 'img/hd-banner.jpg' %}" alt=""></a>
                 <div class="info">
                     <h3>{% trans "Huntington's Disease" %}</h3>
-                    <p>{% trans "Huntington's Disease is the most widely studied and the most
+                    <p>{% blocktrans trimmed %}Huntington's Disease is the most widely studied and the most
                         well known polyglutamine disease. When it comes to neurodegenerative
                         diseases, HD is the most common inherited across generations and is
-                        mainly characterized by excessive and uncontrolled motor movements." %}
+                        mainly characterized by excessive and uncontrolled motor movements.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -74,10 +74,10 @@
                 <img src="{% static 'img/drpla.jpg' %}" alt="">
                 <div class="info">
                     <h3>{% trans "Dentatorubral pallidoluysian atrophy" %}</h3>
-                    <p>{% trans "Dentatorubral pallidoluysian atrophy or DRPLA is sometimes
+                    <p>{% blocktrans trimmed %}Dentatorubral pallidoluysian atrophy or DRPLA is sometimes
                         included in the group of autossomal dominant cerebellar ataxias
                         type 1 because of its various clinical combinations that are seen also in ADCA I diseases.
-                        DRPLA is a disease believed to be mainly found in Japan." %}
+                        DRPLA is a disease believed to be mainly found in Japan.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -85,10 +85,10 @@
                 <img src="{% static 'img/sbma.jpg' %}" alt="">
                 <div class="info">
                     <h3>{% trans "Spinal-bulbar muscular atrophy" %}</h3>
-                    <p> {% trans "Spinal-bulbal muscular atrophy, also known as Kennedy disease,
-                        is a genetic disorder where there is loss of motor neurons.
+                    <p>{% blocktrans trimmed %}Spinal-bulbal muscular atrophy, also known 
+                        as Kennedy disease, is a genetic disorder where there is loss of motor neurons.
                         SBMA is inherited in an X-linked manner so carrier females have
-                        a 50% chance of transmitting the mutation to each child." %}
+                        a 1/2 chance of transmitting the mutation to each child.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -96,10 +96,10 @@
                 <img src="{% static 'img/adca1.jpg' %}" alt="">
                 <div class="info">
                     <h3>ADCA I</h3>
-                    <p>{% trans "Autosomal dominant cerebellar ataxias type 1 (ADCA I) is a group of diseases
+                    <p>{% blocktrans trimmed %}Autosomal dominant cerebellar ataxias type 1 (ADCA I) is a group of diseases
                         that consists of cerebellar ataxia along with variable pyramidal,
                         extrapyramidal, and neuropathic signs. Four polyglutamine diseases are included in this group:
-                        SCA1, SCA2, SCA3 and SCA17." %}"
+                        SCA1, SCA2, SCA3 and SCA17.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -107,9 +107,9 @@
                 <img src="{% static 'img/adca2.jpg' %}" alt="">
                 <div class="info">
                     <h3>ADCA II</h3>
-                    <p>{% trans "Autosomal dominant cerebellar ataxias type 2 is another
+                    <p>{% blocktrans trimmed %}Autosomal dominant cerebellar ataxias type 2 is another
                         ADCA group that consists of diseases presented with cerebellar ataxia and retinal degeneration.
-                        SCA7 is included in this group." %}
+                        SCA7 is included in this group.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -117,9 +117,9 @@
                 <img src="{% static 'img/adca3.jpg' %}" alt="">
                 <div class="info">
                     <h3>ADCA III</h3>
-                    <p>{% trans "Autosomal dominant cerebellar ataxias type 3 is a group of
+                    <p>{% blocktrans trimmed %}Autosomal dominant cerebellar ataxias type 3 is a group of
                         diseases that manifest pure cerebellar ataxia. Many spinocerebellar
-                        ataxias make this group, but the one and only polyglutamine disease in this group is SCA6." %}
+                        ataxias make this group, but the one and only polyglutamine disease in this group is SCA6.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -139,17 +139,17 @@
         <div class="side-text">
             <h2>{% trans "Website briefing" %}</h2>
             <ul>
-                <li>{% trans "There are 9 polyglutamine diseases: Huntington's, SBMA, DRPLA, SCA1, SCA2, SCA3, SCA6, SCA7 and
-                    SCA17." %}
+                <li>{% blocktrans %}There are 9 polyglutamine diseases: Huntington's, SBMA, DRPLA, SCA1, SCA2, SCA3, SCA6, SCA7 and
+                    SCA17.{% endblocktrans %}
                 </li>
-                <li>{% trans "From brief disease introductions to molecular and biological mechanisms. Here we present various
-                    information about every polyglutmine disease to a certain extent." %}
+                <li>{% blocktrans %}From brief disease introductions to molecular and biological mechanisms. Here we present various
+                    information about every polyglutmine disease to a certain extent.{% endblocktrans %}
                 </li>
-                <li>{% trans "Each disease will have an introduction, first described cases description, epidemiology data with
+                <li>{% blocktrans %}Each disease will have an introduction, first described cases description, epidemiology data with
                     representative maps, various information on the gene that causes disease and the codified protein
                     (normal and mutated), pathophysiology section which presents important cellular pathogenic
                     mechanisms and a clinical segment that includes neuropathology findings, signs and symptoms found in
-                    disease patients." %}
+                    disease patients.{% endblocktrans %}
                 </li>
             </ul>
         </div>
