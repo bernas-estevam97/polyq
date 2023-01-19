@@ -419,11 +419,11 @@ main {
 
 .text{
 	width: 55%;
-	margin-left: 5%;
+	margin-left: 2%;
 }
 
 .text h1{
-	font-size: 2vw;
+	font-size: 2em;
 	text-align: justify;
 	margin-left: 20px;
 	padding: 10px 30px;
@@ -450,14 +450,14 @@ main {
 
 
 .intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
-  font-size: 1.5vw;
+  font-size: 1.5em;
   text-align: left;
 	margin-left: 20px;
 	margin-bottom: 30px;
 }
 
 .protein-section > h3, .clinical-section > h3{
-  font-size: 1.3vw;
+  font-size: 1.3em;
   text-align: left;
 	margin-left: 20px;
 	margin-bottom: 30px;
@@ -469,7 +469,7 @@ main {
 
 .intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
   text-align: justify;
-	font-size: 1vw;
+	font-size: 1em;
 	line-height: 2;
 	margin: 20px;
 }
@@ -566,7 +566,7 @@ td{
 
 .protein-section ul li{
 	margin: 20px 0 20px 40px;
-	font-size: 1vw;
+	font-size: 1em;
 	text-align: justify;
 }
 
@@ -688,7 +688,7 @@ td{
 .clinical-section .list-neuronal ul li{
 	margin: 20px 0 20px 40px;
 	text-align: justify;
-	font-size: 1vw;
+	font-size: 1em;
 }
 
 .clinical-section .list-flex{
@@ -713,6 +713,7 @@ td{
 	text-decoration: underline;
 	border: 1px solid #000;
 	padding: 10px;
+	font-size: 1em;
 }
 
 
@@ -722,6 +723,7 @@ td{
 	list-style-type: none;
 	border: 1px solid #ddd;
 	padding: 10px;
+	font-size: 0.9em;
 }
 
 .clinical-section .list-flex-style-two{
@@ -744,6 +746,7 @@ td{
 	text-decoration: underline;
 	border: 1px solid #000;
 	padding: 10px;
+	font-size: 1em;
 }
 
 
@@ -752,6 +755,7 @@ td{
 	list-style-type: none;
 	border: 1px solid #ddd;
 	padding: 10px;
+	font-size: 0.9em;
 }
 
 
@@ -761,6 +765,7 @@ td{
 	padding: 5px;
 	text-align: left;
 	margin-left: 35px;
+	font-size: 1em;
 }
 
 .reference-section ol li .articlebottom{
@@ -819,7 +824,7 @@ span a:hover{
 	top: 25%;
 	/* bottom: 38%; */
 	height: 30%;
-	width: 10%;
+	width: 180px;
 	background: white;
 	border: 1px solid rgba(0,0,0,0.05);
 	box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
@@ -830,7 +835,7 @@ span a:hover{
 }
 
 .aside-bar-left h3{
-	font-size: 18px;
+	font-size: 1em;
 	padding: 9px 8px;
 	margin: 3px 0;
 }
@@ -854,7 +859,7 @@ span a:hover{
 
 #indicator ul li {
 	width: calc(100% - 16px);
-	font-size: 15px;
+	font-size: 0.8em;
 	padding: 9px 8px;
 	margin: 3px 0;
 }
@@ -869,14 +874,14 @@ span a:hover{
 	top: 250px;
 	/* bottom: 38%; */
 	height: 570px;
-	width: 20vw;
+	width: 36em;
 	background: white;
 	border: 1px solid rgba(0,0,0,0.05);
 	box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
 	border-radius: 3px;
 	z-index: 1;
 	padding-left: 25px;
-	font-size: 0.8vw;
+	font-size: 0.8em;
 }
 
 .aside-bar-right h3{
@@ -1153,7 +1158,6 @@ footer .logos .logo-three img{
 
 .intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section{
   padding: 10px !important;
-
 }
 
 .intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
@@ -1263,22 +1267,39 @@ figcaption{
 }
 
 
-.clinical-section .list-flex .column-one,
-.clinical-section .list-flex .column-two,
-.clinical-section .list-flex .column-three{
-	width: 33%;
-}
+/* .clinical-section .list-flex .column-1,
+.clinical-section .list-flex .column-2,
+.clinical-section .list-flex .column-3{
+	margin-right: 5px;
+	width: 30%;
+} */
 
-.clinical-section .list-flex .column-one .column-one-title,
+/* .clinical-section .list-flex .column-one .column-one-title,
 .clinical-section .list-flex .column-two .column-two-title,
 .clinical-section .list-flex .column-three .column-three-title{
 	font-size: 1em;
+} */
+
+.clinical-section .list-flex .column-1 ul li,
+.clinical-section .list-flex .column-2 ul li,
+.clinical-section .list-flex .column-3 ul li{
+	font-size: 0.8em;
 }
 
-.clinical-section .list-flex .column-one ul li,
-.clinical-section .list-flex .column-two ul li,
-.clinical-section .list-flex .column-three ul li{
-	font-size: 0.8em;
+.clinical-section .list-flex-style-two .column-1,
+.clinical-section .list-flex-style-two .column-2{
+	width: 48% !important;
+}
+
+.clinical-section .list-flex-style-two .column-1 ul li,
+.clinical-section .list-flex-style-two .column-2 ul li{
+	font-size: 0.8em !important;
+}
+
+
+.clinical-section .list-flex-style-two .column-1 .column-1-title,
+.clinical-section .list-flex-style-two .column-2 .column-2-title{
+	font-size: 1em;
 }
 
 /* SPAN CONTROL FOR REFS */
@@ -1619,11 +1640,11 @@ figcaption{
 	.text h1{
 		margin-bottom: 50px !important;
 		margin-left: 0 !important;
-		font-size: 3vw;
+		font-size: 2em;
 	}
 
 	.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
-	  font-size: 2.5vw !important;
+	  font-size: 1.5em !important;
 	  text-align: left;
 		margin-left: 0 !important;
 		margin-bottom: 20px !important;
@@ -1633,12 +1654,12 @@ figcaption{
 	  text-align: left;
 		margin-left: 0 !important;
 		margin-bottom: 20px !important;
-		font-size: 2vw;
+		font-size: 1.2em;
 	}
 
 	.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
 	  text-align: justify;
-		font-size: 1.7vw;
+		font-size: 1em;
 		line-height: 2;
 		margin-left: 0 !important;
 		margin-bottom: 10px !important;
@@ -1653,15 +1674,15 @@ figcaption{
 	}
 
 	figcaption{
-		font-size: 1.3vw;
+		font-size: 0.9em;
 	}
 
 	.caption-patho{
-		font-size: 1.3vw;
+		font-size: 0.8em;
 	}
 
 	.table .caption-under{
-		font-size: 1.3vw;
+		font-size: 0.9em;
 	}
 
 	.interactive-image{
@@ -1677,31 +1698,31 @@ figcaption{
 	}
 
 	.int-caption{
-		font-size: 1.3vw;
+		font-size: 0.9em;
 	}
 
 
 	.protein-section ul li{
-		font-size: 1.5vw;
+		font-size: 1em;
 		margin-left: 20px !important;
 		margin-bottom: 20px !important;
 	}
 
 	.clinical-section .list-neuronal ul li{
-		font-size: 1.5vw;
+		font-size: 1em;
 	}
 
 
-	.clinical-section .list-flex .column-one .column-one-title,
-	.clinical-section .list-flex .column-two .column-two-title,
-	.clinical-section .list-flex .column-three .column-three-title{
-		font-size: 1.5vw;
+	.clinical-section .list-flex .column-1 .column-1-title,
+	.clinical-section .list-flex .column-2 .column-2-title,
+	.clinical-section .list-flex .column-3 .column-3-title{
+		font-size: 1em;
 	}
 
-	.clinical-section .list-flex .column-one ul li,
-	.clinical-section .list-flex .column-two ul li,
-	.clinical-section .list-flex .column-three ul li{
-		font-size: 1.2vw;
+	.clinical-section .list-flex .column-1 ul li,
+	.clinical-section .list-flex .column-2 ul li,
+	.clinical-section .list-flex .column-3 ul li{
+		font-size: 0.9em !important;
 	}
 
 
@@ -1825,14 +1846,14 @@ figcaption{
 
 
 		.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
-		  font-size: 1.5vw;
+		  font-size: 1.5em;
 		  text-align: left;
 			margin-left: 20px;
 			margin-bottom: 30px;
 		}
 
 		.protein-section > h3, .clinical-section > h3{
-		  font-size: 1.3vw;
+		  font-size: 1.2em;
 		  text-align: left;
 			margin-left: 20px;
 			margin-bottom: 30px;
@@ -1844,77 +1865,30 @@ figcaption{
 
 		.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
 		  text-align: justify;
-			font-size: 1vw;
+			font-size: 1em;
 			line-height: 2;
 			margin: 20px;
 		}
 
 
 		figcaption{
-			font-size: 1vw;
+			font-size: 0.9em;
 		}
 
 		.caption-patho{
-			font-size: 1vw;
+			font-size: 0.9em;
 		}
 
 		.table .caption-under{
-			font-size: 1vw;
+			font-size: 0.9em;
 		}
 
 		.int-caption{
-			font-size: 1vw;
+			font-size: 0.9em;
 		}
 
-
-		.aside-bar-left{
-			position: sticky;
-			left: 0%;
-			top: 30%;
-			/* bottom: 38%; */
-			height: 30%;
-			width: 12%;
-			background: white;
-			border: 1px solid rgba(0,0,0,0.05);
-			box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-			border-radius: 3px;
-			z-index: 1;
-			margin-bottom: 50px;
-			padding-left: 25px;
-		}
-
-		.aside-bar-left h3{
-			font-size: 15px;
-			padding: 9px 8px;
-			margin: 3px 0;
-		}
-
-		/* #indicator {
-			position: fixed;
-			top: 27.5%;
-			left: 0%;
-			width: 10vw;
-			background: white;
-			border: 1px solid rgba(0,0,0,0.05);
-			box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-			border-radius: 3px;
-			z-index: 10;
-		} */
-
-		#indicator ul {
-			/* width: calc(100% - 20px); */
-			padding: 10px;
-		}
-
-		#indicator ul li {
-			width: calc(100% - 16px);
-			font-size: 12px;
-			padding: 9px 8px;
-			margin: 3px 0;
-		}
-
-		#indicator ul li.spy-active {
-			color: black;
+		.aside-bar-right{
+			width: 20em !important;
 		}
 
 	}
@@ -1927,37 +1901,8 @@ figcaption{
 		    margin: 15px 0 !important;
 		  }
 
-			nav .return-button{
-				margin-left: 10px !important;
-			}
-
-			.aside-bar-left{
-				position: sticky;
-				left: 0%;
-				top: 30%;
-				/* bottom: 38%; */
-				height: 30%;
-				width: 12%;
-				background: white;
-				border: 1px solid rgba(0,0,0,0.05);
-				box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-				border-radius: 3px;
-				z-index: 1;
-				margin-bottom: 50px;
-				padding-left: 25px;
-			}
-
-			.aside-bar-left h3{
-				font-size: 18px;
-				padding: 9px 8px;
-				margin: 3px 0;
-			}
-
-			#indicator ul li {
-				width: calc(100% - 16px);
-				font-size: 15px;
-				padding: 9px 8px;
-				margin: 3px 0;
+			.aside-bar-right{
+				width: 25em !important;
 			}
 		}
 
@@ -1966,35 +1911,6 @@ figcaption{
 		  header h1{
 		    font-size: 26px;
 		  }
-
-			.aside-bar-left{
-				position: sticky;
-				left: 0%;
-				top: 30%;
-				/* bottom: 38%; */
-				height: 30%;
-				width: 11%;
-				background: white;
-				border: 1px solid rgba(0,0,0,0.05);
-				box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-				border-radius: 3px;
-				z-index: 1;
-				margin-bottom: 50px;
-				padding-left: 25px;
-			}
-
-			.aside-bar-left h3{
-				font-size: 18px;
-				padding: 9px 8px;
-				margin: 3px 0;
-			}
-
-			#indicator ul li {
-				width: calc(100% - 16px);
-				font-size: 15px;
-				padding: 9px 8px;
-				margin: 3px 0;
-			}
 
 		}
 
