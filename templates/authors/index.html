@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-
 {% load static %}
 {% load i18n %}
-<html lang="en" dir="ltr">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{LANGUAGE_CODE}}" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,28 +12,26 @@
     <link rel="stylesheet" href="{% static 'css/authors.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
     <script src="{% static 'fontawesome/js/all.min.js' %}"></script>
-    <title>About the authors</title>
+    <title>{% trans "About the authors" %}</title>
   </head>
   <body>
     <header>
       <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
       <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
-      <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+      <h1> <strong>{% trans "An ABC Research Institute polyglutamine disease database" %}</strong></h1>
     </header>
     <nav>
-      {% get_current_language as LANGUAGE_CODE %}
-      {% get_available_languages as LANGUAGES %}
-      {% get_language_info_list for LANGUAGES as languages %}
+      
       <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
       <ul>
-        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
-        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
-        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a></li>
-        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-little"><i class="fa-solid fa-house"></i> Home </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-button"><i class="fa-solid fa-house"></i> {% trans "Return to Landing Page" %} </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-little"><i class="fa-solid fa-house"></i> {% trans "Landing Page" %} </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-button"><i class="fa-solid fa-house"></i> {% trans "Return to Home page" %} </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-little"><i class="fa-solid fa-house"></i> {% trans "Home" %} </a></li>
       </ul>
     </nav>
     <div class="wrapper">
-      <h1> Authors</h1>
+      <h1> {% trans "Authors" %}</h1>
       <div class="team">
         <div class="team_members">
           <div class="team_img">
@@ -39,9 +39,9 @@
           </div>
           <div class="team-body-1">
           <h3> Bernardo Estevam</h3>
-          <p class="role"> Student / website creator</p>
-          <p class="info">Bachelor's in Biomedical Sciences and 2nd year (thesis) student of Biomedical Sciences master degree in University of Algarve.<br>
-          <br>Mainly interested in bioinformatics, neurodegenerative diseases and genetics with a growing interest in programming linked to biology and medicine.<br>
+          <p class="role">{% trans "Student / website creator" %}</p>
+          <p class="info">{% trans "Bachelor's and Master in Biomedical Sciences" %}<br>
+          <br>{% trans "Mainly interested in bioinformatics, neurodegenerative diseases and genetics with a growing interest in programming linked to biology and medicine." %}<br>
         <br><br><br></p>
           <ul>
             <a href="https://www.linkedin.com/in/bernardo-estevam/" target="_blank"><li><i class="fab fa-linkedin"></i></li> </a>
@@ -54,9 +54,9 @@
           </div>
           <div class="team-body-2">
           <h3> Clévio Nóbrega</h3>
-          <p class="role"> Mentor </p>
-          <p class="info">Assistant Professor of the Faculty of Medicine and Biomedical Sciences, and both Director and Principal Investigator of the Algarve Biomedical Center Research Institute, University of Algarve.<br>
-            <br>Main research interests are gene therapy for rare diseases, especially those affecting the nervous system.
+          <p class="role">{% trans "Mentor" %}</p>
+          <p class="info">{% trans "Assistant Professor of the Faculty of Medicine and Biomedical Sciences, and both Director and Principal Investigator of the Algarve Biomedical Center Research Institute, University of Algarve." %}<br>
+            <br>{% trans "Main research interests are gene therapy for rare diseases, especially those affecting the nervous system." %}
           <br><br></p>
           <ul>
             <!-- <a href=""><li><i class="fab fa-facebook"></i></li> </a> -->
@@ -72,9 +72,9 @@
           </div>
           <div class="team-body-1">
           <h3> Carlos Matos</h3>
-          <p class="role"> Co-Mentor</p>
-          <p class="info">Invited Assistant Professor of the Faculty of Medicine and Biomedical Sciences, and post-doctoral researcher at the Algarve Biomedical Center Research Institute, University of Algarve.<br>
-            <br>Carlos’ research is focused on the molecular mechanisms underlying hereditary disorders of the nervous system, especially polyglutamine diseases.<br><br></p>
+          <p class="role">{% trans "Co-Mentor" %}</p>
+          <p class="info">{% trans "Invited Assistant Professor of the Faculty of Medicine and Biomedical Sciences, and post-doctoral researcher at the Algarve Biomedical Center Research Institute, University of Algarve." %}<br>
+            <br>{% trans "Carlos' research is focused on the molecular mechanisms underlying hereditary disorders of the nervous system, especially polyglutamine diseases." %}<br><br></p>
           <ul>
             <!-- <a href=""><li><i class="fab fa-facebook"></i></li> </a> -->
             <!-- <a href=""><li><i class="fab fa-twitter"></i></li> </a> -->
@@ -88,25 +88,25 @@
       <div class="collumns">
         <div class="first-third">
           <ul>
-            <li><a href="/{{ LANGUAGE_CODE }}/home">Home</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/home">{% trans "Home" %}</a></li>
             <li><a href="https://abcri.pt/">ABC-RI</a></li>
-            <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
-            <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
+            <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">{% trans "MNGT group" %}</a></li>
+            <li><a href="https://abcri.pt/news/">{% trans "ABC-RI News" %}</a></li>
           </ul>
         </div>
         <div class="second-third">
           <ul>
-            <li><a href="/{{ LANGUAGE_CODE }}/contact">Contact</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/authors">{% trans "Contact" %}</a></li>
             <li><a href="https://www.ualg.pt/">UAlg</a></li>
             <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
-            <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
+            <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">{% trans "Masters degree" %}</a></li>
           </ul>
         </div>
         <div class="third-third">
           <ul>
-            <li><a href="/{{ LANGUAGE_CODE }}/">Landing Page</a></li>
-            <li><a href="/{{ LANGUAGE_CODE }}/objectives">Objectives</a></li>
-            <li><a href="/{{ LANGUAGE_CODE }}/appreciation">Appreciation</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/">{% trans "Landing Page" %}</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/contact">{% trans "Objectives" %}</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/appreciation">{% trans "Appreciation" %}</a></li>
           </ul>
         </div>
       </div>
@@ -132,7 +132,7 @@ Created by potrace 1.10, written by Peter Selinger 2001-2011
 <path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
 </g>
 </svg>
-      <p>&copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. Authors and database creators all duly mentioned.</p>
+      <p>&copy; {% trans "PolyQ Database. All rights reserved 2021" %}<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. {%trans "Authors and database creators all duly mentioned." %}</p>
       <div class="logos">
         <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
         <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>

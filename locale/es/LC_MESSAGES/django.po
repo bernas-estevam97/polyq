@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-16 16:43+0000\n"
+"POT-Creation-Date: 2023-01-19 18:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,29 +18,227 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\polyQ\settings.py:133
+#: .\polyQ\settings.py:135
 msgid "English"
 msgstr "Inglés"
 
-#: .\polyQ\settings.py:134
+#: .\polyQ\settings.py:136
 msgid "Spanish"
 msgstr "Español"
 
-#: .\polyQ\settings.py:135
+#: .\polyQ\settings.py:137
 msgid "Portuguese"
 msgstr "Portugués"
 
 #: .\polyQ\urls.py:25
 msgid "admin_access/"
-msgstr ""
+msgstr "aceso_admin/"
 
-#: .\templates\index.html:8
-msgid "Polyglutamine Disorders - Database"
+#: .\templates\appreciation\index.html:24 .\templates\authors\index.html:21
+#: .\templates\contact\index.html:22 .\templates\not-found-page.html:22
+#: .\templates\objectives\index.html:21
+msgid "An ABC Research Institute polyglutamine disease database"
 msgstr ""
+"Una base de datos de enfermedades de poliglutamina del Instituto de "
+"Investigación ABC"
+
+#: .\templates\appreciation\index.html:29 .\templates\authors\index.html:27
+#: .\templates\contact\index.html:27 .\templates\objectives\index.html:26
+msgid "Return to Landing Page"
+msgstr "Volver a la página inicial"
+
+#: .\templates\appreciation\index.html:30
+#: .\templates\appreciation\index.html:91 .\templates\authors\index.html:28
+#: .\templates\authors\index.html:107 .\templates\contact\index.html:28
+#: .\templates\contact\index.html:72 .\templates\objectives\index.html:27
+#: .\templates\objectives\index.html:107
+msgid "Landing Page"
+msgstr "Página Inicial"
+
+#: .\templates\appreciation\index.html:31 .\templates\authors\index.html:29
+#: .\templates\contact\index.html:29 .\templates\objectives\index.html:28
+msgid "Return to Home page"
+msgstr "Regresar a la página Home"
+
+#: .\templates\appreciation\index.html:32
+#: .\templates\appreciation\index.html:75 .\templates\authors\index.html:30
+#: .\templates\authors\index.html:91 .\templates\contact\index.html:30
+#: .\templates\contact\index.html:56 .\templates\not-found-page.html:41
+#: .\templates\objectives\index.html:29 .\templates\objectives\index.html:91
+msgid "Home"
+msgstr "Home"
+
+#: .\templates\appreciation\index.html:39
+msgid "Thanks to BioRender for the tools to create some of our images."
+msgstr ""
+"Gracias a BioRender por las herramientas para crear algunas de nuestras "
+"imágenes."
+
+#: .\templates\appreciation\index.html:45
+msgid ""
+"Thanks to MapChart for the amazing tool that helped create our epidemiology "
+"maps for each disease."
+msgstr ""
+"Gracias a MapChart por la increíble herramienta que ayudó a crear nuestros "
+"mapas epidemiologicos para cada enfermedad."
+
+#: .\templates\appreciation\index.html:55
+msgid ""
+"A special thanks for the information across various academic research "
+"databases."
+msgstr ""
+"Un agradecimiento especial por la información a través de varias bases de "
+"dados de investigaciones académicas."
+
+#: .\templates\appreciation\index.html:61
+msgid ""
+"Thanks to Genome Browser for various information including gene location."
+msgstr ""
+"Gracias a Genome Browser por la diversa información, incluida la ubicación "
+"de los genes."
+
+#: .\templates\appreciation\index.html:67
+msgid "Special thanks to UniProt for detailed protein information."
+msgstr ""
+"Un agradecimiento especial a UniProt por la información detallada sobre "
+"proteínas."
+
+#: .\templates\appreciation\index.html:77 .\templates\authors\index.html:93
+#: .\templates\contact\index.html:58 .\templates\objectives\index.html:93
+msgid "MNGT group"
+msgstr "Grupo MNGT"
+
+#: .\templates\appreciation\index.html:78 .\templates\authors\index.html:94
+#: .\templates\contact\index.html:59 .\templates\objectives\index.html:94
+msgid "ABC-RI News"
+msgstr "Noticias ABC-RI"
+
+#: .\templates\appreciation\index.html:83 .\templates\authors\index.html:34
+#: .\templates\contact\index.html:64 .\templates\not-found-page.html:43
+#: .\templates\objectives\index.html:99
+msgid "Authors"
+msgstr "Autores"
+
+#: .\templates\appreciation\index.html:86 .\templates\authors\index.html:102
+#: .\templates\contact\index.html:67 .\templates\objectives\index.html:102
+msgid "Masters degree"
+msgstr "Maestría"
+
+#: .\templates\appreciation\index.html:92 .\templates\authors\index.html:99
+#: .\templates\not-found-page.html:42 .\templates\objectives\index.html:108
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\templates\appreciation\index.html:93 .\templates\authors\index.html:108
+#: .\templates\contact\index.html:73 .\templates\not-found-page.html:44
+#: .\templates\objectives\index.html:12
+msgid "Objectives"
+msgstr "Objetivos"
+
+#: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
+#: .\templates\contact\index.html:100 .\templates\index.html:121
+#: .\templates\objectives\index.html:135
+msgid "PolyQ Database. All rights reserved 2021"
+msgstr "Base de datos PolyQ. Todos los derechos reservados 2021"
+
+#: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
+#: .\templates\contact\index.html:100 .\templates\objectives\index.html:135
+#, fuzzy
+#| msgid "Authors and database creators duly mentioned."
+msgid "Authors and database creators all duly mentioned."
+msgstr "Autores y creadores de bases de datos debidamente mencionados."
+
+#: .\templates\authors\index.html:15
+msgid "About the authors"
+msgstr "Sobre los autores"
+
+#: .\templates\authors\index.html:42
+msgid "Student / website creator"
+msgstr "Estudiante / creador de la plataforma"
+
+#: .\templates\authors\index.html:43
+msgid "Bachelor's and Master in Biomedical Sciences"
+msgstr "Licenciatura y Maestría en Ciencias Biomédicas"
+
+#: .\templates\authors\index.html:44
+msgid ""
+"Mainly interested in bioinformatics, neurodegenerative diseases and genetics "
+"with a growing interest in programming linked to biology and medicine."
+msgstr ""
+"Principalmente interesado en bioinformática, enfermedades neurodegenerativas "
+"y genéticacon un interés creciente en programación ligada a la biología y la "
+"medicina."
+
+#: .\templates\authors\index.html:57
+msgid "Mentor"
+msgstr "Mentor"
+
+#: .\templates\authors\index.html:58
+msgid ""
+"Assistant Professor of the Faculty of Medicine and Biomedical Sciences, and "
+"both Director and Principal Investigator of the Algarve Biomedical Center "
+"Research Institute, University of Algarve."
+msgstr ""
+"Profesor Asistente de la Facultad de Medicina y Ciencias Biomédicas, y "
+"Director e Investigador Principal del Centro Biomédico del Algarve -"
+"Instituto de Investigación de la Universidad del Algarve."
+
+#: .\templates\authors\index.html:59
+msgid ""
+"Main research interests are gene therapy for rare diseases, especially those "
+"affecting the nervous system."
+msgstr ""
+"Los principales intereses de investigación son la terapia génica para "
+"enfermedades raras, especialmente aquellasque afectan el sistema nervioso."
+
+#: .\templates\authors\index.html:75
+msgid "Co-Mentor"
+msgstr "Co-Mentor"
+
+#: .\templates\authors\index.html:76
+msgid ""
+"Invited Assistant Professor of the Faculty of Medicine and Biomedical "
+"Sciences, and post-doctoral researcher at the Algarve Biomedical Center "
+"Research Institute, University of Algarve."
+msgstr ""
+"Profesor Asistente Invitado de la Facultad de Medicina y Ciencias Biomédicas "
+"e investigador postdoctoral en el Centro Biomédico del Algarve -Instituto de "
+"Investigación de la Universidad del Algarve."
+
+#: .\templates\authors\index.html:77
+msgid ""
+"Carlos' research is focused on the molecular mechanisms underlying "
+"hereditary disorders of the nervous system, especially polyglutamine "
+"diseases."
+msgstr ""
+"Su investigaciónse centra en los mecanismos moleculares que subyacen a "
+"trastornos hereditarios del sistema nervioso, especialmente enfermedades "
+"poliglutamina"
+
+#: .\templates\authors\index.html:109 .\templates\contact\index.html:74
+#: .\templates\objectives\index.html:109
+msgid "Appreciation"
+msgstr "Apreciación"
+
+#: .\templates\contact\index.html:12 .\templates\contact\index.html:34
+msgid "Contact Us"
+msgstr "Contactanos"
+
+#: .\templates\contact\index.html:37
+msgid "Contact directly via mail:"
+msgstr "Contactar directamente a través de correo electrónico:"
+
+#: .\templates\contact\index.html:42
+msgid "Available social links:"
+msgstr "Enlaces sociales disponibles:"
+
+#: .\templates\index.html:11
+msgid "Polyglutamine Disorders - Database"
+msgstr "Trastornos de la poliglutamina - Base de datos"
 
 #: .\templates\index.html:106
 msgid "HOME"
-msgstr "INICIO"
+msgstr "HOME"
 
 #: .\templates\index.html:107
 msgid "OBJECTIVES"
@@ -75,9 +273,79 @@ msgid "Visit PolyQ Database"
 msgstr "Visite la base de datos de PolyQ"
 
 #: .\templates\index.html:121
-msgid "PolyQ Database. All rights reserved 2021"
-msgstr "Base de datos PolyQ. Todos los derechos reservados 2021"
-
-#: .\templates\index.html:121
 msgid "Authors and database creators duly mentioned."
 msgstr "Autores y creadores de bases de datos debidamente mencionados."
+
+#: .\templates\not-found-page.html:13
+msgid "Not found"
+msgstr "Extraviado"
+
+#: .\templates\not-found-page.html:30
+msgid "The page you were looking for does not exist! Click"
+msgstr "¡La página que estabas buscando no existe! Hacer clic"
+
+#: .\templates\not-found-page.html:30
+msgid "here"
+msgstr "aquí"
+
+#: .\templates\not-found-page.html:30
+msgid "to return to the home page."
+msgstr "para volver a la página Home"
+
+#: .\templates\not-found-page.html:33
+msgid "If you got to this page by clicking a link, please "
+msgstr "Si llegó a esta página haciendo clic en un enlace, por favor "
+
+#: .\templates\not-found-page.html:33
+msgid "notify us"
+msgstr "notificanos"
+
+#: .\templates\not-found-page.html:47
+msgid "Search for information on 9 different polyglutamine diseases"
+msgstr "Busque información sobre 9 enfermedades poliglutamínicas diferentes"
+
+#: .\templates\not-found-page.html:48
+msgid "Contact us"
+msgstr "Contactanos"
+
+#: .\templates\not-found-page.html:49
+msgid "Authors information"
+msgstr "Información de los autores"
+
+#: .\templates\not-found-page.html:50
+msgid "PolyQ database objectives"
+msgstr "Objetivos de la base de datos PolyQ"
+
+#: .\templates\objectives\index.html:33
+msgid "The objectives of PolyQ Database"
+msgstr "Los objetivos de la base de datos PolyQ"
+
+#: .\templates\objectives\index.html:36
+msgid "What is this database for?"
+msgstr "¿Para qué sirve esta base de datos?"
+
+#: .\templates\objectives\index.html:43
+msgid ""
+"PolyQ Database is a mean to aid in the understanding of polyglutamine "
+"diseases."
+msgstr ""
+"La base de datos PolyQ es un medio para ayudar en la comprensión de las "
+"enfermedades de poliglutamina"
+
+#: .\templates\objectives\index.html:44
+msgid ""
+"As other databases, PolyQ tries to focus on key information and tries "
+"conveying it the best way possible."
+msgstr ""
+"Al igual que otras bases de datos, PolyQ intenta centrarse en la información "
+"clave e intenta transmitirla de la mejor manera posible."
+
+#: .\templates\objectives\index.html:51
+msgid "Why was this made?"
+msgstr "¿Por qué se hizo esto?"
+
+#: .\templates\objectives\index.html:66
+#, fuzzy
+#| msgid "What is this database for?"
+msgid "What makes this database different from others?"
+msgstr "¿Para qué sirve esta base de datos?"

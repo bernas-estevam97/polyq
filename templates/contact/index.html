@@ -2,12 +2,14 @@
 
 {% load static %}
 {% load i18n %}
-
-<html lang="en" dir="ltr">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{LANGUAGE_CODE}}" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>{% trans "Contact Us" %}</title>
     <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
@@ -17,30 +19,27 @@
     <header>
       <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
       <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
-      <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+      <h1> <strong>{% trans "An ABC Research Institute polyglutamine disease database" %}</strong></h1>
     </header>
     <nav>
-      {% get_current_language as LANGUAGE_CODE %}
-      {% get_available_languages as LANGUAGES %}
-      {% get_language_info_list for LANGUAGES as languages %}
         <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
       <ul>
-        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
-        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
-        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a></li>
-        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-little"><i class="fa-solid fa-house"></i> Home </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-button"><i class="fa-solid fa-house"></i>{% trans "Return to Landing Page" %}</a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/" class="return-little"><i class="fa-solid fa-house"></i>{% trans "Landing Page" %} </a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-button"><i class="fa-solid fa-house"></i>{% trans "Return to Home page" %}</a></li>
+        <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-little"><i class="fa-solid fa-house"></i> {% trans "Home" %} </a></li>
       </ul>
     </nav>
   <main>
-    <h1> Contact Us</h1>
+    <h1>{%trans "Contact Us" %}</h1>
     <div class="contact-section">
       <div class="contact-info">
-        <div> <p><i class="fas fa-envelope"></i>  Contact directly via mail:  </p></div>
+        <div> <p><i class="fas fa-envelope"></i> {% trans "Contact directly via mail:" %}</p></div>
         <ul>
           <li><a href="mailto:polyqdatabase@mail.com"> polyqdatabase@gmail.com</a></li>
           <li><a href="mailto:abc.ri@abcmedicalg.pt "> abc.ri@abcmedicalg.pt </a></li>
         </ul>
-        <div> <i class="fa-solid fa-user"></i> Available social links:</div>
+        <div> <i class="fa-solid fa-user"></i>&nbsp{% trans "Available social links:" %}</div>
         <div class="logos"> <a href="https://twitter.com/PolyqDatabase"><i class="fa-brands fa-twitter-square"></i></a><a href="https://www.linkedin.com/in/bernardo-estevam/"><i class="fa-brands fa-linkedin"></i></a></div>
       </div>
         <div class="contact-location">
@@ -54,25 +53,25 @@
     <div class="collumns">
       <div class="first-third">
         <ul>
-          <li><a href="/{{ LANGUAGE_CODE }}/home">Home</a></li>
-          <li><a href="https://abcri.pt/">ABC-RI</a></li>
-          <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
-          <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/home">{% trans "Home" %}</a></li>
+            <li><a href="https://abcri.pt/">ABC-RI</a></li>
+            <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">{% trans "MNGT group" %}</a></li>
+            <li><a href="https://abcri.pt/news/">{% trans "ABC-RI News" %}</a></li>
         </ul>
       </div>
       <div class="second-third">
         <ul>
-          <li><a href="/{{ LANGUAGE_CODE }}/authors">Authors</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/authors">{% trans "Authors" %}</a></li>
           <li><a href="https://www.ualg.pt/">UAlg</a></li>
           <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
-          <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
+          <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">{% trans "Masters degree" %}</a></li>
         </ul>
       </div>
       <div class="third-third">
         <ul>
-          <li><a href="/{{ LANGUAGE_CODE }}/">Landing Page</a></li>
-          <li><a href="/{{ LANGUAGE_CODE }}/objectives">Objectives</a></li>
-          <li><a href="/{{ LANGUAGE_CODE }}/appreciation">Appreciation</a></li>
+          <li><a href="/{{ LANGUAGE_CODE }}/">{% trans "Landing Page" %}</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/contact">{% trans "Objectives" %}</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/appreciation">{% trans "Appreciation" %}</a></li>
         </ul>
       </div>
     </div>
@@ -98,7 +97,7 @@ Created by potrace 1.10, written by Peter Selinger 2001-2011
 <path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
 </g>
 </svg>
-    <p>&copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. Authors and database creators all duly mentioned.</p>
+    <p>&copy; {% trans "PolyQ Database. All rights reserved 2021" %}<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. {%trans "Authors and database creators all duly mentioned." %}</p>
     <div class="logos">
       <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
       <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>
