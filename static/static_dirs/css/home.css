@@ -25,15 +25,15 @@ header h1{
   font-family: verdana, sans-serif;
   letter-spacing: 2px;
   position: absolute;
-  max-width: 1200px;
+  max-width: 1300px;
   background-color: rgba(242, 242, 242, 0.8);
-  top: 10px;
+  top: 20px;
   right: 30px;
   border-radius: 1px;
   padding: 20px;
   text-align: center;
   color: #000;
-  font-size: 2em;
+  font-size: 1.4em;
   box-shadow: 10px 10px #F2C20E;
   z-index: 4;
 }
@@ -1204,7 +1204,7 @@ footer .logos .logo-three img{
     top: 65px;
     color: #000;
     padding: 0;
-    font-size: 1em;
+    font-size: 0.9em;
     box-shadow: 5px 5px #F2C20E !important;
     z-index: 4;
   }
@@ -1541,7 +1541,7 @@ footer .logos .logo-three img{
       top: 65px;
       color: #000;
       padding: 0;
-      font-size: 1.2em;
+      font-size: 1em;
       box-shadow: 5px 5px #F2C20E !important;
       z-index: 4;
     }
@@ -1843,11 +1843,11 @@ footer .logos .logo-three img{
 @media (min-width: 701px) and (max-width: 952px){
 
   header h1{
-    font-size: 18px;
+    font-size: 1em;
     max-width: 300px;
     padding: 2px !important;
-    top: 20px;
-    right: 10px;
+    top: 15px;
+    right: 0;
     box-shadow: 5px 5px #F7B608 !important;
   }
 
@@ -2032,10 +2032,12 @@ footer .logos .logo-three img{
 
 @media (min-width: 953px) and (max-width: 1246px){
     header h1{
+      top: 10px;
+      right: 0;
       max-width: 400px;
-      font-size: 20px;
-      padding: 0 !important;
-      margin: 15px 0 !important;
+      font-size: 1em;
+      padding: 3px 5px !important;
+      margin: 10px 0 !important;
     }
 
     .autocomplete-items{
@@ -2094,9 +2096,10 @@ footer .logos .logo-three img{
 
 @media (min-width: 1247px) and (max-width: 1366px){
     header h1{
+      top: 0;
       max-width: 650px;
-      font-size: 30px;
-      padding: 0 !important;
+      font-size: 1.4em;
+      padding: 3px 5px !important;
       margin: 15px 0 !important;
     }
 
@@ -2155,9 +2158,10 @@ footer .logos .logo-three img{
 
 @media (min-width: 1367px) and (max-width: 1589px){
   header h1{
+    top: 10px !important;
     max-width: 800px;
-    font-size: 30px;
-    padding: 0 !important;
+    font-size: 1.5em;
+    padding: 3px 5px !important;
     margin: 15px 0 !important;
   }
 
@@ -2234,8 +2238,10 @@ footer .logos .logo-three img{
 
 }
 
-@media (min-width: 1590px) and (max-width: 1750px){
+@media (min-width: 1590px) and (max-width: 1900px){
   header h1{
-    font-size: 26px;
+    font-size: 1.4em;
+    width: 50%;
+    padding: 3px 10px !important;
   }
 }

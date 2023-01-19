@@ -443,7 +443,7 @@ msgid ""
 msgstr ""
 "As ataxias cerebelares dominantes autossómicas tipo 2 são outro grupo ADCA que "
 "consiste em doenças apresentadas com ataxia cerebelar e degeneração da retina."
-"SCA7 está incluído neste grupo."
+" SCA7 está incluído neste grupo."
 
 #: .\templates\home\index.html:120
 msgid ""
