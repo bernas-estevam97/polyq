@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 18:19+0000\n"
+"POT-Creation-Date: 2023-01-19 18:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,19 @@ msgstr "Português"
 msgid "admin_access/"
 msgstr "acesso_admin/"
 
+#: .\templates\appreciation\index.html:13 .\templates\authors\index.html:109
+#: .\templates\contact\index.html:74 .\templates\home\index.html:353
+#: .\templates\objectives\index.html:109
+msgid "Appreciation"
+msgstr "Agradecimentos"
+
 #: .\templates\appreciation\index.html:24 .\templates\authors\index.html:21
-#: .\templates\contact\index.html:22 .\templates\not-found-page.html:22
-#: .\templates\objectives\index.html:21
+#: .\templates\contact\index.html:22 .\templates\home\index.html:25
+#: .\templates\not-found-page.html:22 .\templates\objectives\index.html:21
 msgid "An ABC Research Institute polyglutamine disease database"
-msgstr "Uma base de dados de doenças da poliglutamina do Instituto de Investigação ABC"
+msgstr ""
+"Uma base de dados de doenças da poliglutamina do Instituto de Investigação "
+"ABC"
 
 #: .\templates\appreciation\index.html:29 .\templates\authors\index.html:27
 #: .\templates\contact\index.html:27 .\templates\objectives\index.html:26
@@ -48,8 +56,8 @@ msgstr "Voltar para a página inicial"
 #: .\templates\appreciation\index.html:30
 #: .\templates\appreciation\index.html:91 .\templates\authors\index.html:28
 #: .\templates\authors\index.html:107 .\templates\contact\index.html:28
-#: .\templates\contact\index.html:72 .\templates\objectives\index.html:27
-#: .\templates\objectives\index.html:107
+#: .\templates\contact\index.html:72 .\templates\home\index.html:335
+#: .\templates\objectives\index.html:27 .\templates\objectives\index.html:107
 msgid "Landing Page"
 msgstr "Página Inicial"
 
@@ -68,77 +76,83 @@ msgstr "Home"
 
 #: .\templates\appreciation\index.html:39
 msgid "Thanks to BioRender for the tools to create some of our images."
-msgstr "Obrigado ao BioRender pelas ferramentas para criar algumas de nossas imagens."
+msgstr ""
+"Obrigado ao BioRender pelas ferramentas para criar algumas de nossas imagens."
 
 #: .\templates\appreciation\index.html:45
 msgid ""
 "Thanks to MapChart for the amazing tool that helped create our epidemiology "
 "maps for each disease."
-""
 msgstr ""
-"Obrigado ao MapChart pela incrível ferramenta que ajudou a criar nossos mapas epidemiológicos" 
-"para cada doença."
-""
+"Obrigado ao MapChart pela incrível ferramenta que ajudou a criar nossos "
+"mapas epidemiológicospara cada doença."
 
 #: .\templates\appreciation\index.html:55
 msgid ""
 "A special thanks for the information across various academic research "
 "databases."
-""
 msgstr ""
-"Um agradecimento especial pelas informações em várias bases de dados de " 
+"Um agradecimento especial pelas informações em várias bases de dados de "
 "pesquisa académica."
-""
 
 #: .\templates\appreciation\index.html:61
 msgid ""
 "Thanks to Genome Browser for various information including gene location."
-msgstr "Obrigado ao Genome Browser por várias informações, incluindo a localização do gene."
+msgstr ""
+"Obrigado ao Genome Browser por várias informações, incluindo a localização "
+"do gene."
 
 #: .\templates\appreciation\index.html:67
 msgid "Special thanks to UniProt for detailed protein information."
-msgstr "Agradecimentos especiais à UniProt pelas informações detalhadas sobre proteínas."
+msgstr ""
+"Agradecimentos especiais à UniProt pelas informações detalhadas sobre "
+"proteínas."
 
 #: .\templates\appreciation\index.html:77 .\templates\authors\index.html:93
-#: .\templates\contact\index.html:58 .\templates\objectives\index.html:93
+#: .\templates\contact\index.html:58 .\templates\home\index.html:337
+#: .\templates\objectives\index.html:93
 msgid "MNGT group"
 msgstr "Grupo MNGT"
 
 #: .\templates\appreciation\index.html:78 .\templates\authors\index.html:94
-#: .\templates\contact\index.html:59 .\templates\objectives\index.html:94
+#: .\templates\contact\index.html:59 .\templates\home\index.html:338
+#: .\templates\objectives\index.html:94
 msgid "ABC-RI News"
 msgstr "Novidades ABC-RI"
 
 #: .\templates\appreciation\index.html:83 .\templates\authors\index.html:34
-#: .\templates\contact\index.html:64 .\templates\not-found-page.html:43
-#: .\templates\objectives\index.html:99
+#: .\templates\contact\index.html:64 .\templates\home\index.html:343
+#: .\templates\not-found-page.html:43 .\templates\objectives\index.html:99
 msgid "Authors"
 msgstr "Autores"
 
 #: .\templates\appreciation\index.html:86 .\templates\authors\index.html:102
-#: .\templates\contact\index.html:67 .\templates\objectives\index.html:102
+#: .\templates\contact\index.html:67 .\templates\home\index.html:346
+#: .\templates\objectives\index.html:102
 msgid "Masters degree"
 msgstr "Mestrado"
 
 #: .\templates\appreciation\index.html:92 .\templates\authors\index.html:99
-#: .\templates\not-found-page.html:42 .\templates\objectives\index.html:108
+#: .\templates\home\index.html:351 .\templates\not-found-page.html:42
+#: .\templates\objectives\index.html:108
 msgid "Contact"
 msgstr "Contacto"
 
 #: .\templates\appreciation\index.html:93 .\templates\authors\index.html:108
-#: .\templates\contact\index.html:73 .\templates\not-found-page.html:44
-#: .\templates\objectives\index.html:12
+#: .\templates\contact\index.html:73 .\templates\home\index.html:352
+#: .\templates\not-found-page.html:44 .\templates\objectives\index.html:12
 msgid "Objectives"
 msgstr "Objectivos"
 
 #: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
-#: .\templates\contact\index.html:100 .\templates\index.html:121
-#: .\templates\objectives\index.html:135
+#: .\templates\contact\index.html:100 .\templates\home\index.html:380
+#: .\templates\index.html:121 .\templates\objectives\index.html:135
 msgid "PolyQ Database. All rights reserved 2021"
 msgstr "Base de dados PolyQ. Todos os direitos reservados 2021"
 
 #: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
-#: .\templates\contact\index.html:100 .\templates\objectives\index.html:135
+#: .\templates\contact\index.html:100 .\templates\home\index.html:380
+#: .\templates\objectives\index.html:135
 #, fuzzy
 #| msgid "Authors and database creators duly mentioned."
 msgid "Authors and database creators all duly mentioned."
@@ -210,11 +224,6 @@ msgstr ""
 "distúrbios hereditários do sistema nervoso,especialmente doenças de "
 "poliglutamina."
 
-#: .\templates\authors\index.html:109 .\templates\contact\index.html:74
-#: .\templates\objectives\index.html:109
-msgid "Appreciation"
-msgstr "Agradecimentos"
-
 #: .\templates\contact\index.html:12 .\templates\contact\index.html:34
 msgid "Contact Us"
 msgstr "Contacto"
@@ -226,6 +235,98 @@ msgstr "Entre em contato direto por e-mail:"
 #: .\templates\contact\index.html:42
 msgid "Available social links:"
 msgstr "Links sociais disponíveis:"
+
+#: .\templates\home\index.html:47
+msgid "Need help searching?"
+msgstr ""
+
+#: .\templates\home\index.html:49
+msgid "Search-help:"
+msgstr ""
+
+#: .\templates\home\index.html:50
+msgid "Start typing the disease name and recommendations show up."
+msgstr ""
+
+#: .\templates\home\index.html:51
+msgid "Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work."
+msgstr ""
+
+#: .\templates\home\index.html:58
+#, fuzzy
+#| msgid "Visit PolyQ Database"
+msgid "PolyQ Database"
+msgstr "Visita a base de dados PolyQ"
+
+#: .\templates\home\index.html:59
+msgid ""
+"A website with information regarding the 9 polyglutamine diseases documented "
+"so far."
+msgstr ""
+
+#: .\templates\home\index.html:65 .\templates\home\index.html:168
+msgid "Huntington's Disease"
+msgstr ""
+
+#: .\templates\home\index.html:76
+msgid "Dentatorubral pallidoluysian atrophy"
+msgstr ""
+
+#: .\templates\home\index.html:87
+msgid "Spinal-bulbar muscular atrophy"
+msgstr ""
+
+#: .\templates\home\index.html:140
+msgid "Website briefing"
+msgstr ""
+
+#: .\templates\home\index.html:159
+#, fuzzy
+#| msgid "Polyglutamine Disorders - Database"
+msgid "Polyglutamine Diseases"
+msgstr "Doenças de Poliglutaminas - Base de dados"
+
+#: .\templates\home\index.html:160
+msgid "Use search bar or click directly on your disease of interest"
+msgstr ""
+
+#: .\templates\home\index.html:174
+#, fuzzy
+#| msgid "Return to Home page"
+msgid "Go to HD page"
+msgstr "Voltar à página Home"
+
+#: .\templates\home\index.html:192
+msgid "Go to DRPLA page"
+msgstr ""
+
+#: .\templates\home\index.html:210
+msgid "Go to SBMA page"
+msgstr ""
+
+#: .\templates\home\index.html:228
+msgid "Go to SCA1 page"
+msgstr ""
+
+#: .\templates\home\index.html:246
+msgid "Go to SCA2 page"
+msgstr ""
+
+#: .\templates\home\index.html:264
+msgid "Go to SCA3 page"
+msgstr ""
+
+#: .\templates\home\index.html:282
+msgid "Go to SCA6 page"
+msgstr ""
+
+#: .\templates\home\index.html:300
+msgid "Go to SCA7 page"
+msgstr ""
+
+#: .\templates\home\index.html:318
+msgid "Go to SCA17 page"
+msgstr ""
 
 #: .\templates\index.html:11
 msgid "Polyglutamine Disorders - Database"
