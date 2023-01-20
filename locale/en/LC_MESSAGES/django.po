@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 22:43+0000\n"
+"POT-Creation-Date: 2023-01-19 23:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -576,10 +576,37 @@ msgid ""
 "conveying it the best way possible."
 msgstr ""
 
+#: .\templates\objectives\index.html:45
+msgid ""
+"This website is a tool for any interested parties with scientific background "
+"and knowledge to view general important information on polyglutamine "
+"diseases, all in one place."
+msgstr ""
+
 #: .\templates\objectives\index.html:51
 msgid "Why was this made?"
 msgstr ""
 
+#: .\templates\objectives\index.html:59
+msgid ""
+" Information about polyglutamine disorders is scattered through the "
+"internet. One single website regarding the most important\n"
+"                information on every polyglutamine disease would prove to be "
+"helpful for the science community. "
+msgstr ""
+
 #: .\templates\objectives\index.html:66
 msgid "What makes this database different from others?"
+msgstr ""
+
+#: .\templates\objectives\index.html:79
+msgid ""
+" Until the date of the creation of this database, there is no other "
+"polyglutamine database or rare disease database that includes all general "
+"information\n"
+"                  about every polyglutamine disease, some focus on the "
+"genetic side of the disease, others on therapy among some others.\n"
+"                  With the information found from trusted online sources and "
+"literature, the most searched information on polyglutamine disorders is "
+"consolidated within this website. "
 msgstr ""

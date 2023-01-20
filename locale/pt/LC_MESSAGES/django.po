@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 22:43+0000\n"
+"POT-Creation-Date: 2023-01-19 23:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -350,7 +350,8 @@ msgstr "Comece a digitar o nome da doença e vão aparecer recomendações."
 
 #: .\templates\home\index.html:51
 msgid "Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work."
-msgstr "Quaisquer abreviações oficiais como HD, SCA1, DRPLA, SBMA também funcionarão."
+msgstr ""
+"Quaisquer abreviações oficiais como HD, SCA1, DRPLA, SBMA também funcionarão."
 
 #: .\templates\home\index.html:52
 msgid ""
@@ -358,7 +359,7 @@ msgid ""
 "same will happen if the\n"
 "            search button is clicked."
 msgstr ""
-"Ao clicar enter, a página inicial será redirecionada para a página da doença." 
+"Ao clicar enter, a página inicial será redirecionada para a página da doença."
 "O mesmo acontecerá se o botão de pesquisa for clicado."
 
 #: .\templates\home\index.html:58
@@ -372,8 +373,8 @@ msgid ""
 "A website with information regarding the 9 polyglutamine diseases documented "
 "so far."
 msgstr ""
-"Um site com informações sobre as 9 doenças da poliglutamina documentadas "
-"até agora."
+"Um site com informações sobre as 9 doenças da poliglutamina documentadas até "
+"agora."
 
 #: .\templates\home\index.html:65 .\templates\home\index.html:168
 msgid "Huntington's Disease"
@@ -386,10 +387,10 @@ msgid ""
 "the most common inherited across generations and is mainly characterized by "
 "excessive and uncontrolled motor movements."
 msgstr ""
-"A Doença de Huntington é a mais estudada e a mais conhecida"
-"doença de poliglutaminas. Quando se trata de doenças neurodegenerativas, a HD é "
-"a mais comum de ser herdada entre gerações e é caracterizada principalmente por"
-"movimentos motores excessivos e descontrolados."
+"A Doença de Huntington é a mais estudada e a mais conhecidadoença de "
+"poliglutaminas. Quando se trata de doenças neurodegenerativas, a HD é a mais "
+"comum de ser herdada entre gerações e é caracterizada principalmente "
+"pormovimentos motores excessivos e descontrolados."
 
 #: .\templates\home\index.html:76
 msgid "Dentatorubral pallidoluysian atrophy"
@@ -402,10 +403,10 @@ msgid ""
 "various clinical combinations that are seen also in ADCA I diseases. DRPLA "
 "is a disease believed to be mainly found in Japan."
 msgstr ""
-"Atrofia palidoluisiana dentatorrubral ou DRPLA às vezes é incluída no "
-"grupo de ataxias cerebelares autossómicas dominantes tipo 1 por causa das suas"
-"manifestações clínicas que também são observadas em doenças ADCA I. DRPLA "
-"é uma doença que se acredita ser encontrada principalmente no Japão."
+"Atrofia palidoluisiana dentatorrubral ou DRPLA às vezes é incluída no grupo "
+"de ataxias cerebelares autossómicas dominantes tipo 1 por causa das "
+"suasmanifestações clínicas que também são observadas em doenças ADCA I. "
+"DRPLA é uma doença que se acredita ser encontrada principalmente no Japão."
 
 #: .\templates\home\index.html:87
 msgid "Spinal-bulbar muscular atrophy"
@@ -418,10 +419,10 @@ msgid ""
 "linked manner so carrier females have a 1/2 chance of transmitting the "
 "mutation to each child."
 msgstr ""
-"A atrofia muscular espinhal-bulbal (SBMA), também conhecida como doença de Kennedy, é um "
-"distúrbio onde há perda de neurónios motores. A SBMA é herdada de maneira recessiva"
-"ligada ao X, isto quer dizer que mulheres portadoras tem 1/2 chance de transmitir a"
-"mutação para cada criança."
+"A atrofia muscular espinhal-bulbal (SBMA), também conhecida como doença de "
+"Kennedy, é um distúrbio onde há perda de neurónios motores. A SBMA é herdada "
+"de maneira recessivaligada ao X, isto quer dizer que mulheres portadoras tem "
+"1/2 chance de transmitir amutação para cada criança."
 
 #: .\templates\home\index.html:99
 msgid ""
@@ -430,10 +431,10 @@ msgid ""
 "extrapyramidal, and neuropathic signs. Four polyglutamine diseases are "
 "included in this group: SCA1, SCA2, SCA3 and SCA17."
 msgstr ""
-"As ataxias cerebelares autossômicas dominantes tipo 1 (ADCA I) são um grupo de doenças" 
-"que consistem em ataxia cerebelar juntamente com sinais piramidais, extrapiramidais e" 
-"neuropáticos variáveis. Quatro doenças poliglutaminas estão "
-"incluídas neste grupo: SCA1, SCA2, SCA3 e SCA17."
+"As ataxias cerebelares autossômicas dominantes tipo 1 (ADCA I) são um grupo "
+"de doençasque consistem em ataxia cerebelar juntamente com sinais "
+"piramidais, extrapiramidais eneuropáticos variáveis. Quatro doenças "
+"poliglutaminas estão incluídas neste grupo: SCA1, SCA2, SCA3 e SCA17."
 
 #: .\templates\home\index.html:110
 msgid ""
@@ -441,9 +442,9 @@ msgid ""
 "consists of diseases presented with cerebellar ataxia and retinal "
 "degeneration. SCA7 is included in this group."
 msgstr ""
-"As ataxias cerebelares dominantes autossómicas tipo 2 são outro grupo ADCA que "
-"consiste em doenças apresentadas com ataxia cerebelar e degeneração da retina."
-" SCA7 está incluído neste grupo."
+"As ataxias cerebelares dominantes autossómicas tipo 2 são outro grupo ADCA "
+"que consiste em doenças apresentadas com ataxia cerebelar e degeneração da "
+"retina. SCA7 está incluído neste grupo."
 
 #: .\templates\home\index.html:120
 msgid ""
@@ -451,9 +452,10 @@ msgid ""
 "manifest pure cerebellar ataxia. Many spinocerebellar ataxias make this "
 "group, but the one and only polyglutamine disease in this group is SCA6."
 msgstr ""
-"As ataxias cerebelares autossômicas dominantes tipo 3 são um grupo de doenças que "
-"manifestam ataxia cerebelar pura. Muitas ataxias espinocerebelares estão presentes neste "
-"grupo, mas a única proveniente de poliglutaminas é a SCA6."
+"As ataxias cerebelares autossômicas dominantes tipo 3 são um grupo de "
+"doenças que manifestam ataxia cerebelar pura. Muitas ataxias "
+"espinocerebelares estão presentes neste grupo, mas a única proveniente de "
+"poliglutaminas é a SCA6."
 
 #: .\templates\home\index.html:140
 msgid "Website briefing"
@@ -465,8 +467,8 @@ msgid ""
 "SCA3, SCA6, SCA7 and\n"
 "                    SCA17."
 msgstr ""
-"Existem 9 doenças poliglutaminas: Huntington, SBMA, DRPLA, SCA1, SCA2, "
-"SCA3, SCA6, SCA7 e SCA17."
+"Existem 9 doenças poliglutaminas: Huntington, SBMA, DRPLA, SCA1, SCA2, SCA3, "
+"SCA6, SCA7 e SCA17."
 
 #: .\templates\home\index.html:145
 msgid ""
@@ -475,8 +477,8 @@ msgid ""
 "                    information about every polyglutmine disease to a "
 "certain extent."
 msgstr ""
-"De breves introduções de doenças a mecanismos moleculares e biológicos. "
-"Aqui apresentamos várias informações sobre todas as doenças de poliglutaminas"
+"De breves introduções de doenças a mecanismos moleculares e biológicos. Aqui "
+"apresentamos várias informações sobre todas as doenças de poliglutaminas"
 
 #: .\templates\home\index.html:148
 msgid ""
@@ -490,12 +492,12 @@ msgid ""
 "neuropathology findings, signs and symptoms found in\n"
 "                    disease patients."
 msgstr ""
-"Cada doença terá uma introdução, primeira casos descritos, "
-"dados epidemiológicos com mapas representativos, várias informações sobre o gene "
-"que causa doença e a proteína codificada (normal e mutante), secção de fisiopatologia que "
-"apresenta importantes mecanismos de patogenicidade celular e um segmento clínico que inclui "
-"descobertas neuropatológicas, sinais e sintomas encontrados em"
-"pacientes da doença."
+"Cada doença terá uma introdução, primeira casos descritos, dados "
+"epidemiológicos com mapas representativos, várias informações sobre o gene "
+"que causa doença e a proteína codificada (normal e mutante), secção de "
+"fisiopatologia que apresenta importantes mecanismos de patogenicidade "
+"celular e um segmento clínico que inclui descobertas neuropatológicas, "
+"sinais e sintomas encontrados empacientes da doença."
 
 #: .\templates\home\index.html:159
 #, fuzzy
@@ -505,7 +507,8 @@ msgstr "Doenças de Poliglutaminas"
 
 #: .\templates\home\index.html:160
 msgid "Use search bar or click directly on your disease of interest"
-msgstr "Use a barra de pesquisa ou clique diretamente na doença de seu interesse"
+msgstr ""
+"Use a barra de pesquisa ou clique diretamente na doença de seu interesse"
 
 #: .\templates\home\index.html:174
 #, fuzzy
@@ -637,13 +640,14 @@ msgstr "Visita a base de dados PolyQ"
 
 #: .\templates\objectives\index.html:36
 msgid "What is this database for?"
-msgstr ""
+msgstr "Para que serve esta base de dados?"
 
 #: .\templates\objectives\index.html:43
 msgid ""
 "PolyQ Database is a mean to aid in the understanding of polyglutamine "
 "diseases."
-msgstr "Para que serve esta base de dados?"
+msgstr ""
+"A base de dados PolyQ é um meio para auxiliar na melhor compreensão das doenças de poliglutaminas."
 
 #: .\templates\objectives\index.html:44
 msgid ""
@@ -653,10 +657,48 @@ msgstr ""
 "Como outras bases de dados, PolyQ tenta se concentrar nas principais "
 "informações e tentatransmiti-las da melhor maneira possível."
 
+#: .\templates\objectives\index.html:45
+msgid ""
+"This website is a tool for any interested parties with scientific background "
+"and knowledge to view general important information on polyglutamine "
+"diseases, all in one place."
+msgstr ""
+"Esta plataforma é uma ferramenta para qualquer pessoa interessada" 
+"(com formação e conhecimento científico ou não), para explorar informações" 
+"gerais importantes sobre doenças causadas por poliglutaminas, tudo num só lugar."
+
 #: .\templates\objectives\index.html:51
 msgid "Why was this made?"
 msgstr "Porquê fazer esta base de dados?"
 
+#: .\templates\objectives\index.html:59
+msgid ""
+" Information about polyglutamine disorders is scattered through the "
+"internet. One single website regarding the most important\n"
+"                information on every polyglutamine disease would prove to be "
+"helpful for the science community. "
+msgstr ""
+"Informações sobre distúrbios de poliglutamina estão espalhadas pela internet." 
+"Um único local com as informações mais importantes sobre cada doença de poliglutaminas provaria ser útil para a comunidade científica e outras."
+
+
 #: .\templates\objectives\index.html:66
 msgid "What makes this database different from others?"
 msgstr "O que torna esta base de dados diferente das outras?"
+
+#: .\templates\objectives\index.html:79
+msgid ""
+" Until the date of the creation of this database, there is no other "
+"polyglutamine database or rare disease database that includes all general "
+"information\n"
+"                  about every polyglutamine disease, some focus on the "
+"genetic side of the disease, others on therapy among some others.\n"
+"                  With the information found from trusted online sources and "
+"literature, the most searched information on polyglutamine disorders is "
+"consolidated within this website. "
+msgstr ""
+"Até a data de criação desta base de dados, não há nenhuma outra base de dados de doenças" 
+"de poliglutaminas ou de doenças raras que inclua toda a informação"
+"geral sobre todas as doenças da poliglutamina, algumas focam no lado genético, outras na terapia e entre outras." 
+"Com as informações encontradas em fontes on-line confiáveis ​​e "
+"literatura, as informações mais pesquisadas sobre distúrbios da poliglutamina estão consolidadas aqui."

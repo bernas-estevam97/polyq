@@ -30,21 +30,21 @@ header{
 }
 
 header h1{
-  font-family: verdana, sans-serif;
-  letter-spacing: 2px;
-  position: absolute;
-  max-width: 1200px;
-  top: 10px;
-  right: 30px;
-  border-radius: 1px;
-  padding: 20px;
-  text-align: center;
-  color: #000;
-  background-color: rgba(242, 242, 242, 0.8);
-  font-size: 2em;
-  box-shadow: 10px 10px #F2C20E;
-  z-index: 4;
-}
+	font-family: verdana, sans-serif;
+	letter-spacing: 2px;
+	position: absolute;
+	max-width: 1300px;
+	background-color: rgba(242, 242, 242, 0.8);
+	top: 20px;
+	right: 30px;
+	border-radius: 1px;
+	padding: 20px;
+	text-align: center;
+	color: #000;
+	font-size: 1.4em;
+	box-shadow: 10px 10px #F2C20E;
+	z-index: 4;
+  }
 
 .abcri-logo{
   width: 190px;
@@ -1372,10 +1372,10 @@ figcaption{
 		top: 65px;
 		color: #000;
 		padding: 0;
-		font-size: 1.2em;
+		font-size: 0.9em;
 		box-shadow: 5px 5px #F2C20E !important;
 		z-index: 4;
-	}
+	  }
 	.abcri-logo{
 		width: 90px;
 		height: 50px;
@@ -1567,15 +1567,15 @@ figcaption{
 
 /* -------------------------------------- TABLET RESPONSIVENESS SECTION ------------------------------- */
 
-@media (min-width: 768px) and (max-width: 1246px){
+@media (min-width: 768px) and (max-width: 899px){
 	header h1{
-		font-size: 18px;
-		max-width: 300px;
+		font-size: 0.9em;
+		max-width: 350px;
 		padding: 2px !important;
-		top: 20px;
-		right: 10px;
+		top: 30px;
+		right: 0;
 		box-shadow: 5px 5px #F7B608 !important;
-	}
+	  }
 
 	.abcri-logo{
 		width: 150px;
@@ -1622,7 +1622,7 @@ figcaption{
 		margin-left: 10px !important;
 	}
 
-	nav .nav-default .dropdown .dropbtn{
+	nav .nav-default .dropdown .more-btn{
 		font-size: 12px;
 	}
 
@@ -1817,6 +1817,229 @@ figcaption{
 
 }
 
+@media (min-width: 900px) and (max-width: 1246px){
+	header h1{
+		font-size: 1em;
+		max-width: 500px;
+		padding: 2px !important;
+		top: 30px;
+		right: 5px;
+		box-shadow: 5px 5px #F7B608 !important;
+	  }
+
+	.abcri-logo{
+		width: 150px;
+		height: auto;
+		margin-bottom: 20px !important;
+	}
+
+	.mngt-logo{
+		width: 210px;
+		height: auto;
+		margin: 20px 0px !important;
+	}
+
+	nav .nav-default{
+		display: flex;
+		padding: 0 2%;
+		justify-content: space-between;
+		position: relative !important;
+	}
+
+	nav .little-nav{
+		display: none;
+	}
+
+	nav .nav-default .poly-logo{
+		width: 120px;
+		height: auto;
+	}
+
+	nav .nav-default{
+		font-size: 12px;
+	}
+
+	nav .nav-default ul{
+		align-items: center;
+	}
+
+	nav .nav-default ul li{
+		margin: 0 5px !important;
+		padding: 10px;
+	}
+
+	nav .nav-default .dropdown{
+		margin-left: 10px !important;
+	}
+
+	nav .nav-default .dropdown .more-btn{
+		font-size: 12px;
+	}
+
+	nav .nav-default .return-button a{
+		margin: 0 0 0 10px !important;
+		font-size: 1em;
+		padding: 12px !important;
+	}
+
+	.text{
+		width: 80%;
+		margin: 0 0 0 20px !important;
+	}
+
+	.text h1{
+		margin-bottom: 50px !important;
+		margin-left: 0 !important;
+		font-size: 2em;
+	}
+
+	.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
+	  font-size: 1.5em !important;
+	  text-align: left;
+		margin-left: 0 !important;
+		margin-bottom: 20px !important;
+	}
+
+	.protein-section h3, .clinical-section h3{
+	  text-align: left;
+		margin-left: 0 !important;
+		margin-bottom: 20px !important;
+		font-size: 1.2em;
+	}
+
+	.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
+	  text-align: justify;
+		font-size: 1em;
+		line-height: 2;
+		margin-left: 0 !important;
+		margin-bottom: 10px !important;
+	}
+
+	.epi-section img{
+		cursor: auto !important;
+	}
+
+	input[type=checkbox]:checked ~ label > img {
+		transform: scale(1);
+	}
+
+	figcaption{
+		font-size: 0.9em;
+	}
+
+	.caption-patho{
+		font-size: 0.8em;
+	}
+
+	.table .caption-under{
+		font-size: 0.9em;
+	}
+
+	.interactive-image{
+		text-align: center;
+		width: 400px;
+		margin: 0 !important;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.interactive-image img{
+		width: 400px;
+	}
+
+	.int-caption{
+		font-size: 0.9em;
+	}
+
+
+	.protein-section ul li{
+		font-size: 1em;
+		margin-left: 20px !important;
+		margin-bottom: 20px !important;
+	}
+
+	.clinical-section .list-neuronal ul li{
+		font-size: 1em;
+	}
+
+
+	.clinical-section .list-flex .column-1 .column-1-title,
+	.clinical-section .list-flex .column-2 .column-2-title,
+	.clinical-section .list-flex .column-3 .column-3-title{
+		font-size: 1em;
+	}
+
+	.clinical-section .list-flex .column-1 ul li,
+	.clinical-section .list-flex .column-2 ul li,
+	.clinical-section .list-flex .column-3 ul li{
+		font-size: 0.9em !important;
+	}
+
+
+	.aside-bar-left{
+		position: sticky;
+		left: 0;
+		top: 20%;
+		/* bottom: 38%; */
+		width: 180px;
+		background: white;
+		border: 1px solid rgba(0,0,0,0.05);
+		box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+		border-radius: 3px;
+		z-index: 1;
+		margin-top: 50px !important;
+		margin-bottom: 50px;
+		padding-left: 15px !important;
+	}
+
+	.aside-bar-left h3{
+		font-size: 1em;
+		padding: 9px 0px;
+		margin: 3px 0;
+	}
+
+	/* #indicator {
+		position: fixed;
+		top: 27.5%;
+		left: 0%;
+		width: 10vw;
+		background: white;
+		border: 1px solid rgba(0,0,0,0.05);
+		box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+		border-radius: 3px;
+		z-index: 10;
+	} */
+
+	#indicator ul {
+		/* width: calc(100% - 20px); */
+		padding: 10px;
+	}
+
+	#indicator ul li {
+		width: calc(100% - 16px);
+		font-size: 0.8em;
+		padding: 9px 8px;
+		margin: 3px 0;
+	}
+
+	#indicator ul li.spy-active {
+		color: black;
+	}
+
+
+	.aside-bar-right{
+		display: none !important;
+	}
+
+	.refbig{
+		display: none;
+	}
+
+	.reflittle{
+		display: inline-block;
+	}
+}
+
 @media (min-height: 551px) and (max-height: 800px){
 	.aside-bar-right{
 		height: 300px !important;
@@ -1830,11 +2053,12 @@ figcaption{
 
 @media (min-width: 1247px) and (max-width: 1366px){
     header h1{
-      max-width: 650px;
-      font-size: 30px;
-      padding: 0 !important;
-      margin: 15px 0 !important;
-    }
+		top: 0;
+		max-width: 650px;
+		font-size: 1.4em;
+		padding: 3px 5px !important;
+		margin: 15px 0 !important;
+	  }
 
 		nav .nav-default{
 			font-size: .8em;
@@ -1894,11 +2118,12 @@ figcaption{
 	}
 
 	@media (min-width: 1367px) and (max-width: 1589px){
-		  header h1{
-		    max-width: 800px;
-		    font-size: 30px;
-		    padding: 0 !important;
-		    margin: 15px 0 !important;
+		header h1{
+			top: 10px !important;
+			max-width: 800px;
+			font-size: 1.5em;
+			padding: 3px 5px !important;
+			margin: 15px 0 !important;
 		  }
 
 			.aside-bar-right{
@@ -1908,9 +2133,11 @@ figcaption{
 
 		@media (min-width: 1590px) and (max-width:1750px){
 
-		  header h1{
-		    font-size: 26px;
-		  }
+			header h1{
+				font-size: 1.4em;
+				width: 50%;
+				padding: 3px 10px !important;
+			  }
 
 		}
 
