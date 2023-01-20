@@ -371,10 +371,8 @@ msgstr ""
 "O mesmo acontecerá se o botão de pesquisa for clicado."
 
 #: .\templates\home\index.html:58
-#, fuzzy
-#| msgid "Visit PolyQ Database"
 msgid "PolyQ Database"
-msgstr "Visita a base de dados PolyQ"
+msgstr "Base de dados PolyQ"
 
 #: .\templates\home\index.html:59
 msgid ""
@@ -508,8 +506,6 @@ msgstr ""
 "sinais e sintomas encontrados empacientes da doença."
 
 #: .\templates\home\index.html:159
-#, fuzzy
-#| msgid "Polyglutamine Disorders - Database"
 msgid "Polyglutamine Diseases"
 msgstr "Doenças de Poliglutaminas"
 
@@ -519,8 +515,6 @@ msgstr ""
 "Use a barra de pesquisa ou clique diretamente na doença de seu interesse"
 
 #: .\templates\home\index.html:174
-#, fuzzy
-#| msgid "Return to Home page"
 msgid "Go to HD page"
 msgstr "Ir para a página HD"
 
