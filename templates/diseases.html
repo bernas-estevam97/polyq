@@ -38,7 +38,7 @@
         <li><a href="/{{ LANGUAGE_CODE }}/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
     </ul>   
     <div class="dropdown">
-        <button onclick="myFunction()" class="more-btn">More <i class="fa-solid fa-caret-down"></i></button>
+        <button onclick="myFunction()" class="more-btn">{% trans "More" %}<i class="fa-solid fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
             {% for disease in other_diseases|slice:"3:" %}
                 <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease={{ disease }}">{{ disease }}</a>
@@ -85,7 +85,7 @@
         <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
         <div class="nav-separate-little">
         <div class="dropdown-little">
-            <button onclick="myFunctionLittle()" class="more-btn-little">Other Diseases &nbsp <i class="fa-solid fa-turn-down"></i></button>
+            <button onclick="myFunctionLittle()" class="more-btn-little">{% trans "Other Diseases" %} &nbsp <i class="fa-solid fa-turn-down"></i></button>
             <div class="dropdown-content-little" id="myDropdownLittle">
                 {% for disease in other_diseases %}
                     <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease={{ disease }}">{{ disease }}</a>

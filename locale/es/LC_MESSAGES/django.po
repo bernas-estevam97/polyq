@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 23:28+0000\n"
+"POT-Creation-Date: 2023-01-20 01:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -241,6 +241,14 @@ msgstr "Contactar directamente a través de correo electrónico:"
 #: .\templates\contact\index.html:42
 msgid "Available social links:"
 msgstr "Enlaces sociales disponibles:"
+
+#: .\templates\diseases.html:41
+msgid "More"
+msgstr "Más"
+
+#: .\templates\diseases.html:88
+msgid "Other Diseases"
+msgstr "Otras enfermedades"
 
 #: .\templates\diseases.html:133
 msgid "Page navigation"
@@ -661,9 +669,9 @@ msgid ""
 "and knowledge to view general important information on polyglutamine "
 "diseases, all in one place."
 msgstr ""
-"Esta plataforma es una herramienta para cualquier interesado con formación científica"
-"y conocimientos para ver información general importante sobre las enfermedades de poliglutamina,"
-"todo en un solo lugar."
+"Esta plataforma es una herramienta para cualquier interesado con formación "
+"científicay conocimientos para ver información general importante sobre las "
+"enfermedades de poliglutamina,todo en un solo lugar."
 
 #: .\templates\objectives\index.html:51
 msgid "Why was this made?"
@@ -676,9 +684,10 @@ msgid ""
 "                information on every polyglutamine disease would prove to be "
 "helpful for the science community. "
 msgstr ""
-"La información sobre los trastornos de la poliglutamina se encuentra dispersa en el"
-"Internet. Un solo sitio web con la información más importante sobre cada enfermedad" 
-"de poliglutamina resultaría ser útil para la comunidad científica."
+"La información sobre los trastornos de la poliglutamina se encuentra "
+"dispersa en elInternet. Un solo sitio web con la información más importante "
+"sobre cada enfermedadde poliglutamina resultaría ser útil para la comunidad "
+"científica."
 
 #: .\templates\objectives\index.html:66
 msgid "What makes this database different from others?"
@@ -695,10 +704,10 @@ msgid ""
 "literature, the most searched information on polyglutamine disorders is "
 "consolidated within this website. "
 msgstr ""
-"Hasta la fecha de creación de esta base de datos, no existe ninguna otra base de datos" 
-"de poliglutaminas o de enfermedades raras que incluya toda la información general"
-"sobre cada enfermedad de poliglutamina, algunos se centran en el lado genético de la enfermedad," 
-"otros en la terapia, entre otros. Con la información encontrada en fuentes y literatura confiables en línea," 
-"la información más buscada sobre los trastornos de poliglutamina se consolida en este sitio web."
-
-
+"Hasta la fecha de creación de esta base de datos, no existe ninguna otra "
+"base de datosde poliglutaminas o de enfermedades raras que incluya toda la "
+"información generalsobre cada enfermedad de poliglutamina, algunos se "
+"centran en el lado genético de la enfermedad,otros en la terapia, entre "
+"otros. Con la información encontrada en fuentes y literatura confiables en "
+"línea,la información más buscada sobre los trastornos de poliglutamina se "
+"consolida en este sitio web."
