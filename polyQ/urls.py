@@ -25,7 +25,7 @@ urlpatterns = [
     path(_('admin_access/'), admin.site.urls),
     path('', index),
     path('home/', home),
-    path('objectives/', objectives),
+    path(_('objectives/'), objectives),
     # path('diseases/drpla/', diseases_drpla),
     # path('diseases/hd/', diseases_hd),
     # path('diseases/sbma/', diseases_sbma),
@@ -35,11 +35,11 @@ urlpatterns = [
     # path('diseases/sca6/', diseases_sca6),
     # path('diseases/sca7/', diseases_sca7),
     # path('diseases/sca17/', diseases_sca17),
-    path('contact/', contact),
-    path('authors/', authors),
-    path('appreciation/', appreciation),
-    path('disease_search/', search_disease, name='disease_search'),
-    path('disease/', tmp_disease)
+    path(_('contact/'), contact),
+    path(_('authors/'), authors),
+    path(_('appreciation/'), appreciation),
+    path(_('disease_search/'), search_disease, name='disease_search'),
+    path(_('disease/'), tmp_disease)
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)
 
@@ -47,7 +47,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns (
     path('', index),
     path('home/', home),
-    path('objectives/', objectives),
+    path(_('objectives/'), objectives, name="objectives"),
     # path('diseases/drpla/', diseases_drpla),
     # path('diseases/hd/', diseases_hd),
     # path('diseases/sbma/', diseases_sbma),
@@ -57,11 +57,11 @@ urlpatterns += i18n_patterns (
     # path('diseases/sca6/', diseases_sca6),
     # path('diseases/sca7/', diseases_sca7),
     # path('diseases/sca17/', diseases_sca17),
-    path('contact/', contact),
-    path('authors/', authors),
-    path('appreciation/', appreciation),
-    path('disease_search/', search_disease, name='disease_search'),
-    path('disease/', tmp_disease)
+    path(_('contact/'), contact, name='contact'),
+    path(_('authors/'), authors, name='authors'),
+    path(_('appreciation/'), appreciation, name='appreciation'),
+    path(_('disease_search/'), search_disease, name='disease_search'),
+    path(_('disease/'), tmp_disease)
 )
 
 handler404 = 'polyQ.views.custom_page_not_found_view'

@@ -99,9 +99,9 @@ def tmp_disease(request):
 def search_disease(request):
     style_1_diseases = ["HD", "DRPLA", "SBMA", "SCA6"]
     style_2_diseases = ["SCA1", "SCA2", "SCA3", "SCA7", "SCA17"]
-    disease_name = request.GET.get('disease')
+    disease_name = request.GET.get(_('disease'))
     try:
-        disease_name = request.GET.get('disease')
+        disease_name = request.GET.get(_('disease'))
         disease = Disease.objects.get(
             Q(name=disease_name.upper()) | Q(slug__contains=disease_name))
         other_diseases = Disease.objects.all().exclude(name=disease_name.upper())

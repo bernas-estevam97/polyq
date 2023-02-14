@@ -27,21 +27,28 @@
 <nav>
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <div class="autocomplete">
+        {% if LANGUAGE_CODE == 'en' %}
         <form method="get" action="/{{ LANGUAGE_CODE }}/disease_search">
-            {% if LANGUAGE_CODE == 'en' %}
             <input type="text" pattern="[\w' -]{2,}" name="disease" class="search-box" placeholder="Disease search..."
             size="40" id="myInput" autocomplete="off" required>
-            {% endif %}
-            {% if LANGUAGE_CODE == 'pt' %}
-            <input type="text" pattern="[\w' -]{2,}" name="disease" class="search-box" placeholder="Procura a doença..."
-            size="40" id="myInput" autocomplete="off" required>
-            {% endif %}
-            {% if LANGUAGE_CODE == 'es' %}
-            <input type="text" pattern="[\w' -]{2,}" name="disease" class="search-box" placeholder="Busca la enfermedad..."
-            size="40" id="myInput" autocomplete="off" required>
-            {% endif %}
             <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
         </form>
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+        <form method="get" action="/{{ LANGUAGE_CODE }}/patologia_pesquisa">
+            <input type="text" pattern="[\wç' -]{2,}" name="patologia" class="search-box" placeholder="Procura a doença..."
+            size="40" id="myInput" autocomplete="off" required>
+            <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
+        </form>
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+        <form method="get" action="/{{ LANGUAGE_CODE }}/busqueda_enfermedad"></form>
+            <input type="text" pattern="[\w' -]{2,}" name="enfermedad" class="search-box" placeholder="Busca la enfermedad..."
+            size="40" id="myInput" autocomplete="off" required>
+            <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
+        </form>
+            {% endif %}
+        
     </div>
     <div class="search-info">
         <div class="hover-elem"><p>{% trans "Need help searching?" %}</p></div>
@@ -159,7 +166,15 @@
         <h6>{% trans "Polyglutamine Diseases" %}</h6>
         <h2>{% trans "Use search bar or click directly on your disease of interest" %}</h2>
         <div class="slider-container" id="slider-horizontal">
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=hd">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=hd">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=hd">
+            {% endif %}
                 <div class="my_item">
                     <div class="card-container">
                         <div class="front-face">
@@ -177,7 +192,15 @@
                     </div>
                 </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=drpla">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=drpla">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=drpla">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -195,7 +218,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sbma">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sbma">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sbma">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -213,7 +244,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca1">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca1">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca1">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -231,7 +270,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca2">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca2">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca2">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -249,7 +296,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca3">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca3">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca3">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -267,7 +322,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca6">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca6">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca6">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -285,7 +348,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca7">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca7">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca7">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -303,7 +374,15 @@
                 </div>
             </div>
             </a>
+            {% if LANGUAGE_CODE == 'en' %}
             <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca17">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca17">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca17">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -340,7 +419,7 @@
         </div>
         <div class="second-third">
             <ul>
-                <li><a href="/{{ LANGUAGE_CODE }}/authors">{% trans "Authors" %}</a></li>
+                <li><a href="{% url 'authors' %}">{% trans "Authors" %}</a></li>
                 <li><a href="https://www.ualg.pt/" target="_blank">UAlg</a></li>
                 <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
                 <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">{% trans "Masters degree" %}</a></li>
@@ -348,9 +427,9 @@
         </div>
         <div class="third-third">
             <ul>
-                <li><a href="/{{ LANGUAGE_CODE }}/contact">{% trans "Contact" %}</a></li>
-                <li><a href="/{{ LANGUAGE_CODE }}/objectives">{% trans "Objectives" %}</a></li>
-                <li><a href="/{{ LANGUAGE_CODE }}/appreciation">{% trans "Appreciation" %}</a></li>
+                <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+                <li><a href="{% url 'objectives' %}">{% trans "Objectives" %}</a></li>
+                <li><a href="{% url 'appreciation' %}">{% trans "Appreciation" %}</a></li>
             </ul>
         </div>
     </div>
