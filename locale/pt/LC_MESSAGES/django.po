@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 17:01+0000\n"
+"POT-Creation-Date: 2023-02-14 17:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,9 +62,27 @@ msgstr "patologia/"
 msgid "disease"
 msgstr "patologia"
 
+#: .\polyQ\views.py:131
+msgid "This disease does not exit on our database!"
+msgstr "Esta doença não existe na nossa base de dados!"
+
+#: .\polyQ\views.py:136
+msgid "Be more specific with your search"
+msgstr "Seja mais específico na pesquisa"
+
+#: .\polyQ\views.py:143
+#, fuzzy
+#| msgid "Not found"
+msgid "Page not found"
+msgstr "Página não encontrada"
+
+#: .\polyQ\views.py:149
+msgid "Internal Server error"
+msgstr "Erro do servidor"
+
 #: .\templates\appreciation\index.html:13 .\templates\authors\index.html:109
-#: .\templates\contact\index.html:74 .\templates\diseases.html:327
-#: .\templates\home\index.html:368 .\templates\objectives\index.html:109
+#: .\templates\contact\index.html:74 .\templates\diseases.html:355
+#: .\templates\home\index.html:432 .\templates\objectives\index.html:109
 msgid "Appreciation"
 msgstr "Agradecimentos"
 
@@ -85,14 +103,14 @@ msgstr "Voltar para a página inicial"
 #: .\templates\appreciation\index.html:30
 #: .\templates\appreciation\index.html:91 .\templates\authors\index.html:28
 #: .\templates\authors\index.html:107 .\templates\contact\index.html:28
-#: .\templates\contact\index.html:72 .\templates\diseases.html:309
-#: .\templates\home\index.html:350 .\templates\objectives\index.html:27
+#: .\templates\contact\index.html:72 .\templates\diseases.html:337
+#: .\templates\home\index.html:414 .\templates\objectives\index.html:27
 #: .\templates\objectives\index.html:107
 msgid "Landing Page"
 msgstr "Página Inicial"
 
 #: .\templates\appreciation\index.html:31 .\templates\authors\index.html:29
-#: .\templates\contact\index.html:29 .\templates\diseases.html:80
+#: .\templates\contact\index.html:29 .\templates\diseases.html:100
 #: .\templates\objectives\index.html:28
 msgid "Return to Home page"
 msgstr "Voltar à página Home"
@@ -140,53 +158,53 @@ msgstr ""
 "proteínas."
 
 #: .\templates\appreciation\index.html:77 .\templates\authors\index.html:93
-#: .\templates\contact\index.html:58 .\templates\diseases.html:311
-#: .\templates\home\index.html:352 .\templates\objectives\index.html:93
+#: .\templates\contact\index.html:58 .\templates\diseases.html:339
+#: .\templates\home\index.html:416 .\templates\objectives\index.html:93
 msgid "MNGT group"
 msgstr "Grupo MNGT"
 
 #: .\templates\appreciation\index.html:78 .\templates\authors\index.html:94
-#: .\templates\contact\index.html:59 .\templates\home\index.html:353
-#: .\templates\objectives\index.html:94
+#: .\templates\contact\index.html:59 .\templates\diseases.html:340
+#: .\templates\home\index.html:417 .\templates\objectives\index.html:94
 msgid "ABC-RI News"
 msgstr "Novidades ABC-RI"
 
 #: .\templates\appreciation\index.html:83 .\templates\authors\index.html:34
-#: .\templates\contact\index.html:64 .\templates\diseases.html:317
-#: .\templates\home\index.html:358 .\templates\not-found-page.html:43
+#: .\templates\contact\index.html:64 .\templates\diseases.html:345
+#: .\templates\home\index.html:422 .\templates\not-found-page.html:43
 #: .\templates\objectives\index.html:99
 msgid "Authors"
 msgstr "Autores"
 
 #: .\templates\appreciation\index.html:86 .\templates\authors\index.html:102
-#: .\templates\contact\index.html:67 .\templates\diseases.html:320
-#: .\templates\home\index.html:361 .\templates\objectives\index.html:102
+#: .\templates\contact\index.html:67 .\templates\diseases.html:348
+#: .\templates\home\index.html:425 .\templates\objectives\index.html:102
 msgid "Masters degree"
 msgstr "Mestrado"
 
 #: .\templates\appreciation\index.html:92 .\templates\authors\index.html:99
-#: .\templates\diseases.html:325 .\templates\home\index.html:366
+#: .\templates\diseases.html:353 .\templates\home\index.html:430
 #: .\templates\not-found-page.html:42 .\templates\objectives\index.html:108
 msgid "Contact"
 msgstr "Contacto"
 
 #: .\templates\appreciation\index.html:93 .\templates\authors\index.html:108
-#: .\templates\contact\index.html:73 .\templates\diseases.html:326
-#: .\templates\home\index.html:367 .\templates\not-found-page.html:44
+#: .\templates\contact\index.html:73 .\templates\diseases.html:354
+#: .\templates\home\index.html:431 .\templates\not-found-page.html:44
 #: .\templates\objectives\index.html:12
 msgid "Objectives"
 msgstr "Objectivos"
 
 #: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
-#: .\templates\contact\index.html:100 .\templates\diseases.html:354
-#: .\templates\home\index.html:395 .\templates\index.html:121
+#: .\templates\contact\index.html:100 .\templates\diseases.html:382
+#: .\templates\home\index.html:459 .\templates\index.html:121
 #: .\templates\objectives\index.html:135
 msgid "PolyQ Database. All rights reserved 2021"
 msgstr "Base de dados PolyQ. Todos os direitos reservados 2021"
 
 #: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
-#: .\templates\contact\index.html:100 .\templates\diseases.html:354
-#: .\templates\home\index.html:395 .\templates\objectives\index.html:135
+#: .\templates\contact\index.html:100 .\templates\diseases.html:382
+#: .\templates\home\index.html:459 .\templates\objectives\index.html:135
 #, fuzzy
 #| msgid "Authors and database creators duly mentioned."
 msgid "Authors and database creators all duly mentioned."
@@ -270,105 +288,105 @@ msgstr "Entre em contato direto por e-mail:"
 msgid "Available social links:"
 msgstr "Links sociais disponíveis:"
 
-#: .\templates\diseases.html:41
+#: .\templates\diseases.html:53
 msgid "More"
 msgstr "Mais"
 
-#: .\templates\diseases.html:88
+#: .\templates\diseases.html:108
 msgid "Other Diseases"
 msgstr "Outras doenças"
 
-#: .\templates\diseases.html:133
+#: .\templates\diseases.html:161
 msgid "Page navigation"
 msgstr "Navegação da página"
 
-#: .\templates\diseases.html:138 .\templates\diseases.html:140
+#: .\templates\diseases.html:166 .\templates\diseases.html:168
 msgid "Introduction"
 msgstr "Introdução"
 
-#: .\templates\diseases.html:144 .\templates\diseases.html:146
+#: .\templates\diseases.html:172 .\templates\diseases.html:174
 msgid "First described"
 msgstr "Primeiras Descrições"
 
-#: .\templates\diseases.html:150 .\templates\diseases.html:152
+#: .\templates\diseases.html:178 .\templates\diseases.html:180
 msgid "Epidemiology"
 msgstr "Epidemiologia"
 
-#: .\templates\diseases.html:164 .\templates\diseases.html:177
-#: .\templates\diseases.html:193 .\templates\diseases.html:249
+#: .\templates\diseases.html:192 .\templates\diseases.html:205
+#: .\templates\diseases.html:221 .\templates\diseases.html:277
 msgid "[Fullsize image]"
 msgstr "[Imagem completa]"
 
-#: .\templates\diseases.html:168 .\templates\diseases.html:170
+#: .\templates\diseases.html:196 .\templates\diseases.html:198
 msgid "Causative gene"
 msgstr "Gene causal"
 
-#: .\templates\diseases.html:182
+#: .\templates\diseases.html:210
 msgid "Codified protein"
 msgstr "Proteína codificada"
 
-#: .\templates\diseases.html:184
+#: .\templates\diseases.html:212
 msgid ""
 "Codified protein: structure, domains, functions and intracellular "
 "localization"
 msgstr ""
 "Proteína codificada: estrutura, domínios, funções e localização intracelular"
 
-#: .\templates\diseases.html:185
+#: .\templates\diseases.html:213
 msgid "Structure and domains"
 msgstr "Estrutura e domínios"
 
-#: .\templates\diseases.html:200
+#: .\templates\diseases.html:228
 #, fuzzy
 #| msgid "Appreciation"
 msgid "Description"
 msgstr "Agradecimentos"
 
-#: .\templates\diseases.html:201
+#: .\templates\diseases.html:229
 msgid "Position"
 msgstr "Posição"
 
-#: .\templates\diseases.html:202
+#: .\templates\diseases.html:230
 msgid "Length (amino acids)"
 msgstr "Comprimento (aminoácidos)"
 
-#: .\templates\diseases.html:226
+#: .\templates\diseases.html:254
 msgid "Protein functions and biological role"
 msgstr "Funções das proteínas e papel biológico"
 
-#: .\templates\diseases.html:228
+#: .\templates\diseases.html:256
 msgid "Protein intracellular localization"
 msgstr "Localização intracelular da proteína"
 
-#: .\templates\diseases.html:233
+#: .\templates\diseases.html:261
 msgid "Figure 5:"
 msgstr "Figura 5:"
 
-#: .\templates\diseases.html:233
+#: .\templates\diseases.html:261
 msgid "intracellular localization."
 msgstr "localização intracelular"
 
-#: .\templates\diseases.html:240 .\templates\diseases.html:242
+#: .\templates\diseases.html:268 .\templates\diseases.html:270
 msgid "Pathophysiology"
 msgstr "Fisiopatologia"
 
-#: .\templates\diseases.html:253
+#: .\templates\diseases.html:281
 msgid "Clinical manifestations"
 msgstr "Manifestações clínicas"
 
-#: .\templates\diseases.html:255
+#: .\templates\diseases.html:283
 msgid "Clinical manifestations: neuropathology, other signs and symptoms"
 msgstr "Manifestações clínicas: neuropatologia, outros sinais e sintomas"
 
-#: .\templates\diseases.html:256
+#: .\templates\diseases.html:284
 msgid "Neuropathology"
 msgstr "Neuropatologia"
 
-#: .\templates\diseases.html:258
+#: .\templates\diseases.html:286
 msgid "Signs and symptoms"
 msgstr "Sinais e sintomas"
 
-#: .\templates\diseases.html:277 .\templates\diseases.html:292
+#: .\templates\diseases.html:305 .\templates\diseases.html:320
 msgid "References"
 msgstr "Referências"
 
@@ -546,35 +564,35 @@ msgstr ""
 msgid "Go to HD page"
 msgstr "Ir para a página HD"
 
-#: .\templates\home\index.html:207
+#: .\templates\home\index.html:215
 msgid "Go to DRPLA page"
 msgstr "Ir para a página DRPLA"
 
-#: .\templates\home\index.html:225
+#: .\templates\home\index.html:241
 msgid "Go to SBMA page"
 msgstr "Ir para a página SBMA"
 
-#: .\templates\home\index.html:243
+#: .\templates\home\index.html:267
 msgid "Go to SCA1 page"
 msgstr "Ir para a página SCA1"
 
-#: .\templates\home\index.html:261
+#: .\templates\home\index.html:293
 msgid "Go to SCA2 page"
 msgstr "Ir para a página SCA2"
 
-#: .\templates\home\index.html:279
+#: .\templates\home\index.html:319
 msgid "Go to SCA3 page"
 msgstr "Ir para a página SCA3"
 
-#: .\templates\home\index.html:297
+#: .\templates\home\index.html:345
 msgid "Go to SCA6 page"
 msgstr "Ir para a página SCA6"
 
-#: .\templates\home\index.html:315
+#: .\templates\home\index.html:371
 msgid "Go to SCA7 page"
 msgstr "Ir para a página SCA7"
 
-#: .\templates\home\index.html:333
+#: .\templates\home\index.html:397
 msgid "Go to SCA17 page"
 msgstr "Ir para a página SCA17"
 

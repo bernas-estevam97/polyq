@@ -128,25 +128,25 @@ def search_disease(request):
         return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:
         error_code = ""
-        error_message = "This disease does not exit on our database!"
+        error_message = _("This disease does not exit on our database!")
         return render(request, 'not-found-page.html', {'error_message': error_message, 'error_code': error_code})
 
     except Disease.MultipleObjectsReturned:
         error_code = ""
-        error_message = "Be more specific with your search"
+        error_message = _("Be more specific with your search")
         return render(request, 'home/index.html', {'error_message': error_message, 'error_code': error_code})
         # raise CommandError(error_message_alert)
 
 
 def custom_page_not_found_view(request, exception):
     error_code = "404"
-    error_message = "Page not found"
+    error_message = _("Page not found")
     return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
 
 
 def custom_error_view(request, exception=None):
     error_code = "500"
-    error_message = "Internal Server error"
+    error_message = _("Internal Server error")
     return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
 
 

@@ -27,10 +27,10 @@
             <h1 style="text-align: center;">{{error_code}}</h1>
             <h2 style="text-align: center;">{% trans error_message %}<br><br></h2>
             <p>
-              {% trans "The page you were looking for does not exist! Click" %}<a href="/{{ LANGUAGE_CODE }}/home/">{% trans "here" %}</a> {% trans "to return to the home page." %}
+              {% trans "The page you were looking for does not exist! Click " %}<a href="/{{ LANGUAGE_CODE }}/home/">{% trans "here" %}</a> {% trans "to return to the home page." %}
             </p>
             <p>
-              {% trans "If you got to this page by clicking a link, please " %}<a href="/{{ LANGUAGE_CODE }}/contact/">{% trans "notify us" %}</a>.
+              {% trans "If you got to this page by clicking a link, please " %}<a href="{% url 'contact' %}">{% trans "notify us" %}</a>.
             </p>
             <div class="poly-q-logo">
               <img src="{% static 'img/logo-plyq.png' %}">
@@ -39,9 +39,9 @@
             <div class="info-lists">
             <ul class="list-1">
               <li><a href="/{{ LANGUAGE_CODE }}/home/">{% trans "Home" %}</a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/contact/">{% trans "Contact" %}</a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/authors/">{% trans "Authors" %}</a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/objectives/">{% trans "Objectives" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+              <li><a href="{% url 'authors' %}">{% trans "Authors" %}</a></li>
+              <li><a href="{% url 'objectives' %}">{% trans "Objectives" %}</a></li>
             </ul>
             <ul class="list-2">
               <li>{% trans "Search for information on 9 different polyglutamine diseases" %}</li>

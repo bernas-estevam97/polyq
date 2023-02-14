@@ -80,7 +80,7 @@
       </div>
       <div class="second-third">
         <ul>
-          <li><a href="/{{ LANGUAGE_CODE }}/authors">{% trans "Authors" %}</a></li>
+          <li><a href="{% url 'authors' %}">{% trans "Authors" %}</a></li>
           <li><a href="https://www.ualg.pt/">UAlg</a></li>
           <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
           <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">{% trans "Masters degree" %}</a></li>
@@ -89,8 +89,8 @@
       <div class="third-third">
         <ul>
           <li><a href="/{{ LANGUAGE_CODE }}/">{% trans "Landing Page" %}</a></li>
-          <li><a href="/{{ LANGUAGE_CODE }}/contact">{% trans "Contact" %}</a></li>
-          <li><a href="/{{ LANGUAGE_CODE }}/objectives">{% trans "Objectives" %}</a></li>
+          <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+          <li><a href="{% url 'objectives' %}">{% trans "Objectives" %}</a></li>
         </ul>
       </div>
     </div>

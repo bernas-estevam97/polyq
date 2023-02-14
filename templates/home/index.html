@@ -42,13 +42,12 @@
         </form>
             {% endif %}
             {% if LANGUAGE_CODE == 'es' %}
-        <form method="get" action="/{{ LANGUAGE_CODE }}/busqueda_enfermedad"></form>
+        <form method="get" action="/{{ LANGUAGE_CODE }}/busqueda_enfermedad">
             <input type="text" pattern="[\w' -]{2,}" name="enfermedad" class="search-box" placeholder="Busca la enfermedad..."
             size="40" id="myInput" autocomplete="off" required>
             <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
         </form>
             {% endif %}
-        
     </div>
     <div class="search-info">
         <div class="hover-elem"><p>{% trans "Need help searching?" %}</p></div>
