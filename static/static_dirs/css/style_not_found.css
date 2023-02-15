@@ -26,15 +26,15 @@ header h1{
   font-family: verdana, sans-serif;
   letter-spacing: 2px;
   position: absolute;
-  max-width: 1200px;
+  max-width: 1300px;
   background-color: rgba(242, 242, 242, 0.8);
-  top: 15px;
+  top: 20px;
   right: 30px;
   border-radius: 1px;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   color: #000;
-  font-size: 1.6em;
+  font-size: 1.4em;
   box-shadow: 10px 10px #F2C20E;
   z-index: 4;
 }

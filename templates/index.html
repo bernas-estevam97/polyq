@@ -104,10 +104,10 @@
           <i class="fas fa-window-close" onclick="hideMenu()"> </i>
             <ul>
               <li><a href="/{{ LANGUAGE_CODE }}/home">{% trans "HOME" %}</a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/objectives" target="_blank">{% trans "OBJECTIVES" %}</a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/authors">{% trans "AUTHOR/S" %} </a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/contact">{% trans "CONTACT" %} </a></li>
-              <li><a href="/{{ LANGUAGE_CODE }}/appreciation">{% trans "APPRECIATION" %}</a></li>
+              <li><a href="{% url 'objectives' %}" target="_blank">{% trans "OBJECTIVES" %}</a></li>
+              <li><a href="{% url 'authors' %}">{% trans "AUTHOR/S" %} </a></li>
+              <li><a href="{% url 'contact' %}">{% trans "CONTACT" %} </a></li>
+              <li><a href="{% url 'appreciation' %}">{% trans "APPRECIATION" %}</a></li>
             </ul>
           </div>
           <i class="fas fa-bars" onclick="showMenu()"> </i>
