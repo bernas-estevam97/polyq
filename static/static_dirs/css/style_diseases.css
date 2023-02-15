@@ -824,14 +824,14 @@ span a:hover{
 	top: 25%;
 	/* bottom: 38%; */
 	height: 30%;
-	width: 180px;
+	width: 195px;
 	background: white;
 	border: 1px solid rgba(0,0,0,0.05);
 	box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
 	border-radius: 3px;
 	z-index: 1;
 	margin-bottom: 50px;
-	padding-left: 25px;
+	padding-left: 15px;
 }
 
 .aside-bar-left h3{
