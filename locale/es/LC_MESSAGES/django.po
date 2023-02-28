@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 17:55+0000\n"
+"POT-Creation-Date: 2023-02-27 21:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,8 +81,8 @@ msgid "Internal Server error"
 msgstr "Error Interno del Servidor"
 
 #: .\templates\appreciation\index.html:13 .\templates\authors\index.html:109
-#: .\templates\contact\index.html:74 .\templates\diseases.html:355
-#: .\templates\home\index.html:432 .\templates\objectives\index.html:109
+#: .\templates\contact\index.html:74 .\templates\diseases.html:354
+#: .\templates\home\index.html:431 .\templates\objectives\index.html:109
 msgid "Appreciation"
 msgstr "Apreciación"
 
@@ -103,8 +103,8 @@ msgstr "Volver a la página inicial"
 #: .\templates\appreciation\index.html:30
 #: .\templates\appreciation\index.html:91 .\templates\authors\index.html:28
 #: .\templates\authors\index.html:107 .\templates\contact\index.html:28
-#: .\templates\contact\index.html:72 .\templates\diseases.html:337
-#: .\templates\home\index.html:414 .\templates\objectives\index.html:27
+#: .\templates\contact\index.html:72 .\templates\diseases.html:336
+#: .\templates\home\index.html:413 .\templates\objectives\index.html:27
 #: .\templates\objectives\index.html:107
 msgid "Landing Page"
 msgstr "Página Inicial"
@@ -159,53 +159,53 @@ msgstr ""
 "proteínas."
 
 #: .\templates\appreciation\index.html:77 .\templates\authors\index.html:93
-#: .\templates\contact\index.html:58 .\templates\diseases.html:339
-#: .\templates\home\index.html:416 .\templates\objectives\index.html:93
+#: .\templates\contact\index.html:58 .\templates\diseases.html:338
+#: .\templates\home\index.html:415 .\templates\objectives\index.html:93
 msgid "MNGT group"
 msgstr "Grupo MNGT"
 
 #: .\templates\appreciation\index.html:78 .\templates\authors\index.html:94
-#: .\templates\contact\index.html:59 .\templates\diseases.html:340
-#: .\templates\home\index.html:417 .\templates\objectives\index.html:94
+#: .\templates\contact\index.html:59 .\templates\diseases.html:339
+#: .\templates\home\index.html:416 .\templates\objectives\index.html:94
 msgid "ABC-RI News"
 msgstr "Noticias ABC-RI"
 
 #: .\templates\appreciation\index.html:83 .\templates\authors\index.html:34
-#: .\templates\contact\index.html:64 .\templates\diseases.html:345
-#: .\templates\home\index.html:422 .\templates\not-found-page.html:43
+#: .\templates\contact\index.html:64 .\templates\diseases.html:344
+#: .\templates\home\index.html:421 .\templates\not-found-page.html:43
 #: .\templates\objectives\index.html:99
 msgid "Authors"
 msgstr "Autores"
 
 #: .\templates\appreciation\index.html:86 .\templates\authors\index.html:102
-#: .\templates\contact\index.html:67 .\templates\diseases.html:348
-#: .\templates\home\index.html:425 .\templates\objectives\index.html:102
+#: .\templates\contact\index.html:67 .\templates\diseases.html:347
+#: .\templates\home\index.html:424 .\templates\objectives\index.html:102
 msgid "Masters degree"
 msgstr "Maestría"
 
 #: .\templates\appreciation\index.html:92 .\templates\authors\index.html:99
-#: .\templates\diseases.html:353 .\templates\home\index.html:430
+#: .\templates\diseases.html:352 .\templates\home\index.html:429
 #: .\templates\not-found-page.html:42 .\templates\objectives\index.html:108
 msgid "Contact"
 msgstr "Contacto"
 
 #: .\templates\appreciation\index.html:93 .\templates\authors\index.html:108
-#: .\templates\contact\index.html:73 .\templates\diseases.html:354
-#: .\templates\home\index.html:431 .\templates\not-found-page.html:44
+#: .\templates\contact\index.html:73 .\templates\diseases.html:353
+#: .\templates\home\index.html:430 .\templates\not-found-page.html:44
 #: .\templates\objectives\index.html:12
 msgid "Objectives"
 msgstr "Objetivos"
 
 #: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
-#: .\templates\contact\index.html:100 .\templates\diseases.html:382
-#: .\templates\home\index.html:459 .\templates\index.html:121
+#: .\templates\contact\index.html:100 .\templates\diseases.html:381
+#: .\templates\home\index.html:458 .\templates\index.html:121
 #: .\templates\objectives\index.html:135
 msgid "PolyQ Database. All rights reserved 2021"
 msgstr "Base de datos PolyQ. Todos los derechos reservados 2021"
 
 #: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
-#: .\templates\contact\index.html:100 .\templates\diseases.html:382
-#: .\templates\home\index.html:459 .\templates\objectives\index.html:135
+#: .\templates\contact\index.html:100 .\templates\diseases.html:381
+#: .\templates\home\index.html:458 .\templates\objectives\index.html:135
 msgid "Authors and database creators all duly mentioned."
 msgstr "Autores y creadores de bases de datos debidamente mencionados."
 
@@ -313,7 +313,7 @@ msgid "Epidemiology"
 msgstr "Epidemiología"
 
 #: .\templates\diseases.html:192 .\templates\diseases.html:205
-#: .\templates\diseases.html:221 .\templates\diseases.html:277
+#: .\templates\diseases.html:221 .\templates\diseases.html:276
 msgid "[Fullsize image]"
 msgstr "[Imagen completa]"
 
@@ -365,51 +365,55 @@ msgstr "Figura 5:"
 msgid "intracellular localization."
 msgstr "localización intracelular."
 
-#: .\templates\diseases.html:268 .\templates\diseases.html:270
+#: .\templates\diseases.html:262
+msgid "(Refresh this element if changed resolutions)"
+msgstr "(Actualizar este elemento si se cambiaron las resoluciones)"
+
+#: .\templates\diseases.html:267 .\templates\diseases.html:269
 msgid "Pathophysiology"
 msgstr "Fisiopatología"
 
-#: .\templates\diseases.html:281
+#: .\templates\diseases.html:280
 msgid "Clinical manifestations"
 msgstr "Manifestaciones clínicas"
 
-#: .\templates\diseases.html:283
+#: .\templates\diseases.html:282
 msgid "Clinical manifestations: neuropathology, other signs and symptoms"
 msgstr "Manifestaciones clínicas: neuropatología, otros signos y síntomas"
 
-#: .\templates\diseases.html:284
+#: .\templates\diseases.html:283
 msgid "Neuropathology"
 msgstr "Neuropatología"
 
-#: .\templates\diseases.html:286
+#: .\templates\diseases.html:285
 msgid "Signs and symptoms"
 msgstr ""
 
-#: .\templates\diseases.html:305 .\templates\diseases.html:320
+#: .\templates\diseases.html:304 .\templates\diseases.html:319
 msgid "References"
 msgstr "Referencias"
 
-#: .\templates\home\index.html:54
+#: .\templates\home\index.html:53
 msgid "Need help searching?"
 msgstr "¿Necesitas ayuda para buscar?"
 
-#: .\templates\home\index.html:56
+#: .\templates\home\index.html:55
 msgid "Search-help:"
 msgstr "Ayuda de busca"
 
-#: .\templates\home\index.html:57
+#: .\templates\home\index.html:56
 msgid "Start typing the disease name and recommendations show up."
 msgstr ""
 "Comience a escribir el nombre de la enfermedad y aparecerán las "
 "recomendaciones."
 
-#: .\templates\home\index.html:58
+#: .\templates\home\index.html:57
 msgid "Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work."
 msgstr ""
 "Funcionarán las abreviaturas oficiales de cualquier enfermedad. Ejemplos: "
 "HD, SCA1, SCA2, etc."
 
-#: .\templates\home\index.html:59
+#: .\templates\home\index.html:58
 msgid ""
 "On enter click, the home page will be redirected to the disease page. The "
 "same will happen if the\n"
@@ -418,11 +422,11 @@ msgstr ""
 "Al hacer clic en Intro, la página de inicio será redirigida a la página de "
 "la enfermedad. Lomismo sucederá si se hace clic en el botón de búsqueda"
 
-#: .\templates\home\index.html:65
+#: .\templates\home\index.html:64
 msgid "PolyQ Database"
 msgstr "Base de datos PolyQ"
 
-#: .\templates\home\index.html:66
+#: .\templates\home\index.html:65
 msgid ""
 "A website with information regarding the 9 polyglutamine diseases documented "
 "so far."
@@ -430,11 +434,11 @@ msgstr ""
 "Un sitio web con información sobre las 9 enfermedades poliglutamina "
 "documentadas hastael momento."
 
-#: .\templates\home\index.html:72 .\templates\home\index.html:183
+#: .\templates\home\index.html:71 .\templates\home\index.html:182
 msgid "Huntington's Disease"
 msgstr "Enfermedad de Huntington"
 
-#: .\templates\home\index.html:73
+#: .\templates\home\index.html:72
 msgid ""
 "Huntington's Disease is the most widely studied and the most well known "
 "polyglutamine disease. When it comes to neurodegenerative diseases, HD is "
@@ -447,11 +451,11 @@ msgstr ""
 "generaciones en todo el mundoy se caracteriza principalmente por movimientos "
 "motores excesivos e incontrolados."
 
-#: .\templates\home\index.html:83
+#: .\templates\home\index.html:82
 msgid "Dentatorubral pallidoluysian atrophy"
 msgstr "Atrofia palidoluysiana dentatorrubral"
 
-#: .\templates\home\index.html:84
+#: .\templates\home\index.html:83
 msgid ""
 "Dentatorubral pallidoluysian atrophy or DRPLA is sometimes included in the "
 "group of autossomal dominant cerebellar ataxias type 1 because of its "
@@ -464,11 +468,11 @@ msgstr ""
 "I. DRPLA es una enfermedadque se cree que se encuentra principalmente en "
 "Japón."
 
-#: .\templates\home\index.html:94
+#: .\templates\home\index.html:93
 msgid "Spinal-bulbar muscular atrophy"
 msgstr "Atrofia muscular espinal-bulbar"
 
-#: .\templates\home\index.html:95
+#: .\templates\home\index.html:94
 msgid ""
 "Spinal-bulbal muscular atrophy, also known as Kennedy disease, is a genetic "
 "disorder where there is loss of motor neurons. SBMA is inherited in an X-"
@@ -480,7 +484,7 @@ msgstr ""
 "SBMA se heredade forma ligada al cromosoma X, por lo que las mujeres "
 "portadoras tienen 1/2 posibilidades de transmitir la mutación a cada hijo."
 
-#: .\templates\home\index.html:106
+#: .\templates\home\index.html:105
 msgid ""
 "Autosomal dominant cerebellar ataxias type 1 (ADCA I) is a group of diseases "
 "that consists of cerebellar ataxia along with variable pyramidal, "
@@ -492,7 +496,7 @@ msgstr ""
 "variablespiramidales, extrapiramidales y neuropáticos. En este grupo se "
 "incluyen cuatroenfermedades poliglutamínicas: SCA1, SCA2, SCA3 y SCA17."
 
-#: .\templates\home\index.html:117
+#: .\templates\home\index.html:116
 msgid ""
 "Autosomal dominant cerebellar ataxias type 2 is another ADCA group that "
 "consists of diseases presented with cerebellar ataxia and retinal "
@@ -502,7 +506,7 @@ msgstr ""
 "ADCAque consiste en enfermedades que se presentan conAtaxia cerebelosa y "
 "degeneración retiniana. SCA7 está incluido en este grupo."
 
-#: .\templates\home\index.html:127
+#: .\templates\home\index.html:126
 msgid ""
 "Autosomal dominant cerebellar ataxias type 3 is a group of diseases that "
 "manifest pure cerebellar ataxia. Many spinocerebellar ataxias make this "
@@ -513,11 +517,11 @@ msgstr ""
 "espinocerebelosasforman parte de este grupo, pero la única la enfermedad "
 "poliglutamina en este grupo es SCA6."
 
-#: .\templates\home\index.html:147
+#: .\templates\home\index.html:146
 msgid "Website briefing"
 msgstr "Resumen del sitio web"
 
-#: .\templates\home\index.html:149
+#: .\templates\home\index.html:148
 msgid ""
 "There are 9 polyglutamine diseases: Huntington's, SBMA, DRPLA, SCA1, SCA2, "
 "SCA3, SCA6, SCA7 and\n"
@@ -526,7 +530,7 @@ msgstr ""
 "Existen 9 enfermedades poliglutamínicas: Huntington, SBMA, DRPLA, SCA1, SCA2,"
 "SCA3, SCA6, SCA7 y SCA17."
 
-#: .\templates\home\index.html:152
+#: .\templates\home\index.html:151
 msgid ""
 "From brief disease introductions to molecular and biological mechanisms. "
 "Here we present various\n"
@@ -537,7 +541,7 @@ msgstr ""
 "biológicos.Aquí presentamos información variada sobre cada enfermedad "
 "poliglutmínica a un cierto punto."
 
-#: .\templates\home\index.html:155
+#: .\templates\home\index.html:154
 msgid ""
 "Each disease will have an introduction, first described cases description, "
 "epidemiology data with\n"
@@ -556,48 +560,48 @@ msgstr ""
 "patogénicos celulares y un segmento clínico que incluyehallazgos "
 "neuropatológicos, signos y síntomas encontrados en pacientes con enfermedad."
 
-#: .\templates\home\index.html:166
+#: .\templates\home\index.html:165
 msgid "Polyglutamine Diseases"
 msgstr "Trastornos de la poliglutamina"
 
-#: .\templates\home\index.html:167
+#: .\templates\home\index.html:166
 msgid "Use search bar or click directly on your disease of interest"
 msgstr ""
 "Use la barra de búsqueda o haga clic directamente en su enfermedad de interés"
 
-#: .\templates\home\index.html:189
+#: .\templates\home\index.html:188
 msgid "Go to HD page"
 msgstr "Ir a la página de HD"
 
-#: .\templates\home\index.html:215
+#: .\templates\home\index.html:214
 msgid "Go to DRPLA page"
 msgstr "Ir a la página de DRPLA"
 
-#: .\templates\home\index.html:241
+#: .\templates\home\index.html:240
 msgid "Go to SBMA page"
 msgstr "Ir a la página de SBMA"
 
-#: .\templates\home\index.html:267
+#: .\templates\home\index.html:266
 msgid "Go to SCA1 page"
 msgstr "Ir a la página de SCA1"
 
-#: .\templates\home\index.html:293
+#: .\templates\home\index.html:292
 msgid "Go to SCA2 page"
 msgstr "Ir a la página de SCA2"
 
-#: .\templates\home\index.html:319
+#: .\templates\home\index.html:318
 msgid "Go to SCA3 page"
 msgstr "Ir a la página de SCA3"
 
-#: .\templates\home\index.html:345
+#: .\templates\home\index.html:344
 msgid "Go to SCA6 page"
 msgstr "Ir a la página de SCA6"
 
-#: .\templates\home\index.html:371
+#: .\templates\home\index.html:370
 msgid "Go to SCA7 page"
 msgstr "Ir a la página de SCA7"
 
-#: .\templates\home\index.html:397
+#: .\templates\home\index.html:396
 msgid "Go to SCA17 page"
 msgstr "Ir a la página de SCA17"
 
@@ -650,7 +654,9 @@ msgid "Not found"
 msgstr "Extraviado"
 
 #: .\templates\not-found-page.html:30
-msgid "The page you were looking for does not exist! Click"
+#, fuzzy
+#| msgid "The page you were looking for does not exist! Click"
+msgid "The page you were looking for does not exist! Click "
 msgstr "¡La página que estabas buscando no existe! Hacer clic"
 
 #: .\templates\not-found-page.html:30

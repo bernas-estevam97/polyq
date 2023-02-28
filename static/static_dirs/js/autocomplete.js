@@ -106,7 +106,7 @@ var diseases_es = ["Enfermedad de Huntington", "Atrofia dentorrubral-palidoluisi
                 "Ataxia espinocerebelosa tipo 6", "Ataxia espinocerebelosa tipo 7", "Ataxia espinocerebelosa 17"];
 
 var diseases_pt = ["Doença de Huntington", "Atrofia dentatorrubro-palidoluisiana",
-                 "Atrofia muscular espinhal-bulbar", "ataxia espinocerebelar tipo 1", "ataxia espinocerebelar tipo 2", "ataxia espinocerebelar tipo 3",
+                 "Atrofia muscular espinhal-bulbar", "Ataxia espinocerebelar tipo 1", "Ataxia espinocerebelar tipo 2", "Ataxia espinocerebelar tipo 3",
                 "Ataxia espinocerebelar tipo 6", "Ataxia espinocerebelar tipo 7", "Ataxia espinocerebelar 17"];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the diseases array as possible autocomplete values:*/
