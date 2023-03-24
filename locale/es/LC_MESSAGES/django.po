@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-27 21:14+0000\n"
+"POT-Creation-Date: 2023-03-24 21:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -366,8 +366,8 @@ msgid "intracellular localization."
 msgstr "localización intracelular."
 
 #: .\templates\diseases.html:262
-msgid "(Refresh this element if changed resolutions)"
-msgstr "(Actualizar este elemento si se cambiaron las resoluciones)"
+msgid "(Refresh this element if changed resolutions"
+msgstr "(Actualizar este elemento si se cambiaron las resoluciones"
 
 #: .\templates\diseases.html:267 .\templates\diseases.html:269
 msgid "Pathophysiology"
