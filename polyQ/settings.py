@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'v%im0jx$km-kfr12stn$!$^cr_isstce53bjj@&hxid*es6q*b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -73,7 +73,7 @@ if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 else:
@@ -81,8 +81,8 @@ else:
         'default': {
             'ENGINE': 'sql_server.pyodbc',
             'NAME': 'polyq_database',
-            'USER': 'sa',
-            'PASSWORD': 'dG5tI8oO4sqD',
+            'USER': 'bboyBernas10',
+            'PASSWORD': '%)@LFwX5!d(5ghCQ',
             'HOST': '94.46.171.187',
             'PORT': '',
             'OPTIONS': {
