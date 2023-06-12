@@ -168,6 +168,13 @@ class Trials(models.Model):
     def __str__(self):
         return f'{self.trial_id}'
 
+class AddedInfoTrials(models.Model):
+    info_id = models.CharField(max_length= 10)
+    text = models.TextField(blank=True)
+
+    def __str__(self):
+        return f'{self.info_id}'
+
 class Disease(models.Model):
     name = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
@@ -189,6 +196,7 @@ class Disease(models.Model):
         CSS_Class, on_delete=models.CASCADE, blank=True, null=True)
     coordinates = models.ManyToManyField(Coordinate_Text, blank=True)
     trials = models.ManyToManyField(Trials, blank=True)
+    added_info = models.ForeignKey(AddedInfoTrials, on_delete=models.CASCADE)
 
     # image = models.ManyToManyField(Images, blank=True)
 

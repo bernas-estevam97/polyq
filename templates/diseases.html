@@ -207,12 +207,15 @@
         <section class="scrollspy" spy-title="Active trials">
             <div class="trials-section">
                 <h2>Active clinical trials</h2>
-                <p>In this section are all the ongoing and recruiting clinical trials for this disease, presented in clinicaltrials.gov:</p>
+                <p>There is still no cure for these diseases but, at this stage, there are various experimentations that help in finding approaches to ameliorate the symptoms. All trials performed are important and a bridge to finding a cure in the future.</p>
+                <p>If available, this section presents some of the ongoing and recruiting clinical trials for this disease, presented in clinicaltrials.gov:</p>
                 {% for trial in disease.trials.all %}
                     <ul>
                         <li>{{trial.text|safe}}</li>
                     </ul>
                 {% endfor %}
+                <br>
+                <p>{{disease.added_info.text|safe}}</p>
             </div>
         </section>
         <section class="scrollspy" spy-title="References" id="references">

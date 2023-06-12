@@ -607,6 +607,21 @@ td{
 	font-size: 1em;
 }
 
+.trials-section ul li a{
+	text-decoration: none;
+}
+
+.trials-section ul li a:hover{
+	text-decoration: underline;
+}
+
+.trials-section p a{
+	text-decoration: none;
+}
+
+.trials-section p a:hover{
+	text-decoration: underline;
+}
 
 
 .reference-section ol li{
