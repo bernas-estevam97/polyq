@@ -161,6 +161,12 @@ class CSS_Class(models.Model):
     def __str__(self):
         return f'{self.css_class}'
 
+class Trials(models.Model):
+    trial_id = models.CharField(max_length= 10)
+    text = models.TextField()
+
+    def __str__(self):
+        return f'{self.trial_id}'
 
 class Disease(models.Model):
     name = models.CharField(max_length=200)
@@ -182,6 +188,7 @@ class Disease(models.Model):
     css_class = models.ForeignKey(
         CSS_Class, on_delete=models.CASCADE, blank=True, null=True)
     coordinates = models.ManyToManyField(Coordinate_Text, blank=True)
+    trials = models.ManyToManyField(Trials, blank=True)
 
     # image = models.ManyToManyField(Images, blank=True)
 

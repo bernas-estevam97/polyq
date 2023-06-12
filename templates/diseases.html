@@ -204,6 +204,17 @@
                {{disease.clinical.text_under_list|safe}}
            </div>
         </section>
+        <section class="scrollspy" spy-title="Active trials">
+            <div class="trials-section">
+                <h2>Active clinical trials</h2>
+                <p>In this section are all the ongoing and recruiting clinical trials for this disease, presented in clinicaltrials.gov:</p>
+                {% for trial in disease.trials.all %}
+                    <ul>
+                        <li>{{trial.text|safe}}</li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </section>
         <section class="scrollspy" spy-title="References" id="references">
             <div class="reference-section">
                 <h2> References </h2>

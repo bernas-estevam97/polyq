@@ -286,17 +286,17 @@ main {
 
 
 
-.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section{
+.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section, .trials-section{
   padding: 10px 30px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 
 
-.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
+.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2, .trials-section h2{
   font-size: 1.5em;
   text-align: left;
 	margin-left: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .protein-section > h3, .clinical-section > h3{
@@ -310,7 +310,7 @@ main {
 }
 
 
-.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
+.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p, .trials-section > p{
   text-align: justify;
 	font-size: 1em;
 	line-height: 2;
@@ -599,6 +599,12 @@ td{
 	border: 1px solid #ddd;
 	padding: 10px;
 	font-size: 0.9em;
+}
+
+.trials-section ul li{
+	margin: 20px 0 20px 40px;
+	text-align: justify;
+	font-size: 1em;
 }
 
 
@@ -1043,12 +1049,12 @@ nav .return-little a:hover{
 	text-align: center;
 }
 
-.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section{
+.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section, .trials-section{
   padding: 10px !important;
 
 }
 
-.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
+.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2, .trials-section h2{
   font-size: 1.5em;
 	margin-left: 10px !important;
 	margin-bottom: 20px !important;
@@ -1059,7 +1065,7 @@ nav .return-little a:hover{
 	margin: 20px 10px !important;
 }
 
-.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
+.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p, .trials-section > p{
   text-align: justify;
 	font-size: 1em;
 	line-height: 2;
@@ -1151,6 +1157,10 @@ figcaption{
 }
 
 .clinical-section .list-neuronal ul li{
+	font-size: 1em;
+}
+
+.trials-section ul li{
 	font-size: 1em;
 }
 
@@ -1359,11 +1369,11 @@ figcaption{
 	}
 
 
-	.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section{
+	.intro-section, .firstd-section, .epi-section, .gene-section, .protein-section, .patho-section, .clinical-section, .reference-section, .trials-section{
 	  padding: 10px !important;
 	}
 
-	.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
+	.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2, .trials-section h2{
 	  font-size: 1.5em;
 		margin: 10px !important;
 	}
@@ -1374,7 +1384,7 @@ figcaption{
 	}
 
 
-	.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
+	.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p, .trials-section > p{
 	  text-align: justify;
 		font-size: 1em;
 		line-height: 2;
@@ -1427,6 +1437,10 @@ figcaption{
 	}
 
 	.clinical-section .list-neuronal ul li{
+		font-size: 1em;
+	}
+
+	.trials-section ul li{
 		font-size: 1em;
 	}
 
@@ -1562,7 +1576,7 @@ figcaption{
 		font-size: 2em;
 	}
 
-	.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
+	.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2, .trials-section h2{
 	  font-size: 1.5em !important;
 	  text-align: left;
 		margin-left: 0 !important;
@@ -1576,7 +1590,7 @@ figcaption{
 		font-size: 1.2em;
 	}
 
-	.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
+	.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p, .trials-section > p{
 	  text-align: justify;
 		font-size: 1em;
 		line-height: 2;
@@ -1628,6 +1642,10 @@ figcaption{
 	}
 
 	.clinical-section .list-neuronal ul li{
+		font-size: 1em;
+	}
+
+	.trials-section ul li{
 		font-size: 1em;
 	}
 
@@ -1764,7 +1782,7 @@ figcaption{
 		}
 
 
-		.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2{
+		.intro-section > h2, .firstd-section > h2, .epi-section > h2, .gene-section > h2, .protein-section > h2, .patho-section >h2, .clinical-section > h2, .reference-section h2, .trials-section h2{
 		  font-size: 1.5em;
 		  text-align: left;
 			margin-left: 20px;
@@ -1782,7 +1800,7 @@ figcaption{
 		}
 
 
-		.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p{
+		.intro-section > p, .firstd-section > p, .epi-section > p, .gene-section > p, .protein-section > p, .patho-section > p, .clinical-section > p, .trials-section > p{
 		  text-align: justify;
 			font-size: 1em;
 			line-height: 2;
