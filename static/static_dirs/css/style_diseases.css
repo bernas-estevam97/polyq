@@ -951,6 +951,37 @@ footer .logos .logo-three img{
   margin: 5px;
 }
 
+.contact-form{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	height: 75px;
+	width: auto;
+	background: #fff;
+	z-index: 999;
+	border-radius: 50%;
+	padding: 10px;
+	box-shadow: 20px 20px 100px rgba(0,0,0,0.7);
+	cursor:pointer;
+	transition: 0.5s all;
+}
+
+.contact-form:hover{
+	box-shadow: 20px 20px 100px rgba(0,0,0,1);
+}
+
+.contact-form img{
+	height: 75px;
+	width: auto;
+}
+
+.dialog-form{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
 
 
 /* -------------------------------------- PHONE RESPONSIVENESS ----------------------------------- */

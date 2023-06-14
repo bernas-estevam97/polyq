@@ -304,10 +304,13 @@
         <a class="logo-three"> <img src="{% static 'img/fmcb-mod.png' %}" alt=""></a>
     </div>
 </footer>
-<div class="contact-form">
+<div class="contact-form" id="formButton">
     <img src="{% static 'img/form-icon.png' %}">
-
 </div>
+<dialog class="dialog-form">
+    <h3>Submit a form</h3>
+    <button class="close-button">Close form</button>
+</dialog>
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
     <script>
@@ -391,6 +394,21 @@
     //   window.location.reload(true);
     // }
 
+</script>
+
+<script>
+    const openButton = document.querySelector('.contact-form');
+    const closeButton = document.querySelector('.close-button');
+    const dialog = document.querySelector('.dialog-form');
+
+
+    openButton.addEventListener('click', () =>{
+        dialog.showModal();
+    })
+
+    closeButton.addEventListener('click', () =>{
+        dialog.close();
+    })
 </script>
 
 </body>
