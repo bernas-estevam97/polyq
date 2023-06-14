@@ -6,4 +6,4 @@ from .models import Form
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Form
-        exclude = []
+        fields = ('visitor_name', 'email', 'subject', 'message')

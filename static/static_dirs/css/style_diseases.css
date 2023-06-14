@@ -1030,6 +1030,7 @@ footer .logos .logo-three img{
 }
 
 .dialog-form .close-button{
+	font-size: 0.8em;
 	padding: 10px;
 	background: rgb(255, 75, 75);
 	color: #fff;
@@ -1078,6 +1079,29 @@ footer .logos .logo-three img{
 
 .dialog-form input:focus, textarea:focus{
 	border: 3px solid #555;
+}
+
+.success-popup{
+	position: fixed;
+	padding: 20px 10px 20px 30px;
+	border-radius: 5px 0 0px 5px;
+	top: 12em;
+	right: 0;
+	background: rgb(77, 182, 77);
+	color: #fff;
+	z-index: 999;
+}
+
+
+.error-popup{
+	position: fixed;
+	padding: 20px 10px 20px 30px;
+	border-radius: 5px 0 0px 5px;
+	top: 12em;
+	right: 0;
+	background: rgb(221, 64, 64);
+	color: #fff;
+	z-index: 999;
 }
 
 

@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.exceptions import MultipleObjectsReturned
 from polyQ.models import Disease
@@ -6,6 +7,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.core.management import CommandError
 from django.template import RequestContext
+from feedback.forms import FeedbackForm
 
 
 def index(request):
@@ -33,7 +35,11 @@ def appreciation(request):
 
 
 def search_disease(request):
+    form = FeedbackForm
     disease_name = request.GET.get('disease')
+    message_error = " "
+    message_success = " "
+    sent = False
     try:
         disease_name = request.GET.get('disease')
         disease = Disease.objects.get(
@@ -41,6 +47,20 @@ def search_disease(request):
         other_diseases = Disease.objects.all().exclude(name=disease_name.upper())
         title = disease.name
         img_coordinates = []
+        if request.method == 'POST':
+            form = FeedbackForm(request.POST)
+            if form.is_valid():
+                form.save()
+                form = FeedbackForm()
+                message_success = "Form sent. Thanks for contacting us!"
+                sent = True
+                return HttpResponseRedirect('/disease_search/?disease='+ disease_name)
+            else:
+                message_error = 'Something went wrong, try again!'
+                sent = False
+                return HttpResponseRedirect('/disease_search/?disease='+ disease_name)
+        else:
+            form = FeedbackForm
 
         for img_coordinate in disease.coordinates.all():
             img_object = {
@@ -55,7 +75,11 @@ def search_disease(request):
             'disease': disease,
             'title': title,
             'other_diseases': other_diseases,
-            'img_coordinates': img_coordinates
+            'img_coordinates': img_coordinates,
+            'form': form,
+            'message_error': message_error,
+            'message_success': message_success,
+            'sent': sent
         }
         return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:
@@ -80,3 +104,5 @@ def custom_error_view(request, exception=None):
     error_code = "500"
     error_message = "Internal Server error"
     return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
+
+
