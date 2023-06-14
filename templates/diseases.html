@@ -308,8 +308,21 @@
     <img src="{% static 'img/form-icon.png' %}">
 </div>
 <dialog class="dialog-form">
-    <h3>Submit a form</h3>
-    <button class="close-button">Close form</button>
+    <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
+    <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
+    <form method="dialog">
+        <div class="format-input">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email(optional)">
+        </div>
+        <input type="text" placeholder="Subject"><br>
+        <textarea placeholder="Your message..." rows="10"></textarea><br><br>
+        <div class="button-format">
+        <button type="submit" class="submit-btn">Submit form</button>
+        <button class="close-button">Close form</button>
+        </div>
+    </form>
+    
 </dialog>
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
