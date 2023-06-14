@@ -20,42 +20,6 @@ def objectives(request):
     return render(request, 'objectives/index.html')
 
 
-# def diseases_drpla(request):
-#     return render(request, 'diseases/drpla/index.html')
-#
-#
-# def diseases_hd(request):
-#     return render(request, 'diseases/hd/index.html')
-#
-#
-# def diseases_sbma(request):
-#     return render(request, 'diseases/sbma/index.html')
-#
-#
-# def diseases_sca1(request):
-#     return render(request, 'diseases/sca1/index.html')
-#
-#
-# def diseases_sca2(request):
-#     return render(request, 'diseases/sca2/index.html')
-#
-#
-# def diseases_sca3(request):
-#     return render(request, 'diseases/sca3/index.html')
-#
-#
-# def diseases_sca6(request):
-#     return render(request, 'diseases/sca6/index.html')
-#
-#
-# def diseases_sca7(request):
-#     return render(request, 'diseases/sca7/index.html')
-#
-#
-# def diseases_sca17(request):
-#     return render(request, 'diseases/sca17/index.html')
-
-
 def contact(request):
     return render(request, 'contact/index.html')
 
@@ -68,23 +32,7 @@ def appreciation(request):
     return render(request, 'appreciation/index.html')
 
 
-def disease_view(request, disease_name):
-    test_list = [1, 2, 3, 4, 5]
-    try:
-        disease = Disease.objects.get(name=disease_name)
-        return render(request, 'test.html', {'disease': disease, 'test_list': test_list})
-    except Disease.DoesNotExist:
-        error_message = "This disease does not exit on our database"
-        return render(request, 'not-found-page.html', {'error_message': error_message})
-
-
-def tmp_disease(request):
-    return render(request, 'test.html')
-
-
 def search_disease(request):
-    style_1_diseases = ["HD", "DRPLA", "SBMA", "SCA6"]
-    style_2_diseases = ["SCA1", "SCA2", "SCA3", "SCA7", "SCA17"]
     disease_name = request.GET.get('disease')
     try:
         disease_name = request.GET.get('disease')
@@ -107,8 +55,6 @@ def search_disease(request):
             'disease': disease,
             'title': title,
             'other_diseases': other_diseases,
-            'style_1_diseases': style_1_diseases,
-            'style_2_diseases': style_2_diseases,
             'img_coordinates': img_coordinates
         }
         return render(request, 'diseases.html', context)

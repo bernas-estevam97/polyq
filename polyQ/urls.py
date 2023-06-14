@@ -24,21 +24,10 @@ urlpatterns = [
     path('', index),
     path('home/', home),
     path('objectives/', objectives),
-    # path('diseases/drpla/', diseases_drpla),
-    # path('diseases/hd/', diseases_hd),
-    # path('diseases/sbma/', diseases_sbma),
-    # path('diseases/sca1/', diseases_sca1),
-    # path('diseases/sca2/', diseases_sca2),
-    # path('diseases/sca3/', diseases_sca3),
-    # path('diseases/sca6/', diseases_sca6),
-    # path('diseases/sca7/', diseases_sca7),
-    # path('diseases/sca17/', diseases_sca17),
     path('contact/', contact),
     path('authors/', authors),
     path('appreciation/', appreciation),
-    path('teste/<disease_name>', disease_view),
     path('disease_search/', search_disease, name='disease_search'),
-    path('disease/', tmp_disease)
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)
 

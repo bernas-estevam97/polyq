@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polyQ',
-    'import_export'
+    'import_export',
+    'feedback'
 ]
 
 MIDDLEWARE = [
