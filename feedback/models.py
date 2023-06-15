@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Form(models.Model):
-    visitor_name = models.CharField(max_length=120)
+    visitor_name = models.CharField(max_length=20)
     email = models.EmailField(blank=True)
     subject = models.CharField(max_length=20)
     message = models.TextField()

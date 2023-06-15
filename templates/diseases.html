@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
     <!-- <script src="{% static 'fontawesome/js/all.min.js' %}"></script> -->
     <link rel="stylesheet" href="{% static 'css/int-image.css' %}">
+    <script src="{% static 'js/callback.js' %}"></script>
+    <script>
+        function onLoadCallback(){
+            grecaptcha.render('divRecaptcha', {
+                sitekey:"6LfVMZsmAAAAAKaUr2Clv2-xWv7cRl2u8kZbeSsZ",
+                callback: successCallBack,
+            });
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onLoadCallback&render=explicit" async defer></script>
 </head>
 <body>
 <script src="{% static 'js/ScrollSpy.min.js' %}"></script>
@@ -307,15 +317,15 @@
 <div class="contact-form" id="formButton">
     <img src="{% static 'img/form-icon.png' %}">
 </div>
-{% if sent %} 
+<!-- {% if sent %} 
     <div class="success-popup">{{message_success}}</div>
 {% else %} 
     <div class="error-popup">{{message_error}}</div>
-{% endif %}
+{% endif %} -->
 <dialog class="dialog-form">
     <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
     <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
-    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
         <!-- <div class="format-input">
             <input type="text" placeholder="Name" name="name_id" required>
             <input type="email" placeholder="Email(optional)" name="email_id">
@@ -324,8 +334,9 @@
         <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
         <div class="button-format"> -->
         {{ form.as_p }}
+        <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
         <div class="button-format">
-        <button type="submit" class="submit-btn">Submit form</button>
+        <button type="submit" id="submit" class="submit-btn">Submit form</button>
         <div class="close-button">Close form</div>
         </div>
     </form>
@@ -423,7 +434,7 @@
 
 
     openButton.addEventListener('click', () =>{
-        dialog.showModal();
+        dialog.show();
     })
 
     closeButton.addEventListener('click', () =>{
@@ -432,6 +443,4 @@
 </script>
 <!-- <script src="{% static 'js/form-ajax.js' %}"></script> -->
 </body>
-
-
 </html>

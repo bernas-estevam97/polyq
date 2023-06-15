@@ -39,7 +39,7 @@ def search_disease(request):
     disease_name = request.GET.get('disease')
     message_error = " "
     message_success = " "
-    sent = False
+    # sent = False
     try:
         disease_name = request.GET.get('disease')
         disease = Disease.objects.get(
@@ -57,7 +57,7 @@ def search_disease(request):
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name)
             else:
                 message_error = 'Something went wrong, try again!'
-                sent = False
+                # sent = False
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name)
         else:
             form = FeedbackForm
@@ -79,7 +79,7 @@ def search_disease(request):
             'form': form,
             'message_error': message_error,
             'message_success': message_success,
-            'sent': sent
+            # 'sent': sent
         }
         return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:

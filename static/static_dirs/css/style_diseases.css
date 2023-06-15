@@ -958,7 +958,7 @@ footer .logos .logo-three img{
 	height: 70px;
 	width: auto;
 	background: #fff;
-	z-index: 999;
+	z-index: 2;
 	border-radius: 50%;
 	padding: 10px;
 	box-shadow: 20px 20px 100px rgba(0,0,0,0.7);
@@ -984,6 +984,7 @@ footer .logos .logo-three img{
 	box-shadow: 0 0 1em rgb(0 0 0 / .3);
 	padding: 20px;
 	width: 50ch;
+	z-index: 10;
 }
 
 .dialog-form .form-logo{
@@ -1023,6 +1024,7 @@ footer .logos .logo-three img{
     border-radius: 5px;
     font-weight: bold;
 	transition: 0.5s all;
+	margin-top: 20px;
 }
 
 .dialog-form .submit-btn:hover{
@@ -1036,7 +1038,7 @@ footer .logos .logo-three img{
 	color: #fff;
 	border-radius: 5px;
 	border: none;
-	margin-top: 10px;
+	margin-top: 20px;
 	cursor: pointer;
 	transition: 0.2s all;
 }
@@ -1081,7 +1083,7 @@ footer .logos .logo-three img{
 	border: 3px solid #555;
 }
 
-.success-popup{
+/* .success-popup{
 	position: fixed;
 	padding: 20px 10px 20px 30px;
 	border-radius: 5px 0 0px 5px;
@@ -1102,7 +1104,9 @@ footer .logos .logo-three img{
 	background: rgb(221, 64, 64);
 	color: #fff;
 	z-index: 999;
-}
+} */
+
+
 
 
 /* -------------------------------------- PHONE RESPONSIVENESS ----------------------------------- */
