@@ -1083,29 +1083,51 @@ footer .logos .logo-three img{
 	border: 3px solid #555;
 }
 
-/* .success-popup{
+.success-popup{
 	position: fixed;
-	padding: 20px 10px 20px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 10px 20px 20px;
 	border-radius: 5px 0 0px 5px;
 	top: 12em;
 	right: 0;
-	background: rgb(77, 182, 77);
+	background: rgb(103, 206, 103);
 	color: #fff;
 	z-index: 999;
+	border-left: 5px solid rgb(57, 175, 2);
 }
 
 
 .error-popup{
 	position: fixed;
-	padding: 20px 10px 20px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 10px 20px 20px;
 	border-radius: 5px 0 0px 5px;
 	top: 12em;
 	right: 0;
-	background: rgb(221, 64, 64);
+	background: rgb(218, 81, 81);
 	color: #fff;
 	z-index: 999;
-} */
+	border-left: 5px solid rgb(197, 22, 22);
+}
 
+.close-button-popup{
+	font-size: 1.5em;
+	position: relative;
+	margin-left: 15px;
+	padding: 0 5px;
+	transition: 0.2s all;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.close-button-popup:hover{
+	background: #fff;
+	color: #000;
+}
 
 
 

@@ -37,9 +37,10 @@ def appreciation(request):
 def search_disease(request):
     form = FeedbackForm
     disease_name = request.GET.get('disease')
-    message_error = " "
-    message_success = " "
-    # sent = False
+    message_error = 'Something went wrong, try again!'
+    message_success = "Form sent. Thanks for contacting us!"
+    sent = False
+    error=False
     try:
         disease_name = request.GET.get('disease')
         disease = Disease.objects.get(
@@ -52,15 +53,17 @@ def search_disease(request):
             if form.is_valid():
                 form.save()
                 form = FeedbackForm()
-                message_success = "Form sent. Thanks for contacting us!"
                 sent = True
-                return HttpResponseRedirect('/disease_search/?disease='+ disease_name)
+                return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=True')
             else:
-                message_error = 'Something went wrong, try again!'
-                # sent = False
-                return HttpResponseRedirect('/disease_search/?disease='+ disease_name)
+                error=True
+                return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&error')
         else:
             form = FeedbackForm
+            if 'sent' in request.GET:
+                sent = True
+            if 'error' in request.GET:
+                error=True
 
         for img_coordinate in disease.coordinates.all():
             img_object = {
@@ -79,7 +82,8 @@ def search_disease(request):
             'form': form,
             'message_error': message_error,
             'message_success': message_success,
-            # 'sent': sent
+            'sent': sent,
+            'error': error
         }
         return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:

@@ -317,11 +317,51 @@
 <div class="contact-form" id="formButton">
     <img src="{% static 'img/form-icon.png' %}">
 </div>
-<!-- {% if sent %} 
-    <div class="success-popup">{{message_success}}</div>
-{% else %} 
-    <div class="error-popup">{{message_error}}</div>
-{% endif %} -->
+{% if sent %} 
+    <div class="success-popup"><div class="message">{{message_success}}</div><div class="close-button-popup" id="closePopup"><i class="fa fa-times" aria-hidden="true"></i></div></div>
+    <dialog class="dialog-form">
+        <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
+        <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
+        <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
+            <!-- <div class="format-input">
+                <input type="text" placeholder="Name" name="name_id" required>
+                <input type="email" placeholder="Email(optional)" name="email_id">
+            </div>
+            <input type="text" placeholder="Subject" name="get_subject" required><br>
+            <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
+            <div class="button-format"> -->
+            {{ form.as_p }}
+            <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
+            <div class="button-format">
+            <button type="submit" id="submit" class="submit-btn">Submit form</button>
+            <div class="close-button">Close form</div>
+            </div>
+        </form>
+        
+    </dialog>
+{% elif error %} 
+    <div class="error-popup"><div class="message">{{message_error}}</div><div class="close-button-popup" id="closePopup"><i class="fa fa-times" aria-hidden="true"></i></div></div>
+    <dialog class="dialog-form">
+        <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
+        <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
+        <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
+            <!-- <div class="format-input">
+                <input type="text" placeholder="Name" name="name_id" required>
+                <input type="email" placeholder="Email(optional)" name="email_id">
+            </div>
+            <input type="text" placeholder="Subject" name="get_subject" required><br>
+            <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
+            <div class="button-format"> -->
+            {{ form.as_p }}
+            <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
+            <div class="button-format">
+            <button type="submit" id="submit" class="submit-btn">Submit form</button>
+            <div class="close-button">Close form</div>
+            </div>
+        </form>
+        
+    </dialog>
+{% else %}
 <dialog class="dialog-form">
     <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
     <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
@@ -342,6 +382,7 @@
     </form>
     
 </dialog>
+{% endif %}
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
     <script>
@@ -439,6 +480,16 @@
 
     closeButton.addEventListener('click', () =>{
         dialog.close();
+    })
+</script>
+<script>
+    const closePopup = document.getElementById('closePopup');
+    const successPopup = document.querySelector('.success-popup');
+    const errorPopup = document.querySelector('.error-popup');
+
+    $('#closePopup').click(function(){
+        $('.success-popup').fadeOut();
+        $('.error-popup').fadeOut();
     })
 </script>
 <!-- <script src="{% static 'js/form-ajax.js' %}"></script> -->
