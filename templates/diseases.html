@@ -345,14 +345,12 @@
         <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
         <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
         <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
-            <!-- <div class="format-input">
-                <input type="text" placeholder="Name" name="name_id" required>
-                <input type="email" placeholder="Email(optional)" name="email_id">
+            <div class="format-input">
+                <div>{{form.visitor_name}}</div>
+                <div>{{form.email}}</div>
             </div>
-            <input type="text" placeholder="Subject" name="get_subject" required><br>
-            <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
-            <div class="button-format"> -->
-            {{ form.as_p }}
+            {{form.subject}}<br>
+            {{form.message}}<br><br>
             <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
             <div class="button-format">
             <button type="submit" id="submit" class="submit-btn">Submit form</button>
