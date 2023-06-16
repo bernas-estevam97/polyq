@@ -1074,9 +1074,9 @@ footer .logos .logo-three img{
 
 .dialog-form textarea{
 	padding: 5px 10px;
-	margin: 8px 0;
+	margin:10px 10px 10px 0;
 	border: 2px solid #555;
-	width: 500px;
+	width: 490px;
 	height: 200px;
 }
 
@@ -2059,4 +2059,31 @@ figcaption{
 		scroll-margin-top: 100px;
 	}
 
+}
+
+@media (max-width: 574px){
+	.dialog-form{
+		width: 32ch;
+	}
+
+	.dialog-form h3{
+		font-size: 1em;
+	}
+
+	.dialog-form p{
+		font-size: 0.8em;
+	}
+
+	.dialog-form input{
+		margin: 3px 0 !important;
+	}
+
+	#form p{
+		font-size: 0.8em;
+	}
+
+	.dialog-form textarea{
+		width: 300px;
+		height: 100px;
+	}
 }

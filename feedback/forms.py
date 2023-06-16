@@ -19,5 +19,6 @@ class FeedbackForm(ModelForm):
             }),
             'message': Textarea(attrs={
                 'placeholder': 'Your message...',
+                'style': 'resize:none;'
             })
         }
