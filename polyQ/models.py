@@ -196,7 +196,8 @@ class Disease(models.Model):
         CSS_Class, on_delete=models.CASCADE, blank=True, null=True)
     coordinates = models.ManyToManyField(Coordinate_Text, blank=True)
     trials = models.ManyToManyField(Trials, blank=True)
-    added_info = models.ForeignKey(AddedInfoTrials, on_delete=models.CASCADE)
+    added_info = models.ForeignKey(AddedInfoTrials, on_delete=models.CASCADE, blank=True, null=True)
+   
 
     # image = models.ManyToManyField(Images, blank=True)
 
