@@ -331,6 +331,10 @@
             <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
             <div class="button-format"> -->
             {{ form.as_p }}
+            <div class="privacy-checkbox">
+            <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
+            <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
+            </div>
             <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
             <div class="button-format">
             <button type="submit" id="submit" class="submit-btn">Submit form</button>
@@ -353,6 +357,10 @@
             <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
             <div class="button-format"> -->
             {{ form.as_p }}
+            <div class="privacy-checkbox">
+            <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
+            <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
+            </div>
             <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
             <div class="button-format">
             <button type="submit" id="submit" class="submit-btn">Submit form</button>
@@ -374,6 +382,10 @@
         <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
         <div class="button-format"> -->
         {{ form.as_p }}
+        <div class="privacy-checkbox">
+        <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
+        <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
+        </div>
         <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
         <div class="button-format">
         <button type="submit" id="submit" class="submit-btn">Submit form</button>
@@ -481,6 +493,9 @@
     closeButton.addEventListener('click', () =>{
         dialog.close();
     })
+
+
+    document.getElementById('termsPrivacy').required = true;
 </script>
 <script>
     $('#closePopup').click(function(){

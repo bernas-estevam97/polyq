@@ -1,4 +1,4 @@
-function successCallBack(token){
+function successCallBack(){
     console.log("Recaptcha ready!")
 }
 

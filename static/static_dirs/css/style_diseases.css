@@ -987,6 +987,35 @@ footer .logos .logo-three img{
 	z-index: 10;
 }
 
+.dialog-form form .privacy-checkbox{
+	margin-bottom: 20px;
+}
+
+.dialog-form form input[type=checkbox]{
+	display:inline-block;
+}
+
+.dialog-form form .style-checkbox{
+	width: 15px;
+	height: 15px;
+}
+
+.dialog-form form .privacy-checkbox label{
+	font-size: 0.7em;
+	color:#5c5c5c;
+	text-align: justify;
+}
+
+.dialog-form form .privacy-checkbox label a{
+	text-decoration: none;
+	color: #5c5c5c;
+}
+
+.dialog-form form .privacy-checkbox label a:hover{
+	text-decoration: underline;
+	color: #000;
+}
+
 .dialog-form .form-logo{
 	height: 90px;
 	width: auto;
@@ -1042,6 +1071,9 @@ footer .logos .logo-three img{
 	margin-top: 20px;
 	cursor: pointer;
 	transition: 0.2s all;
+	-moz-user-select: none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
 }
 
 .dialog-form .close-button:hover{
