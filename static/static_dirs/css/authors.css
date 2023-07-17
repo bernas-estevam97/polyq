@@ -15,8 +15,6 @@ html, body{
   background: #fff;
   font-family: 'El Messiri', sans-serif;
   overflow:auto;
-  background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/static/img/authors_background.jpg') no-repeat;
-  background-size: cover;
 }
 
 header{
@@ -102,6 +100,13 @@ nav .return-little{
 	font-family: "Poppins", serif;
 }
 
+.wrapper{
+	background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/static/img/authors_background.jpg') no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: auto;
+}
+
 .wrapper h1{
 	font-size: 50px;
   text-align: center;
@@ -124,7 +129,7 @@ nav .return-little{
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 10%;
-  margin-bottom: 10%;
+  padding-bottom: 10%;
 }
 
 .team .team_members{
