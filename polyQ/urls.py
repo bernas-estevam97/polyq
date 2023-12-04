@@ -43,7 +43,6 @@ urlpatterns += i18n_patterns (
     path(_('authors/'), authors, name='authors'),
     path(_('appreciation/'), appreciation, name='appreciation'),
     path(_('disease_search/'), search_disease, name='disease_search'),
-    path(_('disease/'), tmp_disease)
 )
 
 handler404 = 'polyQ.views.custom_page_not_found_view'

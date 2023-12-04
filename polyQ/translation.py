@@ -44,6 +44,12 @@ class ListTranslationOptions(TranslationOptions):
 class ListItemsTranslationOptions(TranslationOptions):
     fields = ('text',)
 
+class TrialsTranslationOptions(TranslationOptions):
+    fields = ('text',)
+
+class AddedInfoTrialsTranslationOptions(TranslationOptions):
+    fields = ('text',)
+
 translator.register(Introduction, IntroductionTranslationOptions)
 translator.register(Disease, DiseaseTranslationOptions)
 translator.register(Coordinate_Text, CoordinatesTranslationOptions)
@@ -58,6 +64,8 @@ translator.register(CharacteristicsTableRows, CharacteristicsTableRowsTranslatio
 translator.register(CharacteristicsTable, CharacteristicsTableTranslationOptions)
 translator.register(List ,ListTranslationOptions)
 translator.register(ListItems ,ListItemsTranslationOptions)
+translator.register(Trials, TrialsTranslationOptions)
+translator.register(AddedInfoTrials, AddedInfoTrialsTranslationOptions)
 
 
 

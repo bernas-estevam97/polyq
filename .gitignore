@@ -2,3 +2,5 @@ venv_patrick/
 venv/
 media/
 db.sqlite3
+polyQ/migrations/
+polyQ/migrations_old/
