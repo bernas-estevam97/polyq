@@ -1,2 +1,4 @@
 venv_patrick/
 venv/
+media/
+db.sqlite3
