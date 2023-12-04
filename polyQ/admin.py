@@ -1,29 +1,33 @@
 from .models import *
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
+# from translations.admin import TranslatableAdmin, TranslationInline
+# from translations.models import Translation
 
 
-class ExcelAdmin(ImportExportModelAdmin):
+class ModelAdmin(ImportExportModelAdmin):
+    # inlines = [TranslationInline, ]
     pass
 
 
-admin.site.register(Images, ExcelAdmin)
-admin.site.register(Introduction, ExcelAdmin)
-admin.site.register(Epidemiology, ExcelAdmin)
-admin.site.register(FirstDescribed, ExcelAdmin)
-admin.site.register(CausativeGene, ExcelAdmin)
-admin.site.register(CodifiedProtein, ExcelAdmin)
-admin.site.register(PathoPhysiology, ExcelAdmin)
-admin.site.register(CharacteristicsTableRows, ExcelAdmin)
-admin.site.register(CharacteristicsTable, ExcelAdmin)
-admin.site.register(Clinical, ExcelAdmin)
-admin.site.register(ListItems, ExcelAdmin)
-admin.site.register(List, ExcelAdmin)
-admin.site.register(Reference, ExcelAdmin)
-admin.site.register(Disease, ExcelAdmin)
-admin.site.register(HtmlTutorial, ExcelAdmin)
-admin.site.register(CSS_Class, ExcelAdmin)
-admin.site.register(Coordinate_Text, ExcelAdmin)
-admin.site.register(RefLinks, ExcelAdmin)
-admin.site.register(Trials, ExcelAdmin)
-admin.site.register(AddedInfoTrials, ExcelAdmin)
+admin.site.register(Images, ModelAdmin)
+admin.site.register(Introduction, ModelAdmin)
+admin.site.register(Epidemiology, ModelAdmin)
+admin.site.register(FirstDescribed, ModelAdmin)
+admin.site.register(CausativeGene, ModelAdmin)
+admin.site.register(CodifiedProtein, ModelAdmin) 
+admin.site.register(PathoPhysiology, ModelAdmin)
+admin.site.register(CharacteristicsTableRows, ModelAdmin)
+admin.site.register(CharacteristicsTable, ModelAdmin)
+admin.site.register(Clinical, ModelAdmin)
+admin.site.register(ListItems, ModelAdmin)
+admin.site.register(List, ModelAdmin)
+admin.site.register(Reference, ModelAdmin)
+admin.site.register(Disease, ModelAdmin)
+admin.site.register(HtmlTutorial, ModelAdmin)
+admin.site.register(CSS_Class, ModelAdmin)
+admin.site.register(Coordinate_Text, ModelAdmin)
+admin.site.register(RefLinks, ModelAdmin)
+admin.site.register(Trials. ExcelAdmin)
+admin.site.register(AddedInfoTrials, ModelAdmin)
+# admin.site.register(Translation)

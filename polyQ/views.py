@@ -8,7 +8,21 @@ from django.contrib import messages
 from django.core.management import CommandError
 from django.template import RequestContext
 from feedback.forms import FeedbackForm
+from django.utils import translation
+from .models import Introduction
+# from translations.models import Translation ---- Using the django-translations package
+from django.db.models import Prefetch
 
+
+# Internalization 
+from django.shortcuts import render
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
+
+
+
+
+# Views and render templates
 
 def index(request):
     return render(request, 'index.html')
@@ -36,13 +50,13 @@ def appreciation(request):
 
 def search_disease(request):
     form = FeedbackForm
-    disease_name = request.GET.get('disease')
+    disease_name = request.GET.get(_('disease'))
     message_error = 'Something went wrong, try again!'
     message_success = "Form sent. Thanks for contacting us!"
     sent = False
     error=False
     try:
-        disease_name = request.GET.get('disease')
+        disease_name = request.GET.get(_('disease'))
         disease = Disease.objects.get(
             Q(name=disease_name.upper()) | Q(slug__contains=disease_name))
         other_diseases = Disease.objects.all().exclude(name=disease_name.upper())
@@ -88,25 +102,33 @@ def search_disease(request):
         return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:
         error_code = ""
-        error_message = "This disease does not exit on our database!"
+        error_message = _("This disease does not exit on our database!")
         return render(request, 'not-found-page.html', {'error_message': error_message, 'error_code': error_code})
 
     except Disease.MultipleObjectsReturned:
         error_code = ""
-        error_message = "Be more specific with your search"
+        error_message = _("Be more specific with your search")
         return render(request, 'home/index.html', {'error_message': error_message, 'error_code': error_code})
         # raise CommandError(error_message_alert)
 
 
 def custom_page_not_found_view(request, exception):
     error_code = "404"
-    error_message = "Page not found"
+    error_message = _("Page not found")
     return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
 
 
 def custom_error_view(request, exception=None):
     error_code = "500"
-    error_message = "Internal Server error"
+    error_message = _("Internal Server error")
     return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
+
+
+def translate(language):
+    cur_language = get_language()
+    try:
+        activate(language)
+    finally:
+        activate(cur_language)
 
 

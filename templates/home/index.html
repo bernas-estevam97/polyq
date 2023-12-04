@@ -1,8 +1,11 @@
+{% load i18n %}
 <!DOCTYPE html>
 
 {% load static %}
-
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,66 +19,83 @@
     <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
 </head>
 <body>
+    
 <header>
-    <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
+    <a href="https://abcri.pt/" target="_blank"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
     <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
-    <h1><strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+    <h1><strong>{% trans "An ABC Research Institute polyglutamine disease database" %}</strong></h1>
 </header>
 <nav>
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <div class="autocomplete">
-        <form method="get" action="/disease_search">
+        {% if LANGUAGE_CODE == 'en' %}
+        <form method="get" action="/{{ LANGUAGE_CODE }}/disease_search">
             <input type="text" pattern="[\w' -]{2,}" name="disease" class="search-box" placeholder="Disease search..."
             size="40" id="myInput" autocomplete="off" required>
             <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
         </form>
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+        <form method="get" action="/{{ LANGUAGE_CODE }}/patologia_pesquisa">
+            <input type="text" pattern="[\wç' -]{2,}" name="patologia" class="search-box" placeholder="Procura a doença..."
+            size="40" id="myInput" autocomplete="off" required>
+            <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
+        </form>
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+        <form method="get" action="/{{ LANGUAGE_CODE }}/busqueda_enfermedad">
+            <input type="text" pattern="[\w' -]{2,}" name="enfermedad" class="search-box" placeholder="Busca la enfermedad..."
+            size="40" id="myInput" autocomplete="off" required>
+            <button type="submit" class="search-button" id="myButton"><i class="fas fa-search"></i></button>
+        </form>
+            {% endif %}
     </div>
     <div class="search-info">
-        <div class="hover-elem"><p>Need help searching?</p></div>
+        <div class="hover-elem"><p>{% trans "Need help searching?" %}</p></div>
         <div class="hover-info"><p>
-            <span>Search-help:</span><br>
-            <br>&nbsp Start typing the disease name and recommendations show up.<br>
-            <br>&nbsp Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work.<br>
-            <br>&nbsp On enter click, the home page will be redirected to the disease page. The same will happen if the
-            search button is clicked.
+            <span>{% trans "Search-help:" %}</span><br>
+            <br>&nbsp {% trans "Start typing the disease name and recommendations show up." %}<br>
+            <br>&nbsp {% trans "Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work." %}<br>
+            <br>&nbsp {% blocktrans %}On enter click, the home page will be redirected to the disease page. The same will happen if the
+            search button is clicked.{% endblocktrans %}
         </p></div>
     </div>
 </nav>
 <main>
-    <h1> PolyQ Database</h1>
-    <h4> A website with information regarding the 9 polyglutamine diseases documented so far.</h4>
+    <h1>{% trans "PolyQ Database" %}</h1>
+    <h4>{% trans "A website with information regarding the 9 polyglutamine diseases documented so far." %}</h4>
     <div class="container">
         <div class="img-slider">
             <div class="slide active">
                 <img src="{% static 'img/hd-banner.jpg' %}" alt=""></a>
                 <div class="info">
-                    <h3>Huntington's Disease</h3>
-                    <p> Huntington's Disease is the most widely studied and the most
+                    <h3>{% trans "Huntington's Disease" %}</h3>
+                    <p>{% blocktrans trimmed %}Huntington's Disease is the most widely studied and the most
                         well known polyglutamine disease. When it comes to neurodegenerative
                         diseases, HD is the most common inherited across generations and is
-                        mainly characterized by excessive and uncontrolled motor movements.
+                        mainly characterized by excessive and uncontrolled motor movements.{% endblocktrans %}
                     </p>
                 </div>
             </div>
             <div class="slide">
                 <img src="{% static 'img/drpla.jpg' %}" alt="">
                 <div class="info">
-                    <h3>Dentatorubral pallidoluysian atrophy</h3>
-                    <p> Dentatorubral pallidoluysian atrophy or DRPLA is sometimes
+                    <h3>{% trans "Dentatorubral pallidoluysian atrophy" %}</h3>
+                    <p>{% blocktrans trimmed %}Dentatorubral pallidoluysian atrophy or DRPLA is sometimes
                         included in the group of autossomal dominant cerebellar ataxias
                         type 1 because of its various clinical combinations that are seen also in ADCA I diseases.
-                        DRPLA is a disease believed to be mainly found in Japan.
+                        DRPLA is a disease believed to be mainly found in Japan.{% endblocktrans %}
                     </p>
                 </div>
             </div>
             <div class="slide">
                 <img src="{% static 'img/sbma.jpg' %}" alt="">
                 <div class="info">
-                    <h3>Spinal-bulbar muscular atrophy</h3>
-                    <p> Spinal-bulbal muscular atrophy, also known as Kennedy disease,
-                        is a genetic disorder where there is loss of motor neurons.
+                    <h3>{% trans "Spinal-bulbar muscular atrophy" %}</h3>
+                    <p>{% blocktrans trimmed %}Spinal-bulbal muscular atrophy, also known 
+                        as Kennedy disease, is a genetic disorder where there is loss of motor neurons.
                         SBMA is inherited in an X-linked manner so carrier females have
-                        a 50% chance of transmitting the mutation to each child.
+                        a 1/2 chance of transmitting the mutation to each child.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -83,10 +103,10 @@
                 <img src="{% static 'img/adca1.jpg' %}" alt="">
                 <div class="info">
                     <h3>ADCA I</h3>
-                    <p> Autosomal dominant cerebellar ataxias type 1 (ADCA I) is a group of diseases
+                    <p>{% blocktrans trimmed %}Autosomal dominant cerebellar ataxias type 1 (ADCA I) is a group of diseases
                         that consists of cerebellar ataxia along with variable pyramidal,
                         extrapyramidal, and neuropathic signs. Four polyglutamine diseases are included in this group:
-                        SCA1, SCA2, SCA3 and SCA17.
+                        SCA1, SCA2, SCA3 and SCA17.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -94,9 +114,9 @@
                 <img src="{% static 'img/adca2.jpg' %}" alt="">
                 <div class="info">
                     <h3>ADCA II</h3>
-                    <p> Autosomal dominant cerebellar ataxias type 2 is another
+                    <p>{% blocktrans trimmed %}Autosomal dominant cerebellar ataxias type 2 is another
                         ADCA group that consists of diseases presented with cerebellar ataxia and retinal degeneration.
-                        SCA7 is included in this group.
+                        SCA7 is included in this group.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -104,9 +124,9 @@
                 <img src="{% static 'img/adca3.jpg' %}" alt="">
                 <div class="info">
                     <h3>ADCA III</h3>
-                    <p> Autosomal dominant cerebellar ataxias type 3 is a group of
+                    <p>{% blocktrans trimmed %}Autosomal dominant cerebellar ataxias type 3 is a group of
                         diseases that manifest pure cerebellar ataxia. Many spinocerebellar
-                        ataxias make this group, but the one and only polyglutamine disease in this group is SCA6.
+                        ataxias make this group, but the one and only polyglutamine disease in this group is SCA6.{% endblocktrans %}
                     </p>
                 </div>
             </div>
@@ -124,47 +144,63 @@
             </div>
         </div>
         <div class="side-text">
-            <h2> Website briefing</h2>
+            <h2>{% trans "Website briefing" %}</h2>
             <ul>
-                <li>There are 9 polyglutamine diseases: Huntington's, SBMA, DRPLA, SCA1, SCA2, SCA3, SCA6, SCA7 and
-                    SCA17.
+                <li>{% blocktrans %}There are 9 polyglutamine diseases: Huntington's, SBMA, DRPLA, SCA1, SCA2, SCA3, SCA6, SCA7 and
+                    SCA17.{% endblocktrans %}
                 </li>
-                <li>From brief disease introductions to molecular and biological mechanisms. Here we present various
-                    information about every polyglutmine disease to a certain extent.
+                <li>{% blocktrans %}From brief disease introductions to molecular and biological mechanisms. Here we present various
+                    information about every polyglutmine disease to a certain extent.{% endblocktrans %}
                 </li>
-                <li>Each disease will have an introduction, first described cases description, epidemiology data with
+                <li>{% blocktrans %}Each disease will have an introduction, first described cases description, epidemiology data with
                     representative maps, various information on the gene that causes disease and the codified protein
                     (normal and mutated), pathophysiology section which presents important cellular pathogenic
-                    mechanisms, a clinical segment that includes neuropathology findings, signs and symptoms found in
-                    disease patients and a final section regarding any available active trials with experimental drugs and more.
+                    mechanisms and a clinical segment that includes neuropathology findings, signs and symptoms found in
+                    disease patients.{% endblocktrans %}
                 </li>
             </ul>
         </div>
     </div>
     <div class="horizontal-slider" data-aos="fade-up" data-aos-offset="300" data-aos-duration="800"
          id="horizontal-slider">
-        <h6>Polyglutamine Diseases</h6>
-        <h2>Use search bar or click directly on your disease of interest</h2>
+        <h6>{% trans "Polyglutamine Diseases" %}</h6>
+        <h2>{% trans "Use search bar or click directly on your disease of interest" %}</h2>
         <div class="slider-container" id="slider-horizontal">
-            <a href="/disease_search/?disease=hd">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=hd">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=hd">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=hd">
+            {% endif %}
                 <div class="my_item">
                     <div class="card-container">
                         <div class="front-face">
                             <img src="{% static 'img/biology-dna.jpg' %}"/>
                             <p>
-                                Huntington's Disease
+                                {% trans "Huntington's Disease" %}
                             </p>
                         </div>
                         <div class="back-face">
                             <img src="{% static 'img/biology-dna.jpg' %}"/>
                             <p>
-                                Go to HD page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                                {% trans "Go to HD page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                             </p>
                         </div>
                     </div>
                 </div>
             </a>
-            <a href="/disease_search/?disease=drpla">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=drpla">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=drpla">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=drpla">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -176,13 +212,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to DRPLA page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to DRPLA page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sbma">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sbma">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sbma">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sbma">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -194,13 +238,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SBMA page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SBMA page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca1">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca1">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca1">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca1">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -212,13 +264,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SCA1 page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SCA1 page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca2">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca2">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca2">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca2">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -230,13 +290,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SCA2 page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SCA2 page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca3">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca3">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca3">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca3">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -248,13 +316,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SCA3 page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SCA3 page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca6">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca6">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca6">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca6">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -266,13 +342,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SCA6 page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SCA6 page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca7">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca7">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca7">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca7">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -284,13 +368,21 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SCA7 page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SCA7 page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
             </div>
             </a>
-            <a href="/disease_search/?disease=sca17">
+            {% if LANGUAGE_CODE == 'en' %}
+            <a href="/{{ LANGUAGE_CODE }}/disease_search/?disease=sca17">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'pt' %}
+            <a href="/{{ LANGUAGE_CODE }}/patologia_pesquisa/?patologia=sca17">
+            {% endif %}
+            {% if LANGUAGE_CODE == 'es' %}
+            <a href="/{{ LANGUAGE_CODE }}/busqueda_enfermedad/?enfermedad=sca17">
+            {% endif %}
             <div class="my_item">
                 <div class="card-container">
                     <div class="front-face">
@@ -302,7 +394,7 @@
                     <div class="back-face">
                         <img src="{% static 'img/biology-dna.jpg' %}"/>
                         <p>
-                            Go to SCA17 page<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
+                            {% trans "Go to SCA17 page" %}<br><span><img src="{% static 'img/arrow-right.png' %}"/></span>
                         </p>
                     </div>
                 </div>
@@ -319,25 +411,25 @@
     <div class="collumns">
         <div class="first-third">
             <ul>
-                <li><a href="/">Landing Page</a></li>
+                <li><a href="/{{ LANGUAGE_CODE }}/">{% trans "Landing Page" %}</a></li>
                 <li><a href="https://abcri.pt/">ABC-RI</a></li>
-                <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
-                <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
+                <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">{% trans "MNGT group" %}</a></li>
+                <li><a href="https://abcri.pt/news/">{% trans "ABC-RI News" %}</a></li>
             </ul>
         </div>
         <div class="second-third">
             <ul>
-                <li><a href="/authors">Authors</a></li>
+                <li><a href="{% url 'authors' %}">{% trans "Authors" %}</a></li>
                 <li><a href="https://www.ualg.pt/" target="_blank">UAlg</a></li>
                 <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
-                <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
+                <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">{% trans "Masters degree" %}</a></li>
             </ul>
         </div>
         <div class="third-third">
             <ul>
-                <li><a href="../contact">Contact</a></li>
-                <li><a href="../objectives">Objectives</a></li>
-                <li><a href="../appreciation">Appreciation</a></li>
+                <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+                <li><a href="{% url 'objectives' %}">{% trans "Objectives" %}</a></li>
+                <li><a href="{% url 'appreciation' %}">{% trans "Appreciation" %}</a></li>
             </ul>
         </div>
     </div>
@@ -364,7 +456,7 @@
             <path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
         </g>
     </svg>
-    <p>&copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. Authors and database creators all duly mentioned.</p>
+    <p>&copy; {% trans "PolyQ Database. All rights reserved 2021" %}<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. {% trans "Authors and database creators all duly mentioned." %}</p>
     <div class="logos">
         <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
         <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>

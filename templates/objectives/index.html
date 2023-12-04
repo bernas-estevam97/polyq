@@ -1,52 +1,54 @@
 <!DOCTYPE html>
-
+{% load i18n %}
 {% load static %}
-
-<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{LANGUAGE_CODE}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PolyQ - Objectives</title>
-  <link rel="shortcut icon" href="{% static 'img/image.ico' %}">
+  <title>PolyQ - {% trans "Objectives" %}</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
   <link rel="stylesheet" href="{% static 'css/objective.css' %}">
   <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
 </head>
 <body>
   <header>
-    <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
+    <a href="https://abcri.pt/" target="_blank"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
     <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
-    <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+    <h1> <strong>{% trans "An ABC Research Institute polyglutamine disease database" %}</strong></h1>
   </header>
   <nav>
     <a href=""><img class="poly-logo" src="{% static 'img/logo-plyq.png' %}"></a>
     <ul>
-      <li><a href="../" class="return-button"><i class="fa-solid fa-house"></i> Return to Landing Page </a></li>
-      <li><a href="../" class="return-little"><i class="fa-solid fa-house"></i> Landing Page </a></li>
-      <li><a href="/home" class="return-button"><i class="fa-solid fa-house"></i> Return to Home page </a></li>
-      <li><a href="/home" class="return-little"><i class="fa-solid fa-house"></i> Home </a></li>
+      <li><a href="/{{ LANGUAGE_CODE }}/" class="return-button"><i class="fa-solid fa-house"></i> {% trans "Return to Landing Page" %} </a></li>
+      <li><a href="/{{ LANGUAGE_CODE }}/" class="return-little"><i class="fa-solid fa-house"></i> {% trans "Landing Page" %} </a></li>
+      <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-button"><i class="fa-solid fa-house"></i> {% trans "Return to Home page" %} </a></li>
+      <li><a href="/{{ LANGUAGE_CODE }}/home" class="return-little"><i class="fa-solid fa-house"></i> {% trans "Home" %} </a></li>
     </ul>
   </nav>
   <section>
-      <h2 class="title"> The objectives of PolyQ Database </h2>
+      <h2 class="title">{% trans "The objectives of PolyQ Database" %}</h2>
       <div class="qaa">
         <div class="question">
-          <h3> What is this database for?</h3>
+          <h3>{% trans "What is this database for?" %}</h3>
           <svg width="15" height="10" viewBox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
           </svg>
           </div>
           <div class="answer">
             <p>
-              <i class="fa-solid fa-circle-chevron-right"></i>&nbsp PolyQ Database is a mean to aid in the understanding of polyglutamine diseases.<br>
-              <br><i class="fa-solid fa-circle-chevron-right"></i>&nbsp As other databases, PolyQ tries to focus on key information and tries conveying it the best way possible.<br>
-              <br><i class="fa-solid fa-circle-chevron-right"></i>&nbsp This website is a tool for any interested parties with scientific background and knowledge to view general important information on polyglutamine diseases, all in one place.
+              <i class="fa-solid fa-circle-chevron-right"></i>&nbsp {% trans "PolyQ Database is a mean to aid in the understanding of polyglutamine diseases." %}<br>
+              <br><i class="fa-solid fa-circle-chevron-right"></i>&nbsp {% trans "As other databases, PolyQ tries to focus on key information and tries conveying it the best way possible." %}<br>
+              <br><i class="fa-solid fa-circle-chevron-right"></i>&nbsp {% trans "This website is a tool for any interested parties with scientific background and knowledge to view general important information on polyglutamine diseases, all in one place." %}
             </p>
             </div>
         </div>
         <div class="qaa">
           <div class="question">
-            <h3> Why was this made?</h3>
+            <h3>{% trans "Why was this made?" %}</h3>
 
             <svg width="15" height="10" viewBox="0 0 42 25">
               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
@@ -54,14 +56,14 @@
             </div>
             <div class="answer">
               <p>
-                Information about polyglutamine disorders is scattered through the internet. One single website regarding the most important
-                information on every polyglutamine disease would prove to be helpful for the science community.
+                {% blocktrans %} Information about polyglutamine disorders is scattered through the internet. One single website regarding the most important
+                information on every polyglutamine disease would prove to be helpful for the science community. {% endblocktrans %}
               </p>
               </div>
           </div>
           <div class="qaa">
             <div class="question">
-              <h3> What makes this database different from others? </h3>
+              <h3>{% trans "What makes this database different from others?" %} </h3>
 
               <svg width="15" height="10" viewBox="0 0 42 25">
                 <path
@@ -74,9 +76,9 @@
               </div>
               <div class="answer">
                 <p>
-                  Until the date of the creation of this database, there is no other polyglutamine database or rare disease database that includes all general information
+                  {% blocktrans %} Until the date of the creation of this database, there is no other polyglutamine database or rare disease database that includes all general information
                   about every polyglutamine disease, some focus on the genetic side of the disease, others on therapy among some others.
-                  With the information found from trusted online sources and literature, the most searched information on polyglutamine disorders is consolidated within this website.
+                  With the information found from trusted online sources and literature, the most searched information on polyglutamine disorders is consolidated within this website. {% endblocktrans %}
                 </p>
                 </div>
             </div>
@@ -85,25 +87,25 @@
       <div class="collumns">
         <div class="first-third">
           <ul>
-            <li><a href="../home">Home</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/home">{% trans "Home" %}</a></li>
             <li><a href="https://abcri.pt/">ABC-RI</a></li>
-            <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">MNGT group</a></li>
-            <li><a href="https://abcri.pt/news/">ABC-RI News</a></li>
+            <li><a href="https://abcri.pt/research-groups/clevio-nobrega/#menu">{% trans "MNGT group" %}</a></li>
+            <li><a href="https://abcri.pt/news/">{% trans "ABC-RI News" %}</a></li>
           </ul>
         </div>
         <div class="second-third">
           <ul>
-            <li><a href="../authors">Authors</a></li>
+            <li><a href="{% url 'authors' %}">{% trans "Authors" %}</a></li>
             <li><a href="https://www.ualg.pt/">UAlg</a></li>
             <li><a href="https://fmcb.ualg.pt/en">UAlg - FMCB</a></li>
-            <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">Masters degree</a></li>
+            <li><a href="https://fmcb.ualg.pt/en/master-biomedical-sciences">{% trans "Masters degree" %}</a></li>
           </ul>
         </div>
         <div class="third-third">
           <ul>
-            <li><a href="../">Landing Page</a></li>
-            <li><a href="../contact">Contact</a></li>
-            <li><a href="../appreciation">Appreciation</a></li>
+            <li><a href="/{{ LANGUAGE_CODE }}/">{% trans "Landing Page" %}</a></li>
+            <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+            <li><a href="{% url 'appreciation' %}">{% trans "Appreciation" %}</a></li>
           </ul>
         </div>
       </div>
@@ -129,7 +131,7 @@
   <path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
   </g>
   </svg>
-      <p>&copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. Authors and database creators all duly mentioned.</p>
+      <p>&copy; {% trans "PolyQ Database. All rights reserved 2021" %}<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. {%trans "Authors and database creators all duly mentioned." %}</p>
       <div class="logos">
         <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
         <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>

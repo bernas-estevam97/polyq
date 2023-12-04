@@ -151,6 +151,36 @@ nav .fas{
   display: none;
 }
 
+.language-options{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.language-options .lang{
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.language-options .lang:hover img{
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.language-options .current{
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.language-options .current img{
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.language-options .lang img, .language-options .current img{
+  width: 40px;
+  height: 40px;
+}
 
 
 @media (min-width:281px) and (max-width: 700px){
@@ -194,12 +224,12 @@ nav .fas{
     text-align: center;
   }
   .text-box h1{
-    font-size: 30px;
+    font-size: 25px;
 
 
     }
   .text-box p{
-    font-size: 20px;
+    font-size: 17px;
     top: 50%;
     left: 50%;
 }
@@ -220,7 +250,7 @@ nav .fas{
   }
 
   .nav-links ul li a{
-    font-size: 20px;
+    font-size: 1.2em;
   }
   .header{
     min-height: 100vh;
@@ -258,6 +288,29 @@ nav .fas{
     top: 90%;
     left:50%;
   }
+
+  .language-options{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 17%;
+  }
+  
+  .language-options .lang, .language-options .current{
+    margin: 20px 10px 20px 20px;
+    text-decoration: none;
+  }
+
+  .language-options .lang img, .language-options .current img{
+    width: 40px;
+    height: 40px;
+  }
+
+
+
 }
 /* Galaxy fold */
 @media (max-width: 280px){
@@ -344,8 +397,8 @@ nav .fas{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    padding: 16px 40px;
-    font-size: 20px;
+    padding: 12px 20px;
+    font-size: 0.9em;
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -356,6 +409,27 @@ nav .fas{
     top: 90%;
     left:50%;
   }
+
+  .language-options{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 17%;
+  }
+  
+  .language-options .lang, .language-options .current{
+    margin: 15px 5px 15px 15px;
+    text-decoration: none;
+  }
+
+  .language-options .lang img, .language-options .current img{
+    width: 30px;
+    height: 30px;
+  }
+
 }
 
 /* Ipad/Tablet */
@@ -418,14 +492,37 @@ nav .fas{
    font-size: 30px;
  }
 
-nav .fas{
-  display: block;
-  color: #fff;
-  font-size: 35px;
-  cursor: pointer;
-  text-align: left;
-  margin-left: 1px;
-}
+  nav .fas{
+    display: block;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: left;
+    margin-left: 1px;
+  }
+
+  .language-options{
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 17%;
+  }
+
+  .language-options .lang, .language-options .current{
+    margin: 20px 10px 20px 20px;
+    text-decoration: none;
+  }
+
+  .language-options .lang img, .language-options .current img{
+    width: 50px;
+    height: 50px;
+  }
+
+  
+
 }
 
 @media (min-width: 1025px) and (max-width: 1546px){

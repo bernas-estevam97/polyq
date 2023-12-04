@@ -1,0 +1,760 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-24 21:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\polyQ\settings.py:135
+msgid "English"
+msgstr "Inglês"
+
+#: .\polyQ\settings.py:136
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: .\polyQ\settings.py:137
+msgid "Portuguese"
+msgstr "Português"
+
+#: .\polyQ\urls.py:25
+msgid "admin_access/"
+msgstr "acesso_admin/"
+
+#: .\polyQ\urls.py:28 .\polyQ\urls.py:50
+msgid "objectives/"
+msgstr "objectivos/"
+
+#: .\polyQ\urls.py:38 .\polyQ\urls.py:60
+msgid "contact/"
+msgstr "contacto/"
+
+#: .\polyQ\urls.py:39 .\polyQ\urls.py:61
+msgid "authors/"
+msgstr "autores/"
+
+#: .\polyQ\urls.py:40 .\polyQ\urls.py:62
+msgid "appreciation/"
+msgstr "agradecimentos/"
+
+#: .\polyQ\urls.py:41 .\polyQ\urls.py:63
+msgid "disease_search/"
+msgstr "patologia_pesquisa/"
+
+#: .\polyQ\urls.py:42 .\polyQ\urls.py:64
+msgid "disease/"
+msgstr "patologia/"
+
+#: .\polyQ\views.py:102 .\polyQ\views.py:104
+msgid "disease"
+msgstr "patologia"
+
+#: .\polyQ\views.py:131
+msgid "This disease does not exit on our database!"
+msgstr "Esta doença não existe na nossa base de dados!"
+
+#: .\polyQ\views.py:136
+msgid "Be more specific with your search"
+msgstr "Seja mais específico na pesquisa"
+
+#: .\polyQ\views.py:143
+#, fuzzy
+#| msgid "Not found"
+msgid "Page not found"
+msgstr "Página não encontrada"
+
+#: .\polyQ\views.py:149
+msgid "Internal Server error"
+msgstr "Erro do servidor"
+
+#: .\templates\appreciation\index.html:13 .\templates\authors\index.html:109
+#: .\templates\contact\index.html:74 .\templates\diseases.html:354
+#: .\templates\home\index.html:431 .\templates\objectives\index.html:109
+msgid "Appreciation"
+msgstr "Agradecimentos"
+
+#: .\templates\appreciation\index.html:24 .\templates\authors\index.html:21
+#: .\templates\contact\index.html:22 .\templates\diseases.html:28
+#: .\templates\home\index.html:25 .\templates\not-found-page.html:22
+#: .\templates\objectives\index.html:21
+msgid "An ABC Research Institute polyglutamine disease database"
+msgstr ""
+"Uma base de dados de doenças da poliglutamina do Instituto de Investigação "
+"ABC"
+
+#: .\templates\appreciation\index.html:29 .\templates\authors\index.html:27
+#: .\templates\contact\index.html:27 .\templates\objectives\index.html:26
+msgid "Return to Landing Page"
+msgstr "Voltar para a página inicial"
+
+#: .\templates\appreciation\index.html:30
+#: .\templates\appreciation\index.html:91 .\templates\authors\index.html:28
+#: .\templates\authors\index.html:107 .\templates\contact\index.html:28
+#: .\templates\contact\index.html:72 .\templates\diseases.html:336
+#: .\templates\home\index.html:413 .\templates\objectives\index.html:27
+#: .\templates\objectives\index.html:107
+msgid "Landing Page"
+msgstr "Página Inicial"
+
+#: .\templates\appreciation\index.html:31 .\templates\authors\index.html:29
+#: .\templates\contact\index.html:29 .\templates\diseases.html:100
+#: .\templates\objectives\index.html:28
+msgid "Return to Home page"
+msgstr "Voltar à página Home"
+
+#: .\templates\appreciation\index.html:32
+#: .\templates\appreciation\index.html:75 .\templates\authors\index.html:30
+#: .\templates\authors\index.html:91 .\templates\contact\index.html:30
+#: .\templates\contact\index.html:56 .\templates\not-found-page.html:41
+#: .\templates\objectives\index.html:29 .\templates\objectives\index.html:91
+msgid "Home"
+msgstr "Home"
+
+#: .\templates\appreciation\index.html:39
+msgid "Thanks to BioRender for the tools to create some of our images."
+msgstr ""
+"Obrigado ao BioRender pelas ferramentas para criar algumas de nossas imagens."
+
+#: .\templates\appreciation\index.html:45
+msgid ""
+"Thanks to MapChart for the amazing tool that helped create our epidemiology "
+"maps for each disease."
+msgstr ""
+"Obrigado ao MapChart pela incrível ferramenta que ajudou a criar nossos "
+"mapas epidemiológicospara cada doença."
+
+#: .\templates\appreciation\index.html:55
+msgid ""
+"A special thanks for the information across various academic research "
+"databases."
+msgstr ""
+"Um agradecimento especial pelas informações em várias bases de dados de "
+"pesquisa académica."
+
+#: .\templates\appreciation\index.html:61
+msgid ""
+"Thanks to Genome Browser for various information including gene location."
+msgstr ""
+"Obrigado ao Genome Browser por várias informações, incluindo a localização "
+"do gene."
+
+#: .\templates\appreciation\index.html:67
+msgid "Special thanks to UniProt for detailed protein information."
+msgstr ""
+"Agradecimentos especiais à UniProt pelas informações detalhadas sobre "
+"proteínas."
+
+#: .\templates\appreciation\index.html:77 .\templates\authors\index.html:93
+#: .\templates\contact\index.html:58 .\templates\diseases.html:338
+#: .\templates\home\index.html:415 .\templates\objectives\index.html:93
+msgid "MNGT group"
+msgstr "Grupo MNGT"
+
+#: .\templates\appreciation\index.html:78 .\templates\authors\index.html:94
+#: .\templates\contact\index.html:59 .\templates\diseases.html:339
+#: .\templates\home\index.html:416 .\templates\objectives\index.html:94
+msgid "ABC-RI News"
+msgstr "Novidades ABC-RI"
+
+#: .\templates\appreciation\index.html:83 .\templates\authors\index.html:34
+#: .\templates\contact\index.html:64 .\templates\diseases.html:344
+#: .\templates\home\index.html:421 .\templates\not-found-page.html:43
+#: .\templates\objectives\index.html:99
+msgid "Authors"
+msgstr "Autores"
+
+#: .\templates\appreciation\index.html:86 .\templates\authors\index.html:102
+#: .\templates\contact\index.html:67 .\templates\diseases.html:347
+#: .\templates\home\index.html:424 .\templates\objectives\index.html:102
+msgid "Masters degree"
+msgstr "Mestrado"
+
+#: .\templates\appreciation\index.html:92 .\templates\authors\index.html:99
+#: .\templates\diseases.html:352 .\templates\home\index.html:429
+#: .\templates\not-found-page.html:42 .\templates\objectives\index.html:108
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\templates\appreciation\index.html:93 .\templates\authors\index.html:108
+#: .\templates\contact\index.html:73 .\templates\diseases.html:353
+#: .\templates\home\index.html:430 .\templates\not-found-page.html:44
+#: .\templates\objectives\index.html:12
+msgid "Objectives"
+msgstr "Objectivos"
+
+#: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
+#: .\templates\contact\index.html:100 .\templates\diseases.html:381
+#: .\templates\home\index.html:458 .\templates\index.html:121
+#: .\templates\objectives\index.html:135
+msgid "PolyQ Database. All rights reserved 2021"
+msgstr "Base de dados PolyQ. Todos os direitos reservados 2021"
+
+#: .\templates\appreciation\index.html:119 .\templates\authors\index.html:135
+#: .\templates\contact\index.html:100 .\templates\diseases.html:381
+#: .\templates\home\index.html:458 .\templates\objectives\index.html:135
+#, fuzzy
+#| msgid "Authors and database creators duly mentioned."
+msgid "Authors and database creators all duly mentioned."
+msgstr "Criadores da base de dados e outros autores devidamente mencionados."
+
+#: .\templates\authors\index.html:15
+msgid "About the authors"
+msgstr "Acerca dos autores"
+
+#: .\templates\authors\index.html:42
+msgid "Student / website creator"
+msgstr "Estudante/ criador da plataforma"
+
+#: .\templates\authors\index.html:43
+msgid "Bachelor's and Master in Biomedical Sciences"
+msgstr "Licenciado e Mestre em Ciências Biomédicas"
+
+#: .\templates\authors\index.html:44
+msgid ""
+"Mainly interested in bioinformatics, neurodegenerative diseases and genetics "
+"with a growing interest in programming linked to biology and medicine."
+msgstr ""
+"Principalmente interessado em biominformática, doenças neurodegenerativas e "
+"genéticacom interesse em programação ligada à biologia e medicina"
+
+#: .\templates\authors\index.html:57
+msgid "Mentor"
+msgstr "Mentor"
+
+#: .\templates\authors\index.html:58
+msgid ""
+"Assistant Professor of the Faculty of Medicine and Biomedical Sciences, and "
+"both Director and Principal Investigator of the Algarve Biomedical Center "
+"Research Institute, University of Algarve."
+msgstr ""
+"Professor assistente na faculdade de medicina e ciências biomédicasw, e "
+"diretor e investigador principal do Instituto de investigação do Centro "
+"Biomédico do Algarve na Universidade do Algarve"
+
+#: .\templates\authors\index.html:59
+msgid ""
+"Main research interests are gene therapy for rare diseases, especially those "
+"affecting the nervous system."
+msgstr ""
+"Principais interesses são terapia génica para doenças raras, especialmente "
+"as que afetam o sistema nervoso"
+
+#: .\templates\authors\index.html:75
+msgid "Co-Mentor"
+msgstr "Co-Mentor"
+
+#: .\templates\authors\index.html:76
+msgid ""
+"Invited Assistant Professor of the Faculty of Medicine and Biomedical "
+"Sciences, and post-doctoral researcher at the Algarve Biomedical Center "
+"Research Institute, University of Algarve."
+msgstr ""
+"Professor Auxiliar Convidado da Faculdade de Medicina e Ciências Biomédicas, "
+"e investigador de pós-doutoramento no Instituto de investigação do Centro "
+"Biomédico do Algarve, Universidade do Algarve."
+
+#: .\templates\authors\index.html:77
+msgid ""
+"Carlos' research is focused on the molecular mechanisms underlying "
+"hereditary disorders of the nervous system, especially polyglutamine "
+"diseases."
+msgstr ""
+"A sua pesquisa está focada nos mecanismos moleculares subjacentes a "
+"distúrbios hereditários do sistema nervoso,especialmente doenças de "
+"poliglutamina."
+
+#: .\templates\contact\index.html:12 .\templates\contact\index.html:34
+msgid "Contact Us"
+msgstr "Contacto"
+
+#: .\templates\contact\index.html:37
+msgid "Contact directly via mail:"
+msgstr "Entre em contato direto por e-mail:"
+
+#: .\templates\contact\index.html:42
+msgid "Available social links:"
+msgstr "Links sociais disponíveis:"
+
+#: .\templates\diseases.html:53
+msgid "More"
+msgstr "Mais"
+
+#: .\templates\diseases.html:108
+msgid "Other Diseases"
+msgstr "Outras doenças"
+
+#: .\templates\diseases.html:161
+msgid "Page navigation"
+msgstr "Navegação da página"
+
+#: .\templates\diseases.html:166 .\templates\diseases.html:168
+msgid "Introduction"
+msgstr "Introdução"
+
+#: .\templates\diseases.html:172 .\templates\diseases.html:174
+msgid "First described"
+msgstr "Primeiras Descrições"
+
+#: .\templates\diseases.html:178 .\templates\diseases.html:180
+msgid "Epidemiology"
+msgstr "Epidemiologia"
+
+#: .\templates\diseases.html:192 .\templates\diseases.html:205
+#: .\templates\diseases.html:221 .\templates\diseases.html:276
+msgid "[Fullsize image]"
+msgstr "[Imagem completa]"
+
+#: .\templates\diseases.html:196 .\templates\diseases.html:198
+msgid "Causative gene"
+msgstr "Gene causal"
+
+#: .\templates\diseases.html:210
+msgid "Codified protein"
+msgstr "Proteína codificada"
+
+#: .\templates\diseases.html:212
+msgid ""
+"Codified protein: structure, domains, functions and intracellular "
+"localization"
+msgstr ""
+"Proteína codificada: estrutura, domínios, funções e localização intracelular"
+
+#: .\templates\diseases.html:213
+msgid "Structure and domains"
+msgstr "Estrutura e domínios"
+
+#: .\templates\diseases.html:228
+#, fuzzy
+#| msgid "Appreciation"
+msgid "Description"
+msgstr "Agradecimentos"
+
+#: .\templates\diseases.html:229
+msgid "Position"
+msgstr "Posição"
+
+#: .\templates\diseases.html:230
+msgid "Length (amino acids)"
+msgstr "Comprimento (aminoácidos)"
+
+#: .\templates\diseases.html:254
+msgid "Protein functions and biological role"
+msgstr "Funções das proteínas e papel biológico"
+
+#: .\templates\diseases.html:256
+msgid "Protein intracellular localization"
+msgstr "Localização intracelular da proteína"
+
+#: .\templates\diseases.html:261
+msgid "Figure 5:"
+msgstr "Figura 5:"
+
+#: .\templates\diseases.html:261
+msgid "intracellular localization."
+msgstr "localização intracelular"
+
+#: .\templates\diseases.html:262
+msgid "(Refresh this element if changed resolutions"
+msgstr "(Atualize este elemento se as resoluções forem alteradas"
+
+#: .\templates\diseases.html:267 .\templates\diseases.html:269
+msgid "Pathophysiology"
+msgstr "Fisiopatologia"
+
+#: .\templates\diseases.html:280
+msgid "Clinical manifestations"
+msgstr "Manifestações clínicas"
+
+#: .\templates\diseases.html:282
+msgid "Clinical manifestations: neuropathology, other signs and symptoms"
+msgstr "Manifestações clínicas: neuropatologia, outros sinais e sintomas"
+
+#: .\templates\diseases.html:283
+msgid "Neuropathology"
+msgstr "Neuropatologia"
+
+#: .\templates\diseases.html:285
+msgid "Signs and symptoms"
+msgstr "Sinais e sintomas"
+
+#: .\templates\diseases.html:304 .\templates\diseases.html:319
+msgid "References"
+msgstr "Referências"
+
+#: .\templates\home\index.html:53
+msgid "Need help searching?"
+msgstr "Precisa de ajuda para pesquisar?"
+
+#: .\templates\home\index.html:55
+msgid "Search-help:"
+msgstr "Ajuda de pesquisa"
+
+#: .\templates\home\index.html:56
+msgid "Start typing the disease name and recommendations show up."
+msgstr "Comece a digitar o nome da doença e vão aparecer recomendações."
+
+#: .\templates\home\index.html:57
+msgid "Any abbreviations such as HD, SCA1, DRPLA, SBMA will also work."
+msgstr ""
+"Quaisquer abreviações oficiais como HD, SCA1, DRPLA, SBMA também funcionarão."
+
+#: .\templates\home\index.html:58
+msgid ""
+"On enter click, the home page will be redirected to the disease page. The "
+"same will happen if the\n"
+"            search button is clicked."
+msgstr ""
+"Ao clicar enter, a página inicial será redirecionada para a página da doença."
+"O mesmo acontecerá se o botão de pesquisa for clicado."
+
+#: .\templates\home\index.html:64
+msgid "PolyQ Database"
+msgstr "Base de dados PolyQ"
+
+#: .\templates\home\index.html:65
+msgid ""
+"A website with information regarding the 9 polyglutamine diseases documented "
+"so far."
+msgstr ""
+"Um site com informações sobre as 9 doenças da poliglutamina documentadas até "
+"agora."
+
+#: .\templates\home\index.html:71 .\templates\home\index.html:182
+msgid "Huntington's Disease"
+msgstr "Doença de Huntington"
+
+#: .\templates\home\index.html:72
+msgid ""
+"Huntington's Disease is the most widely studied and the most well known "
+"polyglutamine disease. When it comes to neurodegenerative diseases, HD is "
+"the most common inherited across generations and is mainly characterized by "
+"excessive and uncontrolled motor movements."
+msgstr ""
+"A Doença de Huntington é a mais estudada e a mais conhecidadoença de "
+"poliglutaminas. Quando se trata de doenças neurodegenerativas, a HD é a mais "
+"comum de ser herdada entre gerações e é caracterizada principalmente "
+"pormovimentos motores excessivos e descontrolados."
+
+#: .\templates\home\index.html:82
+msgid "Dentatorubral pallidoluysian atrophy"
+msgstr "Atrofia palidoluisiana dentatorrubral"
+
+#: .\templates\home\index.html:83
+msgid ""
+"Dentatorubral pallidoluysian atrophy or DRPLA is sometimes included in the "
+"group of autossomal dominant cerebellar ataxias type 1 because of its "
+"various clinical combinations that are seen also in ADCA I diseases. DRPLA "
+"is a disease believed to be mainly found in Japan."
+msgstr ""
+"Atrofia palidoluisiana dentatorrubral ou DRPLA às vezes é incluída no grupo "
+"de ataxias cerebelares autossómicas dominantes tipo 1 por causa das "
+"suasmanifestações clínicas que também são observadas em doenças ADCA I. "
+"DRPLA é uma doença que se acredita ser encontrada principalmente no Japão."
+
+#: .\templates\home\index.html:93
+msgid "Spinal-bulbar muscular atrophy"
+msgstr "Atrofia muscular espinhal-bulbar"
+
+#: .\templates\home\index.html:94
+msgid ""
+"Spinal-bulbal muscular atrophy, also known as Kennedy disease, is a genetic "
+"disorder where there is loss of motor neurons. SBMA is inherited in an X-"
+"linked manner so carrier females have a 1/2 chance of transmitting the "
+"mutation to each child."
+msgstr ""
+"A atrofia muscular espinhal-bulbal (SBMA), também conhecida como doença de "
+"Kennedy, é um distúrbio onde há perda de neurónios motores. A SBMA é herdada "
+"de maneira recessivaligada ao X, isto quer dizer que mulheres portadoras tem "
+"1/2 chance de transmitir amutação para cada criança."
+
+#: .\templates\home\index.html:105
+msgid ""
+"Autosomal dominant cerebellar ataxias type 1 (ADCA I) is a group of diseases "
+"that consists of cerebellar ataxia along with variable pyramidal, "
+"extrapyramidal, and neuropathic signs. Four polyglutamine diseases are "
+"included in this group: SCA1, SCA2, SCA3 and SCA17."
+msgstr ""
+"As ataxias cerebelares autossômicas dominantes tipo 1 (ADCA I) são um grupo "
+"de doençasque consistem em ataxia cerebelar juntamente com sinais "
+"piramidais, extrapiramidais eneuropáticos variáveis. Quatro doenças "
+"poliglutaminas estão incluídas neste grupo: SCA1, SCA2, SCA3 e SCA17."
+
+#: .\templates\home\index.html:116
+msgid ""
+"Autosomal dominant cerebellar ataxias type 2 is another ADCA group that "
+"consists of diseases presented with cerebellar ataxia and retinal "
+"degeneration. SCA7 is included in this group."
+msgstr ""
+"As ataxias cerebelares dominantes autossómicas tipo 2 são outro grupo ADCA "
+"que consiste em doenças apresentadas com ataxia cerebelar e degeneração da "
+"retina. SCA7 está incluído neste grupo."
+
+#: .\templates\home\index.html:126
+msgid ""
+"Autosomal dominant cerebellar ataxias type 3 is a group of diseases that "
+"manifest pure cerebellar ataxia. Many spinocerebellar ataxias make this "
+"group, but the one and only polyglutamine disease in this group is SCA6."
+msgstr ""
+"As ataxias cerebelares autossômicas dominantes tipo 3 são um grupo de "
+"doenças que manifestam ataxia cerebelar pura. Muitas ataxias "
+"espinocerebelares estão presentes neste grupo, mas a única proveniente de "
+"poliglutaminas é a SCA6."
+
+#: .\templates\home\index.html:146
+msgid "Website briefing"
+msgstr "Resumo do site"
+
+#: .\templates\home\index.html:148
+msgid ""
+"There are 9 polyglutamine diseases: Huntington's, SBMA, DRPLA, SCA1, SCA2, "
+"SCA3, SCA6, SCA7 and\n"
+"                    SCA17."
+msgstr ""
+"Existem 9 doenças poliglutaminas: Huntington, SBMA, DRPLA, SCA1, SCA2, SCA3, "
+"SCA6, SCA7 e SCA17."
+
+#: .\templates\home\index.html:151
+msgid ""
+"From brief disease introductions to molecular and biological mechanisms. "
+"Here we present various\n"
+"                    information about every polyglutmine disease to a "
+"certain extent."
+msgstr ""
+"De breves introduções de doenças a mecanismos moleculares e biológicos. Aqui "
+"apresentamos várias informações sobre todas as doenças de poliglutaminas"
+
+#: .\templates\home\index.html:154
+msgid ""
+"Each disease will have an introduction, first described cases description, "
+"epidemiology data with\n"
+"                    representative maps, various information on the gene "
+"that causes disease and the codified protein\n"
+"                    (normal and mutated), pathophysiology section which "
+"presents important cellular pathogenic\n"
+"                    mechanisms and a clinical segment that includes "
+"neuropathology findings, signs and symptoms found in\n"
+"                    disease patients."
+msgstr ""
+"Cada doença terá uma introdução, primeira casos descritos, dados "
+"epidemiológicos com mapas representativos, várias informações sobre o gene "
+"que causa doença e a proteína codificada (normal e mutante), secção de "
+"fisiopatologia que apresenta importantes mecanismos de patogenicidade "
+"celular e um segmento clínico que inclui descobertas neuropatológicas, "
+"sinais e sintomas encontrados empacientes da doença."
+
+#: .\templates\home\index.html:165
+msgid "Polyglutamine Diseases"
+msgstr "Doenças de Poliglutaminas"
+
+#: .\templates\home\index.html:166
+msgid "Use search bar or click directly on your disease of interest"
+msgstr ""
+"Use a barra de pesquisa ou clique diretamente na doença de seu interesse"
+
+#: .\templates\home\index.html:188
+msgid "Go to HD page"
+msgstr "Ir para a página HD"
+
+#: .\templates\home\index.html:214
+msgid "Go to DRPLA page"
+msgstr "Ir para a página DRPLA"
+
+#: .\templates\home\index.html:240
+msgid "Go to SBMA page"
+msgstr "Ir para a página SBMA"
+
+#: .\templates\home\index.html:266
+msgid "Go to SCA1 page"
+msgstr "Ir para a página SCA1"
+
+#: .\templates\home\index.html:292
+msgid "Go to SCA2 page"
+msgstr "Ir para a página SCA2"
+
+#: .\templates\home\index.html:318
+msgid "Go to SCA3 page"
+msgstr "Ir para a página SCA3"
+
+#: .\templates\home\index.html:344
+msgid "Go to SCA6 page"
+msgstr "Ir para a página SCA6"
+
+#: .\templates\home\index.html:370
+msgid "Go to SCA7 page"
+msgstr "Ir para a página SCA7"
+
+#: .\templates\home\index.html:396
+msgid "Go to SCA17 page"
+msgstr "Ir para a página SCA17"
+
+#: .\templates\index.html:11
+msgid "Polyglutamine Disorders - Database"
+msgstr "Doenças de Poliglutaminas - Base de dados"
+
+#: .\templates\index.html:106
+msgid "HOME"
+msgstr "HOME"
+
+#: .\templates\index.html:107
+msgid "OBJECTIVES"
+msgstr "OBJECTIVOS"
+
+#: .\templates\index.html:108
+msgid "AUTHOR/S"
+msgstr "AUTORES"
+
+#: .\templates\index.html:109
+msgid "CONTACT"
+msgstr "CONTACTO"
+
+#: .\templates\index.html:110
+msgid "APPRECIATION"
+msgstr "AGRADECIMENTOS"
+
+#: .\templates\index.html:116
+msgid "A Database for Polyglutamine Diseases"
+msgstr "Uma base de dados para doenças de poliglutamina"
+
+#: .\templates\index.html:117
+msgid ""
+"Information on the 9 known different diseases that result from increased "
+"number of CAG triplets."
+msgstr ""
+"Informação acerca das 9 doenças conhecidas provacadas pelo aumento e "
+"repetição anormal de tripletos CAG"
+
+#: .\templates\index.html:118
+msgid "Visit PolyQ Database"
+msgstr "Visita a base de dados PolyQ"
+
+#: .\templates\index.html:121
+msgid "Authors and database creators duly mentioned."
+msgstr "Criadores da base de dados e outros autores devidamente mencionados."
+
+#: .\templates\not-found-page.html:13
+msgid "Not found"
+msgstr "Não encontrado"
+
+#: .\templates\not-found-page.html:30
+#, fuzzy
+#| msgid "The page you were looking for does not exist! Click"
+msgid "The page you were looking for does not exist! Click "
+msgstr "A pagina que você está procurando não existe! Clique"
+
+#: .\templates\not-found-page.html:30
+msgid "here"
+msgstr "aqui"
+
+#: .\templates\not-found-page.html:30
+msgid "to return to the home page."
+msgstr "para voltar à página Home"
+
+#: .\templates\not-found-page.html:33
+msgid "If you got to this page by clicking a link, please "
+msgstr "Se você chegou a esta página ao clical num link, por favor "
+
+#: .\templates\not-found-page.html:33
+msgid "notify us"
+msgstr "notifique-nos"
+
+#: .\templates\not-found-page.html:47
+msgid "Search for information on 9 different polyglutamine diseases"
+msgstr "Pesquise informações sobre 9 doenças diferentes da poliglutamina"
+
+#: .\templates\not-found-page.html:48
+msgid "Contact us"
+msgstr "Contacte-nos"
+
+#: .\templates\not-found-page.html:49
+msgid "Authors information"
+msgstr "Informações dos autores"
+
+#: .\templates\not-found-page.html:50
+msgid "PolyQ database objectives"
+msgstr "Objectivos da base de dados PolyQ"
+
+#: .\templates\objectives\index.html:33
+#, fuzzy
+#| msgid "Visit PolyQ Database"
+msgid "The objectives of PolyQ Database"
+msgstr "Visita a base de dados PolyQ"
+
+#: .\templates\objectives\index.html:36
+msgid "What is this database for?"
+msgstr "Para que serve esta base de dados?"
+
+#: .\templates\objectives\index.html:43
+msgid ""
+"PolyQ Database is a mean to aid in the understanding of polyglutamine "
+"diseases."
+msgstr ""
+"A base de dados PolyQ é um meio para auxiliar na melhor compreensão das "
+"doenças de poliglutaminas."
+
+#: .\templates\objectives\index.html:44
+msgid ""
+"As other databases, PolyQ tries to focus on key information and tries "
+"conveying it the best way possible."
+msgstr ""
+"Como outras bases de dados, PolyQ tenta se concentrar nas principais "
+"informações e tentatransmiti-las da melhor maneira possível."
+
+#: .\templates\objectives\index.html:45
+msgid ""
+"This website is a tool for any interested parties with scientific background "
+"and knowledge to view general important information on polyglutamine "
+"diseases, all in one place."
+msgstr ""
+"Esta plataforma é uma ferramenta para qualquer pessoa interessada(com "
+"formação e conhecimento científico ou não), para explorar informaçõesgerais "
+"importantes sobre doenças causadas por poliglutaminas, tudo num só lugar."
+
+#: .\templates\objectives\index.html:51
+msgid "Why was this made?"
+msgstr "Porquê fazer esta base de dados?"
+
+#: .\templates\objectives\index.html:59
+msgid ""
+" Information about polyglutamine disorders is scattered through the "
+"internet. One single website regarding the most important\n"
+"                information on every polyglutamine disease would prove to be "
+"helpful for the science community. "
+msgstr ""
+"Informações sobre distúrbios de poliglutamina estão espalhadas pela internet."
+"Um único local com as informações mais importantes sobre cada doença de "
+"poliglutaminas provaria ser útil para a comunidade científica e outras."
+
+#: .\templates\objectives\index.html:66
+msgid "What makes this database different from others?"
+msgstr "O que torna esta base de dados diferente das outras?"
+
+#: .\templates\objectives\index.html:79
+msgid ""
+" Until the date of the creation of this database, there is no other "
+"polyglutamine database or rare disease database that includes all general "
+"information\n"
+"                  about every polyglutamine disease, some focus on the "
+"genetic side of the disease, others on therapy among some others.\n"
+"                  With the information found from trusted online sources and "
+"literature, the most searched information on polyglutamine disorders is "
+"consolidated within this website. "
+msgstr ""
+"Até a data de criação desta base de dados, não há nenhuma outra base de "
+"dados de doençasde poliglutaminas ou de doenças raras que inclua toda a "
+"informaçãogeral sobre todas as doenças da poliglutamina, algumas focam no "
+"lado genético, outras na terapia e entre outras.Com as informações "
+"encontradas em fontes on-line confiáveis ​​e literatura, as informações mais "
+"pesquisadas sobre distúrbios da poliglutamina estão consolidadas aqui."

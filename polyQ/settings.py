@@ -19,9 +19,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+#python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())' GENERATE NEW KEY
 SECRET_KEY = 'v%im0jx$km-kfr12stn$!$^cr_isstce53bjj@&hxid*es6q*b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -37,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polyQ',
     'import_export',
-    'feedback',
+    'feedback',,
+    'modeltranslation'
+    # 'translations'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -63,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -74,7 +80,7 @@ if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
         }
     }
 else:
@@ -82,6 +88,8 @@ else:
         'default': {
             'ENGINE': 'sql_server.pyodbc',
             'NAME': 'polyq_database',
+            'USER': 'bboyBernas10',
+            'PASSWORD': '%)@LFwX5!d(5ghCQ',
             'USER': 'bboyBernas10',
             'PASSWORD': '%)@LFwX5!d(5ghCQ',
             'HOST': '94.46.171.187',
@@ -122,6 +130,21 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+from django.utils.translation import gettext_lazy as _
+
+
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('pt', _('Portuguese')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -140,4 +163,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 60 * 60
+SESSION_COOKIE_AGE = 240 * 60

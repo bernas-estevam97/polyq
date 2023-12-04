@@ -96,11 +96,27 @@ function autocomplete(inp, arr) {
 
 }
 
-/*An array containing all the country names in the world:*/
-var diseases = ["Huntington's disease", "Dentatorubral-pallidoluysian atrophy",
+/*An array containing disease names:*/
+var diseases_en = ["Huntington's disease", "Dentatorubral-pallidoluysian atrophy",
                  "Spinal-bulbar muscular atrophy", "Spinocerebellar ataxia type 1", "Spinocerebellar ataxia type 2", "Spinocerebellar ataxia type 3",
                 "Spinocerebellar ataxia type 6", "Spinocerebellar ataxia type 7", "Spinocerebellar ataxia 17"];
 
+var diseases_es = ["Enfermedad de Huntington", "Atrofia dentorrubral-palidoluisiana",
+                 "Atrofia muscular espinal-bulbar", "Ataxia espinocerebelosa tipo 1", "Ataxia espinocerebelosa tipo 2", "Ataxia espinocerebelosa tipo 3",
+                "Ataxia espinocerebelosa tipo 6", "Ataxia espinocerebelosa tipo 7", "Ataxia espinocerebelosa 17"];
+
+var diseases_pt = ["Doença de Huntington", "Atrofia dentatorrubro-palidoluisiana",
+                 "Atrofia muscular espinhal-bulbar", "Ataxia espinocerebelar tipo 1", "Ataxia espinocerebelar tipo 2", "Ataxia espinocerebelar tipo 3",
+                "Ataxia espinocerebelar tipo 6", "Ataxia espinocerebelar tipo 7", "Ataxia espinocerebelar 17"];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the diseases array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), diseases);
+
+if (document.documentElement.lang === "en"){
+  autocomplete(document.getElementById("myInput"), diseases_en);
+} 
+if (document.documentElement.lang === "es"){
+  autocomplete(document.getElementById("myInput"), diseases_es);
+}
+if (document.documentElement.lang === "pt"){
+  autocomplete(document.getElementById("myInput"), diseases_pt);
+}

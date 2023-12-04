@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 
 {% load static %}
-
-<html lang="en">
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{LANGUAGE_CODE}}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{error_code}} Not found</title>
+    <title>{{error_code}} {% trans "Not found" %}</title>
     <link rel="shortcut icon" href="{% static 'img/image1.ico' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/style_not_found.css' %}"/>
   </head>
     <body>
       <header>
         <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
         <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
-        <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
+        <h1> <strong>{% trans "An ABC Research Institute polyglutamine disease database" %}</strong></h1>
       </header>
       <main>
+        
         <div class="info">
             <h1 style="text-align: center;">{{error_code}}</h1>
-            <h2 style="text-align: center;">{{ error_message }}<br><br></h2>
+            <h2 style="text-align: center;">{% trans error_message %}<br><br></h2>
             <p>
-              The page you were looking for does not exist! Click <a href="/home/">here</a> to return to the home page.
+              {% trans "The page you were looking for does not exist! Click " %}<a href="/{{ LANGUAGE_CODE }}/home/">{% trans "here" %}</a> {% trans "to return to the home page." %}
             </p>
             <p>
-              If you got to this page by clicking a link, please <a href="/contact/">notify us</a>.
+              {% trans "If you got to this page by clicking a link, please " %}<a href="{% url 'contact' %}">{% trans "notify us" %}</a>.
             </p>
             <div class="poly-q-logo">
               <img src="{% static 'img/logo-plyq.png' %}">
@@ -33,16 +38,16 @@
             <div class="container-list">
             <div class="info-lists">
             <ul class="list-1">
-              <li><a href="/home/">Home</a></li>
-              <li><a href="/contact/">Contact</a></li>
-              <li><a href="/authors/">Authors</a></li>
-              <li><a href="/objectives/">Objectives</a></li>
+              <li><a href="/{{ LANGUAGE_CODE }}/home/">{% trans "Home" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+              <li><a href="{% url 'authors' %}">{% trans "Authors" %}</a></li>
+              <li><a href="{% url 'objectives' %}">{% trans "Objectives" %}</a></li>
             </ul>
             <ul class="list-2">
-              <li>Search for information on 9 different polyglutamine diseases</li>
-              <li>Contact us</li>
-              <li>Authors information</li>
-              <li>PolyQ database objectives</li>
+              <li>{% trans "Search for information on 9 different polyglutamine diseases" %}</li>
+              <li>{% trans "Contact us" %}</li>
+              <li>{% trans "Authors information" %}</li>
+              <li>{% trans "PolyQ database objectives" %}</li>
             </ul>
             </div>
           </div>
