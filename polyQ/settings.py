@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,3 +142,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_COOKIE_AGE = 60 * 60
+
+# EMAIL SECTION
+
+load_dotenv()
+password = os.getenv('PASSWORD')
+# import socket
+# EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT = 587  # Gmail SMTP port for TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'polyqdatabase@gmail.com'
+EMAIL_HOST_PASSWORD = password
+
+
+
+load_dotenv()

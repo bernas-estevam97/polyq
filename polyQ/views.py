@@ -8,6 +8,12 @@ from django.contrib import messages
 from django.core.management import CommandError
 from django.template import RequestContext
 from feedback.forms import FeedbackForm
+# from django.core.mail import send_mail
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.conf import settings
+from django.utils.html import strip_tags
+
 
 
 def index(request):
@@ -50,11 +56,39 @@ def search_disease(request):
         img_coordinates = []
         if request.method == 'POST':
             form = FeedbackForm(request.POST)
-            if form.is_valid():
+            if form.is_valid() and not form.data['email']:
                 form.save()
                 form = FeedbackForm()
                 sent = True
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=True')
+            elif form.is_valid() and form.data['email']:
+                form.save()
+                # send_mail(
+                #             f"Thank you for your feedback, Mr/Mrs.{form.data['visitor_name']}",
+                #             f"Here are the details you inputed into our form.\n"
+                #             f"Subject: {form.data['subject']}\n" 
+                #             f"Message: {form.data['message']}\n\n"
+                #             f"Thank you again for contacting us.\n" 
+                #             f"Best regards\nPolyQDatabase team",
+                #             "polyqdatabase@gmail.com",
+                #             [form.data['email']],
+                #             fail_silently=False,
+                #         )
+                subject = f"Your form was submitted to PolyQDatabase, Mr/Mrs. {form.data['visitor_name']}."
+                subject_form = form.data['subject']
+                
+                email_from = settings.EMAIL_HOST_USER
+                email_to = [form.data['email']]
+                message = form.data['message']
+                mydict= {'subject': subject_form, 'name': form.data['visitor_name'], 'message': message}
+                html_message = render_to_string('mail_template.html', context=mydict)
+                # plain_message = strip_tags(html_message)
+                email = EmailMessage(subject, html_message, email_from, email_to)
+                email.content_subtype = 'html'
+                email.send()
+                form = FeedbackForm()
+                sent = True
+                return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=mailTrue')
             else:
                 error=True
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&error')
