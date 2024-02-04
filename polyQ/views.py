@@ -9,7 +9,7 @@ from django.core.management import CommandError
 from django.template import RequestContext
 from feedback.forms import FeedbackForm
 # from django.core.mail import send_mail
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils.html import strip_tags
@@ -63,17 +63,15 @@ def search_disease(request):
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=True')
             elif form.is_valid() and form.data['email']:
                 form.save()
-                # send_mail(
-                #             f"Thank you for your feedback, Mr/Mrs.{form.data['visitor_name']}",
-                #             f"Here are the details you inputed into our form.\n"
-                #             f"Subject: {form.data['subject']}\n" 
-                #             f"Message: {form.data['message']}\n\n"
-                #             f"Thank you again for contacting us.\n" 
-                #             f"Best regards\nPolyQDatabase team",
-                #             "polyqdatabase@gmail.com",
-                #             [form.data['email']],
-                #             fail_silently=False,
-                #         )
+                send_mail(
+                            f"Form received notification from PolyQ",
+                            f"You received a form from visitor with the name: {form.data['visitor_name']}\n"  # Work on text to be more appealing
+                            f"Be sure to check it when you are available\n"
+                            f"PolyQ automated form notification",
+                            "polyqdatabase@gmail.com",
+                            ["bernaz10.1997golden@gmail.com"],
+                            fail_silently=False,
+                        )
                 subject = f"Your form was submitted to PolyQDatabase, Mr/Mrs. {form.data['visitor_name']}."
                 subject_form = form.data['subject']
                 
