@@ -9,10 +9,13 @@ from django.core.management import CommandError
 from django.template import RequestContext
 from feedback.forms import FeedbackForm
 # from django.core.mail import send_mail
-from django.core.mail import EmailMessage, send_mail
+from django.core import mail
+from django.core.mail import EmailMessage, send_mail, send_mass_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils.html import strip_tags
+import string
+import html
 
 
 
@@ -58,32 +61,65 @@ def search_disease(request):
             form = FeedbackForm(request.POST)
             if form.is_valid() and not form.data['email']:
                 form.save()
+                send_mail(
+                            f"Form received notification from PolyQ",
+                            f"You received a feedback form from visitor: {string.capwords(form.data['visitor_name'])}\n"  # Work on text to be more appealing
+                            f"Be sure to check it when you are available\n\n"
+                            f"PolyQ Database automated form notification",
+                            "polyqdatabase@gmail.com",
+                            ["bernaz10.1997golden@gmail.com"],
+                            fail_silently=False,
+                        )
                 form = FeedbackForm()
                 sent = True
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=True')
             elif form.is_valid() and form.data['email']:
                 form.save()
-                send_mail(
-                            f"Form received notification from PolyQ",
-                            f"You received a form from visitor with the name: {form.data['visitor_name']}\n"  # Work on text to be more appealing
-                            f"Be sure to check it when you are available\n"
-                            f"PolyQ automated form notification",
-                            "polyqdatabase@gmail.com",
-                            ["bernaz10.1997golden@gmail.com"],
-                            fail_silently=False,
-                        )
-                subject = f"Your form was submitted to PolyQDatabase, Mr/Mrs. {form.data['visitor_name']}."
-                subject_form = form.data['subject']
-                
-                email_from = settings.EMAIL_HOST_USER
-                email_to = [form.data['email']]
-                message = form.data['message']
-                mydict= {'subject': subject_form, 'name': form.data['visitor_name'], 'message': message}
-                html_message = render_to_string('mail_template.html', context=mydict)
-                # plain_message = strip_tags(html_message)
-                email = EmailMessage(subject, html_message, email_from, email_to)
-                email.content_subtype = 'html'
-                email.send()
+                #------------------------------------------------------------------------------------------------------------#
+                # Working in different connections
+
+                # send_mail(f"Form received notification from PolyQ",
+                #                 f"You received a feedback form from visitor: {string.capwords(form.data['visitor_name'])}\n"  # Work on text to be more appealing
+                #                 f"Be sure to check it when you are available\n\n"
+                #                 f"PolyQ Database automated form notification",
+                #                 "polyqdatabase@gmail.com",
+                #                 ["bernaz10.1997golden@gmail.com"],
+                #         )
+                # subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form.data['visitor_name'])}."
+                # subject_form = form.data['subject']
+                # email_from = settings.EMAIL_HOST_USER
+                # email_to = [form.data['email']]
+                # message = form.data['message']
+                # mydict= {'subject': subject_form, 'name': form.data['visitor_name'], 'message': message}
+                # html_message = render_to_string('mail_template.html', context=mydict)
+                # # plain_message = strip_tags(html_message)
+                # email_for_visitor = EmailMessage(subject, html_message, email_from, email_to)
+                # email_for_visitor.content_subtype = 'html'
+                # email_for_visitor.send()
+                #---------------------------------------------------------------------------------------------------------#
+                # Woking in the same connection
+                with mail.get_connection() as connection:
+                    EmailMessage(
+                                f"Form received notification from PolyQ",
+                                f"You received a feedback form from visitor: {string.capwords(form.data['visitor_name'])}\n"  # Work on text to be more appealing
+                                f"Be sure to check it when you are available\n\n"
+                                f"PolyQ Database automated form notification",
+                                "polyqdatabase@gmail.com",
+                                ["bernaz10.1997golden@gmail.com"],
+                                connection=connection,
+                            ).send()
+                    subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form.data['visitor_name'])}."
+                    subject_form = form.data['subject']
+                    email_from = settings.EMAIL_HOST_USER
+                    email_to = [form.data['email']]
+                    message = form.data['message']
+                    mydict= {'subject': subject_form, 'name': form.data['visitor_name'], 'message': message}
+                    html_message = render_to_string('mail_template.html', context=mydict)
+                    # plain_message = strip_tags(html_message)
+                    email_for_visitor = EmailMessage(subject, html_message, email_from, email_to, connection=connection)
+                    email_for_visitor.content_subtype = 'html'
+                    email_for_visitor.send()
+                # send_mass_mail((form_admin_notification, email_for_visitor),fail_silently= False)
                 form = FeedbackForm()
                 sent = True
                 return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=mailTrue')
