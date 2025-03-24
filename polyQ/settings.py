@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'polyQ',
     'import_export',
     'feedback',
+    'ratelimit',
 ]
 
 MIDDLEWARE = [

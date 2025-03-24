@@ -4,12 +4,15 @@ diff-match-patch==20200713
 Django==2.1.15
 django-import-export==2.3.0
 django-pyodbc-azure==2.1.0.0
+django-ratelimit==3.0.1
+dotenv==0.9.9
 et-xmlfile==1.1.0
 MarkupPy==1.14
 odfpy==1.4.1
 openpyxl==3.0.10
 Pillow==9.2.0
 pyodbc==4.0.34
+python-dotenv==1.0.1
 pytz==2022.2.1
 PyYAML==6.0
 sqlparse==0.4.2
