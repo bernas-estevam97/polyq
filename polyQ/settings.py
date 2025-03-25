@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'polyQ',
     'import_export',
     'feedback',
-    'ratelimit',
+    'django_ratelimit',
 ]
 
 MIDDLEWARE = [
@@ -95,6 +95,7 @@ else:
         },
     }
 
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -146,7 +147,7 @@ SESSION_COOKIE_AGE = 60 * 60
 
 # EMAIL SECTION
 
-load_dotenv()
+load_dotenv('/var/www/polyq/polyQ/.env')
 password = os.getenv('PASSWORD')
 # import socket
 # EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
@@ -155,3 +156,6 @@ EMAIL_PORT = 587  # Gmail SMTP port for TLS
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'polyqdatabase@gmail.com'
 EMAIL_HOST_PASSWORD = password
+
+
+

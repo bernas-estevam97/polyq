@@ -16,7 +16,7 @@ from django.conf import settings
 from django.utils.html import strip_tags
 import string
 import html
-from ratelimit.decorators import ratelimit
+from django_ratelimit.decorators import ratelimit
 
 
 
@@ -43,7 +43,7 @@ def authors(request):
 def appreciation(request):
     return render(request, 'appreciation/index.html')
 
-@ratelimit(key='ip', rate='5/m', block=True)
+@ratelimit(key='ip', rate='5/m', method='POST', block=True)
 def search_disease(request):
     form = FeedbackForm
     disease_name = request.GET.get('disease')
