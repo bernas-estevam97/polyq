@@ -16,7 +16,7 @@ from django.conf import settings
 from django.utils.html import strip_tags
 import string
 import html
-from ratelimit.decorators import ratelimit
+from django_ratelimit.decorators import ratelimit
 
 
 
@@ -43,7 +43,7 @@ def authors(request):
 def appreciation(request):
     return render(request, 'appreciation/index.html')
 
-@ratelimit(key='ip', rate='5/m', block=True)
+@ratelimit(key='ip', rate='5/m', method='POST', block=True)
 def search_disease(request):
     form = FeedbackForm
     disease_name = request.GET.get('disease')
@@ -140,27 +140,27 @@ def search_disease(request):
                 if 'error' in request.GET:
                     error=True
 
-            for img_coordinate in disease.coordinates.all():
-                img_object = {
-                    'x': img_coordinate.x,
-                    'y': img_coordinate.y,
-                    'title': img_coordinate.title,
-                    'text': img_coordinate.text,
-                    'device': img_coordinate.device
-                }
-                img_coordinates.append(img_object)
-            context = {
-                'disease': disease,
-                'title': title,
-                'other_diseases': other_diseases,
-                'img_coordinates': img_coordinates,
-                'form': form,
-                'message_error': message_error,
-                'message_success': message_success,
-                'sent': sent,
-                'error': error
+        for img_coordinate in disease.coordinates.all():
+            img_object = {
+                'x': img_coordinate.x,
+                'y': img_coordinate.y,
+                'title': img_coordinate.title,
+                'text': img_coordinate.text,
+                'device': img_coordinate.device
             }
-            return render(request, 'diseases.html', context)
+            img_coordinates.append(img_object)
+        context = {
+            'disease': disease,
+            'title': title,
+            'other_diseases': other_diseases,
+            'img_coordinates': img_coordinates,
+            'form': form,
+            'message_error': message_error,
+            'message_success': message_success,
+            'sent': sent,
+            'error': error
+        }
+        return render(request, 'diseases.html', context)
     except Disease.DoesNotExist:
         error_code = ""
         error_message = "This disease does not exit on our database!"

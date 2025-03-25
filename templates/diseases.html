@@ -356,7 +356,13 @@
             <input type="text" placeholder="Subject" name="get_subject" required><br>
             <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
             <div class="button-format"> -->
-            {{ form.as_p }}
+            {{ form.visitor_name }}
+            {{ form.email }}
+            {{ form.subject }}
+            {{ form.message }}
+    
+            <!-- Honeypot field will be hidden here -->
+            {{ form.honeypot }}
             <div class="privacy-checkbox">
             <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
             <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
@@ -381,7 +387,13 @@
         <input type="text" placeholder="Subject" name="get_subject" required><br>
         <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
         <div class="button-format"> -->
-        {{ form.as_p }}
+        {{ form.visitor_name }}
+    	{{ form.email }}
+    	{{ form.subject }}
+   	{{ form.message }}
+    
+    	<!-- Honeypot field will be hidden here -->
+    	{{ form.honeypot }}
         <div class="privacy-checkbox">
         <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
         <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
