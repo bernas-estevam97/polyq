@@ -20,7 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v%im0jx$km-kfr12stn$!$^cr_isstce53bjj@&hxid*es6q*b'
+
+load_dotenv(dotenv_path=BASE_DIR / '.env')  # WINDOWS
+S_KEY = os.getenv('S_KEY')
+SECRET_KEY = S_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -28,6 +31,14 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Application definition
+
+
+#RECAPTCHA
+RECAPTCHA_PUBLIC_KEY = '6LcMoAArAAAAAPSzMc0vx-Zy31o_ysMrQt0QvR1T'
+RECAPTCHA_PRIVATE_KEY = '6LcMoAArAAAAAK6kHSh4c7aoaWsxzoNGMnT81_8v'
+
+RECAPTCHA_REQUIRED_SCORE = 0.85  # for v3
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,8 +50,12 @@ INSTALLED_APPS = [
     'polyQ',
     'import_export',
     'feedback',
-    'django_ratelimit',
+    'cache_cleaner',
+    'django_recaptcha',
 ]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'polyQ.request_limiter.RateLimitMiddleware',
 ]
 
 ROOT_URLCONF = 'polyQ.urls'
@@ -94,6 +110,17 @@ else:
             },
         },
     }
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "cache_table",
+        "TIMEOUT": None,
+    }
+}
+
+# CREATE CACHE TABLE ----> python manage.py createcachetable
 
 
 # Password validation
@@ -147,14 +174,18 @@ SESSION_COOKIE_AGE = 60 * 60
 
 # EMAIL SECTION
 
-load_dotenv('/var/www/polyq/polyQ/.env')
+load_dotenv(dotenv_path=BASE_DIR / '.env')  # WINDOWS
+
+# FOR UBUNTU -------> load_dotenv('/var/www/polyq/polyQ/.env')
+
 password = os.getenv('PASSWORD')
+usr = os.getenv('USER')
 # import socket
 # EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
 EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_PORT = 587  # Gmail SMTP port for TLS
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'polyqdatabase@gmail.com'
+EMAIL_HOST_USER = usr
 EMAIL_HOST_PASSWORD = password
 
 

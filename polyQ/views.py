@@ -8,7 +8,6 @@ from django.contrib import messages
 from django.core.management import CommandError
 from django.template import RequestContext
 from feedback.forms import FeedbackForm
-# from django.core.mail import send_mail
 from django.core import mail
 from django.core.mail import EmailMessage, send_mail, send_mass_mail
 from django.template.loader import render_to_string
@@ -16,8 +15,8 @@ from django.conf import settings
 from django.utils.html import strip_tags
 import string
 import html
-from django_ratelimit.decorators import ratelimit
-
+from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlencode, urlparse, parse_qs
 
 
 def index(request):
@@ -43,112 +42,104 @@ def authors(request):
 def appreciation(request):
     return render(request, 'appreciation/index.html')
 
-@ratelimit(key='ip', rate='5/m', method='POST', block=True)
+# Create a thread pool executor for the application
+executor = ThreadPoolExecutor(max_workers=3)
+
+# Function to send email notifications in the background
+def send_notification_emails(form_data, email_address):
+    # Send email to admin
+    send_mail(
+        f"Form received notification from PolyQ",
+        f"You received a feedback form from visitor: {string.capwords(form_data['visitor_name'])}\n"
+        f"Be sure to check it when you are available\n\n"
+        f"PolyQ Database automated form notification",
+        "polyqdatabase@gmail.com",
+        ["bernaz10.1997golden@gmail.com"],
+        fail_silently=False,
+    )
+
+    # Send email to the user
+    subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form_data['visitor_name'])}."
+    subject_form = form_data['subject']
+    email_from = settings.EMAIL_HOST_USER
+    email_to = [email_address]
+    message = form_data['message']
+    mydict = {'subject': subject_form, 'name': form_data['visitor_name'], 'message': message}
+    html_message = render_to_string('mail_template.html', context=mydict)
+    email_for_visitor = EmailMessage(subject, html_message, email_from, email_to)
+    email_for_visitor.content_subtype = 'html'
+    email_for_visitor.send()
+
+def redirect_with_query_param(request, new_params: dict):
+    """
+    Redirects to the same path with updated query parameters.
+    Preserves the 'disease' parameter and adds/updates others.
+    """
+    url_parts = urlparse(request.get_full_path())
+    query_dict = parse_qs(url_parts.query)
+
+    # Always retain the disease query parameter if it's available
+    disease_name = request.GET.get('disease', '')
+    if disease_name:
+        query_dict['disease'] = [disease_name]
+
+    # Add or modify other parameters as needed
+    for key, value in new_params.items():
+        query_dict[key] = [value]
+
+    # Rebuild the query string
+    new_query = urlencode(query_dict, doseq=True)
+    return HttpResponseRedirect(f"{url_parts.path}?{new_query}")
+
+
+# Main view function with rate-limiting and email sending in background
 def search_disease(request):
-    form = FeedbackForm
     disease_name = request.GET.get('disease')
+    form = FeedbackForm(request.POST or None)
     message_error = 'Something went wrong, try again!'
     message_success = "Form sent. Thanks for contacting us!"
-    sent = False
-    error=False
+
+    # ✅ Read redirect status from query params (for GET requests after redirect)
+    sent_flag = request.GET.get('sent')
+    error_flag = request.GET.get('error')
+
+    sent = sent_flag in ['True', 'mailTrue']
+    error = error_flag is not None
+
+    if request.method == 'POST':
+        if form.is_valid():
+            if form.is_spam():
+                return redirect_with_query_param(request, {'sent': 'True'})
+
+            form.save()
+
+            # Send email notifications in the background
+            email_address = form.cleaned_data.get('email')
+            recipient = email_address if email_address else ""
+            executor.submit(send_notification_emails, form.cleaned_data, recipient)
+
+            # Reset the form after submission
+            return redirect_with_query_param(request, {'sent': 'mailTrue'})
+
+        else:
+            return redirect_with_query_param(request, {'error': 'true'})
+
+    # Gather data for the disease search
     try:
-        disease_name = request.GET.get('disease')
-        disease = Disease.objects.get(
-            Q(name=disease_name.upper()) | Q(slug__contains=disease_name))
-        other_diseases = Disease.objects.all().exclude(name=disease_name.upper())
+        disease = Disease.objects.get(Q(name=disease_name.upper()) | Q(slug__contains=disease_name))
+        other_diseases = Disease.objects.exclude(name=disease_name.upper())
         title = disease.name
-        img_coordinates = []
-        if request.method == 'POST':
-            form = FeedbackForm(request.POST)
-            if form.is_valid() and not form.data['email']:
-                if form.cleaned_data['honeypot']:
-                    return HttpResponseForbidden("No bots, please.")
-                else:
-                    form.save()
-                    send_mail(
-                                f"Form received notification from PolyQ",
-                                f"You received a feedback form from visitor: {string.capwords(form.data['visitor_name'])}\n"  # Work on text to be more appealing
-                                f"Be sure to check it when you are available\n\n"
-                                f"PolyQ Database automated form notification",
-                                "polyqdatabase@gmail.com",
-                                ["bernaz10.1997golden@gmail.com"],
-                                fail_silently=False,
-                            )
-                    form = FeedbackForm()
-                    sent = True
-                    return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=True')
-            elif form.is_valid() and form.data['email']:
-                if form.cleaned_data['honeypot']:
-                    return HttpResponseForbidden("No bots, please.")
-                elif not form.cleaned_data['honeypot']:
-                    form.save()
-                #------------------------------------------------------------------------------------------------------------#
-                # Working in different connections
-
-                # send_mail(f"Form received notification from PolyQ",
-                #                 f"You received a feedback form from visitor: {string.capwords(form.data['visitor_name'])}\n"  # Work on text to be more appealing
-                #                 f"Be sure to check it when you are available\n\n"
-                #                 f"PolyQ Database automated form notification",
-                #                 "polyqdatabase@gmail.com",
-                #                 ["bernaz10.1997golden@gmail.com"],
-                #         )
-                # subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form.data['visitor_name'])}."
-                # subject_form = form.data['subject']
-                # email_from = settings.EMAIL_HOST_USER
-                # email_to = [form.data['email']]
-                # message = form.data['message']
-                # mydict= {'subject': subject_form, 'name': form.data['visitor_name'], 'message': message}
-                # html_message = render_to_string('mail_template.html', context=mydict)
-                # # plain_message = strip_tags(html_message)
-                # email_for_visitor = EmailMessage(subject, html_message, email_from, email_to)
-                # email_for_visitor.content_subtype = 'html'
-                # email_for_visitor.send()
-                #---------------------------------------------------------------------------------------------------------#
-                # Woking in the same connection
-                    with mail.get_connection() as connection:
-                        EmailMessage(
-                                    f"Form received notification from PolyQ",
-                                    f"You received a feedback form from visitor: {string.capwords(form.data['visitor_name'])}\n"  # Work on text to be more appealing
-                                    f"Be sure to check it when you are available\n\n"
-                                    f"PolyQ Database automated form notification",
-                                    "polyqdatabase@gmail.com",
-                                    ["bernaz10.1997golden@gmail.com"],
-                                    connection=connection,
-                                ).send()
-                        subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form.data['visitor_name'])}."
-                        subject_form = form.data['subject']
-                        email_from = settings.EMAIL_HOST_USER
-                        email_to = [form.data['email']]
-                        message = form.data['message']
-                        mydict= {'subject': subject_form, 'name': form.data['visitor_name'], 'message': message}
-                        html_message = render_to_string('mail_template.html', context=mydict)
-                        # plain_message = strip_tags(html_message)
-                        email_for_visitor = EmailMessage(subject, html_message, email_from, email_to, connection=connection)
-                        email_for_visitor.content_subtype = 'html'
-                        email_for_visitor.send()
-                    # send_mass_mail((form_admin_notification, email_for_visitor),fail_silently= False)
-                    form = FeedbackForm()
-                    sent = True
-                    return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&sent=mailTrue')
-                else:
-                    error=True
-                    return HttpResponseRedirect('/disease_search/?disease='+ disease_name + '&error')
-            else:
-                form = FeedbackForm
-                if 'sent' in request.GET:
-                    sent = True
-                if 'error' in request.GET:
-                    error=True
-
-        for img_coordinate in disease.coordinates.all():
-            img_object = {
-                'x': img_coordinate.x,
-                'y': img_coordinate.y,
-                'title': img_coordinate.title,
-                'text': img_coordinate.text,
-                'device': img_coordinate.device
+        img_coordinates = [
+            {
+                'x': coord.x,
+                'y': coord.y,
+                'title': coord.title,
+                'text': coord.text,
+                'device': coord.device
             }
-            img_coordinates.append(img_object)
+            for coord in disease.coordinates.all()
+        ]
+
         context = {
             'disease': disease,
             'title': title,
@@ -160,17 +151,14 @@ def search_disease(request):
             'sent': sent,
             'error': error
         }
-        return render(request, 'diseases.html', context)
-    except Disease.DoesNotExist:
-        error_code = ""
-        error_message = "This disease does not exit on our database!"
-        return render(request, 'not-found-page.html', {'error_message': error_message, 'error_code': error_code})
 
+        return render(request, 'diseases.html', context)
+
+    except Disease.DoesNotExist:
+        return render(request, 'not-found-page.html', {'error_message': "This disease does not exist in our database!"})
     except Disease.MultipleObjectsReturned:
-        error_code = ""
-        error_message = "Be more specific with your search"
-        return render(request, 'home/index.html', {'error_message': error_message, 'error_code': error_code})
-            # raise CommandError(error_message_alert)
+        return render(request, 'home/index.html', {'error_message': "Be more specific with your search."})
+
 
 
 def custom_page_not_found_view(request, exception):

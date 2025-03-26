@@ -13,16 +13,6 @@
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"/>
     <!-- <script src="{% static 'fontawesome/js/all.min.js' %}"></script> -->
     <link rel="stylesheet" href="{% static 'css/int-image.css' %}">
-    <script src="{% static 'js/callback.js' %}"></script>
-    <script>
-        function onLoadCallback(){
-            grecaptcha.render('divRecaptcha', {
-                sitekey:"6LfVMZsmAAAAAKaUr2Clv2-xWv7cRl2u8kZbeSsZ",
-                callback: successCallBack,
-            });
-        }
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onLoadCallback&render=explicit" async defer></script>
 </head>
 <body>
 <script src="{% static 'js/ScrollSpy.min.js' %}"></script>
@@ -317,101 +307,106 @@
 <div class="contact-form" id="formButton">
     <img src="{% static 'img/form-icon.png' %}">
 </div>
-{% if sent %} 
-    <div class="success-popup"><div class="message">{{message_success}}</div><div class="close-button-popup" id="closePopup"><i class="fa fa-times" aria-hidden="true"></i></div></div>
     <dialog class="dialog-form">
         <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
         <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
-        <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
-            <!-- <div class="format-input">
-                <input type="text" placeholder="Name" name="name_id" required>
-                <input type="email" placeholder="Email(optional)" name="email_id">
-            </div>
-            <input type="text" placeholder="Subject" name="get_subject" required><br>
-            <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
-            <div class="button-format"> -->
+        <form action="{% url 'disease_search' %}?{{ request.GET.urlencode }}" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
             {{ form.as_p }}
+            
             <div class="privacy-checkbox">
-            <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
-            <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
+                <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
+                <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
             </div>
-            <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
             <div class="button-format">
-            <button type="submit" id="submit" class="submit-btn">Submit form</button>
-            <div class="close-button">Close form</div>
+                <button type="submit" id="submitButton" class="submit-btn">Submit form</button>
+                <div class="close-button">Close form</div>
             </div>
         </form>
-        
     </dialog>
-{% elif error %} 
-    <div class="error-popup"><div class="message">{{message_error}}</div><div class="close-button-popup" id="closePopup"><i class="fa fa-times" aria-hidden="true"></i></div></div>
-    <dialog class="dialog-form">
-        <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
-        <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
-        <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
-            <!-- <div class="format-input">
-                <input type="text" placeholder="Name" name="name_id" required>
-                <input type="email" placeholder="Email(optional)" name="email_id">
-            </div>
-            <input type="text" placeholder="Subject" name="get_subject" required><br>
-            <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
-            <div class="button-format"> -->
-            {{ form.visitor_name }}
-            {{ form.email }}
-            {{ form.subject }}
-            {{ form.message }}
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            // Wait until the page is fully loaded
+            const openButton = document.querySelector('.contact-form'); // Button to open dialog
+            const dialog = document.querySelector('.dialog-form'); // Your dialog box
+            const form = document.getElementById('form'); // Your form
     
-            <!-- Honeypot field will be hidden here -->
-            {{ form.honeypot }}
-            <div class="privacy-checkbox">
-            <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
-            <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
-            </div>
-            <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
-            <div class="button-format">
-            <button type="submit" id="submit" class="submit-btn">Submit form</button>
-            <div class="close-button">Close form</div>
-            </div>
-        </form>
-        
-    </dialog>
-{% else %}
-<dialog class="dialog-form">
-    <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
-    <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
-    <form action="" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
-        <!-- <div class="format-input">
-            <input type="text" placeholder="Name" name="name_id" required>
-            <input type="email" placeholder="Email(optional)" name="email_id">
-        </div>
-        <input type="text" placeholder="Subject" name="get_subject" required><br>
-        <textarea placeholder="Your message..." rows="10" required name="get_message"></textarea><br><br>
-        <div class="button-format"> -->
-        {{ form.visitor_name }}
-    	{{ form.email }}
-    	{{ form.subject }}
-   	{{ form.message }}
+            // Function to initialize reCAPTCHA once the dialog is shown
+            function initializeRecaptcha() {
+                // Check if reCAPTCHA and form are available
+                const recaptchaInput = dialog.querySelector('.g-recaptcha');
     
-    	<!-- Honeypot field will be hidden here -->
-    	{{ form.honeypot }}
-        <div class="privacy-checkbox">
-        <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
-        <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
-        </div>
-        <div id="divRecaptcha" class="g-recaptcha" style="z-index: 999;"></div>
-        <div class="button-format">
-        <button type="submit" id="submit" class="submit-btn">Submit form</button>
-        <div class="close-button">Close form</div>
-        </div>
-    </form>
+                if (!form || !recaptchaInput || !window.grecaptcha) {
+                    console.error("Form or reCAPTCHA input not found!");
+                    return;
+                }
     
-</dialog>
+                grecaptcha.ready(function () {
+                    const form = document.getElementById('form');
+                    const recaptchaInput = dialog.querySelector('.g-recaptcha');
+
+                    if (!form || !recaptchaInput) {
+                        console.error("Form or reCAPTCHA input not found!");
+                        return;
+                    }
+
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault();
+
+                        grecaptcha.execute('6LcMoAArAAAAAPSzMc0vx-Zy31o_ysMrQt0QvR1T', {}).then(function (token) {
+                            // Directly set the token value in the form
+                            recaptchaInput.querySelector('textarea').value = token;
+
+                            // Now submit the form
+                            form.submit(); // ✅ Submitting the form securely without logging the token
+                        }).catch(function (error) {
+                            console.error("Error while executing reCAPTCHA: ", error);
+                        });
+                    });
+                });   
+            }
+    
+            // Open dialog and trigger reCAPTCHA initialization
+            openButton.addEventListener('click', function () {
+                dialog.show(); // Open dialog box
+                initializeRecaptcha();
+            });
+    
+            // Close button for dialog box
+            const closeButton = document.querySelector('.close-button');
+            closeButton.addEventListener('click', function () {
+                dialog.close();
+            });
+        });
+    </script>
+{% if sent %}
+<div class="success-popup">
+  <div class="message">{{ message_success }}</div>
+  <div class="close-button-popup" id="closePopup">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+</div>
+{% elif error %}
+<div class="error-popup">
+  <div class="message">{{ message_error }}</div>
+  <div class="close-button-popup" id="closePopup">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+</div>
 {% endif %}
+<script>
+        document.getElementById("closePopup")?.addEventListener("click", () => {
+            const url = new URL(window.location);
+            url.searchParams.delete("sent");
+            url.searchParams.delete("error");
+            window.history.replaceState({}, document.title, url.pathname + url.search);
+    });
+</script>
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
-    <script>
-        let img_coordinates = {{ img_coordinates|safe }};
-    </script>
+<script>
+    let img_coordinates = {{ img_coordinates|safe }};
+</script>
     <script src="{% static 'js/image-int-all.js' %}"></script>
 <script>
     let indicator = document.getElementById('indicator');
@@ -492,7 +487,7 @@
 
 </script>
 
-<script>
+<!-- <script>
     const openButton = document.querySelector('.contact-form');
     const closeButton = document.querySelector('.close-button');
     const dialog = document.querySelector('.dialog-form');
@@ -508,7 +503,7 @@
 
 
     document.getElementById('termsPrivacy').required = true;
-</script>
+</script> -->
 <script>
     $('#closePopup').click(function(){
         $('.success-popup').fadeOut();
