@@ -24,9 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(dotenv_path=BASE_DIR / '.env')  # WINDOWS
 S_KEY = os.getenv('S_KEY')
 SECRET_KEY = S_KEY
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -35,7 +34,8 @@ ALLOWED_HOSTS = ['*']
 
 #RECAPTCHA
 RECAPTCHA_PUBLIC_KEY = '6LcMoAArAAAAAPSzMc0vx-Zy31o_ysMrQt0QvR1T'
-RECAPTCHA_PRIVATE_KEY = '6LcMoAArAAAAAK6kHSh4c7aoaWsxzoNGMnT81_8v'
+RECAPTCHA_PRIVATE_KEY = os.getenv('G_PKEY')
+
 
 RECAPTCHA_REQUIRED_SCORE = 0.85  # for v3
 
@@ -97,20 +97,21 @@ if DEBUG:
     }
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'sql_server.pyodbc',
-            'NAME': 'polyq_database',
-            'USER': 'bboyBernas10',
-            'PASSWORD': '%)@LFwX5!d(5ghCQ',
-            'HOST': '94.46.171.187',
-            'PORT': '',
-            'OPTIONS': {
-                'driver': 'ODBC Driver 17 for SQL Server',
-                'extra_params': 'MARS_Connection=Yes'
-            },
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'polyq',
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('IP_HOST'),  # or 'localhost'
+        'PORT': '1433',  # default SQL Server port
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            # Optional:
+            # 'trust_server_certificate': 'yes',  # if you're using self-signed certs
+            # 'encrypt': 'yes',  # for Azure or secure connections
         },
     }
-
+}
 
 CACHES = {
     "default": {
