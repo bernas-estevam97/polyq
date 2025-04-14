@@ -17,7 +17,13 @@ import string
 import html
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlencode, urlparse, parse_qs
+from urllib.parse import unquote_plus
+import unicodedata
+from django.db.models.functions import Lower
 
+def normalize_text(text):
+    text = unicodedata.normalize('NFKD', text)
+    return text.replace("’", "'").strip()
 
 def index(request):
     return render(request, 'index.html')
@@ -83,6 +89,7 @@ def redirect_with_query_param(request, new_params: dict):
     if disease_name:
         query_dict['disease'] = [disease_name]
 
+
     # Add or modify other parameters as needed
     for key, value in new_params.items():
         query_dict[key] = [value]
@@ -94,7 +101,9 @@ def redirect_with_query_param(request, new_params: dict):
 
 # Main view function with rate-limiting and email sending in background
 def search_disease(request):
-    disease_name = request.GET.get('disease')
+    raw_disease_name = request.GET.get('disease')
+    disease_name = normalize_text(unquote_plus(raw_disease_name))
+
     form = FeedbackForm(request.POST or None)
     message_error = 'Something went wrong, try again!'
     message_success = "Form sent. Thanks for contacting us!"
@@ -126,8 +135,21 @@ def search_disease(request):
 
     # Gather data for the disease search
     try:
-        disease = Disease.objects.get(Q(name=disease_name.upper()) | Q(slug__contains=disease_name))
-        other_diseases = Disease.objects.exclude(name=disease_name.upper())
+        query = disease_name.strip()
+
+        # First, try to get the disease by exact name match (case-insensitive)
+        disease = Disease.objects.filter(name__iexact=query).first()
+
+        # If not found, try to get the disease by exact slug match (case-insensitive)
+        if not disease:
+            disease = Disease.objects.filter(slug__iexact=query).first()
+
+        # If still not found, you can try a loose match, but this should be a fallback (optional)
+        if not disease:
+            disease = Disease.objects.filter(Q(name__icontains=query) | Q(slug__icontains=query)).first()
+
+        
+        other_diseases = Disease.objects.exclude(id=disease.id)
         title = disease.name
         img_coordinates = [
             {
@@ -158,7 +180,6 @@ def search_disease(request):
         return render(request, 'not-found-page.html', {'error_message': "This disease does not exist in our database!"})
     except Disease.MultipleObjectsReturned:
         return render(request, 'home/index.html', {'error_message': "Be more specific with your search."})
-
 
 
 def custom_page_not_found_view(request, exception):

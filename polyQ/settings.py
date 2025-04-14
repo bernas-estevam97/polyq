@@ -27,6 +27,7 @@ SECRET_KEY = S_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -175,12 +176,12 @@ SESSION_COOKIE_AGE = 60 * 60
 
 # EMAIL SECTION
 
-load_dotenv(dotenv_path=BASE_DIR / '.env')  # WINDOWS
 
 # FOR UBUNTU -------> load_dotenv('/var/www/polyq/polyQ/.env')
 
 password = os.getenv('PASSWORD')
-usr = os.getenv('USER')
+usr = os.getenv('USER_MAIL')
+
 # import socket
 # EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
 EMAIL_HOST= 'smtp.gmail.com'

@@ -311,8 +311,15 @@
         <div class="form-header"><img class="form-logo" src="{% static 'img/logo-plyq.png' %}"><h3>Submit a form</h3><img class="form-logo-2" src="{% static 'img/Logo_ABCRI.png' %}"></div>
         <p>If you wish to contact us about any subject regarding this database and its contents contact us directly through this form or check our <a href="{% url 'contact_page' %}">contact page</a>.</p>
         <form action="{% url 'disease_search' %}?{{ request.GET.urlencode }}" method="POST" id="form" enctype="multipart/form-data">{% csrf_token %}
-            {{ form.as_p }}
-            
+	    <!-- Manually render each form field to ensure they are separated properly -->
+    	<p>{{ form.visitor_name }}</p>
+    	<p>{{ form.email }}</p>
+    	<p>{{ form.subject }}</p>
+    	<p>{{ form.message }}</p>
+	<input style="visibility: hidden" name="{{ form.honeypot_field_name }}" value="">
+    	{{ form.honeypot_time }}
+	{{ form.captcha }}	
+
             <div class="privacy-checkbox">
                 <input type="checkbox" id="termsPrivacy" name="termsPrivacy" class="style-checkbox"/>
                 <label for=""><a href="https://www.dgert.gov.pt/politica-de-privacidade-e-de-protecao-de-dados-pessoais-da-dgert" target="_blank">Terms of information and privacy</a> - I expressly authorize the processing of my personal data for the purposes of contact discolure and communication.</label>
@@ -324,76 +331,55 @@
         </form>
     </dialog>
 
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            // Wait until the page is fully loaded
-            const openButton = document.querySelector('.contact-form'); // Button to open dialog
-            const dialog = document.querySelector('.dialog-form'); // Your dialog box
-            const form = document.getElementById('form'); // Your form
-    
-            // Function to initialize reCAPTCHA once the dialog is shown
-            function initializeRecaptcha() {
-                // Check if reCAPTCHA and form are available
-                const recaptchaInput = dialog.querySelector('.g-recaptcha');
-    
-                if (!form || !recaptchaInput || !window.grecaptcha) {
-                    console.error("Form or reCAPTCHA input not found!");
-                    return;
-                }
-    
-                grecaptcha.ready(function () {
-                    const form = document.getElementById('form');
-                    const recaptchaInput = dialog.querySelector('.g-recaptcha');
 
-                    if (!form || !recaptchaInput) {
-                        console.error("Form or reCAPTCHA input not found!");
-                        return;
-                    }
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const openButton = document.querySelector('.contact-form'); // Button that opens the dialog
+    const dialog = document.querySelector('.dialog-form'); // The dialog element
+    const form = document.getElementById('form'); // Your feedback form
+    const closeButton = document.querySelector('.close-button'); // Dialog close button
 
-                    form.addEventListener('submit', function (event) {
-                        event.preventDefault();
+    // Function that checks if reCAPTCHA is working
+    function checkRecaptchaReady() {
+        if (!window.grecaptcha) {
+            console.error("reCAPTCHA library not loaded.");
+            return;
+        }
 
-                        grecaptcha.execute('6LcMoAArAAAAAPSzMc0vx-Zy31o_ysMrQt0QvR1T', {}).then(function (token) {
-                            // Directly set the token value in the form
-                            recaptchaInput.querySelector('textarea').value = token;
-
-                            // Now submit the form
-                            form.submit(); // ✅ Submitting the form securely without logging the token
-                        }).catch(function (error) {
-                            console.error("Error while executing reCAPTCHA: ", error);
-                        });
-                    });
-                });   
-            }
-    
-            // Open dialog and trigger reCAPTCHA initialization
-            openButton.addEventListener('click', function () {
-                dialog.show(); // Open dialog box
-                initializeRecaptcha();
-            });
-    
-            // Close button for dialog box
-            const closeButton = document.querySelector('.close-button');
-            closeButton.addEventListener('click', function () {
-                dialog.close();
-            });
+        grecaptcha.ready(function () {
+            console.log("✅ reCAPTCHA is ready.");
         });
-    </script>
-{% if sent %}
-<div class="success-popup">
-  <div class="message">{{ message_success }}</div>
-  <div class="close-button-popup" id="closePopup">
-    <i class="fa fa-times" aria-hidden="true"></i>
-  </div>
-</div>
-{% elif error %}
+    }
+
+    // When the open button is clicked
+    openButton.addEventListener('click', function () {
+        dialog.show();         // Show the dialog box
+        checkRecaptchaReady(); // Check if reCAPTCHA is initialized
+    });
+
+    // When the close button is clicked
+    closeButton.addEventListener('click', function () {
+        dialog.close(); // Close the dialog
+    });
+});
+</script>
+
+{% if error %}
 <div class="error-popup">
   <div class="message">{{ message_error }}</div>
   <div class="close-button-popup" id="closePopup">
     <i class="fa fa-times" aria-hidden="true"></i>
   </div>
 </div>
+{% elif sent %}
+<div class="success-popup">
+  <div class="message">{{ message_success }}</div>
+  <div class="close-button-popup" id="closePopup">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+</div>
 {% endif %}
+
 <script>
         document.getElementById("closePopup")?.addEventListener("click", () => {
             const url = new URL(window.location);
@@ -487,7 +473,7 @@
 
 </script>
 
-<!-- <script>
+<!---<script>
     const openButton = document.querySelector('.contact-form');
     const closeButton = document.querySelector('.close-button');
     const dialog = document.querySelector('.dialog-form');
@@ -503,7 +489,7 @@
 
 
     document.getElementById('termsPrivacy').required = true;
-</script> -->
+</script>-->
 <script>
     $('#closePopup').click(function(){
         $('.success-popup').fadeOut();

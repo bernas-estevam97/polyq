@@ -15,16 +15,16 @@ class FeedbackForm(ModelForm):
         self.honeypot_field_name = self.generate_honeypot_field()
         super().__init__(*args, **kwargs)
 
-        # Dynamically assign the generated honeypot field name
+	# Add the dynamically generated honeypot field to the form fields
         self.fields[self.honeypot_field_name] = forms.CharField(
             required=False,
-            widget=forms.TextInput(attrs={'style': 'visibility: hidden; position: absolute; width: 1px; height: 1px;'}),
+            widget=forms.HiddenInput,  # Use HiddenInput widget
             label="",
-            initial=''  # Add an initial empty value
+            initial=''  # Initial empty value for honeypot field
         )
-
+	
         # Create a timestamp field for the time-based honeypot with a static name
-        self.fields['honeypot_time'] = forms.CharField(
+        self.fields['holy_time'] = forms.CharField(
             required=False,
             widget=forms.HiddenInput,
             initial=str(time.time())  # Set current timestamp
@@ -43,7 +43,7 @@ class FeedbackForm(ModelForm):
         
         # Time-based validation: if the form is submitted too quickly, it's likely a bot
         try:
-            submitted_time = float(self.cleaned_data.get('honeypot_time', 0))
+            submitted_time = float(self.cleaned_data.get('holy_time', 0))
             current_time = time.time()
             
             # If form submission time is less than 2 seconds apart, it is considered spam
