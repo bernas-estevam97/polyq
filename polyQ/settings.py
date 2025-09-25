@@ -28,7 +28,7 @@ SECRET_KEY = S_KEY
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['polyq.pt','www.polyq.pt']
 
 # Application definition
 
@@ -101,9 +101,9 @@ else:
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'polyq',
-        'USER': os.getenv('DB_USER'),
+        'USER': 'SA',
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('IP_HOST'),  # or 'localhost'
+        'HOST': '127.0.0.1',  # or 'localhost'
         'PORT': '1433',  # default SQL Server port
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
@@ -191,4 +191,17 @@ EMAIL_HOST_USER = usr
 EMAIL_HOST_PASSWORD = password
 
 
+
+# Security checks Django App
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+USE_X_FORWARDED_HOST = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
