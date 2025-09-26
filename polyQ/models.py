@@ -13,11 +13,11 @@ class Coordinate_Text(models.Model):
     y = models.IntegerField()
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=500)
-    device = models.CharField(max_length=500)
+    resolution = models.CharField(max_length=500)
     disease_coords = models.CharField(max_length=100)
 
     def __str__(self):
-        return f'{self.title} {self.device} {self.disease_coords}'
+        return f'{self.title} {self.resolution} {self.disease_coords}'
 
 
 class Images(models.Model):

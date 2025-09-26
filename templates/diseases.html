@@ -159,6 +159,8 @@
                 <h3> Protein intracellular localization</h3>
                 {{ disease.codified_protein.protein_location|safe }}
                 <div class="interactive-image" id="my-interactive-image">
+                    <!-- Embeds JSON data safely and CSP-compliantly -->
+                    {{ img_coordinates|json_script:"img-coordinates-data" }}
                     <img src="{% static 'img/cell-scheme.jpg' %}"/>
                 </div>
                 <div class="int-caption"><strong>Figure 5:</strong> {{disease.codified_protein.protein_name|safe}} intracellular localization.<br>(Refresh
@@ -332,37 +334,7 @@
     </dialog>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const openButton = document.querySelector('.contact-form'); // Button that opens the dialog
-    const dialog = document.querySelector('.dialog-form'); // The dialog element
-    const form = document.getElementById('form'); // Your feedback form
-    const closeButton = document.querySelector('.close-button'); // Dialog close button
-
-    // Function that checks if reCAPTCHA is working
-    function checkRecaptchaReady() {
-        if (!window.grecaptcha) {
-            console.error("reCAPTCHA library not loaded.");
-            return;
-        }
-
-        grecaptcha.ready(function () {
-            console.log("✅ reCAPTCHA is ready.");
-        });
-    }
-
-    // When the open button is clicked
-    openButton.addEventListener('click', function () {
-        dialog.show();         // Show the dialog box
-        checkRecaptchaReady(); // Check if reCAPTCHA is initialized
-    });
-
-    // When the close button is clicked
-    closeButton.addEventListener('click', function () {
-        dialog.close(); // Close the dialog
-    });
-});
-</script>
+<script src="{% static 'js/recaptcha-logic.js' %}"></script>
 
 {% if error %}
 <div class="error-popup">
@@ -380,122 +352,15 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 {% endif %}
 
-<script>
-        document.getElementById("closePopup")?.addEventListener("click", () => {
-            const url = new URL(window.location);
-            url.searchParams.delete("sent");
-            url.searchParams.delete("error");
-            window.history.replaceState({}, document.title, url.pathname + url.search);
-    });
-</script>
+<script src="{% static 'js/url-mod.js' %}"></script>
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/interactive-image.min.js' %}"></script>
-<script>
-    let img_coordinates = {{ img_coordinates|safe }};
-</script>
-    <script src="{% static 'js/image-int-all.js' %}"></script>
-<script>
-    let indicator = document.getElementById('indicator');
-
-    var spy = new ScrollSpy(
-        {
-            contexts_class: 'scrollspy'
-        }
-    );
-
-    spy.Indicator({
-        element: indicator
-    });
-</script>
-<script>
-    /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    function myFunctionLittle() {
-        document.getElementById("myDropdownLittle").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-        if (!event.target.matches('.dropbtn-little')) {
-            var dropLittle = document.getElementsByClassName("dropdown-content-little");
-            var r;
-            for (r = 0; r < dropLittle.length; r++) {
-                var openDropLittle = dropLittle[r];
-                if (openDropLittle.classList.contains('show')) {
-                    openDropLittle.classList.remove('show');
-                }
-            }
-        }
-    }
-
-</script>
-<script>
-
-
-    $(document).scroll(function () {
-        checkOffset();
-    });
-
-    function checkOffset() {
-        if ($('#bar-right').offset().top + $('#bar-right').height() >= $('#references').offset().top + 200)
-            $('#bar-right').hide(800);
-        if ($(document).scrollTop() + window.innerHeight < $('#references').offset().top + 200)
-            $('#bar-right').show(800); // restore when you scroll up
-    }
-</script>
-
-<script>
-
-    function reload() {
-        var imageInt = document.getElementById("my-interactive-image");
-        var imageContent = imageInt.innerHTML;
-        imageInt.innerHTML = imageContent;
-    }
-
-    // function reloadImage(reload){
-    //   window.location.hash = "my-interactive-image";
-    //   window.location.reload(true);
-    // }
-
-</script>
-
-<!---<script>
-    const openButton = document.querySelector('.contact-form');
-    const closeButton = document.querySelector('.close-button');
-    const dialog = document.querySelector('.dialog-form');
-
-
-    openButton.addEventListener('click', () =>{
-        dialog.show();
-    })
-
-    closeButton.addEventListener('click', () =>{
-        dialog.close();
-    })
-
-
-    document.getElementById('termsPrivacy').required = true;
-</script>-->
-<script>
-    $('#closePopup').click(function(){
-        $('.success-popup').fadeOut();
-        $('.error-popup').fadeOut();
-    })
-</script>
-<!-- <script src="{% static 'js/form-ajax.js' %}"></script> -->
+<script src="{% static 'js/init-coords.js' %}"></script>
+<script src="{% static 'js/img-int-dynamic-new.js' %}"></script>
+<script src="{% static 'js/scrollspy-logic.js' %}"></script>
+<script src="{% static 'js/nav-dropdown.js' %}"></script>
+<script src="{% static 'js/scroll-offset.js' %}"></script>
+<script src="{% static 'js/int-image-reload.js' %}"></script>
+<script src="{% static 'js/close-popup.js' %}"></script>
 </body>
 </html>

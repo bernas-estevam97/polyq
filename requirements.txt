@@ -14,7 +14,6 @@ mssql-django==1.5
 odfpy==1.4.1
 openpyxl==3.0.10
 packaging==25.0
-Pillow==9.2.0
 pyodbc==5.2.0
 python-dotenv==1.1.0
 pytz==2022.2.1

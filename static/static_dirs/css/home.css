@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@400;500;600;700&family=Saira+Condensed&display=swap');
 
 *{
   margin: 0;
@@ -566,6 +567,7 @@ main h4{
 
 
 footer{
+  font-family: "Poppins", sans-serif;
   position:relative;
   bottom:0;
   width:100%;
@@ -581,12 +583,12 @@ footer .collumns{
 }
 
 footer .collumns .first-third{
-  width: 140px;
+  width: 130px;
   display: flex;
   border-left: 3px solid #898989;
   margin: 10px;
-  height: 120px;
-  padding: 10px;
+  height: 130px;
+  padding: 0 10px;
 }
 
 footer .collumns .first-third ul {
@@ -595,7 +597,7 @@ footer .collumns .first-third ul {
 }
 
 footer .collumns .first-third ul li{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 footer .collumns .first-third ul li a{
@@ -608,12 +610,12 @@ footer .collumns .first-third ul li:hover > a{
 }
 
 footer .collumns .second-third{
-  width: 130px;
+  width: 150px;
   display: flex;
   border-left: 3px solid #898989;
   margin: 10px;
-  height: 120px;
-  padding: 10px;
+  height: 130px;
+  padding: 0 10px;
 }
 
 footer .collumns .second-third ul {
@@ -621,7 +623,7 @@ footer .collumns .second-third ul {
 }
 
 footer .collumns .second-third ul li{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 footer .collumns .second-third ul li a{
@@ -634,12 +636,12 @@ footer .collumns .second-third ul li:hover > a{
 }
 
 footer .collumns .third-third{
-  width: 100px;
+  width: 132px;
   display: flex;
   border-left: 3px solid #898989;
   margin: 10px;
-  height: 120px;
-  padding: 10px;
+  height: 130px;
+  padding: 0 10px;
 }
 
 footer .collumns .third-third ul {
@@ -647,7 +649,7 @@ footer .collumns .third-third ul {
 }
 
 footer .collumns .third-third ul li{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 footer .collumns .third-third ul li a{
@@ -667,7 +669,6 @@ footer svg{
   transform: translateX(-50%);
   margin-top: 20px;
 }
-
 
 footer p{
   font-family: arial;
@@ -1043,11 +1044,10 @@ footer .logos .logo-three img{
 		font-size: 12px;
 	}
 
-  footer .collumns .first-third{
+	footer .collumns .first-third{
 		margin: 10px 0px !important;
 		border-left: none !important;
 		border-right: 3px solid #898989;
-    width: 100px !important;
 	}
 
 	footer .collumns .second-third{
@@ -1388,38 +1388,42 @@ footer .logos .logo-three img{
   }
 
 
-  footer .collumns .first-third{
-    margin: 10px 0px !important;
-    border-left: none !important;
-    border-right: 3px solid #898989;
-  }
+  footer{
+		overflow: hidden;
+	}
 
-  footer .collumns .second-third{
-    margin: 10px 0px !important;
-    border-left: none !important;
-  }
+	footer .collumns .first-third{
+		margin: 10px 0px !important;
+		border-left: none !important;
+		border-right: 3px solid #898989;
+	}
 
-  footer .collumns .third-third{
-    margin: 10px 0px !important;
-  }
+	footer .collumns .second-third{
+		margin: 10px 0px !important;
+		border-left: none !important;
+	}
 
-  footer .logos .logo-one img{
-    height: auto !important;
-    width: 20vw !important;
-    margin: 5px;
-  }
+	footer .collumns .third-third{
+		margin: 10px 0px !important;
+	}
 
-  footer .logos .logo-two img{
-    height: auto !important;
-    width: 25vw !important;
-    margin: 5px;
-  }
+	footer .logos .logo-one img{
+		height: auto !important;
+		width: 15vw !important;
+		margin: 5px;
+	}
 
-  footer .logos .logo-three img{
-    height: auto !important;
-    width: 27vw !important;
-    margin: 5px;
-  }
+	footer .logos .logo-two img{
+		height: auto !important;
+		width: 20vw !important;
+		margin: 5px;
+	}
+
+	footer .logos .logo-three img{
+		height: auto !important;
+		width: 23vw !important;
+		margin: 5px;
+	}
 
   }
 
@@ -1723,20 +1727,21 @@ footer .logos .logo-three img{
       display: none;
     }
 
-    footer .collumns .first-third{
-  		margin: 10px 0px !important;
-  		border-left: none !important;
-  		border-right: 3px solid #898989;
-  	}
+	footer .collumns .first-third{
+		margin: 10px 0px !important;
+		border-left: none !important;
+		border-right: 3px solid #898989;
+	}
 
-  	footer .collumns .second-third{
-  		margin: 10px 0px !important;
-  		border-left: none !important;
-  	}
+	footer .collumns .second-third{
+		margin: 10px 0px !important;
+		border-left: none !important;
+	}
 
-  	footer .collumns .third-third{
-  		margin: 10px 0px !important;
-  	}
+	footer .collumns .third-third{
+		margin: 10px 0px !important;
+	}
+
 }
 
 

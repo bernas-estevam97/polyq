@@ -60,6 +60,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'csp.middleware.CSPMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -86,6 +88,36 @@ TEMPLATES = [
         },
     },
 ]
+
+#CSP SECTION
+
+CSP_DEFAULT_SRC = ("'self'",)  # default fallback
+
+CSP_STYLE_SRC = (
+    "'self'",
+    'https://fonts.googleapis.com',  # for Google Fonts CSS
+)
+
+CSP_FONT_SRC = (
+    "'self'",
+    'https://fonts.gstatic.com',  # Google Fonts font files
+)
+
+CSP_IMG_SRC = (
+    "'self'",  # your own static folder images
+    'data:',   # allow base64-encoded images if any
+)
+
+CSP_SCRIPT_SRC = ("'self'",)  # your own JS files, add external domains if any
+
+CSP_CONNECT_SRC = ("'self'",)  # if you make AJAX or WebSocket connections
+
+CSP_FRAME_SRC = ("'none'",)  # block embedding your site into iframes by default
+
+
+
+
+
 
 WSGI_APPLICATION = 'polyQ.wsgi.application'
 
@@ -157,13 +189,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
-STATICFILES_DIRS = (
+
+# Where static files will be collected to (for production)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Extra directories to look for static files (optional)
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static', 'static_dirs'),
-)
+]
+
+# Media files (uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Storage settings (Django 4.2+)
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+        'OPTIONS': {
+            'location': MEDIA_ROOT,
+        },
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
+
 
 
 # Default primary key field type
@@ -172,7 +226,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 60 * 60
+SESSION_COOKIE_AGE = 180 * 60
 
 # EMAIL SECTION
 

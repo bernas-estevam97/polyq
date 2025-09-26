@@ -114,22 +114,12 @@
           <a href="home" class="btn-visit"> Visit PolyQ Database</a>
         </div>
           <div class="footer-container">
-            <a class="copy-right"> &copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script><br>Authors and database creators duly mentioned.<br> &#129516; &#129516; &#129516; &#129516; &#129516;</a>
+            <a class="copy-right"> &copy; PolyQ Database. All rights reserved 2021<span id="year"></span><br>Authors and database creators duly mentioned.<br> &#129516; &#129516; &#129516; &#129516; &#129516;</a>
           </div>
       </section>
 <!--- Javascript for toggle menu --->
-<script type="text/javascript">
-
-
-    var navLinks= document.getElementById("navLinks");
-    function showMenu(){
-      navLinks.style.right = "0";
-    }
-    function hideMenu(wind_size){
-      navLinks.style.right = "-240px";
-    }
-
-</script>
+<script src="{% static 'js/landing-page-menu.js' %}"></script>
+<script src="{% static 'js/get-date-year.js' %}"></script>
 
   </body>
 </html>

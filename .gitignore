@@ -1,5 +1,8 @@
 venv/
+venv_312/
 polyQ/migrations/
 .env
 Dados PolyQ 2024/
 DB backup old/
+desktop.ini
+staticfiles/

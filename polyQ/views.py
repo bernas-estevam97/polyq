@@ -157,7 +157,7 @@ def search_disease(request):
                 'y': coord.y,
                 'title': coord.title,
                 'text': coord.text,
-                'device': coord.device
+                'resolution': coord.resolution
             }
             for coord in disease.coordinates.all()
         ]
