@@ -1,4 +1,5 @@
 {% load static %}
+{% load csp %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,44 @@
 <body>
 <script src="{% static 'js/ScrollSpy.min.js' %}"></script>
 <script src="{% static 'js/highlight.pack.js' %}"></script>
+<script nonce="{{ request.csp_nonce }}">
+  document.addEventListener("DOMContentLoaded", function () {
+    const mainBtn = document.getElementById("dropbtn");
+    const littleBtn = document.getElementById("dropbtn-little");
+
+    if (mainBtn) {
+      mainBtn.addEventListener("click", function (e) {
+        e.stopPropagation(); // Prevents window.onclick from firing
+        document.getElementById("myDropdown").classList.toggle("show");
+      });
+    }
+
+    if (littleBtn) {
+      littleBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        document.getElementById("myDropdownLittle").classList.toggle("show");
+      });
+    }
+
+    window.addEventListener("click", function (event) {
+      // Hide large dropdown if click is outside
+      if (!event.target.closest(".dropbtn")) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (const dropdown of dropdowns) {
+          dropdown.classList.remove("show");
+        }
+      }
+
+      // Hide little dropdown if click is outside
+      if (!event.target.closest(".dropbtn-little")) {
+        const littleDropdowns = document.getElementsByClassName("dropdown-content-little");
+        for (const drop of littleDropdowns) {
+          drop.classList.remove("show");
+        }
+      }
+    });
+  });
+</script>
 <header>
     <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
     <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
@@ -30,7 +69,7 @@
         <li><a href="/disease_search/?disease={{ other_diseases.1.name }}">{{ other_diseases.1 }}</a></li>
         <li><a href="/disease_search/?disease={{ other_diseases.2.name }}">{{ other_diseases.2 }}</a></li>
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
+        <button class="dropbtn" id="dropbtn">More <i class="fa-solid fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
             {% for disease in other_diseases|slice:"3:" %}
                 <a href="/disease_search/?disease={{ disease }}">{{ disease }}</a>
@@ -45,7 +84,7 @@
     <div class="little-nav">
     <ul>
     <div class="dropdown-little">
-        <button onclick="myFunctionLittle()" class="dropbtn-little">Other Diseases &nbsp <i
+        <button class="dropbtn-little" id="dropbtn-little">Other Diseases &nbsp <i
                 class="fa-solid fa-turn-down"></i></button>
         <div class="dropdown-content-little" id="myDropdownLittle">
             {% for disease in other_diseases %}
@@ -125,7 +164,8 @@
                      {% endfor %}
                 </div>
                 <div class="table">
-                    <table style="width:100%" id="table">
+		    <style nonce="{{ request.csp_nonce }}">#table {width: 100%;}</style>
+                    <table id="table">
                         <caption>{{disease.characteristic_table.table_title|safe}}</caption>
                         <tr>
                             <th>Description</th>
@@ -299,7 +339,7 @@
             <path d="M1362 588 c-7 -7 -12 -36 -12 -65 0 -57 17 -76 48 -56 22 13 27 33 8 33 -9 0 -16 -4 -16 -10 0 -5 -4 -10 -10 -10 -5 0 -10 9 -10 20 0 15 7 20 25 20 21 0 25 5 25 28 0 29 -16 52 -35 52 -6 0 -16 -5 -23 -12z m38 -40 c0 -5 -7 -8 -15 -8 -15 0 -20 21 -8 33 7 7 23 -11 23 -25z"/>
         </g>
     </svg>
-    <p>&copy; PolyQ Database. All rights reserved 2021<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>. Authors and database creators all duly mentioned.</p>
+    <p>&copy; PolyQ Database. All rights reserved 2021<span id="year"></span><br>. Authors and database creators all duly mentioned.</p>
     <div class="logos">
         <a class="logo-one"> <img src="{% static 'img/Logo_ABCRI.png' %}" alt=""></a>
         <a class="logo-two"> <img src="{% static 'img/Logo_MNGT.png' %}" alt=""></a>
@@ -318,7 +358,7 @@
     	<p>{{ form.email }}</p>
     	<p>{{ form.subject }}</p>
     	<p>{{ form.message }}</p>
-	<input style="visibility: hidden" name="{{ form.honeypot_field_name }}" value="">
+	<input class="honeypot-hidden" name="{{ form.honeypot_field_name }}" value="">
     	{{ form.honeypot_time }}
 	{{ form.captcha }}	
 
@@ -358,9 +398,10 @@
 <script src="{% static 'js/init-coords.js' %}"></script>
 <script src="{% static 'js/img-int-dynamic-new.js' %}"></script>
 <script src="{% static 'js/scrollspy-logic.js' %}"></script>
-<script src="{% static 'js/nav-dropdown.js' %}"></script>
+<!-- <script src="{% static 'js/nav-dropdown.js' %}"></script> -->
 <script src="{% static 'js/scroll-offset.js' %}"></script>
 <script src="{% static 'js/int-image-reload.js' %}"></script>
 <script src="{% static 'js/close-popup.js' %}"></script>
+<script src="{% static 'js/get-date-year.js' %}"></script>
 </body>
 </html>

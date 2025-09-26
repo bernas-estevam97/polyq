@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from csp.constants import SELF, NONE, NONCE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
     'feedback',
     'cache_cleaner',
     'django_recaptcha',
+    'csp',
 ]
 
 
@@ -89,37 +91,27 @@ TEMPLATES = [
     },
 ]
 
-#CSP SECTION
-
-CSP_DEFAULT_SRC = ("'self'",)  # default fallback
-
-CSP_STYLE_SRC = (
-    "'self'",
-    'https://fonts.googleapis.com',  # for Google Fonts CSS
-)
-
-CSP_FONT_SRC = (
-    "'self'",
-    'https://fonts.gstatic.com',  # Google Fonts font files
-)
-
-CSP_IMG_SRC = (
-    "'self'",  # your own static folder images
-    'data:',   # allow base64-encoded images if any
-)
-
-CSP_SCRIPT_SRC = ("'self'",)  # your own JS files, add external domains if any
-
-CSP_CONNECT_SRC = ("'self'",)  # if you make AJAX or WebSocket connections
-
-CSP_FRAME_SRC = ("'none'",)  # block embedding your site into iframes by default
-
-
-
-
-
 
 WSGI_APPLICATION = 'polyQ.wsgi.application'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'INFO',  # make sure INFO and above are logged
+            'propagate': True,
+        },
+    },
+}
+
+
 
 if DEBUG:
     DATABASES = {
@@ -130,7 +122,7 @@ if DEBUG:
     }
 else:
     DATABASES = {
-    'default': {
+        'default': {
         'ENGINE': 'mssql',
         'NAME': 'polyq',
         'USER': 'SA',
@@ -140,8 +132,8 @@ else:
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
             # Optional:
-            # 'trust_server_certificate': 'yes',  # if you're using self-signed certs
-            # 'encrypt': 'yes',  # for Azure or secure connections
+            'trust_server_certificate': 'yes',  # if you're using self-signed certs
+            #'encrypt': 'yes',  # for Azure or secure connections
         },
     }
 }
@@ -215,6 +207,23 @@ STORAGES = {
     },
     'staticfiles': {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
+
+
+
+#CSP SECTION
+
+
+CONTENT_SECURITY_POLICY = {
+    "DIRECTIVES": {
+        "default-src": [SELF],
+        "script-src": [SELF, "https://www.google.com", "https://www.gstatic.com", NONCE],
+        "style-src": [SELF, "https://fonts.googleapis.com", "https://www.gstatic.com", NONCE],
+        "connect-src": [SELF, "https://www.google.com", "https://www.gstatic.com"],
+        "img-src": [SELF, "data:"],
+        "font-src": [SELF, "https://fonts.gstatic.com"],
+        "frame-src": ["https://www.google.com", "https://www.google.com/maps/embed"],
     },
 }
 

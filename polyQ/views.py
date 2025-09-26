@@ -20,6 +20,7 @@ from urllib.parse import urlencode, urlparse, parse_qs
 from urllib.parse import unquote_plus
 import unicodedata
 from django.db.models.functions import Lower
+from csp.decorators import csp_update
 
 def normalize_text(text):
     text = unicodedata.normalize('NFKD', text)
@@ -103,8 +104,9 @@ def redirect_with_query_param(request, new_params: dict):
 def search_disease(request):
     raw_disease_name = request.GET.get('disease')
     disease_name = normalize_text(unquote_plus(raw_disease_name))
-
-    form = FeedbackForm(request.POST or None)
+    nonce = getattr(request, 'csp_nonce', None)
+    csp_update(request, script_src=[f"'nonce-{nonce}'"])
+    form = FeedbackForm(request.POST or None, nonce=nonce)
     message_error = 'Something went wrong, try again!'
     message_success = "Form sent. Thanks for contacting us!"
 

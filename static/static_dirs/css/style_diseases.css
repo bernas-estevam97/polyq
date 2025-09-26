@@ -2178,3 +2178,13 @@ figcaption{
 		cursor: auto;
 	  }
 }
+
+
+
+.no-resize {
+   resize: none;
+}
+
+.honeypot-hidden {
+   visibility: hidden;
+}
