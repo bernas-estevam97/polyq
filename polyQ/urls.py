@@ -28,6 +28,7 @@ urlpatterns = [
     path('authors', authors, name="authors"),
     path('appreciation', appreciation, name="thanks"),
     path('disease_search/', search_disease, name='disease_search'),
+    path('support', support, name='support'),
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)
 

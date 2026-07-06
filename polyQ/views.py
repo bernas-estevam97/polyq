@@ -49,6 +49,10 @@ def authors(request):
 def appreciation(request):
     return render(request, 'appreciation/index.html')
 
+
+def support(request):
+    return render(request, 'support/index.html')
+
 # Create a thread pool executor for the application
 executor = ThreadPoolExecutor(max_workers=3)
 

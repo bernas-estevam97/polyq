@@ -97,16 +97,17 @@
 				</svg>
         <a> <img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"> </a>
         <div class="nav-links" id="navLinks">
-          <i class="fas fa-window-close" onclick="hideMenu()"> </i>
+          <i id="closeBtn" class="fas fa-window-close"></i>
             <ul>
               <li><a href="home">HOME </a></li>
               <li><a href="objectives" target="_blank"> OBJECTIVE </a></li>
               <li><a href="authors">AUTHOR/S </a></li>
               <li><a href="contact">CONTACT </a></li>
               <li><a href="appreciation">APPRECIATION </a></li>
+			  <li><a href="support">SUPPORT</a></li>
             </ul>
           </div>
-          <i class="fas fa-bars" onclick="showMenu()"> </i>
+          <i id="openBtn" class="fas fa-bars"></i>
       </nav>
         <div class="text-box">
           <h1> A Database for Polyglutamine Diseases</h1>
@@ -120,7 +121,6 @@
 <!--- Javascript for toggle menu --->
 <script src="{% static 'js/landing-page-menu.js' %}"></script>
 <script src="{% static 'js/get-date-year.js' %}"></script>
-
   </body>
 </html>
 

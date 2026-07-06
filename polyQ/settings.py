@@ -223,7 +223,7 @@ CONTENT_SECURITY_POLICY = {
         "connect-src": [SELF, "https://www.google.com", "https://www.gstatic.com"],
         "img-src": [SELF, "data:"],
         "font-src": [SELF, "https://fonts.gstatic.com"],
-        "frame-src": ["https://www.google.com", "https://www.google.com/maps/embed"],
+        "frame-src": ["https://www.google.com", "https://www.google.com/maps/embed", "https://ko-fi.com"],
     },
 }
 
