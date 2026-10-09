@@ -112,16 +112,42 @@ class NotificationEmailTests(TestCase):
         self.assertEqual([m.to for m in mail.outbox], [['visitor@example.com']])
 
     def test_no_visitor_email_when_address_blank(self):
+        from django.core import mail
         from polyQ import views
         data = {'visitor_name': 'ana', 'subject': 's', 'message': 'm'}
-        with mock.patch.object(views, 'send_mail') as admin_mail, \
-                mock.patch.object(views, 'EmailMessage') as visitor_mail:
-            views.send_notification_emails(data, '')
-        admin_mail.assert_called_once()
-        visitor_mail.assert_not_called()
+        views.send_notification_emails(data, '')
+        self.assertEqual([m.to for m in mail.outbox], [['admin@example.com']])  # admin only
+        self.assertEqual(mail.outbox[0].reply_to, [])                          # nobody to reply to
 
     def test_email_failure_is_logged_not_raised(self):
         from polyQ import views
-        with mock.patch.object(views, 'send_mail', side_effect=OSError('smtp down')), \
+        data = {'visitor_name': 'ana', 'subject': 's', 'message': 'm'}
+        with mock.patch('django.core.mail.EmailMessage.send', side_effect=OSError('smtp down')), \
                 self.assertLogs('polyQ.views', level='ERROR'):
-            views.send_notification_emails({'visitor_name': 'ana'}, '')
+            views.send_notification_emails(data, '')
+
+    @override_settings(SITE_URL='https://polyq.pt')
+    def test_email_contents(self):
+        from django.core import mail
+        from polyQ import views
+        data = {'visitor_name': 'ana silva', 'subject': "SCA3 & HD",
+                'message': "First line\nSecond line <script>alert(1)</script>"}
+        views.send_notification_emails(data, 'visitor@example.com', 'SCA3')
+        admin_mail, visitor_mail = mail.outbox
+
+        # admin: full message, page, visitor as Reply-To, link to the feedback list
+        self.assertEqual(admin_mail.subject, 'PolyQ feedback: SCA3 & HD')
+        self.assertEqual(admin_mail.reply_to, ['visitor@example.com'])
+        for text in ('Ana Silva', 'Page:    SCA3', 'Second line <script>',
+                     'https://polyq.pt/access_django_adm/feedback/form/'):
+            self.assertIn(text, admin_mail.body)
+
+        # visitor: plain text unescaped, HTML escaped, line breaks kept, logo absolute
+        self.assertIn('Subject: SCA3 & HD', visitor_mail.body)
+        html, mimetype = visitor_mail.alternatives[0]
+        self.assertEqual(mimetype, 'text/html')
+        self.assertIn('Hi Ana Silva,', html)
+        self.assertIn('SCA3 &amp; HD', html)
+        self.assertIn('First line<br>Second line &lt;script&gt;', html)
+        self.assertNotIn('<script>alert', html)
+        self.assertIn('src="https://polyq.pt/static/img/image-crop.png"', html)

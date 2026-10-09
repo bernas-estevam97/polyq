@@ -1,0 +1,17 @@
+{% autoescape off %}Hi {{ name }},
+
+Thank you for writing to the PolyQ Database. Your message has reached us, and we will reply to this address if it needs a response.
+
+Subject: {{ subject }}
+
+Your message:
+{{ message }}
+
+Need to add something? Just reply to this email.
+
+PolyQ Database
+{{ site_url }}/home
+ABC Research Institute, University of Algarve
+
+You received this because this address was entered in the feedback form at polyq.pt.
+{% endautoescape %}

@@ -1,15 +1,17 @@
 import logging
 import string
+from datetime import date
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlencode, urlparse, parse_qs
 
 from django.conf import settings
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template.loader import render_to_string
+from django.urls import reverse
 
 from feedback.forms import FeedbackForm
 from polyQ.models import Disease
@@ -61,28 +63,37 @@ executor = ThreadPoolExecutor(max_workers=3)
 
 # Function to send email notifications in the background.
 # Runs in a worker thread, so exceptions would otherwise vanish silently: log them.
-def send_notification_emails(form_data, email_address):
+def send_notification_emails(form_data, email_address, page=''):
     try:
-        _send_notification_emails(form_data, email_address)
+        _send_notification_emails(form_data, email_address, page)
     except Exception:
         logger.exception("Feedback notification email failed")
 
 
-def _send_notification_emails(form_data, email_address):
+def _send_notification_emails(form_data, email_address, page=''):
     # Sender and admin recipient come from .env (FEEDBACK_FROM_EMAIL / FEEDBACK_ADMIN_EMAIL)
     email_from = settings.DEFAULT_FROM_EMAIL
+    context = {
+        'name': string.capwords(form_data['visitor_name']),
+        'email': email_address,
+        'subject': form_data['subject'],
+        'message': form_data['message'],
+        'page': page or '(unknown)',
+        'site_url': settings.SITE_URL,
+        'admin_url': settings.SITE_URL + reverse('admin:feedback_form_changelist'),
+        'year': date.today().year,
+    }
 
-    # Send email to admin
+    # Admin notification: the whole message, and Reply-To set to the visitor so a plain
+    # "Reply" in the inbox answers them directly.
     if settings.FEEDBACK_ADMIN_EMAIL:
-        send_mail(
-            f"Form received notification from PolyQ",
-            f"You received a feedback form from visitor: {string.capwords(form_data['visitor_name'])}\n"
-            f"Be sure to check it when you are available\n\n"
-            f"PolyQ Database automated form notification",
-            email_from,
-            [settings.FEEDBACK_ADMIN_EMAIL],
-            fail_silently=False,
-        )
+        EmailMessage(
+            subject=f"PolyQ feedback: {context['subject']}",
+            body=render_to_string('emails/feedback_admin.txt', context),
+            from_email=email_from,
+            to=[settings.FEEDBACK_ADMIN_EMAIL],
+            reply_to=[email_address] if email_address else None,
+        ).send()
     else:
         logger.warning("FEEDBACK_ADMIN_EMAIL is not set in .env: admin was not notified of new feedback")
 
@@ -90,16 +101,16 @@ def _send_notification_emails(form_data, email_address):
     if not email_address:
         return
 
-    # Send email to the user
-    subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form_data['visitor_name'])}."
-    subject_form = form_data['subject']
-    email_to = [email_address]
-    message = form_data['message']
-    mydict = {'subject': subject_form, 'name': form_data['visitor_name'], 'message': message}
-    html_message = render_to_string('mail_template.html', context=mydict)
-    email_for_visitor = EmailMessage(subject, html_message, email_from, email_to)
-    email_for_visitor.content_subtype = 'html'
-    email_for_visitor.send()
+    # Confirmation to the visitor: HTML with a plain-text version (better for spam filters
+    # and text-only mail clients)
+    confirmation = EmailMultiAlternatives(
+        subject="We received your message - PolyQ Database",
+        body=render_to_string('emails/feedback_confirmation.txt', context),
+        from_email=email_from,
+        to=[email_address],
+    )
+    confirmation.attach_alternative(render_to_string('emails/feedback_confirmation.html', context), 'text/html')
+    confirmation.send()
 
 def redirect_with_query_param(request, new_params: dict):
     """
@@ -156,7 +167,8 @@ def search_disease(request):
             # Send email notifications in the background
             email_address = form.cleaned_data.get('email')
             recipient = email_address if email_address else ""
-            executor.submit(send_notification_emails, form.cleaned_data, recipient)
+            # page: which disease page the form was sent from, shown in the admin email
+            executor.submit(send_notification_emails, form.cleaned_data, recipient, disease_name)
 
             # Reset the form after submission
             return redirect_with_query_param(request, {'sent': 'mailTrue'})

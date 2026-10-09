@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% comment %}
+  Confirmation sent to a visitor after the feedback form. Email clients ignore most CSS,
+  so layout is tables + inline styles; colours match static/static_dirs/css/modern.css.
+  Context: name, subject, message, site_url, year.
+{% endcomment %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>We received your message</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f3f7f7; -webkit-text-size-adjust:none; text-size-adjust:none;">
+<!-- Inbox preview text -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">Thanks, {{ name }}. We received your message about "{{ subject }}".</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f7f7;">
+  <tr>
+    <td align="center" style="padding:32px 16px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px; background-color:#ffffff; border:1px solid #d6e1e3; border-radius:12px; overflow:hidden;">
+
+        <!-- Header -->
+        <tr>
+          <td style="background-color:#0f2a33; padding:24px 32px;">
+            <a href="{{ site_url }}/home" style="text-decoration:none;">
+              <img src="{{ site_url }}/static/img/image-crop.png" width="92" height="64" alt="PolyQ Database" style="display:block; border:0; height:64px; width:auto;">
+            </a>
+          </td>
+        </tr>
+        <tr><td style="background-color:#f2c20e; height:4px; line-height:4px; font-size:4px;">&nbsp;</td></tr>
+
+        <!-- Body -->
+        <tr>
+          <td style="padding:36px 32px 8px; font-family:'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#22363d; font-size:16px; line-height:1.6;">
+            <h1 style="margin:0 0 16px; font-size:26px; line-height:1.2; color:#0f2a33; font-weight:700;">We received your message</h1>
+            <p style="margin:0 0 16px;">Hi {{ name }},</p>
+            <p style="margin:0 0 24px;">Thank you for writing to the PolyQ Database. Your message has reached us, and we will reply to this address if it needs a response.</p>
+          </td>
+        </tr>
+
+        <!-- Copy of the message -->
+        <tr>
+          <td style="padding:0 32px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f7f7; border-left:4px solid #1d6f7e; border-radius:6px;">
+              <tr>
+                <td style="padding:18px 20px; font-family:'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#22363d; font-size:15px; line-height:1.6;">
+                  <p style="margin:0 0 4px; font-size:13px; color:#55686e;">Subject</p>
+                  <p style="margin:0 0 14px; font-weight:600; color:#0f2a33;">{{ subject }}</p>
+                  <p style="margin:0 0 4px; font-size:13px; color:#55686e;">Your message</p>
+                  <p style="margin:0;">{{ message|linebreaksbr }}</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Button -->
+        <tr>
+          <td style="padding:32px 32px 36px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color:#1d6f7e; border-radius:999px;">
+                  <a href="{{ site_url }}/home" style="display:inline-block; padding:13px 26px; font-family:'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; font-weight:600; color:#ffffff; text-decoration:none;">Back to PolyQ Database</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:24px 32px; border-top:1px solid #d6e1e3; font-family:'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#55686e; font-size:13px; line-height:1.6;">
+            <p style="margin:0 0 8px;">PolyQ Database, a reference on the nine polyglutamine diseases from the ABC Research Institute, University of Algarve.</p>
+            <p style="margin:0 0 8px;">Need to add something? Just reply to this email.</p>
+            <p style="margin:0;">
+              <a href="{{ site_url }}/home" style="color:#1d6f7e;">polyq.pt</a> &nbsp;&middot;&nbsp;
+              <a href="https://twitter.com/PolyqDatabase" style="color:#1d6f7e;">Twitter</a> &nbsp;&middot;&nbsp;
+              <a href="https://www.linkedin.com/in/bernas-estevam97/" style="color:#1d6f7e;">LinkedIn</a>
+            </p>
+            <p style="margin:12px 0 0; font-size:12px; color:#8a9a9f;">&copy; 2021&ndash;{{ year }} PolyQ Database</p>
+          </td>
+        </tr>
+      </table>
+      <p style="margin:16px 0 0; font-family:Helvetica, Arial, sans-serif; font-size:12px; color:#8a9a9f;">You received this because this address was entered in the feedback form at polyq.pt.</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

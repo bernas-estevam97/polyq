@@ -1,0 +1,12 @@
+{% autoescape off %}New feedback on the PolyQ Database.
+
+From:    {{ name }}
+Email:   {{ email|default:"(not given)" }}
+Subject: {{ subject }}
+Page:    {{ page }}
+
+{{ message }}
+
+{% if email %}Reply to this email to answer the visitor directly.
+{% endif %}All feedback: {{ admin_url }}
+{% endautoescape %}

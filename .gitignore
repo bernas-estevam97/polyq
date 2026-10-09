@@ -19,6 +19,7 @@ polyq_dump.json
 counts_*.txt
 Dados PolyQ 2024/
 DB backup old/
+backups/
 
 # --- Generated on the server by `manage.py collectstatic` -------------------
 staticfiles/

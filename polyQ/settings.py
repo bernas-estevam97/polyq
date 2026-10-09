@@ -279,6 +279,8 @@ EMAIL_HOST_PASSWORD = password
 # so the sender defaults to USER_MAIL.
 DEFAULT_FROM_EMAIL = os.getenv('FEEDBACK_FROM_EMAIL', usr)
 FEEDBACK_ADMIN_EMAIL = os.getenv('FEEDBACK_ADMIN_EMAIL')  # who gets told about new feedback
+# Public address of the site, for absolute links and the logo inside emails
+SITE_URL = os.getenv('SITE_URL', 'https://polyq.pt').rstrip('/')
 
 
 
