@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block title %}PolyQ - {{ title }}{% endblock %}
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/highlightjs.css' %}">
-    <link rel="stylesheet" href="{% static 'css/int-image.css' %}">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/int-image.css' %}">{% endblock %}
 {% block main_class %}page page-disease{% endblock %}
 
 {% block content %}
@@ -245,8 +244,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/ScrollSpy.min.js' %}"></script>
-<script src="{% static 'js/highlight.pack.js' %}"></script>
 <script src="{% static 'js/recaptcha-logic.js' %}"></script>
 <script src="{% static 'js/url-mod.js' %}"></script>
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>

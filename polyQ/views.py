@@ -1,26 +1,29 @@
-from django.http import HttpResponse, HttpResponseForbidden
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.core.exceptions import MultipleObjectsReturned
-from polyQ.models import Disease
-from django.db.models import Q
-from django.contrib import messages
-from django.core.management import CommandError
-from django.template import RequestContext
-from feedback.forms import FeedbackForm
-from django.core import mail
-from django.core.mail import EmailMessage, send_mail, send_mass_mail
-from django.template.loader import render_to_string
-from django.conf import settings
-from django.utils.html import strip_tags
+import logging
 import string
-import html
+import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlencode, urlparse, parse_qs
-from urllib.parse import unquote_plus
-import unicodedata
-from django.db.models.functions import Lower
-from csp.decorators import csp_update
+
+from django.conf import settings
+from django.core.mail import EmailMessage, send_mail
+from django.db.models import Q
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.template.loader import render_to_string
+
+from feedback.forms import FeedbackForm
+from polyQ.models import Disease
+
+logger = logging.getLogger(__name__)
+
+# Everything the disease page template touches, loaded in a fixed number of queries
+# instead of one query per reference, link, list and image.
+DISEASE_SELECT = ('introduction', 'first_described', 'epidemiology', 'causative_gene',
+                  'codified_protein', 'patho_physiology', 'clinical', 'characteristic_table',
+                  'css_class', 'added_info')
+DISEASE_PREFETCH = ('epidemiology__image', 'causative_gene__image', 'codified_protein__image',
+                    'patho_physiology__image', 'characteristic_table__rows_col', 'list__item',
+                    'references__links', 'trials', 'coordinates')
 
 def normalize_text(text):
     text = unicodedata.normalize('NFKD', text)
@@ -56,23 +59,40 @@ def support(request):
 # Create a thread pool executor for the application
 executor = ThreadPoolExecutor(max_workers=3)
 
-# Function to send email notifications in the background
+# Function to send email notifications in the background.
+# Runs in a worker thread, so exceptions would otherwise vanish silently: log them.
 def send_notification_emails(form_data, email_address):
+    try:
+        _send_notification_emails(form_data, email_address)
+    except Exception:
+        logger.exception("Feedback notification email failed")
+
+
+def _send_notification_emails(form_data, email_address):
+    # Sender and admin recipient come from .env (FEEDBACK_FROM_EMAIL / FEEDBACK_ADMIN_EMAIL)
+    email_from = settings.DEFAULT_FROM_EMAIL
+
     # Send email to admin
-    send_mail(
-        f"Form received notification from PolyQ",
-        f"You received a feedback form from visitor: {string.capwords(form_data['visitor_name'])}\n"
-        f"Be sure to check it when you are available\n\n"
-        f"PolyQ Database automated form notification",
-        "polyqdatabase@gmail.com",
-        ["bernaz10.1997golden@gmail.com"],
-        fail_silently=False,
-    )
+    if settings.FEEDBACK_ADMIN_EMAIL:
+        send_mail(
+            f"Form received notification from PolyQ",
+            f"You received a feedback form from visitor: {string.capwords(form_data['visitor_name'])}\n"
+            f"Be sure to check it when you are available\n\n"
+            f"PolyQ Database automated form notification",
+            email_from,
+            [settings.FEEDBACK_ADMIN_EMAIL],
+            fail_silently=False,
+        )
+    else:
+        logger.warning("FEEDBACK_ADMIN_EMAIL is not set in .env: admin was not notified of new feedback")
+
+    # Email is optional on the form: no address, no confirmation email
+    if not email_address:
+        return
 
     # Send email to the user
     subject = f"Your form was submitted to PolyQDatabase, {string.capwords(form_data['visitor_name'])}."
     subject_form = form_data['subject']
-    email_from = settings.EMAIL_HOST_USER
     email_to = [email_address]
     message = form_data['message']
     mydict = {'subject': subject_form, 'name': form_data['visitor_name'], 'message': message}
@@ -88,6 +108,10 @@ def redirect_with_query_param(request, new_params: dict):
     """
     url_parts = urlparse(request.get_full_path())
     query_dict = parse_qs(url_parts.query)
+    # Drop the previous outcome, or a failed attempt followed by a successful one
+    # would leave both ?error and ?sent in the URL and the error popup would win.
+    query_dict.pop('sent', None)
+    query_dict.pop('error', None)
 
     # Always retain the disease query parameter if it's available
     disease_name = request.GET.get('disease', '')
@@ -106,10 +130,11 @@ def redirect_with_query_param(request, new_params: dict):
 
 # Main view function with rate-limiting and email sending in background
 def search_disease(request):
-    raw_disease_name = request.GET.get('disease', '')
-    disease_name = normalize_text(unquote_plus(raw_disease_name))
-    nonce = getattr(request, 'csp_nonce', None)
-    csp_update(request, script_src=[f"'nonce-{nonce}'"])
+    # request.GET is already URL-decoded; decoding again would turn a literal "+" into a space
+    disease_name = normalize_text(request.GET.get('disease', ''))
+    # request.csp_nonce is lazy and is falsy until read as a string, so the reCAPTCHA widget
+    # would skip it. str() generates it now; the NONCE entry in settings puts it in the header.
+    nonce = str(request.csp_nonce)
     form = FeedbackForm(request.POST or None, nonce=nonce)
     message_error = 'Something went wrong, try again!'
     message_success = "Form sent. Thanks for contacting us!"
@@ -145,11 +170,15 @@ def search_disease(request):
     if query:
         disease = (Disease.objects.filter(name__iexact=query).first()
                    or Disease.objects.filter(slug__iexact=query).first()
-                   or Disease.objects.filter(Q(name__icontains=query) | Q(slug__icontains=query)).first())
+                   or Disease.objects.filter(Q(name__icontains=query) | Q(slug__icontains=query))
+                   .order_by('id').first())  # several loose matches (e.g. "ataxia"): pick consistently
 
     if disease is None:
         return render(request, 'not-found-page.html',
                       {'error_message': "This disease does not exist in our database."}, status=404)
+
+    disease = (Disease.objects.select_related(*DISEASE_SELECT)
+               .prefetch_related(*DISEASE_PREFETCH).get(pk=disease.pk))
 
     other_diseases = Disease.objects.exclude(id=disease.id)
     img_coordinates = [
@@ -181,12 +210,16 @@ def search_disease(request):
 def custom_page_not_found_view(request, exception):
     error_code = "404"
     error_message = "Page not found"
-    return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
+    # Without an explicit status these pages were served as 200 OK ("soft 404"),
+    # so search engines indexed them and monitoring saw no errors.
+    return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code},
+                  status=404)
 
 
 def custom_error_view(request, exception=None):
     error_code = "500"
     error_message = "Internal Server error"
-    return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code})
+    return render(request, "not-found-page.html", {'error_message': error_message, 'error_code': error_code},
+                  status=500)
 
 

@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.safestring import mark_safe
 from django.forms import ModelForm, TextInput, EmailInput, Textarea
 from django_recaptcha.fields import ReCaptchaField
 from django_recaptcha.widgets import ReCaptchaV3
@@ -14,11 +15,13 @@ class NonceReCaptchaV3(ReCaptchaV3):
     def render(self, name, value, attrs=None, renderer=None):
         rendered = super().render(name, value, attrs, renderer)
         if self.nonce:
-            # Inject nonce into the <script> tag
-            rendered = rendered.replace(
+            # Inject nonce into the <script> tag. str.replace() returns a plain str, so
+            # re-mark it safe or Django 5 escapes the whole widget into visible text.
+            # Safe: the input is the widget's own template output, the nonce is server-generated.
+            rendered = mark_safe(rendered.replace(
                 '<script type="text/javascript">',
                 f'<script nonce="{self.nonce}" type="text/javascript">'
-            )
+            ))
         return rendered
 
 class FeedbackForm(ModelForm):
@@ -65,7 +68,7 @@ class FeedbackForm(ModelForm):
         return False
 
     # 🧠 Invisible reCAPTCHA v3 — use the custom widget by default (you can override it)
-    captcha = ReCaptchaField(widget=NonceReCaptchaV3(attrs={'required_score': 0.85}))
+    captcha = ReCaptchaField(widget=NonceReCaptchaV3(attrs={'required_score': 0.7}))
 
     class Meta:
         model = Form

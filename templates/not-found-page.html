@@ -1,19 +1,39 @@
 {% extends 'base.html' %}
+{% comment %}
+  Three cases share this page:
+  - error_code "404": unknown URL
+  - error_code "500": server error
+  - no error_code:    disease search with no match (404 status)
+{% endcomment %}
 
-{% block title %}{{ error_code }} Not found{% endblock %}
+{% block title %}{% if error_code == "500" %}Something went wrong{% else %}Not found{% endif %} - PolyQ Database{% endblock %}
 
 {% block content %}
 <div class="error-page">
-    <p class="error-code">{{ error_code }}</p>
+    {% if error_code %}<p class="error-code">Error {{ error_code }}</p>{% endif %}
+
+    {% if error_code == "500" %}
+    <h1>Something went wrong on our side</h1>
+    <p>The page could not be loaded because of a server error. It has been logged. Try again in a few minutes; if it keeps happening, please <a href="/contact">let us know</a>.</p>
+    {% else %}
     <h1>{{ error_message }}</h1>
     {% if error_code %}
     <p>This page does not exist. If a link brought you here, please <a href="/contact">let us know</a>.</p>
     {% else %}
     <p>Check the spelling, try an abbreviation such as HD or SCA3, or pick a disease from the <a href="/home">home page</a>.</p>
     {% endif %}
+    <form method="get" action="/disease_search/" class="search-form error-search" role="search">
+        <label for="error-search" class="visually-hidden">Search diseases</label>
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input type="text" name="disease" id="error-search" class="search-box" pattern="[\w' -]{2,}"
+               placeholder="Search a disease, e.g. Huntington's or SCA3" autocomplete="off" required>
+        <button type="submit" class="search-button">Search</button>
+    </form>
+    {% endif %}
+
     <ul class="error-links">
-        <li><a href="/home"><strong>Home</strong><span>Search the nine polyglutamine diseases</span></a></li>
-        <li><a href="/contact"><strong>Contact</strong><span>Report a broken link</span></a></li>
+        <li><a href="/home"><strong>Home</strong><span>Browse the nine polyglutamine diseases</span></a></li>
+        <li><a href="/contact"><strong>Contact</strong><span>{% if error_code == "500" %}Report a problem{% else %}Report a broken link{% endif %}</span></a></li>
         <li><a href="/authors"><strong>Authors</strong><span>Who built the database</span></a></li>
         <li><a href="/objectives"><strong>Objectives</strong><span>What the database is for</span></a></li>
     </ul>

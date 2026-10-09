@@ -22,11 +22,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-load_dotenv(dotenv_path=BASE_DIR / '.env')  # WINDOWS
+# .env next to manage.py (Windows dev) or inside the polyQ/ package folder
+# (/var/www/polyq/polyQ/.env on the Ubuntu server). Both are loaded if present; a value
+# found in the first file, or already set in the real environment, is never overwritten.
+for env_file in (BASE_DIR / '.env', BASE_DIR / 'polyQ' / '.env'):
+    load_dotenv(dotenv_path=env_file, encoding='utf-8-sig')  # utf-8-sig: tolerate a Windows BOM
 S_KEY = os.getenv('S_KEY')
 SECRET_KEY = S_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Off unless .env sets DJANGO_DEBUG=True (local development only).
+DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() == 'true'
 
 
 
@@ -40,7 +45,7 @@ RECAPTCHA_PUBLIC_KEY = '6LcMoAArAAAAAPSzMc0vx-Zy31o_ysMrQt0QvR1T'
 RECAPTCHA_PRIVATE_KEY = os.getenv('G_PKEY')
 
 
-RECAPTCHA_REQUIRED_SCORE = 0.85  # for v3
+RECAPTCHA_REQUIRED_SCORE = 0.7  # for v3
 
 
 INSTALLED_APPS = [
@@ -109,35 +114,52 @@ LOGGING = {
             'level': 'INFO',  # make sure INFO and above are logged
             'propagate': True,
         },
+        # App code: feedback email failures (background thread) and rate limiter problems
+        'polyQ': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
     },
 }
 
 
 
-if DEBUG:
+# Database is chosen by DB_ENGINE (mssql | postgres | sqlite3), independently of DEBUG.
+# Defaults match production (SQL Server on this host).
+DB_ENGINE = os.getenv('DB_ENGINE', 'mssql').lower()
+if DB_ENGINE.startswith('sqlite'):  # "sqlite" or "sqlite3"
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+elif DB_ENGINE.startswith('postgres'):  # "postgres" or "postgresql"; needs: pip install "psycopg[binary]"
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME', 'polyq'),
+            'USER': os.getenv('DB_USER', 'polyq'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+            'PORT': os.getenv('DB_PORT', '5432'),
+        }
+    }
 else:
     DATABASES = {
         'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'polyq',
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': '127.0.0.1',  # or 'localhost'
-        'PORT': '1433',  # default SQL Server port
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            # Optional:
-            'trust_server_certificate': 'yes',  # if you're using self-signed certs
-            #'encrypt': 'yes',  # for Azure or secure connections
-        },
+            'ENGINE': 'mssql',
+            'NAME': os.getenv('DB_NAME', 'polyq'),
+            'USER': os.getenv('DB_USER', 'SA'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+            'PORT': os.getenv('DB_PORT', '1433'),
+            'OPTIONS': {
+                'driver': 'ODBC Driver 17 for SQL Server',
+                'trust_server_certificate': 'yes',  # self-signed certificate in the Docker container
+            },
+        }
     }
-}
 
 CACHES = {
     "default": {
@@ -241,7 +263,6 @@ SESSION_COOKIE_AGE = 180 * 60
 # EMAIL SECTION
 
 
-# FOR UBUNTU -------> load_dotenv('/var/www/polyq/polyQ/.env')
 
 password = os.getenv('PASSWORD')
 usr = os.getenv('USER_MAIL')
@@ -254,18 +275,26 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = usr
 EMAIL_HOST_PASSWORD = password
 
+# Feedback notifications. Gmail only sends as the account it logs in with,
+# so the sender defaults to USER_MAIL.
+DEFAULT_FROM_EMAIL = os.getenv('FEEDBACK_FROM_EMAIL', usr)
+FEEDBACK_ADMIN_EMAIL = os.getenv('FEEDBACK_ADMIN_EMAIL')  # who gets told about new feedback
+
 
 
 # Security checks Django App
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-USE_X_FORWARDED_HOST = True
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# HTTPS-only settings: always on in production, off with DEBUG so runserver works over http.
+# (SECURE_BROWSER_XSS_FILTER was removed: it has had no effect since Django 4.0.)
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    USE_X_FORWARDED_HOST = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_PRELOAD = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
