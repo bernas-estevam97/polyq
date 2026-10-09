@@ -106,7 +106,7 @@ def redirect_with_query_param(request, new_params: dict):
 
 # Main view function with rate-limiting and email sending in background
 def search_disease(request):
-    raw_disease_name = request.GET.get('disease')
+    raw_disease_name = request.GET.get('disease', '')
     disease_name = normalize_text(unquote_plus(raw_disease_name))
     nonce = getattr(request, 'csp_nonce', None)
     csp_update(request, script_src=[f"'nonce-{nonce}'"])
@@ -139,53 +139,43 @@ def search_disease(request):
         else:
             return redirect_with_query_param(request, {'error': 'true'})
 
-    # Gather data for the disease search
-    try:
-        query = disease_name.strip()
+    # Gather data for the disease search: exact name, then exact slug, then a loose match
+    query = disease_name.strip()
+    disease = None
+    if query:
+        disease = (Disease.objects.filter(name__iexact=query).first()
+                   or Disease.objects.filter(slug__iexact=query).first()
+                   or Disease.objects.filter(Q(name__icontains=query) | Q(slug__icontains=query)).first())
 
-        # First, try to get the disease by exact name match (case-insensitive)
-        disease = Disease.objects.filter(name__iexact=query).first()
+    if disease is None:
+        return render(request, 'not-found-page.html',
+                      {'error_message': "This disease does not exist in our database."}, status=404)
 
-        # If not found, try to get the disease by exact slug match (case-insensitive)
-        if not disease:
-            disease = Disease.objects.filter(slug__iexact=query).first()
-
-        # If still not found, you can try a loose match, but this should be a fallback (optional)
-        if not disease:
-            disease = Disease.objects.filter(Q(name__icontains=query) | Q(slug__icontains=query)).first()
-
-        
-        other_diseases = Disease.objects.exclude(id=disease.id)
-        title = disease.name
-        img_coordinates = [
-            {
-                'x': coord.x,
-                'y': coord.y,
-                'title': coord.title,
-                'text': coord.text,
-                'resolution': coord.resolution
-            }
-            for coord in disease.coordinates.all()
-        ]
-
-        context = {
-            'disease': disease,
-            'title': title,
-            'other_diseases': other_diseases,
-            'img_coordinates': img_coordinates,
-            'form': form,
-            'message_error': message_error,
-            'message_success': message_success,
-            'sent': sent,
-            'error': error
+    other_diseases = Disease.objects.exclude(id=disease.id)
+    img_coordinates = [
+        {
+            'x': coord.x,
+            'y': coord.y,
+            'title': coord.title,
+            'text': coord.text,
+            'resolution': coord.resolution
         }
+        for coord in disease.coordinates.all()
+    ]
 
-        return render(request, 'diseases.html', context)
+    context = {
+        'disease': disease,
+        'title': disease.name,
+        'other_diseases': other_diseases,
+        'img_coordinates': img_coordinates,
+        'form': form,
+        'message_error': message_error,
+        'message_success': message_success,
+        'sent': sent,
+        'error': error
+    }
 
-    except Disease.DoesNotExist:
-        return render(request, 'not-found-page.html', {'error_message': "This disease does not exist in our database!"})
-    except Disease.MultipleObjectsReturned:
-        return render(request, 'home/index.html', {'error_message': "Be more specific with your search."})
+    return render(request, 'diseases.html', context)
 
 
 def custom_page_not_found_view(request, exception):

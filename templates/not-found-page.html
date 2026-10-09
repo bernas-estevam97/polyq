@@ -1,52 +1,21 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-{% load static %}
+{% block title %}{{ error_code }} Not found{% endblock %}
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{error_code}} Not found</title>
-    <link rel="shortcut icon" href="{% static 'img/image1.ico' %}"/>
-    <link rel="stylesheet" href="{% static 'css/style_not_found.css' %}"/>
-  </head>
-    <body>
-      <header>
-        <a href="https://abcri.pt/"><img class="abcri-logo" src="{% static 'img/Logo_ABCRI.png' %}"></a>
-        <a><img class="mngt-logo" src="{% static 'img/Logo_MNGT.png' %}"></a>
-        <h1> <strong>An ABC Research Institute polyglutamine disease database</strong></h1>
-      </header>
-      <main>
-        <div class="info">
-            <h1 style="text-align: center;">{{error_code}}</h1>
-            <h2 style="text-align: center;">{{ error_message }}<br><br></h2>
-            <p>
-              The page you were looking for does not exist! Click <a href="/home">here</a> to return to the home page.
-            </p>
-            <p>
-              If you got to this page by clicking a link, please <a href="/contact">notify us</a>.
-            </p>
-            <div class="poly-q-logo">
-              <img src="{% static 'img/logo-plyq.png' %}">
-            </div>
-            <div class="container-list">
-            <div class="info-lists">
-            <ul class="list-1">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/authors">Authors</a></li>
-              <li><a href="/objectives">Objectives</a></li>
-            </ul>
-            <ul class="list-2">
-              <li>Search for information on 9 different polyglutamine diseases</li>
-              <li>Contact us</li>
-              <li>Authors information</li>
-              <li>PolyQ database objectives</li>
-            </ul>
-            </div>
-          </div>
-          </div>
-        </main>
-      </body>
-      </html>
+{% block content %}
+<div class="error-page">
+    <p class="error-code">{{ error_code }}</p>
+    <h1>{{ error_message }}</h1>
+    {% if error_code %}
+    <p>This page does not exist. If a link brought you here, please <a href="/contact">let us know</a>.</p>
+    {% else %}
+    <p>Check the spelling, try an abbreviation such as HD or SCA3, or pick a disease from the <a href="/home">home page</a>.</p>
+    {% endif %}
+    <ul class="error-links">
+        <li><a href="/home"><strong>Home</strong><span>Search the nine polyglutamine diseases</span></a></li>
+        <li><a href="/contact"><strong>Contact</strong><span>Report a broken link</span></a></li>
+        <li><a href="/authors"><strong>Authors</strong><span>Who built the database</span></a></li>
+        <li><a href="/objectives"><strong>Objectives</strong><span>What the database is for</span></a></li>
+    </ul>
+</div>
+{% endblock %}

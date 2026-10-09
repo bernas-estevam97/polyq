@@ -29,7 +29,8 @@ SECRET_KEY = S_KEY
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['polyq.pt','www.polyq.pt']
+
+ALLOWED_HOSTS = ['polyq.pt','www.polyq.pt', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -125,7 +126,7 @@ else:
         'default': {
         'ENGINE': 'mssql',
         'NAME': 'polyq',
-        'USER': 'SA',
+        'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': '127.0.0.1',  # or 'localhost'
         'PORT': '1433',  # default SQL Server port

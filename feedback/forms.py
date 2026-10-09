@@ -2,8 +2,6 @@ from django import forms
 from django.forms import ModelForm, TextInput, EmailInput, Textarea
 from django_recaptcha.fields import ReCaptchaField
 from django_recaptcha.widgets import ReCaptchaV3
-import random
-import string
 import time
 
 from .models import Form
@@ -48,8 +46,9 @@ class FeedbackForm(ModelForm):
         )
 
     def generate_honeypot_field(self):
-        """Generate a random string for the honeypot field name."""
-        return ''.join(random.choices(string.ascii_lowercase, k=10))
+        """Honeypot field name. Must be stable: a random name per instance never matched
+        the name posted back, so the honeypot check could not trigger."""
+        return 'website_url'
 
     def is_spam(self):
         """Custom spam check, used in the view."""

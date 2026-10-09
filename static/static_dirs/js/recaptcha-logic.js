@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const openButton = document.querySelector('.contact-form'); // Button that opens the dialog
     const dialog = document.querySelector('.dialog-form'); // The dialog element
     const form = document.getElementById('form'); // Your feedback form
-    const closeButton = document.querySelector('.close-button'); // Dialog close button
+    const closeButton = dialog.querySelector('.close-button'); // Dialog close button
 
     // Function that checks if reCAPTCHA is working
     function checkRecaptchaReady() {
