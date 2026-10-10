@@ -19,18 +19,17 @@
 <header class="landing-header">
     <a class="landing-brand" href="{% url 'home_page' %}"><img src="{% static 'img/image-crop.png' %}" alt="PolyQ Database" width="184" height="128"></a>
     <a class="landing-abcri" href="https://abcri.pt/"><img src="{% static 'img/Logo_ABCRI.png' %}" alt="ABC Research Institute"></a>
-    <div class="nav-links" id="navLinks">
-        <button type="button" id="closeBtn" class="menu-btn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <button type="button" id="menuToggle" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
         <ul>
             <li><a href="{% url 'home_page' %}">Home</a></li>
             <li><a href="{% url 'objectives' %}">Objectives</a></li>
             <li><a href="{% url 'authors' %}">Authors</a></li>
             <li><a href="{% url 'contact_page' %}">Contact</a></li>
             <li><a href="{% url 'thanks' %}">Appreciation</a></li>
-            <li><a href="{% url 'support' %}">Support</a></li>
+            <li><a href="{% url 'support' %}"><i class="fa-solid fa-mug-hot"></i> Support</a></li>
         </ul>
-    </div>
-    <button type="button" id="openBtn" class="menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </nav>
 </header>
 <main class="landing-main">
     <h1>A database for polyglutamine diseases</h1>

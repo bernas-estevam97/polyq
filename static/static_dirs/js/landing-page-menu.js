@@ -1,12 +1,18 @@
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
-var navLinks= document.getElementById("navLinks");
-    function showMenu(){
-      navLinks.style.right = "0";
-    }
-    function hideMenu(wind_size){
-      navLinks.style.right = "-240px";
-    }
+var menuToggle = document.getElementById("menuToggle");
 
-openBtn.addEventListener("click", showMenu);
-closeBtn.addEventListener("click", hideMenu);
+function setMenu(open) {
+    menuToggle.setAttribute("aria-expanded", open);
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("menu-open", open);
+}
+
+menuToggle.addEventListener("click", function () {
+    setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+});
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") setMenu(false);
+});
+// Close the sheet if the screen grows past the mobile breakpoint (e.g. tablet rotation)
+window.matchMedia("(min-width: 761px)").addEventListener("change", function () {
+    setMenu(false);
+});
